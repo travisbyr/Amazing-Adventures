@@ -1,0 +1,11 @@
+C:\Users\tbyrm\Documents\NMIT\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\bin\Debug\amazingAdventures.exe.config
+C:\Users\tbyrm\Documents\NMIT\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\bin\Debug\amazingAdventures.exe
+C:\Users\tbyrm\Documents\NMIT\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\bin\Debug\amazingAdventures.pdb
+C:\Users\tbyrm\Documents\NMIT\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.csprojAssemblyReference.cache
+C:\Users\tbyrm\Documents\NMIT\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.login.resources
+C:\Users\tbyrm\Documents\NMIT\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.Properties.Resources.resources
+C:\Users\tbyrm\Documents\NMIT\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.csproj.GenerateResource.cache
+C:\Users\tbyrm\Documents\NMIT\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.csproj.CoreCompileInputs.cache
+C:\Users\tbyrm\Documents\NMIT\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.exe
+C:\Users\tbyrm\Documents\NMIT\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.pdb
+C:\Users\tbyrm\Documents\NMIT\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.loginForm.resources
