@@ -26,5 +26,10 @@ namespace amazingAdventures
         {
 
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            new lobbyForm().Show();
+        }
     }
 }

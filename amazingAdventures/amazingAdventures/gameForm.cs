@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace amazingAdventures
 {
-    public partial class login : Form
+    public partial class gameForm : Form
     {
-        public login()
+        public gameForm()
         {
             InitializeComponent();
-        }
-
-        private void Use_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

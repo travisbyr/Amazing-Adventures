@@ -40,19 +40,20 @@ namespace amazingAdventures
             // loginButton
             // 
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.loginButton.Location = new System.Drawing.Point(158, 259);
+            this.loginButton.Location = new System.Drawing.Point(160, 291);
             this.loginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(168, 35);
             this.loginButton.TabIndex = 11;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label2.Location = new System.Drawing.Point(124, 165);
+            this.label2.Location = new System.Drawing.Point(124, 173);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 24);
@@ -64,7 +65,7 @@ namespace amazingAdventures
             // 
             this.Use.AutoSize = true;
             this.Use.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.Use.Location = new System.Drawing.Point(124, 100);
+            this.Use.Location = new System.Drawing.Point(124, 108);
             this.Use.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Use.Name = "Use";
             this.Use.Size = new System.Drawing.Size(102, 24);
@@ -74,7 +75,7 @@ namespace amazingAdventures
             // loginPassword
             // 
             this.loginPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.loginPassword.Location = new System.Drawing.Point(129, 192);
+            this.loginPassword.Location = new System.Drawing.Point(129, 200);
             this.loginPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginPassword.Name = "loginPassword";
             this.loginPassword.PasswordChar = '*';
@@ -84,7 +85,7 @@ namespace amazingAdventures
             // loginUsername
             // 
             this.loginUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginUsername.Location = new System.Drawing.Point(129, 127);
+            this.loginUsername.Location = new System.Drawing.Point(129, 135);
             this.loginUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginUsername.Name = "loginUsername";
             this.loginUsername.Size = new System.Drawing.Size(237, 29);
@@ -93,11 +94,11 @@ namespace amazingAdventures
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 33);
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(71, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 39);
+            this.label1.Size = new System.Drawing.Size(351, 47);
             this.label1.TabIndex = 6;
             this.label1.Text = "Amazing Adventures";
             // 
