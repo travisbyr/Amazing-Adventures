@@ -37,7 +37,7 @@ namespace amazingAdventures
             this.leftButton = new System.Windows.Forms.Button();
             this.rightButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.gameBackgroundLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@ namespace amazingAdventures
             this.totalFoundItemsLabel = new System.Windows.Forms.Label();
             this.foundItemLabel = new System.Windows.Forms.Label();
             this.totalPlayersLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.photoPlaceholderLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -84,7 +84,7 @@ namespace amazingAdventures
             this.upButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.upButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.upButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.upButton.Location = new System.Drawing.Point(122, 977);
+            this.upButton.Location = new System.Drawing.Point(122, 983);
             this.upButton.Name = "upButton";
             this.upButton.Size = new System.Drawing.Size(258, 46);
             this.upButton.TabIndex = 16;
@@ -96,7 +96,7 @@ namespace amazingAdventures
             this.downButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.downButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.downButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.downButton.Location = new System.Drawing.Point(479, 977);
+            this.downButton.Location = new System.Drawing.Point(479, 983);
             this.downButton.Name = "downButton";
             this.downButton.Size = new System.Drawing.Size(258, 46);
             this.downButton.TabIndex = 17;
@@ -108,7 +108,7 @@ namespace amazingAdventures
             this.leftButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.leftButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.leftButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.leftButton.Location = new System.Drawing.Point(841, 977);
+            this.leftButton.Location = new System.Drawing.Point(841, 983);
             this.leftButton.Name = "leftButton";
             this.leftButton.Size = new System.Drawing.Size(258, 46);
             this.leftButton.TabIndex = 18;
@@ -120,7 +120,7 @@ namespace amazingAdventures
             this.rightButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.rightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.rightButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.rightButton.Location = new System.Drawing.Point(1183, 977);
+            this.rightButton.Location = new System.Drawing.Point(1183, 983);
             this.rightButton.Name = "rightButton";
             this.rightButton.Size = new System.Drawing.Size(258, 46);
             this.rightButton.TabIndex = 19;
@@ -138,14 +138,14 @@ namespace amazingAdventures
             this.label3.TabIndex = 20;
             this.label3.Text = "Amazing Adventures";
             // 
-            // label4
+            // gameBackgroundLabel
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.Window;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(52, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1463, 837);
-            this.label4.TabIndex = 21;
+            this.gameBackgroundLabel.BackColor = System.Drawing.SystemColors.Window;
+            this.gameBackgroundLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gameBackgroundLabel.Location = new System.Drawing.Point(52, 88);
+            this.gameBackgroundLabel.Name = "gameBackgroundLabel";
+            this.gameBackgroundLabel.Size = new System.Drawing.Size(1462, 852);
+            this.gameBackgroundLabel.TabIndex = 21;
             // 
             // label5
             // 
@@ -217,21 +217,21 @@ namespace amazingAdventures
             this.totalPlayersLabel.TabIndex = 28;
             this.totalPlayersLabel.Text = "2 Players";
             // 
-            // label8
+            // photoPlaceholderLabel
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.Window;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(1661, 398);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(200, 200);
-            this.label8.TabIndex = 29;
+            this.photoPlaceholderLabel.BackColor = System.Drawing.SystemColors.Window;
+            this.photoPlaceholderLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.photoPlaceholderLabel.Location = new System.Drawing.Point(1661, 398);
+            this.photoPlaceholderLabel.Name = "photoPlaceholderLabel";
+            this.photoPlaceholderLabel.Size = new System.Drawing.Size(200, 200);
+            this.photoPlaceholderLabel.TabIndex = 29;
             // 
             // gameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1955, 1069);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.photoPlaceholderLabel);
             this.Controls.Add(this.totalPlayersLabel);
             this.Controls.Add(this.foundItemLabel);
             this.Controls.Add(this.totalFoundItemsLabel);
@@ -239,7 +239,7 @@ namespace amazingAdventures
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.gameBackgroundLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rightButton);
             this.Controls.Add(this.leftButton);
@@ -265,7 +265,7 @@ namespace amazingAdventures
         private System.Windows.Forms.Button leftButton;
         private System.Windows.Forms.Button rightButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label gameBackgroundLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -273,6 +273,6 @@ namespace amazingAdventures
         private System.Windows.Forms.Label totalFoundItemsLabel;
         private System.Windows.Forms.Label foundItemLabel;
         private System.Windows.Forms.Label totalPlayersLabel;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label photoPlaceholderLabel;
     }
 }
