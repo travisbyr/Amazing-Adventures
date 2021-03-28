@@ -7,14 +7,6 @@ delimiter //
 create procedure createDB()
 begin
 
-    CREATE TABLE `tbl_score` (
-	  `ScoreID` int NOT NULL AUTO_INCREMENT,
-      `Score` int DEFAULT 0,
-      `CharacterID` int DEFAULT NULL,
-      `GameID` int DEFAULT NULL,
-	  PRIMARY KEY (`ScoreID`)
-	  );
-
 	CREATE TABLE `tbl_tile` (
 	  `TileID` int NOT NULL AUTO_INCREMENT,
 	  `TileLocation` int DEFAULT NULL,
@@ -41,7 +33,6 @@ begin
 	  `CharacterName` varchar(15) DEFAULT NULL,
 	  `CharacterColour` varchar(25) DEFAULT NULL,
       `CharacterLocation` varchar(25) DEFAULT NULL,
-      `CharacterInGame` boolean DEFAULT true,
       `TileID` int DEFAULT NULL,
       `GameID` int DEFAULT NULL,
       `PlayerID` int DEFAULT NULL,
@@ -93,20 +84,7 @@ delimiter ;
    
 CALL createDB();   
 
-/*------------------------------------->> TEST CODE <<-------------------------------------*/   
-
--- INSERT INTO `tbl_tile`(`TileLocation`)
--- VALUES (23);
---       
--- insert into `tbl_item`(`ItemName`,`ItemValue`,`ItemPhoto`,`TileID`)
--- values ('Apple',10, 'dwjadjkwakdwkl', 2);
-
--- SELECT * from `tbl_item`;
-
-
 /*------------------------------------->> FOREIGN KEYS <<-------------------------------------*/
-ALTER TABLE `tbl_score` ADD FOREIGN KEY (CharacterID) REFERENCES tbl_character(CharacterID);    
-ALTER TABLE `tbl_score` ADD FOREIGN KEY (GameID) REFERENCES tbl_game(GameID); 
 
 ALTER TABLE `tbl_player` ADD FOREIGN KEY (CharacterID) REFERENCES tbl_character(CharacterID);  
 
@@ -126,3 +104,14 @@ ALTER TABLE `tbl_chat` ADD FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID
 ALTER TABLE `tbl_game` ADD FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID);   
 
 ALTER TABLE `tbl_item` ADD FOREIGN KEY (TileID) REFERENCES tbl_tile(TileID);
+
+/*------------------------------------->> TEST CODE <<-------------------------------------*/   
+
+INSERT INTO `tbl_tile`(`TileLocation`)
+VALUES (23);
+      
+insert into `tbl_item`(`ItemName`,`ItemValue`,`ItemPhoto`,`TileID`)
+values ('Apple',10, 'dwjadjkwakdwkl', 2);
+
+SELECT * from `tbl_item`;
+
