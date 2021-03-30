@@ -47,12 +47,12 @@ begin
 	  );
       
 	CREATE TABLE `tbl_game` (
-	  `GameID` int NOT NULL AUTO_INCREMENT,
+	  `GameID` int NOT NULL AUTO_INCREMENT, 
 	  `GameName` varchar(25) DEFAULT NULL,
 	  `GameDuration` int DEFAULT 120,
       `PlayerID` int DEFAULT NULL,
 	  PRIMARY KEY (`GameID`),
-      FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID)
+      FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID) ON DELETE CASCADE
 	  );  
       
     CREATE TABLE `tbl_character` (
@@ -64,9 +64,9 @@ begin
       `GameID` int DEFAULT NULL,
       `PlayerID` int DEFAULT NULL,
 	  PRIMARY KEY (`CharacterID`),
-      FOREIGN KEY (TileID) REFERENCES tbl_tile(TileID),
-      FOREIGN KEY (GameID) REFERENCES tbl_game(GameID),
-      FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID) 
+      FOREIGN KEY (TileID) REFERENCES tbl_tile(TileID) ON DELETE CASCADE,
+      FOREIGN KEY (GameID) REFERENCES tbl_game(GameID) ON DELETE CASCADE,
+      FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID) ON DELETE CASCADE
 	  );  
       
 	CREATE TABLE `tbl_tileAsset` (
@@ -75,9 +75,9 @@ begin
       `ItemID` int DEFAULT NULL,
 	  `GameID` int DEFAULT NULL,
 	  PRIMARY KEY (`tileAssetID`),
-	  FOREIGN KEY (TileID) REFERENCES tbl_tile(TileID),
-      FOREIGN KEY (ItemID) REFERENCES tbl_item(ItemID),
-      FOREIGN KEY (GameID) REFERENCES tbl_game(GameID) 
+	  FOREIGN KEY (TileID) REFERENCES tbl_tile(TileID) ON DELETE CASCADE,
+      FOREIGN KEY (ItemID) REFERENCES tbl_item(ItemID) ON DELETE CASCADE,
+      FOREIGN KEY (GameID) REFERENCES tbl_game(GameID) ON DELETE CASCADE 
 	  );        
       
 	CREATE TABLE `tbl_backpack` (
@@ -85,8 +85,8 @@ begin
       `CharacterID` int DEFAULT NULL,
       `ItemID` int DEFAULT NULL,
 	  PRIMARY KEY (`BackpackID`),
-	  FOREIGN KEY (CharacterID) REFERENCES tbl_character(CharacterID),
-      FOREIGN KEY (ItemID) REFERENCES tbl_item(ItemID)
+	  FOREIGN KEY (CharacterID) REFERENCES tbl_character(CharacterID) ON DELETE CASCADE,
+      FOREIGN KEY (ItemID) REFERENCES tbl_item(ItemID) ON DELETE CASCADE
 	  );        
       
 	CREATE TABLE `tbl_chat` (
@@ -95,7 +95,7 @@ begin
 	  `ChatDateTime` varchar(25) DEFAULT NULL,/*use NOW() and insert into it*/
       `PlayerID` int DEFAULT NULL,
 	  PRIMARY KEY (`ChatID`),
-      FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID)
+      FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID) ON DELETE SET NULL
 	  );      
        
 end //
@@ -157,7 +157,7 @@ begin
 	VALUES (1,1,1);
 
 	INSERT INTO `tbl_tileAsset`(`TileID`,`ItemID`,`GameID`)
-	VALUES (2,2,1);
+	VALUES (2,2,2);
 
 	INSERT INTO `tbl_tileAsset`(`TileID`,`ItemID`,`GameID`)
 	VALUES (3,3,1);
@@ -203,7 +203,18 @@ begin
 
 	UPDATE `tbl_item` SET ItemValue = 10 WHERE ItemID = 1;
     
-    /*------------------------------------->> SELECT STATEMENTS <<-------------------------------------*/  
+	/*------------------------------------->> DELETE STATEMENTS <<-------------------------------------*/  
+
+	DELETE FROM `tbl_tileAsset` WHERE tileAssetID = 1;
+	DELETE FROM `tbl_character` WHERE CharacterName = "Travis";
+	DELETE FROM `tbl_player` WHERE PlayerUsername = "User1";
+	DELETE FROM `tbl_tile` WHERE TileLocation = 0;
+	DELETE FROM `tbl_backpack` WHERE ItemID = 2;
+	DELETE FROM `tbl_chat` WHERE ChatText = "Hello world!";
+	DELETE FROM `tbl_game` WHERE GameName = "Game3";
+	DELETE FROM `tbl_item` WHERE ItemName = "Apple";
+    
+	/*------------------------------------->> SELECT STATEMENTS <<-------------------------------------*/  
     
 	SELECT * FROM `tbl_tile`;
     SELECT * FROM `tbl_player`;
@@ -213,14 +224,10 @@ begin
     SELECT * FROM `tbl_chat`;
     SELECT * FROM `tbl_game`;
     SELECT * FROM `tbl_item`;
-
+    
 end //
 delimiter ;   
 
 CALL createDB();  
 CALL editDB();   
 
-/*
-SELECT * FROM `tbl_player`;
-*/
-/*Update, select, insert, delete*/
