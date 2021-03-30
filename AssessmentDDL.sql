@@ -7,11 +7,30 @@ delimiter //
 create procedure createDB()
 begin
 
+	/*------------------------------------->> CREATE TABLE STATEMENTS <<-------------------------------------*/   
+	
+    DROP TABLE IF EXISTS `tbl_backpack`;
+	DROP TABLE IF EXISTS `tbl_tileAsset`;
+    DROP TABLE IF EXISTS `tbl_item`;
+    DROP TABLE IF EXISTS `tbl_chat`;
+    DROP TABLE IF EXISTS `tbl_character`;
+    DROP TABLE IF EXISTS `tbl_game`;
+	DROP TABLE IF EXISTS `tbl_tile`;
+	DROP TABLE IF EXISTS `tbl_player`;
+
 	CREATE TABLE `tbl_tile` (
 	  `TileID` int NOT NULL AUTO_INCREMENT,
 	  `TileLocation` int DEFAULT NULL,
-	  PRIMARY KEY (`TileID`)
+	  PRIMARY KEY (`TileID`) 
 	  );     
+      
+	CREATE TABLE `tbl_item` (
+	  `ItemID` int NOT NULL AUTO_INCREMENT,
+	  `ItemName` varchar(25) DEFAULT NULL,
+	  `ItemValue` int DEFAULT 0,
+      `ItemPhoto` varchar(50) DEFAULT NULL,
+	  PRIMARY KEY (`ItemID`)
+	  ); 
     
     CREATE TABLE `tbl_player` (
 	  `PlayerID` int NOT NULL AUTO_INCREMENT,
@@ -24,19 +43,30 @@ begin
       `LoggedIn` boolean DEFAULT false,
       `LoginAttempts` int(1) DEFAULT 0,
       `CurrentlyPlaying` boolean DEFAULT false,
-      `CharacterID` int DEFAULT NULL,
 	  PRIMARY KEY (`PlayerID`)
 	  );
+      
+	CREATE TABLE `tbl_game` (
+	  `GameID` int NOT NULL AUTO_INCREMENT,
+	  `GameName` varchar(25) DEFAULT NULL,
+	  `GameDuration` int DEFAULT 120,
+      `PlayerID` int DEFAULT NULL,
+	  PRIMARY KEY (`GameID`),
+      FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID)
+	  );  
       
     CREATE TABLE `tbl_character` (
 	  `CharacterID` int NOT NULL AUTO_INCREMENT,
 	  `CharacterName` varchar(15) DEFAULT NULL,
 	  `CharacterColour` varchar(25) DEFAULT NULL,
-      `CharacterLocation` varchar(25) DEFAULT NULL,
+      `CharacterScore` int DEFAULT 0,
       `TileID` int DEFAULT NULL,
       `GameID` int DEFAULT NULL,
       `PlayerID` int DEFAULT NULL,
-	  PRIMARY KEY (`CharacterID`)
+	  PRIMARY KEY (`CharacterID`),
+      FOREIGN KEY (TileID) REFERENCES tbl_tile(TileID),
+      FOREIGN KEY (GameID) REFERENCES tbl_game(GameID),
+      FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID) 
 	  );  
       
 	CREATE TABLE `tbl_tileAsset` (
@@ -44,14 +74,19 @@ begin
       `TileID` int DEFAULT NULL,
       `ItemID` int DEFAULT NULL,
 	  `GameID` int DEFAULT NULL,
-	  PRIMARY KEY (`tileAssetID`)
+	  PRIMARY KEY (`tileAssetID`),
+	  FOREIGN KEY (TileID) REFERENCES tbl_tile(TileID),
+      FOREIGN KEY (ItemID) REFERENCES tbl_item(ItemID),
+      FOREIGN KEY (GameID) REFERENCES tbl_game(GameID) 
 	  );        
       
 	CREATE TABLE `tbl_backpack` (
 	  `BackpackID` int NOT NULL AUTO_INCREMENT,
       `CharacterID` int DEFAULT NULL,
       `ItemID` int DEFAULT NULL,
-	  PRIMARY KEY (`BackpackID`)
+	  PRIMARY KEY (`BackpackID`),
+	  FOREIGN KEY (CharacterID) REFERENCES tbl_character(CharacterID),
+      FOREIGN KEY (ItemID) REFERENCES tbl_item(ItemID)
 	  );        
       
 	CREATE TABLE `tbl_chat` (
@@ -59,59 +94,133 @@ begin
 	  `ChatText` varchar(35) DEFAULT NULL,
 	  `ChatDateTime` varchar(25) DEFAULT NULL,/*use NOW() and insert into it*/
       `PlayerID` int DEFAULT NULL,
-	  PRIMARY KEY (`ChatID`)
+	  PRIMARY KEY (`ChatID`),
+      FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID)
 	  );      
-      
-	CREATE TABLE `tbl_game` (
-	  `GameID` int NOT NULL AUTO_INCREMENT,
-	  `GameName` varchar(25) DEFAULT NULL,
-	  `Duration` int DEFAULT 0,
-      `PlayerID` int DEFAULT NULL,
-	  PRIMARY KEY (`GameID`)
-	  );   
-      
-	CREATE TABLE `tbl_item` (
-	  `ItemID` int NOT NULL AUTO_INCREMENT,
-	  `ItemName` varchar(25) DEFAULT NULL,
-	  `ItemValue` int DEFAULT 0,
-      `ItemPhoto` varchar(50) DEFAULT NULL,
-	  `TileID` int DEFAULT NULL,
-	  PRIMARY KEY (`ItemID`)
-	  ); 
-      
+       
 end //
 delimiter ;   
-   
-CALL createDB();   
 
-/*------------------------------------->> FOREIGN KEYS <<-------------------------------------*/
+drop procedure if exists editDB;
+delimiter //
+create procedure editDB()
+begin
 
-ALTER TABLE `tbl_player` ADD FOREIGN KEY (CharacterID) REFERENCES tbl_character(CharacterID);  
+	/*------------------------------------->> INSERT STATEMENTS <<-------------------------------------*/   
 
-ALTER TABLE `tbl_character` ADD FOREIGN KEY (TileID) REFERENCES tbl_tile(TileID);    
-ALTER TABLE `tbl_character` ADD FOREIGN KEY (GameID) REFERENCES tbl_game(GameID); 
-ALTER TABLE `tbl_character` ADD FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID);  
+	INSERT INTO `tbl_tile`(`TileLocation`)
+	VALUES (00);
 
-ALTER TABLE `tbl_tileAsset` ADD FOREIGN KEY (TileID) REFERENCES tbl_tile(TileID);   
-ALTER TABLE `tbl_tileAsset` ADD FOREIGN KEY (ItemID) REFERENCES tbl_item(ItemID);   
-ALTER TABLE `tbl_tileAsset` ADD FOREIGN KEY (GameID) REFERENCES tbl_game(GameID);   
+	INSERT INTO `tbl_tile`(`TileLocation`)
+	VALUES (01);
 
-ALTER TABLE `tbl_backpack` ADD FOREIGN KEY (CharacterID) REFERENCES tbl_character(CharacterID);   
-ALTER TABLE `tbl_backpack` ADD FOREIGN KEY (ItemID) REFERENCES tbl_item(ItemID);  
+	INSERT INTO `tbl_tile`(`TileLocation`)
+	VALUES (02);
 
-ALTER TABLE `tbl_chat` ADD FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID); 
+	INSERT INTO `tbl_item`(`ItemName`,`ItemValue`,`ItemPhoto`)
+	VALUES ('Apple', 2, '://FilePath//Photo');
 
-ALTER TABLE `tbl_game` ADD FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID);   
+	INSERT INTO `tbl_item`(`ItemName`,`ItemValue`,`ItemPhoto`)
+	VALUES ('Knife', 3, '://FilePath//Photo');
 
-ALTER TABLE `tbl_item` ADD FOREIGN KEY (TileID) REFERENCES tbl_tile(TileID);
+	INSERT INTO `tbl_item`(`ItemName`,`ItemValue`,`ItemPhoto`)
+	VALUES ('Trap', 0, '://FilePath//Photo');
 
-/*------------------------------------->> TEST CODE <<-------------------------------------*/   
+	INSERT INTO `tbl_player`(`PlayerUsername`,`PlayerPassword`,`PlayerEmail`)
+	VALUES ('User1','Password','User1@email.com');
 
-INSERT INTO `tbl_tile`(`TileLocation`)
-VALUES (23);
-      
-insert into `tbl_item`(`ItemName`,`ItemValue`,`ItemPhoto`,`TileID`)
-values ('Apple',10, 'dwjadjkwakdwkl', 2);
+	INSERT INTO `tbl_player`(`PlayerUsername`,`PlayerPassword`,`PlayerEmail`)
+	VALUES ('User2','Password','User2@email.com');
 
-SELECT * from `tbl_item`;
+	INSERT INTO `tbl_player`(`PlayerUsername`,`PlayerPassword`,`PlayerEmail`)
+	VALUES ('User3','Password','User3@email.com');
 
+	INSERT INTO `tbl_game`(`GameName`,`GameDuration`,`PlayerID`)
+	VALUES ('Game1','600',1);
+
+	INSERT INTO `tbl_game`(`GameName`,`GameDuration`,`PlayerID`)
+	VALUES ('Game2','600',2);
+
+	INSERT INTO `tbl_game`(`GameName`,`GameDuration`,`PlayerID`)
+	VALUES ('Game3','600',3);
+
+	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`TileID`,`GameID`,`PlayerID`)
+	VALUES ('Travis','blue',1,1,1);
+
+	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`TileID`,`GameID`,`PlayerID`)
+	VALUES ('Bob','blue',2,1,2);
+
+	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`TileID`,`GameID`,`PlayerID`)
+	VALUES ('Gary','blue',3,1,3);
+	
+	INSERT INTO `tbl_tileAsset`(`TileID`,`ItemID`,`GameID`)
+	VALUES (1,1,1);
+
+	INSERT INTO `tbl_tileAsset`(`TileID`,`ItemID`,`GameID`)
+	VALUES (2,2,1);
+
+	INSERT INTO `tbl_tileAsset`(`TileID`,`ItemID`,`GameID`)
+	VALUES (3,3,1);
+
+	INSERT INTO `tbl_backpack`(`CharacterID`,`ItemID`)
+	VALUES (1,1);
+
+	INSERT INTO `tbl_backpack`(`CharacterID`,`ItemID`)
+	VALUES (1,2);
+
+	INSERT INTO `tbl_backpack`(`CharacterID`,`ItemID`)
+	VALUES (1,3);
+
+	INSERT INTO `tbl_chat`(`ChatText`,`ChatDateTime`,`PlayerID`)
+	VALUES('Hello',Now(),'1');
+
+	INSERT INTO `tbl_chat`(`ChatText`,`ChatDateTime`,`PlayerID`)
+	VALUES('Hello world!',Now(),'2');
+
+	INSERT INTO `tbl_chat`(`ChatText`,`ChatDateTime`,`PlayerID`)
+	VALUES('How are you?',Now(),'3');
+    
+    /*------------------------------------->> UPDATE STATEMENTS <<-------------------------------------*/  
+    
+    UPDATE `tbl_player` SET IsAdmin = TRUE WHERE PlayerID = 1;
+	UPDATE `tbl_player` SET LoginAttempts = LoginAttempts + 1 WHERE PlayerID = 2;
+	UPDATE `tbl_player` SET Highscore = 48 WHERE PlayerID = 3;
+
+	UPDATE `tbl_tile` SET TileLocation = 3 WHERE TileID = 12;
+
+	UPDATE `tbl_character` SET CharacterScore = 30 WHERE CharacterID = 1;
+	UPDATE `tbl_character` SET CharacterName = "Harry" WHERE CharacterID = 2;
+	UPDATE `tbl_character` SET GameID = 2 WHERE CharacterID = 3;
+
+	UPDATE `tbl_tileAsset` SET TileID = 2 WHERE tileAssetID = 12;
+
+	UPDATE `tbl_backpack` SET ItemID = 3 WHERE BackpackID = 1;
+
+	UPDATE `tbl_chat` SET ChatText = "*Censored*" WHERE ChatID = 1;
+
+	UPDATE `tbl_game` SET GameName = "My Game 1" WHERE GameID = 1;
+	UPDATE `tbl_game` SET GameDuration = 200 WHERE GameID = 3;
+
+	UPDATE `tbl_item` SET ItemValue = 10 WHERE ItemID = 1;
+    
+    /*------------------------------------->> SELECT STATEMENTS <<-------------------------------------*/  
+    
+	SELECT * FROM `tbl_tile`;
+    SELECT * FROM `tbl_player`;
+    SELECT * FROM `tbl_character`;
+    SELECT * FROM `tbl_tileAsset`;
+	SELECT * FROM `tbl_backpack`;
+    SELECT * FROM `tbl_chat`;
+    SELECT * FROM `tbl_game`;
+    SELECT * FROM `tbl_item`;
+
+end //
+delimiter ;   
+
+CALL createDB();  
+CALL editDB();   
+
+/*
+SELECT * FROM `tbl_player`;
+*/
+/*Update, select, insert, delete*/
