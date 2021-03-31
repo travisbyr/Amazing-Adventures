@@ -7,7 +7,7 @@ delimiter //
 create procedure createDB()
 begin
 
-	/*------------------------------------->> CREATE TABLE STATEMENTS <<-------------------------------------*/   
+	/*------------------------------------->> DROP TABLE STATEMENTS <<-------------------------------------*/   
 	
     DROP TABLE IF EXISTS `tbl_backpack`;
 	DROP TABLE IF EXISTS `tbl_tileAsset`;
@@ -17,6 +17,8 @@ begin
     DROP TABLE IF EXISTS `tbl_game`;
 	DROP TABLE IF EXISTS `tbl_tile`;
 	DROP TABLE IF EXISTS `tbl_player`;
+    
+    	/*------------------------------------->> CREATE TABLE STATEMENTS <<-------------------------------------*/   
 
 	CREATE TABLE `tbl_tile` (
 	  `TileID` int NOT NULL AUTO_INCREMENT,
@@ -110,73 +112,57 @@ begin
 
 	INSERT INTO `tbl_tile`(`TileLocation`)
 	VALUES (00);
-
 	INSERT INTO `tbl_tile`(`TileLocation`)
 	VALUES (01);
-
 	INSERT INTO `tbl_tile`(`TileLocation`)
 	VALUES (02);
 
 	INSERT INTO `tbl_item`(`ItemName`,`ItemValue`,`ItemPhoto`)
 	VALUES ('Apple', 2, '://FilePath//Photo');
-
 	INSERT INTO `tbl_item`(`ItemName`,`ItemValue`,`ItemPhoto`)
 	VALUES ('Knife', 3, '://FilePath//Photo');
-
 	INSERT INTO `tbl_item`(`ItemName`,`ItemValue`,`ItemPhoto`)
 	VALUES ('Trap', 0, '://FilePath//Photo');
-
+    
 	INSERT INTO `tbl_player`(`PlayerUsername`,`PlayerPassword`,`PlayerEmail`)
 	VALUES ('User1','Password','User1@email.com');
-
 	INSERT INTO `tbl_player`(`PlayerUsername`,`PlayerPassword`,`PlayerEmail`)
 	VALUES ('User2','Password','User2@email.com');
-
 	INSERT INTO `tbl_player`(`PlayerUsername`,`PlayerPassword`,`PlayerEmail`)
 	VALUES ('User3','Password','User3@email.com');
 
 	INSERT INTO `tbl_game`(`GameName`,`GameDuration`,`PlayerID`)
 	VALUES ('Game1','600',1);
-
 	INSERT INTO `tbl_game`(`GameName`,`GameDuration`,`PlayerID`)
 	VALUES ('Game2','600',2);
-
 	INSERT INTO `tbl_game`(`GameName`,`GameDuration`,`PlayerID`)
 	VALUES ('Game3','600',3);
 
 	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`TileID`,`GameID`,`PlayerID`)
 	VALUES ('Travis','blue',1,1,1);
-
 	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`TileID`,`GameID`,`PlayerID`)
 	VALUES ('Bob','blue',2,1,2);
-
 	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`TileID`,`GameID`,`PlayerID`)
 	VALUES ('Gary','blue',3,1,3);
 	
 	INSERT INTO `tbl_tileAsset`(`TileID`,`ItemID`,`GameID`)
 	VALUES (1,1,1);
-
 	INSERT INTO `tbl_tileAsset`(`TileID`,`ItemID`,`GameID`)
 	VALUES (2,2,2);
-
 	INSERT INTO `tbl_tileAsset`(`TileID`,`ItemID`,`GameID`)
 	VALUES (3,3,1);
 
 	INSERT INTO `tbl_backpack`(`CharacterID`,`ItemID`)
 	VALUES (1,1);
-
 	INSERT INTO `tbl_backpack`(`CharacterID`,`ItemID`)
 	VALUES (1,2);
-
 	INSERT INTO `tbl_backpack`(`CharacterID`,`ItemID`)
 	VALUES (1,3);
 
 	INSERT INTO `tbl_chat`(`ChatText`,`ChatDateTime`,`PlayerID`)
 	VALUES('Hello',Now(),'1');
-
 	INSERT INTO `tbl_chat`(`ChatText`,`ChatDateTime`,`PlayerID`)
 	VALUES('Hello world!',Now(),'2');
-
 	INSERT INTO `tbl_chat`(`ChatText`,`ChatDateTime`,`PlayerID`)
 	VALUES('How are you?',Now(),'3');
     
@@ -185,22 +171,15 @@ begin
     UPDATE `tbl_player` SET IsAdmin = TRUE WHERE PlayerID = 1;
 	UPDATE `tbl_player` SET LoginAttempts = LoginAttempts + 1 WHERE PlayerID = 2;
 	UPDATE `tbl_player` SET Highscore = 48 WHERE PlayerID = 3;
-
 	UPDATE `tbl_tile` SET TileLocation = 3 WHERE TileID = 12;
-
 	UPDATE `tbl_character` SET CharacterScore = 30 WHERE CharacterID = 1;
 	UPDATE `tbl_character` SET CharacterName = "Harry" WHERE CharacterID = 2;
 	UPDATE `tbl_character` SET GameID = 2 WHERE CharacterID = 3;
-
 	UPDATE `tbl_tileAsset` SET TileID = 2 WHERE tileAssetID = 12;
-
 	UPDATE `tbl_backpack` SET ItemID = 3 WHERE BackpackID = 1;
-
 	UPDATE `tbl_chat` SET ChatText = "*Censored*" WHERE ChatID = 1;
-
 	UPDATE `tbl_game` SET GameName = "My Game 1" WHERE GameID = 1;
 	UPDATE `tbl_game` SET GameDuration = 200 WHERE GameID = 3;
-
 	UPDATE `tbl_item` SET ItemValue = 10 WHERE ItemID = 1;
     
 	/*------------------------------------->> DELETE STATEMENTS <<-------------------------------------*/  
