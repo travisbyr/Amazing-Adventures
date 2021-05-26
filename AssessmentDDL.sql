@@ -62,6 +62,7 @@ begin
 	  `CharacterName` varchar(15) DEFAULT NULL,
 	  `CharacterColour` varchar(25) DEFAULT NULL,
       `CharacterScore` int DEFAULT 0,
+      `CharacterLocation` varchar(10) DEFAULT NULL,
       `TileID` int DEFAULT NULL,
       `GameID` int DEFAULT NULL,
       `PlayerID` int DEFAULT NULL,
@@ -138,12 +139,12 @@ begin
 	INSERT INTO `tbl_game`(`GameName`,`GameDuration`,`PlayerID`)
 	VALUES ('Game3','600',3);
 
-	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`TileID`,`GameID`,`PlayerID`)
-	VALUES ('Travis','blue',1,1,1);
-	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`TileID`,`GameID`,`PlayerID`)
-	VALUES ('Bob','blue',2,1,2);
-	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`TileID`,`GameID`,`PlayerID`)
-	VALUES ('Gary','blue',3,1,3);
+	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`CharacterLocation`,`TileID`,`GameID`,`PlayerID`)
+	VALUES ('Travis','blue',6,1,1,1);
+	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`CharacterLocation`,`TileID`,`GameID`,`PlayerID`)
+	VALUES ('Bob','blue',6,2,1,2);
+	INSERT INTO `tbl_character`(`CharacterName`,`CharacterColour`,`CharacterLocation`,`TileID`,`GameID`,`PlayerID`)
+	VALUES ('Gary','blue',6,3,1,3);
 	
 	INSERT INTO `tbl_tileAsset`(`TileID`,`ItemID`,`GameID`)
 	VALUES (1,1,1);
