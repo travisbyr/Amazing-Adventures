@@ -15,6 +15,9 @@ namespace amazingAdventures
         public loginForm()
         {
             InitializeComponent();
+            DataAccess.createdb(); // Creates the tables
+            DataAccess.modifydb(); // Creates the items
+            DataAccess.testData(); // Creates the test data
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,7 +32,20 @@ namespace amazingAdventures
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            new lobbyForm().Show();
+            login();
+        }
+
+        private void login()
+        {
+            DataAccess.checkUsername(loginUsername.Text);
+            if (DataAccess.message == "avaliableUsername")
+            {
+
+            } else
+            {
+                MessageBox.Show("Unavliable username");
+            }
+            MessageBox.Show(DataAccess.message);
         }
     }
 }

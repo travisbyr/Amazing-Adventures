@@ -117,6 +117,7 @@ namespace amazingAdventures
             this.chatButton.TabIndex = 11;
             this.chatButton.Text = "CHAT";
             this.chatButton.UseVisualStyleBackColor = false;
+            this.chatButton.Click += new System.EventHandler(this.chatButton_Click);
             // 
             // settingsButton
             // 
@@ -185,6 +186,7 @@ namespace amazingAdventures
             this.Controls.Add(this.onlinePlayersList);
             this.Controls.Add(this.currentGameList);
             this.Name = "lobbyForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Lobby";
             this.Load += new System.EventHandler(this.lobbyForm_Load);
             this.ResumeLayout(false);

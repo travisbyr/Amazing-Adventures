@@ -41,7 +41,7 @@ namespace amazingAdventures
             // 
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.loginButton.Location = new System.Drawing.Point(160, 291);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(2);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(168, 35);
             this.loginButton.TabIndex = 11;
@@ -76,7 +76,7 @@ namespace amazingAdventures
             // 
             this.loginPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.loginPassword.Location = new System.Drawing.Point(129, 200);
-            this.loginPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginPassword.Margin = new System.Windows.Forms.Padding(2);
             this.loginPassword.Name = "loginPassword";
             this.loginPassword.PasswordChar = '*';
             this.loginPassword.Size = new System.Drawing.Size(237, 29);
@@ -86,7 +86,7 @@ namespace amazingAdventures
             // 
             this.loginUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginUsername.Location = new System.Drawing.Point(129, 135);
-            this.loginUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginUsername.Margin = new System.Windows.Forms.Padding(2);
             this.loginUsername.Name = "loginUsername";
             this.loginUsername.Size = new System.Drawing.Size(237, 29);
             this.loginUsername.TabIndex = 7;
@@ -104,6 +104,7 @@ namespace amazingAdventures
             // 
             // loginForm
             // 
+            this.AcceptButton = this.loginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -114,8 +115,11 @@ namespace amazingAdventures
             this.Controls.Add(this.loginPassword);
             this.Controls.Add(this.loginUsername);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "loginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
