@@ -12,6 +12,13 @@ namespace amazingAdventures
 {
     public partial class LobbyForm : Form
     {
+
+        private static readonly LobbyForm _instance = new LobbyForm();
+
+        public static LobbyForm Lobby => _instance;
+
+        static LobbyForm() { }
+
         public LobbyForm()
         {
             InitializeComponent();

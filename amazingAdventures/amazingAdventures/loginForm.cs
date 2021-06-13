@@ -63,11 +63,30 @@ namespace amazingAdventures
                 usrnInvalidSecondLabel.Visible = false;
             } else if (DataAccess.message == "unavaliableUsername")
             {
-                //usrnInvalidFirstLabel.Visible = true;
-                //usrnInvalidSecondLabel.Visible = true;
                 //MessageBox.Show("Error! Username or Password is invalid.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DataAccess.accountLogin(loginUsername.Text, loginPassword.Text);
-                MessageBox.Show(DataAccess.message);
+                //MessageBox.Show(DataAccess.message);
+                if (DataAccess.message == "NLogin")
+                {
+                    usrnValidFirstLine.Visible = false;
+                    usrnValidSecondLine.Visible = false;
+                    usrnInvalidFirstLabel.Text = "Invalid Login.";
+                    usrnInvalidSecondLabel.Text = "Please try again.";
+                    usrnInvalidFirstLabel.Visible = true;
+                    usrnInvalidSecondLabel.Visible = true;
+                } else if (DataAccess.message == "maxLoginAttempts")
+                {
+                    usrnValidFirstLine.Visible = false;
+                    usrnValidSecondLine.Visible = false;
+                    usrnInvalidFirstLabel.Text = "Account Locked";
+                    usrnInvalidSecondLabel.Text = "Email an administrator to unlock this account";
+                    usrnInvalidFirstLabel.Visible = true;
+                    usrnInvalidSecondLabel.Visible = true;
+                } else if (DataAccess.message == "SLogin")
+                {
+                    LobbyForm.Lobby.Show();
+                    Hide();
+                }
             }
         }
     }

@@ -47,6 +47,7 @@ namespace amazingAdventures
             this.rgsrSecondLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgsrSecondLine.ForeColor = System.Drawing.Color.Red;
             this.rgsrSecondLine.Location = new System.Drawing.Point(122, 358);
+            this.rgsrSecondLine.MinimumSize = new System.Drawing.Size(241, 16);
             this.rgsrSecondLine.Name = "rgsrSecondLine";
             this.rgsrSecondLine.Size = new System.Drawing.Size(241, 16);
             this.rgsrSecondLine.TabIndex = 27;
@@ -60,6 +61,7 @@ namespace amazingAdventures
             this.rgsrFirstLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rgsrFirstLine.ForeColor = System.Drawing.Color.Red;
             this.rgsrFirstLine.Location = new System.Drawing.Point(189, 338);
+            this.rgsrFirstLine.MinimumSize = new System.Drawing.Size(117, 17);
             this.rgsrFirstLine.Name = "rgsrFirstLine";
             this.rgsrFirstLine.Size = new System.Drawing.Size(117, 17);
             this.rgsrFirstLine.TabIndex = 26;

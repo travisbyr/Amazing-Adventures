@@ -114,11 +114,12 @@ namespace amazingAdventures
             this.usrnInvalidFirstLabel.AutoSize = true;
             this.usrnInvalidFirstLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.usrnInvalidFirstLabel.ForeColor = System.Drawing.Color.Red;
-            this.usrnInvalidFirstLabel.Location = new System.Drawing.Point(169, 284);
+            this.usrnInvalidFirstLabel.Location = new System.Drawing.Point(185, 284);
+            this.usrnInvalidFirstLabel.MinimumSize = new System.Drawing.Size(128, 17);
             this.usrnInvalidFirstLabel.Name = "usrnInvalidFirstLabel";
             this.usrnInvalidFirstLabel.Size = new System.Drawing.Size(128, 17);
             this.usrnInvalidFirstLabel.TabIndex = 12;
-            this.usrnInvalidFirstLabel.Text = "Incorrect Password";
+            this.usrnInvalidFirstLabel.Text = "Incorrect Login";
             this.usrnInvalidFirstLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.usrnInvalidFirstLabel.Visible = false;
             // 
@@ -127,11 +128,12 @@ namespace amazingAdventures
             this.usrnInvalidSecondLabel.AutoSize = true;
             this.usrnInvalidSecondLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrnInvalidSecondLabel.ForeColor = System.Drawing.Color.Red;
-            this.usrnInvalidSecondLabel.Location = new System.Drawing.Point(139, 304);
+            this.usrnInvalidSecondLabel.Location = new System.Drawing.Point(86, 304);
+            this.usrnInvalidSecondLabel.MinimumSize = new System.Drawing.Size(323, 16);
             this.usrnInvalidSecondLabel.Name = "usrnInvalidSecondLabel";
-            this.usrnInvalidSecondLabel.Size = new System.Drawing.Size(220, 16);
+            this.usrnInvalidSecondLabel.Size = new System.Drawing.Size(323, 16);
             this.usrnInvalidSecondLabel.TabIndex = 13;
-            this.usrnInvalidSecondLabel.Text = "You have 5 attempts remaining";
+            this.usrnInvalidSecondLabel.Text = "Email and administrator to unlock this account";
             this.usrnInvalidSecondLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.usrnInvalidSecondLabel.Visible = false;
             // 
@@ -156,6 +158,7 @@ namespace amazingAdventures
             this.usrnValidSecondLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usrnValidSecondLine.ForeColor = System.Drawing.Color.Red;
             this.usrnValidSecondLine.Location = new System.Drawing.Point(121, 336);
+            this.usrnValidSecondLine.MinimumSize = new System.Drawing.Size(263, 16);
             this.usrnValidSecondLine.Name = "usrnValidSecondLine";
             this.usrnValidSecondLine.Size = new System.Drawing.Size(263, 16);
             this.usrnValidSecondLine.TabIndex = 16;
@@ -169,6 +172,7 @@ namespace amazingAdventures
             this.usrnValidFirstLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.usrnValidFirstLine.ForeColor = System.Drawing.Color.Red;
             this.usrnValidFirstLine.Location = new System.Drawing.Point(174, 316);
+            this.usrnValidFirstLine.MinimumSize = new System.Drawing.Size(165, 17);
             this.usrnValidFirstLine.Name = "usrnValidFirstLine";
             this.usrnValidFirstLine.Size = new System.Drawing.Size(165, 17);
             this.usrnValidFirstLine.TabIndex = 15;
