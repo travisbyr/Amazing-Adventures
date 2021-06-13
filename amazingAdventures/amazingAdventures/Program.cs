@@ -16,7 +16,7 @@ namespace amazingAdventures
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loginForm());
+            Application.Run(LoginForm.Login);
         }
     }
 }

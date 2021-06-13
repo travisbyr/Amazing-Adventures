@@ -10,9 +10,17 @@ using System.Windows.Forms;
 
 namespace amazingAdventures
 {
-    public partial class loginForm : Form
+    public partial class LoginForm : Form
     {
-        public loginForm()
+        public static string username;
+
+        private static readonly LoginForm _instance = new LoginForm();
+
+        public static LoginForm Login => _instance;
+
+        static LoginForm() { }
+        
+        public LoginForm()
         {
             InitializeComponent();
             DataAccess.createdb(); // Creates the tables
@@ -37,6 +45,12 @@ namespace amazingAdventures
             login();
         }
 
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            username = loginUsername.Text;
+            new RegisterForm().Show();
+        }
+
         private void login()
         {
             DataAccess.checkUsername(loginUsername.Text);
@@ -47,13 +61,14 @@ namespace amazingAdventures
                 usrnValidSecondLine.Visible = true;
                 usrnInvalidFirstLabel.Visible = false;
                 usrnInvalidSecondLabel.Visible = false;
-            } else
+            } else if (DataAccess.message == "unavaliableUsername")
             {
-                usrnInvalidFirstLabel.Visible = true;
-                usrnInvalidSecondLabel.Visible = true;
+                //usrnInvalidFirstLabel.Visible = true;
+                //usrnInvalidSecondLabel.Visible = true;
                 //MessageBox.Show("Error! Username or Password is invalid.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DataAccess.accountLogin(loginUsername.Text, loginPassword.Text);
+                MessageBox.Show(DataAccess.message);
             }
-            MessageBox.Show(DataAccess.message);
         }
     }
 }

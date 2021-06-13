@@ -1,7 +1,7 @@
 ﻿
 namespace amazingAdventures
 {
-    partial class chat
+    partial class ChatForm
     {
         /// <summary>
         /// Required designer variable.

@@ -1,7 +1,7 @@
 ﻿
 namespace amazingAdventures
 {
-    partial class loginForm
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -148,6 +148,7 @@ namespace amazingAdventures
             this.registerBtn.Text = "Register";
             this.registerBtn.UseVisualStyleBackColor = false;
             this.registerBtn.Visible = false;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
             // usrnValidSecondLine
             // 
@@ -175,7 +176,7 @@ namespace amazingAdventures
             this.usrnValidFirstLine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.usrnValidFirstLine.Visible = false;
             // 
-            // loginForm
+            // LoginForm
             // 
             this.AcceptButton = this.loginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,7 +197,7 @@ namespace amazingAdventures
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "loginForm";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Login";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -215,9 +216,9 @@ namespace amazingAdventures
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label usrnInvalidFirstLabel;
         private System.Windows.Forms.Label usrnInvalidSecondLabel;
-        private System.Windows.Forms.Button registerBtn;
-        private System.Windows.Forms.Label usrnValidSecondLine;
-        private System.Windows.Forms.Label usrnValidFirstLine;
+        public System.Windows.Forms.Button registerBtn;
+        public System.Windows.Forms.Label usrnValidSecondLine;
+        public System.Windows.Forms.Label usrnValidFirstLine;
     }
 }
 

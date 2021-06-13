@@ -1,7 +1,7 @@
 ﻿
 namespace amazingAdventures
 {
-    partial class lobbyForm
+    partial class LobbyForm
     {
         /// <summary>
         /// Required designer variable.

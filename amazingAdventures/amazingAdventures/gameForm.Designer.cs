@@ -1,7 +1,7 @@
 ﻿
 namespace amazingAdventures
 {
-    partial class gameForm
+    partial class GameForm
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace amazingAdventures
 {
-    public partial class gameForm : Form
+    public partial class GameForm : Form
     {
-        public gameForm()
+        public GameForm()
         {
             InitializeComponent();
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace amazingAdventures
 {
-    public partial class lobbyForm : Form
+    public partial class LobbyForm : Form
     {
-        public lobbyForm()
+        public LobbyForm()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace amazingAdventures
 
         private void newGameButton_Click(object sender, EventArgs e)
         {
-            new gameForm().Show();
+            new GameForm().Show();
         }
 
         private void lobbyForm_Load(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace amazingAdventures
 
         private void chatButton_Click(object sender, EventArgs e)
         {
-            new chat().Show();
+            new ChatForm().Show();
         }
     }
 }
