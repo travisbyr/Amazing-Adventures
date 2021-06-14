@@ -12,7 +12,7 @@ namespace amazingAdventures
 {
     public partial class LoginForm : Form
     {
-        public static string username;
+        public string username;
 
         private static readonly LoginForm _instance = new LoginForm();
 

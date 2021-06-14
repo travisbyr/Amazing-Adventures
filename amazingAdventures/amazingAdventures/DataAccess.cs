@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace amazingAdventures
 {
@@ -675,6 +676,29 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
+        public static void getColour(string pusername, int pgamenumber)
+        {
+            MySqlCommand cmd = new MySqlCommand("getColour", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
+            cmd.Parameters.AddWithValue("pGameNumber", pgamenumber); // Add a parameter
+            connect.Open();
+            cmd.ExecuteNonQuery();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    message = myReader.GetString("CharacterColour");
+                 
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
     }
 }

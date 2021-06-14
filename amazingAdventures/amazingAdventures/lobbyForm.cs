@@ -13,7 +13,7 @@ namespace amazingAdventures
     public partial class LobbyForm : Form
     {
         public static string username;
-        public static int gameIndex;
+        public int gameIndex;
 
         private static readonly LobbyForm _instance = new LobbyForm();
 
@@ -36,7 +36,8 @@ namespace amazingAdventures
 
         private void currentGameList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            gameIndex = currentGameList.SelectedIndex;
+            int index = currentGameList.SelectedIndex;
+            gameIndex = DataAccess.gameListID[index];
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
@@ -81,7 +82,7 @@ namespace amazingAdventures
 
         private void joinGameButton_Click(object sender, EventArgs e)
         {
-            DataAccess.checkCharacter(LoginForm.username, gameIndex);
+            DataAccess.checkCharacter(LoginForm.Login.username, gameIndex);
             if (DataAccess.message == "characterIsMade")
             {
                 joinGame();
@@ -94,11 +95,11 @@ namespace amazingAdventures
 
         private void joinGame()
         {
-            DataAccess.characterRejoins(LoginForm.username, gameIndex);
+            DataAccess.characterRejoins(LoginForm.Login.username, gameIndex);
             GameForm.Game.Show();
             Hide();
         }
-
+        
         private void createCharacter()
         {
             CharacterCreateForm.CreateForm.Show();

@@ -23,7 +23,6 @@ namespace amazingAdventures
 
         public GameForm()
         {
-            //panel.BackColor = ColorTranslator.FromHtml("#ffff99");
             InitializeComponent();
             characterSetup();
         }
@@ -35,59 +34,94 @@ namespace amazingAdventures
 
         private void upButton_Click(object sender, EventArgs e)
         {
-            showPreviousTile();
             characterTile = characterTile - 15;
-            characterMove();
+            if (characterTile <= 134 && characterTile >= 1)
+            {
+                characterMove();
+                showPreviousTile(characterTile + 15);
+            } 
+            else
+            {
+                characterTile = characterTile + 15;
+            }
         }
 
         private void downButton_Click(object sender, EventArgs e)
         {
-            showPreviousTile();
             characterTile = characterTile + 15;
-            characterMove();
+            if (characterTile <= 134 && characterTile >= 1)
+            {
+                characterMove();
+                showPreviousTile(characterTile - 15);
+            }
+            else
+            {
+                characterTile = characterTile - 15;
+            }
         }
 
         private void leftButton_Click(object sender, EventArgs e)
         {
-            showPreviousTile();
             characterTile = characterTile - 1;
-            characterMove();
+            if (characterTile <= 134 && characterTile >= 1)
+            {
+                characterMove();
+                showPreviousTile(characterTile + 1);
+            }
+            else
+            {
+                characterTile = characterTile + 1;
+            }
         }
 
         private void rightButton_Click(object sender, EventArgs e)
         {
-            showPreviousTile();
             characterTile = characterTile + 1;
-            characterMove();
+            if (characterTile <= 134 && characterTile >= 1)
+            {
+                characterMove();
+                showPreviousTile(characterTile - 1);
+            }
+            else
+            {
+                characterTile = characterTile - 1;
+            }
         }
 
         private void characterSetup()
         {
             pb68.Visible = false;
+
+            int x = LobbyForm.Lobby.gameIndex;
+            DataAccess.getColour(LoginForm.Login.username, x);
+            MessageBox.Show(x.ToString());
+            MessageBox.Show(LoginForm.Login.username);
+            MessageBox.Show(DataAccess.message);
+            buttonEllipse1.BackColor = ColorTranslator.FromHtml(DataAccess.message);
+            buttonEllipse1.ForeColor = ColorTranslator.FromHtml(DataAccess.message);
             buttonEllipse1.Location = new System.Drawing.Point(707, 470);
             buttonEllipse1.Name = "buttonEllipse1";
             buttonEllipse1.Size = new System.Drawing.Size(86, 86);
             buttonEllipse1.Invalidate();
             buttonEllipse1.Text = "buttonEllipse1";
             buttonEllipse1.Enabled = false;
-            buttonEllipse1.UseVisualStyleBackColor = true;
             Controls.Add(buttonEllipse1);
             buttonEllipse1.BringToFront();
 
         }
         private void characterMove()
         {
-            string x = "pb" + characterTile; // gets picturebox name
-            PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox; // targets control with the name from above
-            pb.Visible = false; // changes the controls properties
+            string x = "pb" + characterTile;                                              // gets picturebox name
+            PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
+            pb.Visible = false;                                                           // changes the controls properties
             Point pt = pb.FindForm().PointToClient(pb.Parent.PointToScreen(pb.Location)); // gets control location
-            Size locationOfMove = new Size(pt); // converts to size
-            buttonEllipse1.Location = new System.Drawing.Point(locationOfMove); // moves character to tile
+            Size locationOfMove = new Size(pt);                                           // converts to size
+            buttonEllipse1.Location = new System.Drawing.Point(locationOfMove);           // moves character to tile
         }
 
-        private void showPreviousTile()
+        private void showPreviousTile(int tile)
         {
-            string x = "pb" + characterTile; // gets picturebox name
+            string x = "pb" + tile; // gets picturebox name
             PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
             pb.Visible = true;
         }
