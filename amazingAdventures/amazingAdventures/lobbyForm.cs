@@ -13,7 +13,6 @@ namespace amazingAdventures
     public partial class LobbyForm : Form
     {
         public static string username;
-        public int gameIndex;
 
         private static readonly LobbyForm _instance = new LobbyForm();
 
@@ -37,7 +36,7 @@ namespace amazingAdventures
         private void currentGameList_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = currentGameList.SelectedIndex;
-            gameIndex = DataAccess.gameListID[index];
+            Main.M.GameIndex = Main.M.GameListID[index];
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
@@ -53,12 +52,12 @@ namespace amazingAdventures
         public void listGames()
         {
             currentGameList.Items.Clear();
-            DataAccess.gameListName.Clear();
-            DataAccess.gameListID.Clear();
+            Main.M.GameListName.Clear();
+            Main.M.GameListID.Clear();
             DataAccess.gamesList();
             if (DataAccess.message == "gamesAvaliable")
             {
-                foreach (string a in DataAccess.gameListName.ToArray())
+                foreach (string a in Main.M.GameListName.ToArray())
                 {
                     currentGameList.Items.Add(a);
                 }
@@ -74,7 +73,7 @@ namespace amazingAdventures
         private void listPlayers()
         {
             DataAccess.showPlayerList();
-            foreach (string a in DataAccess.playerList.ToArray())
+            foreach (string a in Main.M.PlayerList.ToArray())
             {
                 onlinePlayersList.Items.Add(a);
             }
@@ -82,7 +81,7 @@ namespace amazingAdventures
 
         private void joinGameButton_Click(object sender, EventArgs e)
         {
-            DataAccess.checkCharacter(LoginForm.Login.username, gameIndex);
+            DataAccess.checkCharacter(Main.M.Username, Main.M.GameIndex);
             if (DataAccess.message == "characterIsMade")
             {
                 joinGame();
@@ -95,7 +94,7 @@ namespace amazingAdventures
 
         private void joinGame()
         {
-            DataAccess.characterRejoins(LoginForm.Login.username, gameIndex);
+            DataAccess.characterRejoins(Main.M.Username, Main.M.GameIndex);
             GameForm.Game.Show();
             Hide();
         }

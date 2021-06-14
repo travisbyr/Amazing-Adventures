@@ -34,68 +34,56 @@ namespace amazingAdventures
 
         private void upButton_Click(object sender, EventArgs e)
         {
-            characterTile = characterTile - 15;
-            if (characterTile <= 134 && characterTile >= 1)
-            {
-                characterMove();
-                showPreviousTile(characterTile + 15);
-            } 
-            else
-            {
-                characterTile = characterTile + 15;
-            }
+            moveUp();
         }
 
         private void downButton_Click(object sender, EventArgs e)
         {
-            characterTile = characterTile + 15;
-            if (characterTile <= 134 && characterTile >= 1)
-            {
-                characterMove();
-                showPreviousTile(characterTile - 15);
-            }
-            else
-            {
-                characterTile = characterTile - 15;
-            }
+            moveDown();
         }
 
         private void leftButton_Click(object sender, EventArgs e)
         {
-            characterTile = characterTile - 1;
-            if (characterTile <= 134 && characterTile >= 1)
-            {
-                characterMove();
-                showPreviousTile(characterTile + 1);
-            }
-            else
-            {
-                characterTile = characterTile + 1;
-            }
+            moveLeft();
         }
 
         private void rightButton_Click(object sender, EventArgs e)
         {
-            characterTile = characterTile + 1;
-            if (characterTile <= 134 && characterTile >= 1)
+            moveRight();
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Left)
             {
-                characterMove();
-                showPreviousTile(characterTile - 1);
+                moveLeft();
+                return true;
             }
-            else
+            else if (keyData == Keys.Right)
             {
-                characterTile = characterTile - 1;
+                moveRight();
+                return true;
             }
+            else if (keyData == Keys.Up)
+            {
+                moveUp();
+                return true;
+            }
+            else if (keyData == Keys.Down)
+            {
+                moveDown();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private void characterSetup()
         {
             pb68.Visible = false;
 
-            int x = LobbyForm.Lobby.gameIndex;
-            DataAccess.checkCharacter(LoginForm.Login.username, LobbyForm.Lobby.gameIndex);
+            int x = Main.M.GameIndex;
+            DataAccess.checkCharacter(Main.M.Username, Main.M.GameIndex);
 
-            DataAccess.getColour(LoginForm.Login.username, x);
+            DataAccess.getColour(Main.M.Username, x);
             buttonEllipse1.BackColor = ColorTranslator.FromHtml(DataAccess.message);
             buttonEllipse1.ForeColor = ColorTranslator.FromHtml(DataAccess.message);
             buttonEllipse1.FlatStyle = FlatStyle.Flat;
@@ -103,8 +91,9 @@ namespace amazingAdventures
             buttonEllipse1.Name = "buttonEllipse1";
             buttonEllipse1.Size = new System.Drawing.Size(86, 86);
             buttonEllipse1.Invalidate();
-            buttonEllipse1.Text = DataAccess.characterName;
+            buttonEllipse1.Text = Main.M.CharacterName;
             buttonEllipse1.Enabled = false;
+            buttonEllipse1.Font = new Font("Arial", 12);
             Controls.Add(buttonEllipse1);
             buttonEllipse1.BringToFront();
 
@@ -125,5 +114,59 @@ namespace amazingAdventures
             PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
             pb.Visible = true;
         }
+
+        private void moveUp()
+        {
+            characterTile = characterTile - 15;
+            if (characterTile <= 134 && characterTile >= 1)
+            {
+                characterMove();
+                showPreviousTile(characterTile + 15);
+            }
+            else
+            {
+                characterTile = characterTile + 15;
+            }
+        }
+        private void moveDown()
+        {
+            characterTile = characterTile + 15;
+            if (characterTile <= 134 && characterTile >= 1)
+            {
+                characterMove();
+                showPreviousTile(characterTile - 15);
+            }
+            else
+            {
+                characterTile = characterTile - 15;
+            }
+        }
+        private void moveLeft()
+        {
+            characterTile = characterTile - 1;
+            if (characterTile <= 134 && characterTile >= 1)
+            {
+                characterMove();
+                showPreviousTile(characterTile + 1);
+            }
+            else
+            {
+                characterTile = characterTile + 1;
+            }
+        }
+        private void moveRight()
+        {
+            characterTile = characterTile + 1;
+            if (characterTile <= 134 && characterTile >= 1)
+            {
+                characterMove();
+                showPreviousTile(characterTile - 1);
+            }
+            else
+            {
+                characterTile = characterTile - 1;
+            }
+        }
+
     }
 }

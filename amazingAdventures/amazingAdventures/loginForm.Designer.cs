@@ -67,7 +67,6 @@ namespace amazingAdventures
             this.label2.Size = new System.Drawing.Size(97, 24);
             this.label2.TabIndex = 10;
             this.label2.Text = "Password:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Use
             // 

@@ -12,7 +12,6 @@ namespace amazingAdventures
 {
     public partial class LoginForm : Form
     {
-        public string username;
 
         private static readonly LoginForm _instance = new LoginForm();
 
@@ -35,11 +34,6 @@ namespace amazingAdventures
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             login();
@@ -47,7 +41,7 @@ namespace amazingAdventures
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            username = loginUsername.Text;
+            Main.M.Username = loginUsername.Text;
             new RegisterForm().Show();
         }
 
@@ -65,7 +59,6 @@ namespace amazingAdventures
             {
                 registerBtn.Visible = false;
                 DataAccess.accountLogin(loginUsername.Text, loginPassword.Text);
-                //MessageBox.Show(DataAccess.message);
                 if (DataAccess.message == "NLogin")
                 {
                     usrnValidFirstLine.Visible = false;
@@ -84,7 +77,7 @@ namespace amazingAdventures
                     usrnInvalidSecondLabel.Visible = true;
                 } else if (DataAccess.message == "SLogin")
                 {
-                    username = loginUsername.Text;
+                    Main.M.Username = loginUsername.Text;
                     LobbyForm.Lobby.Show();
                     Hide();
                 }

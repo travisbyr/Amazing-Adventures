@@ -14,18 +14,18 @@ namespace amazingAdventures
         // PUBLIC VARIABLES
 
         public static string message = "";
-        public static string characterName = "";
+        /*public static string characterName = "";
         public static string characterScore = "";
-        public static string leaderboardGame = "";
+        public static string leaderboardGame = "";*/
 
         // PUBLIC LISTS
-
+/*
         public static List<string> gameListName = new List<string>();
         public static List<int> gameListID = new List<int>();
         public static List<string> leaderboardList = new List<string>();
         public static List<string> chatGlobal = new List<string>();
         public static List<string> backpackList = new List<string>();
-        public static List<string> playerList = new List<string>();
+        public static List<string> playerList = new List<string>();*/
 
         // CONNECTION TO DATABASE
 
@@ -198,8 +198,8 @@ namespace amazingAdventures
                 while (myReader.Read())
                 {
                     message = myReader.GetString("MESSAGE"); // Get message
-                    gameListName.Add(myReader.GetString("GameName"));
-                    gameListID.Add(Int32.Parse(myReader.GetString("GameID")));
+                    Main.M.GameListName.Add(myReader.GetString("GameName"));
+                    Main.M.GameListID.Add(Int32.Parse(myReader.GetString("GameID")));
                 }
             }
             finally
@@ -362,9 +362,9 @@ namespace amazingAdventures
             {
                 while (myReader.Read())
                 {
-                    leaderboardGame = myReader.GetString("GameName");
-                    leaderboardList.Add(myReader.GetString("CharacterName"));
-                    leaderboardList.Add(myReader.GetString("CharacterScore"));
+                    Main.M.LeaderboardGame = myReader.GetString("GameName");
+                    Main.M.LeaderboardList.Add(myReader.GetString("CharacterName"));
+                    Main.M.LeaderboardList.Add(myReader.GetString("CharacterScore"));
                     message = myReader.GetString("MESSAGE"); // Get message  
                 }
             }
@@ -410,9 +410,9 @@ namespace amazingAdventures
                 while (myReader.Read())
                 {
                     message = myReader.GetString("MESSAGE");
-                    chatGlobal.Add(myReader.GetString("ChatDateTime"));
-                    chatGlobal.Add(myReader.GetString("PlayerUsername"));
-                    chatGlobal.Add(myReader.GetString("ChatText"));
+                    Main.M.GlobalChat.Add(myReader.GetString("ChatDateTime"));
+                    Main.M.GlobalChat.Add(myReader.GetString("PlayerUsername"));
+                    Main.M.GlobalChat.Add(myReader.GetString("ChatText"));
                 }
             }
             finally
@@ -436,9 +436,9 @@ namespace amazingAdventures
                 while (myReader.Read())
                 {
                     message = myReader.GetString("MESSAGE");
-                    characterScore = myReader.GetString("CharacterScore");
-                    backpackList.Add(myReader.GetString("ItemName"));
-                    backpackList.Add(myReader.GetString("ItemCount"));
+                    Main.M.CharacterScore = myReader.GetString("CharacterScore");
+                    Main.M.BackpackList.Add(myReader.GetString("ItemName"));
+                    Main.M.BackpackList.Add(myReader.GetString("ItemCount"));
                 }
             }
             finally
@@ -644,7 +644,7 @@ namespace amazingAdventures
             {
                 while (myReader.Read())
                 {
-                    playerList.Add(myReader.GetString("PlayerUsername"));
+                    Main.M.PlayerList.Add(myReader.GetString("PlayerUsername"));
                 }
             }
             finally
@@ -669,7 +669,7 @@ namespace amazingAdventures
                 while (myReader.Read())
                 {
                     message = myReader.GetString("MESSAGE");
-                    characterName = myReader.GetString("CNAME");
+                    Main.M.CharacterName = myReader.GetString("CNAME");
                 }
             }
             finally

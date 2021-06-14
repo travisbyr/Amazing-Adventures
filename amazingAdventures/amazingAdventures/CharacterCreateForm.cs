@@ -49,7 +49,7 @@ namespace amazingAdventures
 
         private void createCharacterBtn_click(object sender, EventArgs e)
         {
-            DataAccess.characterJoinGame(LobbyForm.Lobby.gameIndex, characterNameInput.Text, characterColour, LoginForm.Login.username.ToString());
+            DataAccess.characterJoinGame(Main.M.GameIndex, characterNameInput.Text, characterColour, Main.M.Username.ToString());
             GameForm.Game.Show();
             Hide();
         }

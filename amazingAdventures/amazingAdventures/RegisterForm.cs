@@ -16,7 +16,7 @@ namespace amazingAdventures
         {
            InitializeComponent();
            registerBtn.FlatAppearance.BorderColor = Color.Blue;
-           registerUsername.Text = LoginForm.Login.username;
+           registerUsername.Text = Main.M.Username;
         }
 
         private void registerBtn_Click(object sender, EventArgs e)
