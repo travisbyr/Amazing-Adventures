@@ -89,6 +89,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonEllipse.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CharacterCreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
