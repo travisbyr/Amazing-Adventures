@@ -14,6 +14,7 @@ namespace amazingAdventures
         // PUBLIC VARIABLES
 
         public static string message = "";
+        public static string characterName = "";
         public static string characterScore = "";
         public static string leaderboardGame = "";
 
@@ -668,6 +669,7 @@ namespace amazingAdventures
                 while (myReader.Read())
                 {
                     message = myReader.GetString("MESSAGE");
+                    characterName = myReader.GetString("CharacterName");
                 }
             }
             finally

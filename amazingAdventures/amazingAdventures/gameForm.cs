@@ -94,16 +94,14 @@ namespace amazingAdventures
 
             int x = LobbyForm.Lobby.gameIndex;
             DataAccess.getColour(LoginForm.Login.username, x);
-            MessageBox.Show(x.ToString());
-            MessageBox.Show(LoginForm.Login.username);
-            MessageBox.Show(DataAccess.message);
             buttonEllipse1.BackColor = ColorTranslator.FromHtml(DataAccess.message);
             buttonEllipse1.ForeColor = ColorTranslator.FromHtml(DataAccess.message);
+            buttonEllipse1.FlatStyle = FlatStyle.Flat;
             buttonEllipse1.Location = new System.Drawing.Point(707, 470);
             buttonEllipse1.Name = "buttonEllipse1";
             buttonEllipse1.Size = new System.Drawing.Size(86, 86);
             buttonEllipse1.Invalidate();
-            buttonEllipse1.Text = "buttonEllipse1";
+            buttonEllipse1.Text = DataAccess.characterName;
             buttonEllipse1.Enabled = false;
             Controls.Add(buttonEllipse1);
             buttonEllipse1.BringToFront();
