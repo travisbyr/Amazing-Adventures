@@ -54,6 +54,7 @@ namespace amazingAdventures
             this.currentGameList.Name = "currentGameList";
             this.currentGameList.Size = new System.Drawing.Size(283, 479);
             this.currentGameList.TabIndex = 0;
+            this.currentGameList.SelectedIndexChanged += new System.EventHandler(this.currentGameList_SelectedIndexChanged);
             // 
             // onlinePlayersList
             // 
@@ -141,7 +142,7 @@ namespace amazingAdventures
             // joinGameButton
             // 
             this.joinGameButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.joinGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.joinGameButton.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 16F);
             this.joinGameButton.ForeColor = System.Drawing.SystemColors.WindowText;
             this.joinGameButton.Location = new System.Drawing.Point(90, 623);
             this.joinGameButton.Name = "joinGameButton";
@@ -154,7 +155,7 @@ namespace amazingAdventures
             // logoutButton
             // 
             this.logoutButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.logoutButton.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 16F);
             this.logoutButton.ForeColor = System.Drawing.SystemColors.WindowText;
             this.logoutButton.Location = new System.Drawing.Point(762, 623);
             this.logoutButton.Name = "logoutButton";
@@ -219,7 +220,6 @@ namespace amazingAdventures
             this.Name = "LobbyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Lobby";
-            this.Load += new System.EventHandler(this.lobbyForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

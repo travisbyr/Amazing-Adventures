@@ -19,7 +19,7 @@ namespace amazingAdventures
         // PUBLIC LISTS
 
         public static List<string> gameListName = new List<string>();
-        public static List<string> gameListID = new List<string>();
+        public static List<int> gameListID = new List<int>();
         public static List<string> leaderboardList = new List<string>();
         public static List<string> chatGlobal = new List<string>();
         public static List<string> backpackList = new List<string>();
@@ -197,7 +197,7 @@ namespace amazingAdventures
                 {
                     message = myReader.GetString("MESSAGE"); // Get message
                     gameListName.Add(myReader.GetString("GameName"));
-                    gameListID.Add(myReader.GetString("GameID"));
+                    gameListID.Add(Int32.Parse(myReader.GetString("GameID")));
                 }
             }
             finally
@@ -207,7 +207,7 @@ namespace amazingAdventures
             }
         }
 
-        public static void characterJoinGame(int pgamenumber, string pcharactername, string pcharactercolour, string pusername, int ptile)
+        public static void characterJoinGame(int pgamenumber, string pcharactername, string pcharactercolour, string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("characterJoinGame", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -215,7 +215,6 @@ namespace amazingAdventures
             cmd.Parameters.AddWithValue("pCharacterName", pcharactername); // Add a parameter
             cmd.Parameters.AddWithValue("pCharacterColour", pcharactercolour); // Add a parameter
             cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
-            cmd.Parameters.AddWithValue("pTile", ptile); // Add a parameter
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();
@@ -653,11 +652,12 @@ namespace amazingAdventures
             }
         }
 
-        public static void checkCharacter(string pusername)
+        public static void checkCharacter(string pusername, int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("checkCharacter", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
+            cmd.Parameters.AddWithValue("pGameNumber", pgamenumber); // Add a parameter
             connect.Open();
             cmd.ExecuteNonQuery();
             MySqlDataReader myReader;
