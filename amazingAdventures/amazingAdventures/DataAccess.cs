@@ -669,7 +669,7 @@ namespace amazingAdventures
                 while (myReader.Read())
                 {
                     message = myReader.GetString("MESSAGE");
-                    characterName = myReader.GetString("CharacterName");
+                    characterName = myReader.GetString("CNAME");
                 }
             }
             finally

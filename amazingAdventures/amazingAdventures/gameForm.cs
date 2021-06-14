@@ -93,6 +93,8 @@ namespace amazingAdventures
             pb68.Visible = false;
 
             int x = LobbyForm.Lobby.gameIndex;
+            DataAccess.checkCharacter(LoginForm.Login.username, LobbyForm.Lobby.gameIndex);
+
             DataAccess.getColour(LoginForm.Login.username, x);
             buttonEllipse1.BackColor = ColorTranslator.FromHtml(DataAccess.message);
             buttonEllipse1.ForeColor = ColorTranslator.FromHtml(DataAccess.message);

@@ -127,6 +127,7 @@ namespace amazingAdventures
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(492, 335);
+            this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pickcolourBtn);
             this.Controls.Add(this.cancelCharacterBtn);
@@ -135,6 +136,7 @@ namespace amazingAdventures
             this.Controls.Add(this.characterNameInput);
             this.Controls.Add(this.label1);
             this.Name = "CharacterCreateForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Create Character";
             this.ResumeLayout(false);
             this.PerformLayout();
