@@ -12,6 +12,7 @@ namespace amazingAdventures
 {
     public partial class LobbyForm : Form
     {
+        public static string username;
 
         private static readonly LobbyForm _instance = new LobbyForm();
 
@@ -22,6 +23,8 @@ namespace amazingAdventures
         public LobbyForm()
         {
             InitializeComponent();
+            listGames();
+            listPlayers();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -36,7 +39,8 @@ namespace amazingAdventures
 
         private void newGameButton_Click(object sender, EventArgs e)
         {
-            new GameForm().Show();
+            NewGameForm.NewGame.Show();
+            NewGameForm.NewGame.gameNameInput.Text = "";
         }
 
         private void lobbyForm_Load(object sender, EventArgs e)
@@ -51,7 +55,37 @@ namespace amazingAdventures
 
         private void chatButton_Click(object sender, EventArgs e)
         {
-            new ChatForm().Show();
+            ChatForm.Chat.Show();
+        }
+
+        public void listGames()
+        {
+            currentGameList.Items.Clear();
+            DataAccess.gameListName.Clear();
+            DataAccess.gameListID.Clear();
+            DataAccess.gamesList();
+            if (DataAccess.message == "gamesAvaliable")
+            {
+                foreach (string a in DataAccess.gameListName.ToArray())
+                {
+                    currentGameList.Items.Add(a);
+                }
+            }
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            LoginForm.Login.Show();
+        }
+
+        private void listPlayers()
+        {
+            DataAccess.showPlayerList();
+            foreach (string a in DataAccess.playerList.ToArray())
+            {
+                onlinePlayersList.Items.Add(a);
+            }
         }
     }
 }

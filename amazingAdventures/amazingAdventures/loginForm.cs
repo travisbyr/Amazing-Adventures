@@ -63,7 +63,7 @@ namespace amazingAdventures
                 usrnInvalidSecondLabel.Visible = false;
             } else if (DataAccess.message == "unavaliableUsername")
             {
-                //MessageBox.Show("Error! Username or Password is invalid.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                registerBtn.Visible = false;
                 DataAccess.accountLogin(loginUsername.Text, loginPassword.Text);
                 //MessageBox.Show(DataAccess.message);
                 if (DataAccess.message == "NLogin")
@@ -84,6 +84,7 @@ namespace amazingAdventures
                     usrnInvalidSecondLabel.Visible = true;
                 } else if (DataAccess.message == "SLogin")
                 {
+                    username = loginUsername.Text;
                     LobbyForm.Lobby.Show();
                     Hide();
                 }
@@ -91,3 +92,4 @@ namespace amazingAdventures
         }
     }
 }
+ 

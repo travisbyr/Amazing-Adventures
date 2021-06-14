@@ -12,6 +12,13 @@ namespace amazingAdventures
 {
     public partial class ChatForm : Form
     {
+
+        private static readonly ChatForm _instance = new ChatForm();
+
+        public static ChatForm Chat => _instance;
+
+        static ChatForm() { }
+
         public ChatForm()
         {
             InitializeComponent();
@@ -20,6 +27,11 @@ namespace amazingAdventures
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void chatCloseBtn_Click(object sender, EventArgs e)
+        {
+            Hide();
         }
     }
 }

@@ -46,3 +46,4 @@ C:\Users\tbyrm\Documents\Workspace\DAT602\amazingAdventures\amazingAdventures\am
 C:\Users\tbyrm\Documents\Workspace\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.ChatForm.resources
 C:\Users\tbyrm\Documents\Workspace\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.RegisterForm.resources
 C:\Users\tbyrm\Documents\Workspace\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.LoginForm.resources
+C:\Users\tbyrm\Documents\Workspace\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.NewGameForm.resources

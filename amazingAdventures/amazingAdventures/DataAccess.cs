@@ -18,10 +18,12 @@ namespace amazingAdventures
 
         // PUBLIC LISTS
 
-        public static List<string> gameList = new List<string>();
+        public static List<string> gameListName = new List<string>();
+        public static List<string> gameListID = new List<string>();
         public static List<string> leaderboardList = new List<string>();
         public static List<string> chatGlobal = new List<string>();
         public static List<string> backpackList = new List<string>();
+        public static List<string> playerList = new List<string>();
 
         // CONNECTION TO DATABASE
 
@@ -194,8 +196,8 @@ namespace amazingAdventures
                 while (myReader.Read())
                 {
                     message = myReader.GetString("MESSAGE"); // Get message
-                    gameList.Add(myReader.GetString("GameName"));
-                    gameList.Add(myReader.GetString("GameID"));
+                    gameListName.Add(myReader.GetString("GameName"));
+                    gameListID.Add(myReader.GetString("GameID"));
                 }
             }
             finally
@@ -620,6 +622,28 @@ namespace amazingAdventures
                 while (myReader.Read())
                 {
                     message = myReader.GetString("MESSAGE");
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
+
+        public static void showPlayerList()
+        {
+            MySqlCommand cmd = new MySqlCommand("listOfPlayers", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            connect.Open();
+            cmd.ExecuteNonQuery();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    playerList.Add(myReader.GetString("PlayerUsername"));
                 }
             }
             finally

@@ -29,6 +29,7 @@ namespace amazingAdventures
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.rgsrSecondLine = new System.Windows.Forms.Label();
             this.rgsrFirstLine = new System.Windows.Forms.Label();
             this.registerBtn = new System.Windows.Forms.Button();
@@ -172,6 +173,7 @@ namespace amazingAdventures
             this.Controls.Add(this.registerPassword);
             this.Controls.Add(this.registerEmail);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Register";

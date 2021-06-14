@@ -29,6 +29,7 @@ namespace amazingAdventures
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.leaveButton = new System.Windows.Forms.Button();
@@ -226,13 +227,13 @@ namespace amazingAdventures
             this.photoPlaceholderLabel.Size = new System.Drawing.Size(200, 200);
             this.photoPlaceholderLabel.TabIndex = 29;
             // 
-            // gameForm
+            // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(962, 552);
+            this.ClientSize = new System.Drawing.Size(1944, 1071);
             this.Controls.Add(this.photoPlaceholderLabel);
             this.Controls.Add(this.totalPlayersLabel);
             this.Controls.Add(this.foundItemLabel);
@@ -250,7 +251,8 @@ namespace amazingAdventures
             this.Controls.Add(this.leaveButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "gameForm";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Game";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -29,6 +29,7 @@ namespace amazingAdventures
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.loginBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.Use = new System.Windows.Forms.Label();
@@ -199,6 +200,7 @@ namespace amazingAdventures
             this.Controls.Add(this.loginUsername);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "LoginForm";

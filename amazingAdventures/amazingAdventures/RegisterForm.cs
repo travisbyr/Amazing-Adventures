@@ -26,7 +26,7 @@ namespace amazingAdventures
             LoginForm.Login.registerBtn.Visible = false;
             LoginForm.Login.usrnValidFirstLine.Visible = false;
             LoginForm.Login.usrnValidSecondLine.Visible = false;
-            this.Close();
+            Hide();
         }
     }
 }

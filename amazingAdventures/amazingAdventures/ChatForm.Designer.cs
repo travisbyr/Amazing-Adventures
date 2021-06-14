@@ -29,10 +29,12 @@ namespace amazingAdventures
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatForm));
             this.chatMessageListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chatTxtbox = new System.Windows.Forms.TextBox();
             this.chatCloseBtn = new System.Windows.Forms.Button();
+            this.submitChatBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // chatMessageListBox
@@ -70,19 +72,31 @@ namespace amazingAdventures
             this.chatCloseBtn.Name = "chatCloseBtn";
             this.chatCloseBtn.Size = new System.Drawing.Size(158, 40);
             this.chatCloseBtn.TabIndex = 10;
-            this.chatCloseBtn.Text = "Close";
+            this.chatCloseBtn.Text = "Close Chat";
             this.chatCloseBtn.UseVisualStyleBackColor = true;
+            this.chatCloseBtn.Click += new System.EventHandler(this.chatCloseBtn_Click);
             // 
-            // chat
+            // submitChatBtn
+            // 
+            this.submitChatBtn.Location = new System.Drawing.Point(25, 364);
+            this.submitChatBtn.Name = "submitChatBtn";
+            this.submitChatBtn.Size = new System.Drawing.Size(75, 23);
+            this.submitChatBtn.TabIndex = 11;
+            this.submitChatBtn.Text = "Submit";
+            this.submitChatBtn.UseVisualStyleBackColor = true;
+            // 
+            // ChatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 445);
+            this.Controls.Add(this.submitChatBtn);
             this.Controls.Add(this.chatCloseBtn);
             this.Controls.Add(this.chatTxtbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chatMessageListBox);
-            this.Name = "chat";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ChatForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Chat";
             this.ResumeLayout(false);
@@ -96,5 +110,6 @@ namespace amazingAdventures
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox chatTxtbox;
         private System.Windows.Forms.Button chatCloseBtn;
+        private System.Windows.Forms.Button submitChatBtn;
     }
 }
