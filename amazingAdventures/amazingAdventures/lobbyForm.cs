@@ -87,5 +87,27 @@ namespace amazingAdventures
                 onlinePlayersList.Items.Add(a);
             }
         }
+
+        private void joinGameButton_Click(object sender, EventArgs e)
+        {
+            DataAccess.checkCharacter(LoginForm.username);
+            if (DataAccess.message == "characterIsMade")
+            {
+                createCharacter();
+            } else
+            {
+                joinGame();
+            }
+        }
+
+        private void joinGame()
+        {
+            //DataAccess.characterJoinGame();
+        }
+
+        private void createCharacter()
+        {
+            //DataAccess.characterJoinGame();
+        }
     }
 }

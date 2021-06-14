@@ -653,5 +653,28 @@ namespace amazingAdventures
             }
         }
 
+        public static void checkCharacter(string pusername)
+        {
+            MySqlCommand cmd = new MySqlCommand("checkCharacter", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
+            connect.Open();
+            cmd.ExecuteNonQuery();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    message = myReader.GetString("MESSAGE");
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
+
     }
 }

@@ -149,6 +149,7 @@ namespace amazingAdventures
             this.joinGameButton.TabIndex = 13;
             this.joinGameButton.Text = "Join";
             this.joinGameButton.UseVisualStyleBackColor = false;
+            this.joinGameButton.Click += new System.EventHandler(this.joinGameButton_Click);
             // 
             // logoutButton
             // 
