@@ -13,8 +13,8 @@ namespace AmazingAdventures
     public partial class GameForm : Form
     {
         ButtonEllipse playerMarker = new ButtonEllipse();
-        public static int preTile;
-        public static int curTile = 68;
+        public int preTile;
+        public int curTile = 68;
 
         private static readonly GameForm _instance = new GameForm();
 
@@ -106,6 +106,7 @@ namespace AmazingAdventures
         }
         private void characterCheckLocation()
         {
+
             if (preTile == 15 && curTile == 16 ||
                 preTile == 30 && curTile == 31 ||
                 preTile == 45 && curTile == 46 ||
@@ -116,11 +117,13 @@ namespace AmazingAdventures
                 preTile == 120 && curTile == 121 ||
                 preTile == 135 && curTile == 136)
             {
+               DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
                 curTile = curTile - 15;
-                DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
+                preTile = preTile - 1;
                 if (DataAccess.message == "invalidMove")
                 {
-                    curTile = curTile + 15;
+                    MessageBox.Show(preTile + " - " + curTile);
+                   curTile = curTile + 15;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
@@ -184,7 +187,7 @@ namespace AmazingAdventures
                 }
             }
 
-            else if (preTile == 1 && curTile == -14 ||
+           else if (preTile == 1 && curTile == -14 ||
                 preTile == 2 && curTile == -13 ||
                 preTile == 3 && curTile == -12 ||
                 preTile == 4 && curTile == -11 ||
@@ -204,7 +207,7 @@ namespace AmazingAdventures
                 DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
                 if (DataAccess.message == "invalidMove")
                 {
-                    curTile = curTile - 15;
+                    curTile = curTile - 135;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
@@ -269,6 +272,7 @@ namespace AmazingAdventures
         {
             preTile = curTile;
             curTile = curTile + 1;
+            MessageBox.Show(preTile + " - " + curTile);
             characterCheckLocation();
         }
 
