@@ -13,7 +13,7 @@ namespace amazingAdventures
         public static Main M => _instance;
         static Main() { }
 
-        private int gameIndex;
+        private int gameNumber;
         private string username;
         private string message;
         private string characterName;
@@ -27,7 +27,7 @@ namespace amazingAdventures
         private List<string> _backpackList = new List<string>();
         private List<string> _playerList = new List<string>();
 
-        public int GameIndex { get => gameIndex; set => gameIndex = value; }
+        public int GameNumber { get => gameNumber; set => gameNumber = value; }
         public string Username { get => username; set => username = value; }
         public string Message { get => message; set => message = value; }
         public string CharacterName { get => characterName; set => characterName = value; }
