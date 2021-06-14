@@ -182,7 +182,6 @@ namespace amazingAdventures
             this.pb45 = new System.Windows.Forms.PictureBox();
             this.pb30 = new System.Windows.Forms.PictureBox();
             this.pb15 = new System.Windows.Forms.PictureBox();
-            this.buttonEllipse1 = new amazingAdventures.ButtonEllipse();
             ((System.ComponentModel.ISupportInitialize)(this.pb120)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb106)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb91)).BeginInit();
@@ -363,6 +362,7 @@ namespace amazingAdventures
             this.upButton.TabIndex = 16;
             this.upButton.Text = "Up";
             this.upButton.UseVisualStyleBackColor = false;
+            this.upButton.Click += new System.EventHandler(this.upButton_Click);
             // 
             // downButton
             // 
@@ -375,6 +375,7 @@ namespace amazingAdventures
             this.downButton.TabIndex = 17;
             this.downButton.Text = "Down";
             this.downButton.UseVisualStyleBackColor = false;
+            this.downButton.Click += new System.EventHandler(this.downButton_Click);
             // 
             // leftButton
             // 
@@ -387,6 +388,7 @@ namespace amazingAdventures
             this.leftButton.TabIndex = 18;
             this.leftButton.Text = "Left";
             this.leftButton.UseVisualStyleBackColor = false;
+            this.leftButton.Click += new System.EventHandler(this.leftButton_Click);
             // 
             // rightButton
             // 
@@ -399,6 +401,7 @@ namespace amazingAdventures
             this.rightButton.TabIndex = 19;
             this.rightButton.Text = "Right";
             this.rightButton.UseVisualStyleBackColor = false;
+            this.rightButton.Click += new System.EventHandler(this.rightButton_Click);
             // 
             // label3
             // 
@@ -415,9 +418,9 @@ namespace amazingAdventures
             // 
             this.gameFormBackground.BackColor = System.Drawing.SystemColors.Window;
             this.gameFormBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gameFormBackground.Location = new System.Drawing.Point(52, 87);
+            this.gameFormBackground.Location = new System.Drawing.Point(52, 91);
             this.gameFormBackground.Name = "gameFormBackground";
-            this.gameFormBackground.Size = new System.Drawing.Size(1395, 850);
+            this.gameFormBackground.Size = new System.Drawing.Size(1395, 844);
             this.gameFormBackground.TabIndex = 21;
             // 
             // label5
@@ -1579,15 +1582,6 @@ namespace amazingAdventures
             this.pb15.TabIndex = 156;
             this.pb15.TabStop = false;
             // 
-            // buttonEllipse1
-            // 
-            this.buttonEllipse1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.buttonEllipse1.Location = new System.Drawing.Point(1596, 838);
-            this.buttonEllipse1.Name = "buttonEllipse1";
-            this.buttonEllipse1.Size = new System.Drawing.Size(86, 86);
-            this.buttonEllipse1.TabIndex = 165;
-            this.buttonEllipse1.UseVisualStyleBackColor = false;
-            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1596,7 +1590,6 @@ namespace amazingAdventures
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1880, 1073);
             this.ControlBox = false;
-            this.Controls.Add(this.buttonEllipse1);
             this.Controls.Add(this.pb134);
             this.Controls.Add(this.pb119);
             this.Controls.Add(this.pb105);
@@ -2051,6 +2044,5 @@ namespace amazingAdventures
         private System.Windows.Forms.PictureBox pb45;
         private System.Windows.Forms.PictureBox pb30;
         private System.Windows.Forms.PictureBox pb15;
-        private ButtonEllipse buttonEllipse1;
     }
 }
