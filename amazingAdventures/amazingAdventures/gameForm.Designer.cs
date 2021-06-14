@@ -1,5 +1,5 @@
 ﻿
-namespace amazingAdventures
+namespace AmazingAdventures
 {
     partial class GameForm
     {
@@ -182,6 +182,8 @@ namespace amazingAdventures
             this.pb45 = new System.Windows.Forms.PictureBox();
             this.pb30 = new System.Windows.Forms.PictureBox();
             this.pb15 = new System.Windows.Forms.PictureBox();
+            this.gameLTwoErrorLbl = new System.Windows.Forms.Label();
+            this.gameLOneErrorLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb121)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb106)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb91)).BeginInit();
@@ -1852,6 +1854,34 @@ namespace amazingAdventures
             this.pb15.TabIndex = 156;
             this.pb15.TabStop = false;
             // 
+            // gameLTwoErrorLbl
+            // 
+            this.gameLTwoErrorLbl.AutoSize = true;
+            this.gameLTwoErrorLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold);
+            this.gameLTwoErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.gameLTwoErrorLbl.Location = new System.Drawing.Point(1567, 911);
+            this.gameLTwoErrorLbl.MinimumSize = new System.Drawing.Size(263, 16);
+            this.gameLTwoErrorLbl.Name = "gameLTwoErrorLbl";
+            this.gameLTwoErrorLbl.Size = new System.Drawing.Size(263, 20);
+            this.gameLTwoErrorLbl.TabIndex = 166;
+            this.gameLTwoErrorLbl.Text = "Tile is already occupied.";
+            this.gameLTwoErrorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gameLTwoErrorLbl.Visible = false;
+            // 
+            // gameLOneErrorLbl
+            // 
+            this.gameLOneErrorLbl.AutoSize = true;
+            this.gameLOneErrorLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.gameLOneErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.gameLOneErrorLbl.Location = new System.Drawing.Point(1616, 889);
+            this.gameLOneErrorLbl.MinimumSize = new System.Drawing.Size(165, 17);
+            this.gameLOneErrorLbl.Name = "gameLOneErrorLbl";
+            this.gameLOneErrorLbl.Size = new System.Drawing.Size(165, 22);
+            this.gameLOneErrorLbl.TabIndex = 165;
+            this.gameLOneErrorLbl.Text = "Invalid move!";
+            this.gameLOneErrorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gameLOneErrorLbl.Visible = false;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1860,6 +1890,8 @@ namespace amazingAdventures
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1880, 1073);
             this.ControlBox = false;
+            this.Controls.Add(this.gameLTwoErrorLbl);
+            this.Controls.Add(this.gameLOneErrorLbl);
             this.Controls.Add(this.pb135);
             this.Controls.Add(this.pb120);
             this.Controls.Add(this.pb105);
@@ -2314,5 +2346,7 @@ namespace amazingAdventures
         private System.Windows.Forms.PictureBox pb45;
         private System.Windows.Forms.PictureBox pb30;
         private System.Windows.Forms.PictureBox pb15;
+        public System.Windows.Forms.Label gameLTwoErrorLbl;
+        public System.Windows.Forms.Label gameLOneErrorLbl;
     }
 }

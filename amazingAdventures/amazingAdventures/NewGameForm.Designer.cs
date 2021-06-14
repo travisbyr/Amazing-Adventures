@@ -1,5 +1,5 @@
 ﻿
-namespace amazingAdventures
+namespace AmazingAdventures
 {
     partial class NewGameForm
     {

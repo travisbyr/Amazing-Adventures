@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace amazingAdventures
+namespace AmazingAdventures
 {
     public partial class GameForm : Form
     {
@@ -48,12 +48,10 @@ namespace amazingAdventures
         {
             moveDown();
         }
-
         private void leftButton_Click(object sender, EventArgs e)
         {
             moveLeft();
         }
-
         private void rightButton_Click(object sender, EventArgs e)
         {
             moveRight();
@@ -106,7 +104,7 @@ namespace amazingAdventures
             playerMarker.BringToFront();
 
         }
-        private void characterMove()
+        private void characterCheckLocation()
         {
             if (preTile == 15 && curTile == 16 ||
                 preTile == 30 && curTile == 31 ||
@@ -119,6 +117,17 @@ namespace amazingAdventures
                 preTile == 135 && curTile == 136)
             {
                 curTile = curTile - 15;
+                DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
+                if (DataAccess.message == "invalidMove")
+                {
+                    curTile = curTile + 15;
+                    gameLOneErrorLbl.Visible = true;
+                    gameLTwoErrorLbl.Visible = true;
+                }
+                else if (DataAccess.message == "succMove")
+                {
+                    characterMove();
+                }
             }
 
             if (preTile == 1 && curTile == 0 ||
@@ -132,10 +141,98 @@ namespace amazingAdventures
                 preTile == 121 && curTile == 120)
             {
                 curTile = curTile + 15;
+                DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
+                if (DataAccess.message == "invalidMove")
+                {
+                    curTile = curTile - 15;
+                    gameLOneErrorLbl.Visible = true;
+                    gameLTwoErrorLbl.Visible = true;
+                }
+                else if (DataAccess.message == "succMove")
+                {
+                    characterMove();
+                }
             }
 
+            else if (preTile == 121 && curTile == 136 ||
+                preTile == 122 && curTile == 137 ||
+                preTile == 123 && curTile == 138 ||
+                preTile == 124 && curTile == 139 ||
+                preTile == 125 && curTile == 140 ||
+                preTile == 126 && curTile == 141 ||
+                preTile == 127 && curTile == 142 ||
+                preTile == 128 && curTile == 143 ||
+                preTile == 129 && curTile == 144 ||
+                preTile == 130 && curTile == 145 ||
+                preTile == 131 && curTile == 146 ||
+                preTile == 132 && curTile == 147 ||
+                preTile == 133 && curTile == 148 ||
+                preTile == 134 && curTile == 149 ||
+                preTile == 135 && curTile == 150)
+            {
+                curTile = curTile - 135;
+                DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
+                if (DataAccess.message == "invalidMove")
+                {
+                    curTile = curTile + 135;
+                    gameLOneErrorLbl.Visible = true;
+                    gameLTwoErrorLbl.Visible = true;
+                }
+                else if (DataAccess.message == "succMove")
+                {
+                    characterMove();
+                }
+            }
 
-            string x = "pb" + curTile;                                              // gets picturebox name
+            else if (preTile == 1 && curTile == -14 ||
+                preTile == 2 && curTile == -13 ||
+                preTile == 3 && curTile == -12 ||
+                preTile == 4 && curTile == -11 ||
+                preTile == 5 && curTile == -10 ||
+                preTile == 6 && curTile == -9 ||
+                preTile == 7 && curTile == -8 ||
+                preTile == 8 && curTile == -7 ||
+                preTile == 9 && curTile == -6 ||
+                preTile == 10 && curTile == -5 ||
+                preTile == 11 && curTile == -4 ||
+                preTile == 12 && curTile == -3 ||
+                preTile == 13 && curTile == -2 ||
+                preTile == 14 && curTile == -1 ||
+                preTile == 15 && curTile == 0)
+            {
+                curTile = curTile + 135;
+                DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
+                if (DataAccess.message == "invalidMove")
+                {
+                    curTile = curTile - 15;
+                    gameLOneErrorLbl.Visible = true;
+                    gameLTwoErrorLbl.Visible = true;
+                }
+                else if (DataAccess.message == "succMove")
+                {
+                    characterMove();
+                }
+            } 
+            else
+            {
+                DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
+                //usMessageBox.Show(DataAccess.message);
+                if (DataAccess.message == "invalidMove")
+                {
+                    curTile = preTile;
+                    gameLOneErrorLbl.Visible = true;
+                    gameLTwoErrorLbl.Visible = true;
+                }
+                else if (DataAccess.message == "succMove")
+                {
+                    characterMove();
+                }
+            }
+        }
+
+        private void characterMove()
+        {
+            string x = "pb" + curTile;                                                    // gets picturebox name
             PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
             pb.Visible = false;                                                           // changes the controls properties
             Point pt = pb.FindForm().PointToClient(pb.Parent.PointToScreen(pb.Location)); // gets control location
@@ -143,7 +240,6 @@ namespace amazingAdventures
             playerMarker.Location = new System.Drawing.Point(locationOfMove);             // moves character to tile
             showPreviousTile(preTile);
         }
-
         private void showPreviousTile(int tile)
         {
             string x = "pb" + tile; // gets picturebox name
@@ -155,53 +251,25 @@ namespace amazingAdventures
         {
             preTile = curTile;
             curTile = curTile - 15;
-            if (curTile <= 136 && curTile >= 0)
-            {
-                characterMove();
-            }
-            else
-            {
-                curTile = curTile + 15;
-            }
+            characterCheckLocation();
         }
         private void moveDown()
         {
             preTile = curTile;
             curTile = curTile + 15;
-            if (curTile <= 136 && curTile >= 0)
-            {
-                characterMove();
-            }
-            else
-            {
-                curTile = curTile - 15;
-            }
+            characterCheckLocation();
         }
         private void moveLeft()
         {
             preTile = curTile;
             curTile = curTile - 1;
-            if (curTile <= 136 && curTile >= 0)
-            {
-                characterMove();
-            }
-            else
-            {
-                curTile = curTile + 1;
-            }
+            characterCheckLocation();
         }
         private void moveRight()
         {
             preTile = curTile;
             curTile = curTile + 1;
-            if (curTile <= 136 && curTile >= 0)
-            {
-                characterMove();
-            }
-            else
-            {
-                curTile = curTile - 1;
-            }
+            characterCheckLocation();
         }
 
     }
