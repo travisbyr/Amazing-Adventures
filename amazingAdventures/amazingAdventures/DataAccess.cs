@@ -410,10 +410,15 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
+                    string chatdatetime = myReader.GetString("ChatDateTime");
+                    string playerusername = myReader.GetString("PlayerUsername");
+                    string chattext = myReader.GetString("ChatText");
+
                     Message = myReader.GetString("MESSAGE");
-                    Main.M.GlobalChat.Add(myReader.GetString("ChatDateTime"));
-                    Main.M.GlobalChat.Add(myReader.GetString("PlayerUsername"));
-                    Main.M.GlobalChat.Add(myReader.GetString("ChatText"));
+                    if (Message != "noChatText")
+                    {
+                        Main.ChatList.Add(new GlobalChat() { ChatDateTime = chatdatetime, PlayerUsername = playerusername, ChatText = chattext });
+                    }
                 }
             }
             finally

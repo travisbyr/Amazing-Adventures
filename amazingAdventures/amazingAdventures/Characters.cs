@@ -8,7 +8,6 @@ namespace AmazingAdventures
 {
     public class Characters : Main
     {
-        // Auto-Initialized properties  
         public string Name { get; set; }
         public string Colour { get; set; }
         public int? TileID { get; set; }

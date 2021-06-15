@@ -99,6 +99,7 @@
       <DependentUpon>CharacterCreateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Characters.cs" />
+    <Compile Include="Chat.cs" />
     <Compile Include="ChatForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +113,7 @@
     <Compile Include="GameForm.Designer.cs">
       <DependentUpon>GameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalChat.cs" />
     <Compile Include="LobbyForm.cs">
       <SubType>Form</SubType>
     </Compile>
