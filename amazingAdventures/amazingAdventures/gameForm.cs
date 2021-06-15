@@ -13,6 +13,7 @@ namespace AmazingAdventures
     public partial class GameForm : Form
     {
         ButtonEllipse playerMarker = new ButtonEllipse();
+        public int prePreTile;
         public int preTile;
         public int curTile = 68;
 
@@ -117,23 +118,24 @@ namespace AmazingAdventures
                 preTile == 120 && curTile == 121 ||
                 preTile == 135 && curTile == 136)
             {
-               DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
                 curTile = curTile - 15;
-                preTile = preTile - 1;
+               DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
                 if (DataAccess.message == "invalidMove")
                 {
-                    MessageBox.Show(preTile + " - " + curTile);
-                   curTile = curTile + 15;
+                    curTile = preTile;
+                    preTile = prePreTile;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
                 else if (DataAccess.message == "succMove")
                 {
                     characterMove();
+                    gameLOneErrorLbl.Visible = false;
+                    gameLTwoErrorLbl.Visible = false;
                 }
             }
 
-            if (preTile == 1 && curTile == 0 ||
+            else if (preTile == 1 && curTile == 0 ||
                 preTile == 16 && curTile == 15 ||
                 preTile == 31 && curTile == 30 ||
                 preTile == 46 && curTile == 45 ||
@@ -147,13 +149,16 @@ namespace AmazingAdventures
                 DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
                 if (DataAccess.message == "invalidMove")
                 {
-                    curTile = curTile - 15;
+                    curTile = preTile;
+                    preTile = prePreTile;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
                 else if (DataAccess.message == "succMove")
                 {
                     characterMove();
+                    gameLOneErrorLbl.Visible = false;
+                    gameLTwoErrorLbl.Visible = false;
                 }
             }
 
@@ -177,13 +182,16 @@ namespace AmazingAdventures
                 DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
                 if (DataAccess.message == "invalidMove")
                 {
-                    curTile = curTile + 135;
+                    curTile = preTile;
+                    preTile = prePreTile;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
                 else if (DataAccess.message == "succMove")
                 {
                     characterMove();
+                    gameLOneErrorLbl.Visible = false;
+                    gameLTwoErrorLbl.Visible = false;
                 }
             }
 
@@ -207,28 +215,33 @@ namespace AmazingAdventures
                 DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
                 if (DataAccess.message == "invalidMove")
                 {
-                    curTile = curTile - 135;
+                    curTile = preTile;
+                    preTile = prePreTile;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
                 else if (DataAccess.message == "succMove")
                 {
                     characterMove();
+                    gameLOneErrorLbl.Visible = false;
+                    gameLTwoErrorLbl.Visible = false;
                 }
             } 
             else
             {
                 DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
-                //usMessageBox.Show(DataAccess.message);
                 if (DataAccess.message == "invalidMove")
                 {
                     curTile = preTile;
+                    preTile = prePreTile;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
                 else if (DataAccess.message == "succMove")
                 {
                     characterMove();
+                    gameLOneErrorLbl.Visible = false;
+                    gameLTwoErrorLbl.Visible = false;
                 }
             }
         }
@@ -252,27 +265,30 @@ namespace AmazingAdventures
 
         private void moveUp()
         {
+            prePreTile = preTile;
             preTile = curTile;
             curTile = curTile - 15;
             characterCheckLocation();
         }
         private void moveDown()
         {
+            prePreTile = preTile;
             preTile = curTile;
             curTile = curTile + 15;
             characterCheckLocation();
         }
         private void moveLeft()
         {
+            prePreTile = preTile;
             preTile = curTile;
             curTile = curTile - 1;
             characterCheckLocation();
         }
         private void moveRight()
         {
+            prePreTile = preTile;
             preTile = curTile;
             curTile = curTile + 1;
-            MessageBox.Show(preTile + " - " + curTile);
             characterCheckLocation();
         }
 
