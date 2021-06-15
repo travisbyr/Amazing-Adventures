@@ -13,9 +13,11 @@ namespace AmazingAdventures
     public partial class GameForm : Form
     {
         ButtonEllipse playerMarker = new ButtonEllipse();
+
         public int prePreTile;
         public int preTile;
         public int curTile = 68;
+        public static int n = 1;
 
         private static readonly GameForm _instance = new GameForm();
 
@@ -26,6 +28,7 @@ namespace AmazingAdventures
         public GameForm()
         {
             InitializeComponent();
+           // otherCharacterSetup();
         }
 
         private void leaveButton_Click(object sender, EventArgs e)
@@ -104,7 +107,9 @@ namespace AmazingAdventures
             Controls.Add(playerMarker);
             playerMarker.BringToFront();
 
+            otherCharacterSetup();
         }
+
         private void characterCheckLocation()
         {
 
@@ -291,6 +296,42 @@ namespace AmazingAdventures
             curTile = curTile + 1;
             characterCheckLocation();
         }
+        
+        private void otherCharacterSetup()
+        {
+            DataAccess.getAllCharacterPositions(Main.M.GameNumber);
+            n = Main.CharacterList.Count();
 
+            ButtonEllipse[] button = new ButtonEllipse[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                button[n] = new ButtonEllipse();
+
+                foreach (Characters item in Main.CharacterList)
+                {
+                    string x = "pb" + item.TileID;                                                // gets picturebox name
+                    PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
+                    pb.Visible = false;                                                           // changes the controls properties
+                    Point pt = pb.FindForm().PointToClient(pb.Parent.PointToScreen(pb.Location)); // gets control location
+                    Size playerLocation = new Size(pt);                                           // converts to size
+                    
+                    button[n].BackColor = ColorTranslator.FromHtml(item.Colour);
+                    button[n].ForeColor = ColorTranslator.FromHtml(item.Colour);
+                    button[n].FlatStyle = FlatStyle.Flat;
+                    button[n].Location = new System.Drawing.Point(playerLocation);
+                    button[n].Name = item.ID.ToString();
+                    button[n].Size = new System.Drawing.Size(86, 86);
+                    button[n].Invalidate();
+                    button[n].Text = item.Name;
+                    button[n].Enabled = false;
+                    button[n].Font = new Font("Arial", 12);
+                    Controls.Add(button[n]);
+                    button[n].BringToFront();
+                    i++;
+                    //MessageBox.Show(item.Name);
+                }
+            }
+        }
     }
 }

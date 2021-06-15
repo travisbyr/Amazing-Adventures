@@ -98,6 +98,7 @@
     <Compile Include="CharacterCreateForm.Designer.cs">
       <DependentUpon>CharacterCreateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Characters.cs" />
     <Compile Include="ChatForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -702,5 +702,33 @@ namespace AmazingAdventures
                 connect.Close();
             }
         }
+
+        public static void getAllCharacterPositions(int pgamenumber)
+        {
+            MySqlCommand cmd = new MySqlCommand("getCharacters", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("pGameNumber", pgamenumber); // Add a parameter
+            connect.Open();
+            cmd.ExecuteNonQuery();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    string name = myReader.GetString("CharacterName");
+                    string colour = myReader.GetString("CharacterColour");
+                    int tile = Int32.Parse(myReader.GetString("TileID"));
+                    int id = Int32.Parse(myReader.GetString("CharacterID"));
+
+                    Main.CharacterList.Add(new Characters() { Name = name, Colour = colour, TileID = tile, ID = id });
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
     }
 }

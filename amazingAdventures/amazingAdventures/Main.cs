@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AmazingAdventures
 {
-    class Main
+    public class Main
     {
         private static readonly Main _instance = new Main();
 
@@ -26,6 +26,7 @@ namespace AmazingAdventures
         private List<string> _globalChat = new List<string>();
         private List<string> _backpackList = new List<string>();
         private List<string> _playerList = new List<string>();
+        private static List<Main> _characterList = new List<Main>();
 
         public int GameNumber { get => gameNumber; set => gameNumber = value; }
         public string Username { get => username; set => username = value; }
@@ -40,6 +41,6 @@ namespace AmazingAdventures
         public List<string> GlobalChat { get => _globalChat; set => _globalChat = value; }
         public List<string> BackpackList { get => _backpackList; set => _backpackList = value; }
         public List<string> PlayerList { get => _playerList; set => _playerList = value; }
-
+        public static List<Main> CharacterList { get => _characterList; set => _characterList = value; }
     }
 }
