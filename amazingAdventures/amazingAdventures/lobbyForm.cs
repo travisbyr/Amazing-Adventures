@@ -55,7 +55,7 @@ namespace AmazingAdventures
             Main.M.GameListName.Clear();
             Main.M.GameListID.Clear();
             DataAccess.gamesList();
-            if (DataAccess.message == "gamesAvaliable")
+            if (DataAccess.Message == "gamesAvaliable")
             {
                 foreach (string a in Main.M.GameListName.ToArray())
                 {
@@ -82,7 +82,7 @@ namespace AmazingAdventures
         private void joinGameButton_Click(object sender, EventArgs e)
         {
             DataAccess.checkCharacter(Main.M.Username, Main.M.GameNumber);
-            if (DataAccess.message == "characterIsMade")
+            if (DataAccess.Message == "characterIsMade")
             {
                 joinGame();
             } 

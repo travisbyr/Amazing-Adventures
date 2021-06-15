@@ -15,8 +15,8 @@ namespace AmazingAdventures
         ButtonEllipse playerMarker = new ButtonEllipse();
 
         public int prePreTile;
-        public int preTile;
-        public int curTile = 68;
+        public int preTile = 0;
+        public int curTile;
         public static int n = 0;
 
         private static readonly GameForm _instance = new GameForm();
@@ -28,7 +28,6 @@ namespace AmazingAdventures
         public GameForm()
         {
             InitializeComponent();
-           // otherCharacterSetup();
         }
 
         private void leaveButton_Click(object sender, EventArgs e)
@@ -87,18 +86,16 @@ namespace AmazingAdventures
 
         public void characterSetup() // Creating an eclipse that will show the players current location
         {
-            curTile = 68;
-            pb68.Visible = false;
-            playerMarker.Visible = true;
-            int x = Main.M.GameNumber;
+            characterMove();
+
+            int a = Main.M.GameNumber;
             DataAccess.checkCharacter(Main.M.Username, Main.M.GameNumber);
 
-            DataAccess.getColour(Main.M.Username, x);
-            playerMarker.BackColor = ColorTranslator.FromHtml(DataAccess.message);
-            playerMarker.ForeColor = ColorTranslator.FromHtml(DataAccess.message);
+            DataAccess.getColour(Main.M.Username, a);
+            playerMarker.BackColor = ColorTranslator.FromHtml(DataAccess.Message);
+            playerMarker.ForeColor = ColorTranslator.FromHtml(DataAccess.Message);
             playerMarker.FlatStyle = FlatStyle.Flat;
-            playerMarker.Location = new System.Drawing.Point(707, 470);
-            playerMarker.Name = "buttonEllipse1";
+            playerMarker.Name = "playerButtonEllipse";
             playerMarker.Size = new System.Drawing.Size(86, 86);
             playerMarker.Invalidate();
             playerMarker.Text = Main.M.CharacterName;
@@ -109,7 +106,6 @@ namespace AmazingAdventures
 
             otherCharactersMarker();
         }
-
         private void characterCheckLocation()
         {
             otherCharactersMarker();
@@ -126,14 +122,14 @@ namespace AmazingAdventures
             {
                 curTile = curTile - 15;
                DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
-                if (DataAccess.message == "invalidMove")
+                if (DataAccess.Message == "invalidMove")
                 {
                     curTile = preTile;
                     preTile = prePreTile;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
-                else if (DataAccess.message == "succMove")
+                else if (DataAccess.Message == "succMove")
                 {
                     characterMove();
                     gameLOneErrorLbl.Visible = false;
@@ -153,14 +149,14 @@ namespace AmazingAdventures
             {
                 curTile = curTile + 15;
                 DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
-                if (DataAccess.message == "invalidMove")
+                if (DataAccess.Message == "invalidMove")
                 {
                     curTile = preTile;
                     preTile = prePreTile;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
-                else if (DataAccess.message == "succMove")
+                else if (DataAccess.Message == "succMove")
                 {
                     characterMove();
                     gameLOneErrorLbl.Visible = false;
@@ -186,14 +182,14 @@ namespace AmazingAdventures
             {
                 curTile = curTile - 135;
                 DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
-                if (DataAccess.message == "invalidMove")
+                if (DataAccess.Message == "invalidMove")
                 {
                     curTile = preTile;
                     preTile = prePreTile;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
-                else if (DataAccess.message == "succMove")
+                else if (DataAccess.Message == "succMove")
                 {
                     characterMove();
                     gameLOneErrorLbl.Visible = false;
@@ -219,14 +215,14 @@ namespace AmazingAdventures
             {
                 curTile = curTile + 135;
                 DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
-                if (DataAccess.message == "invalidMove")
+                if (DataAccess.Message == "invalidMove")
                 {
                     curTile = preTile;
                     preTile = prePreTile;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
-                else if (DataAccess.message == "succMove")
+                else if (DataAccess.Message == "succMove")
                 {
                     characterMove();
                     gameLOneErrorLbl.Visible = false;
@@ -236,14 +232,14 @@ namespace AmazingAdventures
             else
             {
                 DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
-                if (DataAccess.message == "invalidMove")
+                if (DataAccess.Message == "invalidMove")
                 {
                     curTile = preTile;
                     preTile = prePreTile;
                     gameLOneErrorLbl.Visible = true;
                     gameLTwoErrorLbl.Visible = true;
                 }
-                else if (DataAccess.message == "succMove")
+                else if (DataAccess.Message == "succMove")
                 {
                     characterMove();
                     gameLOneErrorLbl.Visible = false;
@@ -251,22 +247,28 @@ namespace AmazingAdventures
                 }
             }
         }
-
         private void characterMove()
         {
+            DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
             string x = "pb" + curTile;                                                    // gets picturebox name
             PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
             pb.Visible = false;                                                           // changes the controls properties
+
             Point pt = pb.FindForm().PointToClient(pb.Parent.PointToScreen(pb.Location)); // gets control location
             Size locationOfMove = new Size(pt);                                           // converts to size
+            playerMarker.Visible = true;
             playerMarker.Location = new System.Drawing.Point(locationOfMove);             // moves character to tile
             showPreviousTile(preTile);
         }
         private void showPreviousTile(int tile)
         {
-            string x = "pb" + tile; // gets picturebox name
-            PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
-            pb.Visible = true;
+            if (preTile != 0)
+            {
+                string x = "pb" + tile; // gets picturebox name
+                PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
+                pb.Visible = true;
+            }
+            
         }
 
         private void moveUp()

@@ -37,7 +37,7 @@ namespace AmazingAdventures
         private void createGame()
         {
             DataAccess.gameCreation(Main.M.Username, gameNameInput.Text);
-            if (DataAccess.message == "gameAlreadyCreated")
+            if (DataAccess.Message == "gameAlreadyCreated")
             {
                 DialogResult result = MessageBox.Show("You have already created a game.\nWould you like to delete it and make a new one?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 if (result == DialogResult.Yes)

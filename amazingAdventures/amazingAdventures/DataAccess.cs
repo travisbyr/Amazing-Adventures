@@ -13,7 +13,7 @@ namespace AmazingAdventures
     {
         // PUBLIC VARIABLES
 
-        public static string message = "";
+        public static string Message = "";
         /*public static string characterName = "";
         public static string characterScore = "";
         public static string leaderboardGame = "";*/
@@ -82,7 +82,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message
+                    Message = myReader.GetString("MESSAGE"); // Get message
                 }
             }
             finally
@@ -104,7 +104,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message
+                    Message = myReader.GetString("MESSAGE"); // Get message
                 }
             }
             finally
@@ -127,7 +127,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message
+                    Message = myReader.GetString("MESSAGE"); // Get message
                 }
             }
             finally
@@ -149,7 +149,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message
+                    Message = myReader.GetString("MESSAGE"); // Get message
                 }
             }
             finally
@@ -175,7 +175,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message
+                    Message = myReader.GetString("MESSAGE"); // Get message
                 }
             }
             finally
@@ -197,7 +197,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message
+                    Message = myReader.GetString("MESSAGE"); // Get message
                     Main.M.GameListName.Add(myReader.GetString("GameName"));
                     Main.M.GameListID.Add(Int32.Parse(myReader.GetString("GameID")));
                 }
@@ -224,7 +224,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message
+                    Message = myReader.GetString("MESSAGE"); // Get message
                 }
             }
             finally
@@ -248,7 +248,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message
+                    Message = myReader.GetString("MESSAGE"); // Get message
                 }
             }
             finally
@@ -271,7 +271,8 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("cTile"); // Get message
+                   // Message = myReader.GetString("cTile"); // Get message
+                    GameForm.Game.curTile = Int32.Parse(myReader.GetString("cTile"));
                 }
             }
             finally
@@ -295,7 +296,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message
+                    Message = myReader.GetString("MESSAGE"); // Get message
                 }
             }
             finally
@@ -318,7 +319,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message 
+                    Message = myReader.GetString("MESSAGE"); // Get message 
                 }
             }
             finally
@@ -340,7 +341,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message 
+                    Message = myReader.GetString("MESSAGE"); // Get message 
                 }
             }
             finally
@@ -365,7 +366,7 @@ namespace AmazingAdventures
                     Main.M.LeaderboardGame = myReader.GetString("GameName");
                     Main.M.LeaderboardList.Add(myReader.GetString("CharacterName"));
                     Main.M.LeaderboardList.Add(myReader.GetString("CharacterScore"));
-                    message = myReader.GetString("MESSAGE"); // Get message  
+                    Message = myReader.GetString("MESSAGE"); // Get message  
                 }
             }
             finally
@@ -386,7 +387,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE"); // Get message  
+                    Message = myReader.GetString("MESSAGE"); // Get message  
                 }
             }
             finally
@@ -409,7 +410,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE");
+                    Message = myReader.GetString("MESSAGE");
                     Main.M.GlobalChat.Add(myReader.GetString("ChatDateTime"));
                     Main.M.GlobalChat.Add(myReader.GetString("PlayerUsername"));
                     Main.M.GlobalChat.Add(myReader.GetString("ChatText"));
@@ -435,7 +436,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE");
+                    Message = myReader.GetString("MESSAGE");
                     Main.M.CharacterScore = myReader.GetString("CharacterScore");
                     Main.M.BackpackList.Add(myReader.GetString("ItemName"));
                     Main.M.BackpackList.Add(myReader.GetString("ItemCount"));
@@ -463,7 +464,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE");
+                    Message = myReader.GetString("MESSAGE");
                 }
             }
             finally
@@ -486,7 +487,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE");
+                    Message = myReader.GetString("MESSAGE");
                 }
             }
             finally
@@ -509,7 +510,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE");
+                    Message = myReader.GetString("MESSAGE");
                 }
             }
             finally
@@ -534,7 +535,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE");
+                    Message = myReader.GetString("MESSAGE");
                 }
             }
             finally
@@ -556,7 +557,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE");
+                    Message = myReader.GetString("MESSAGE");
                 }
             }
             finally
@@ -577,7 +578,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE");
+                    Message = myReader.GetString("MESSAGE");
                 }
             }
             finally
@@ -599,7 +600,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE");
+                    Message = myReader.GetString("MESSAGE");
                 }
             }
             finally
@@ -622,7 +623,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE");
+                    Message = myReader.GetString("MESSAGE");
                 }
             }
             finally
@@ -668,7 +669,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("MESSAGE");
+                    Message = myReader.GetString("MESSAGE");
                     Main.M.CharacterName = myReader.GetString("CNAME");
                 }
             }
@@ -692,7 +693,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    message = myReader.GetString("CharacterColour");
+                    Message = myReader.GetString("CharacterColour");
                  
                 }
             }

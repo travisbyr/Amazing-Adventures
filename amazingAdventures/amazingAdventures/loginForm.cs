@@ -48,18 +48,18 @@ namespace AmazingAdventures
         private void login()
         {
             DataAccess.checkUsername(loginUsername.Text);
-            if (DataAccess.message == "avaliableUsername")
+            if (DataAccess.Message == "avaliableUsername")
             {
                 registerBtn.Visible = true;
                 usrnValidFirstLine.Visible = true;
                 usrnValidSecondLine.Visible = true;
                 usrnInvalidFirstLabel.Visible = false;
                 usrnInvalidSecondLabel.Visible = false;
-            } else if (DataAccess.message == "unavaliableUsername")
+            } else if (DataAccess.Message == "unavaliableUsername")
             {
                 registerBtn.Visible = false;
                 DataAccess.accountLogin(loginUsername.Text, loginPassword.Text);
-                if (DataAccess.message == "NLogin")
+                if (DataAccess.Message == "NLogin")
                 {
                     usrnValidFirstLine.Visible = false;
                     usrnValidSecondLine.Visible = false;
@@ -67,7 +67,7 @@ namespace AmazingAdventures
                     usrnInvalidSecondLabel.Text = "Please try again.";
                     usrnInvalidFirstLabel.Visible = true;
                     usrnInvalidSecondLabel.Visible = true;
-                } else if (DataAccess.message == "maxLoginAttempts")
+                } else if (DataAccess.Message == "maxLoginAttempts")
                 {
                     usrnValidFirstLine.Visible = false;
                     usrnValidSecondLine.Visible = false;
@@ -75,7 +75,7 @@ namespace AmazingAdventures
                     usrnInvalidSecondLabel.Text = "Email an administrator to unlock this account";
                     usrnInvalidFirstLabel.Visible = true;
                     usrnInvalidSecondLabel.Visible = true;
-                } else if (DataAccess.message == "SLogin")
+                } else if (DataAccess.Message == "SLogin")
                 {
                     Main.M.Username = loginUsername.Text;
                     LobbyForm.Lobby.Show();
