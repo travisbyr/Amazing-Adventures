@@ -107,11 +107,12 @@ namespace AmazingAdventures
             Controls.Add(playerMarker);
             playerMarker.BringToFront();
 
-            otherCharacterSetup();
+            otherCharactersMarker();
         }
 
         private void characterCheckLocation()
         {
+            otherCharactersMarker();
 
             if (preTile == 15 && curTile == 16 ||
                 preTile == 30 && curTile == 31 ||
@@ -297,27 +298,28 @@ namespace AmazingAdventures
             characterCheckLocation();
         }
         
-        private void otherCharacterSetup()
+        private void otherCharactersMarker()
         {
+
+            if (Main.CharacterList.Count() > 0)
+            {
+                foreach (Characters item in Main.CharacterList)
+                {
+                    var labelToRemove = Controls[item.ID.ToString()];
+                    Controls.Remove(labelToRemove);
+                }
+            }
+
             int b = n;
+            Main.CharacterList.Clear();
             DataAccess.getAllCharacterPositions(Main.M.Username, Main.M.GameNumber);
             n = Main.CharacterList.Count();
-
             ButtonEllipse[] button = new ButtonEllipse[n];
 
             for (int i = 0; i < n; i++)
             { 
                 foreach (Characters item in Main.CharacterList)
                 {
-
-                    if (b != 0)
-                    {
-                        for (int c = 0; c < b; c++)
-                        {
-                            Controls.Remove(button[c]);
-                        }
-                    }
-
                     string x = "pb" + item.TileID;                                                // gets picturebox name
                     PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
                     pb.Visible = false;                                                           // changes the controls properties
@@ -339,16 +341,7 @@ namespace AmazingAdventures
                     Controls.Add(button[i]);
                     button[i].BringToFront();
                     i++;
-                    //MessageBox.Show(item.Name);
                 }
-            }
-        }
-
-        private void OtherCharacterUpdateMovement()
-        {
-            for (int i = 0; i < n; i++)
-            {
-               // Controls.Remove(button[i]);
             }
         }
     }
