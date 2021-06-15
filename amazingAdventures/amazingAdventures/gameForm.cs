@@ -305,6 +305,9 @@ namespace AmazingAdventures
             {
                 foreach (Characters item in Main.CharacterList)
                 {
+                    string x = "pb" + item.TileID;                                                
+                    PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        
+                    pb.Visible = true;
                     var labelToRemove = Controls[item.ID.ToString()];
                     Controls.Remove(labelToRemove);
                 }
