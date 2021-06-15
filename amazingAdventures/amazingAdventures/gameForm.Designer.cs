@@ -349,6 +349,7 @@ namespace AmazingAdventures
             this.leaveButton.Name = "leaveButton";
             this.leaveButton.Size = new System.Drawing.Size(266, 51);
             this.leaveButton.TabIndex = 15;
+            this.leaveButton.TabStop = false;
             this.leaveButton.Text = "Leave";
             this.leaveButton.UseVisualStyleBackColor = false;
             this.leaveButton.Click += new System.EventHandler(this.leaveButton_Click);
@@ -362,6 +363,7 @@ namespace AmazingAdventures
             this.upButton.Name = "upButton";
             this.upButton.Size = new System.Drawing.Size(258, 46);
             this.upButton.TabIndex = 16;
+            this.upButton.TabStop = false;
             this.upButton.Text = "Up";
             this.upButton.UseVisualStyleBackColor = false;
             this.upButton.Click += new System.EventHandler(this.upButton_Click);
@@ -375,6 +377,7 @@ namespace AmazingAdventures
             this.downButton.Name = "downButton";
             this.downButton.Size = new System.Drawing.Size(258, 46);
             this.downButton.TabIndex = 17;
+            this.downButton.TabStop = false;
             this.downButton.Text = "Down";
             this.downButton.UseVisualStyleBackColor = false;
             this.downButton.Click += new System.EventHandler(this.downButton_Click);
@@ -388,6 +391,7 @@ namespace AmazingAdventures
             this.leftButton.Name = "leftButton";
             this.leftButton.Size = new System.Drawing.Size(258, 46);
             this.leftButton.TabIndex = 18;
+            this.leftButton.TabStop = false;
             this.leftButton.Text = "Left";
             this.leftButton.UseVisualStyleBackColor = false;
             this.leftButton.Click += new System.EventHandler(this.leftButton_Click);
@@ -401,6 +405,7 @@ namespace AmazingAdventures
             this.rightButton.Name = "rightButton";
             this.rightButton.Size = new System.Drawing.Size(258, 46);
             this.rightButton.TabIndex = 19;
+            this.rightButton.TabStop = false;
             this.rightButton.Text = "Right";
             this.rightButton.UseVisualStyleBackColor = false;
             this.rightButton.Click += new System.EventHandler(this.rightButton_Click);

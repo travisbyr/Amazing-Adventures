@@ -17,7 +17,7 @@ namespace AmazingAdventures
         public int prePreTile;
         public int preTile;
         public int curTile = 68;
-        public static int n = 1;
+        public static int n = 0;
 
         private static readonly GameForm _instance = new GameForm();
 
@@ -299,38 +299,56 @@ namespace AmazingAdventures
         
         private void otherCharacterSetup()
         {
-            DataAccess.getAllCharacterPositions(Main.M.GameNumber);
+            int b = n;
+            DataAccess.getAllCharacterPositions(Main.M.Username, Main.M.GameNumber);
             n = Main.CharacterList.Count();
 
             ButtonEllipse[] button = new ButtonEllipse[n];
 
             for (int i = 0; i < n; i++)
-            {
-                button[n] = new ButtonEllipse();
-
+            { 
                 foreach (Characters item in Main.CharacterList)
                 {
+
+                    if (b != 0)
+                    {
+                        for (int c = 0; c < b; c++)
+                        {
+                            Controls.Remove(button[c]);
+                        }
+                    }
+
                     string x = "pb" + item.TileID;                                                // gets picturebox name
                     PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
                     pb.Visible = false;                                                           // changes the controls properties
                     Point pt = pb.FindForm().PointToClient(pb.Parent.PointToScreen(pb.Location)); // gets control location
                     Size playerLocation = new Size(pt);                                           // converts to size
-                    
-                    button[n].BackColor = ColorTranslator.FromHtml(item.Colour);
-                    button[n].ForeColor = ColorTranslator.FromHtml(item.Colour);
-                    button[n].FlatStyle = FlatStyle.Flat;
-                    button[n].Location = new System.Drawing.Point(playerLocation);
-                    button[n].Name = item.ID.ToString();
-                    button[n].Size = new System.Drawing.Size(86, 86);
-                    button[n].Invalidate();
-                    button[n].Text = item.Name;
-                    button[n].Enabled = false;
-                    button[n].Font = new Font("Arial", 12);
-                    Controls.Add(button[n]);
-                    button[n].BringToFront();
+
+                    button[i] = new ButtonEllipse();
+
+                    button[i].BackColor = ColorTranslator.FromHtml(item.Colour);
+                    button[i].ForeColor = ColorTranslator.FromHtml(item.Colour);
+                    button[i].FlatStyle = FlatStyle.Flat;
+                    button[i].Location = new System.Drawing.Point(playerLocation);
+                    button[i].Name = item.ID.ToString();
+                    button[i].Size = new System.Drawing.Size(86, 86);
+                    button[i].Invalidate();
+                    button[i].Text = item.Name;
+                    button[i].Enabled = false;
+                    button[i].Font = new Font("Arial", 12);
+                    Controls.Add(button[i]);
+                    button[i].BringToFront();
                     i++;
                     //MessageBox.Show(item.Name);
                 }
+            }
+        }
+
+        private void OtherCharacterUpdateMovement()
+        {
+            for (int i = 0; i < n; i++)
+            {
+               // Controls.Remove(button[i]);
             }
         }
     }

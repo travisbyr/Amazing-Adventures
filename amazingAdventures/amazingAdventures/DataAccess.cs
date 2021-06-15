@@ -703,11 +703,12 @@ namespace AmazingAdventures
             }
         }
 
-        public static void getAllCharacterPositions(int pgamenumber)
+        public static void getAllCharacterPositions(string pusername, int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("getCharacters", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("pGameNumber", pgamenumber); // Add a parameter
+            cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
             connect.Open();
             cmd.ExecuteNonQuery();
             MySqlDataReader myReader;
