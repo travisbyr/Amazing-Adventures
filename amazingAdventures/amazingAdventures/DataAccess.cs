@@ -397,6 +397,34 @@ namespace AmazingAdventures
             }
         }
 
+        public static void readGlobalChat()
+        {
+            MySqlCommand cmd = new MySqlCommand("viewGlobalChat", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            connect.Open();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    Message = myReader.GetString("MESSAGE");
+                    if (Message != "noChatText")
+                    {
+                        string chatdatetime = myReader.GetString("ChatDateTime");
+                        string playerusername = myReader.GetString("PlayerUsername");
+                        string chattext = myReader.GetString("ChatText");
+                        Main.ChatList.Add(new Chat() { ChatDateTime = chatdatetime, PlayerUsername = playerusername, ChatText = chattext });
+                    }
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
+
         public static void globalChat(string pchatmessage, string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("globalChat", connect); // Select stored proecdure name
@@ -406,26 +434,18 @@ namespace AmazingAdventures
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();
-            try
+/*            try
             {
                 while (myReader.Read())
                 {
-                    string chatdatetime = myReader.GetString("ChatDateTime");
-                    string playerusername = myReader.GetString("PlayerUsername");
-                    string chattext = myReader.GetString("ChatText");
 
-                    Message = myReader.GetString("MESSAGE");
-                    if (Message != "noChatText")
-                    {
-                        Main.ChatList.Add(new GlobalChat() { ChatDateTime = chatdatetime, PlayerUsername = playerusername, ChatText = chattext });
-                    }
                 }
             }
             finally
-            {
+            {*/
                 myReader.Close();
                 connect.Close();
-            }
+           // }
         }
 
         public static void playerBackpack(string pusername, int pgamenumber)

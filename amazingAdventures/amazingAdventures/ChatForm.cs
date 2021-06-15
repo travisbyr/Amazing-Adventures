@@ -22,6 +22,7 @@ namespace AmazingAdventures
         public ChatForm()
         {
             InitializeComponent();
+            refreshChat();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,5 +34,34 @@ namespace AmazingAdventures
         {
             Hide();
         }
-    }
+
+        private void refreshChat()
+        {
+            chatMessageListBox.Items.Clear();
+            Main.ChatList.Clear();
+            DataAccess.readGlobalChat();
+            if (DataAccess.Message == "foundChatText")
+            {
+                foreach (Chat item in Main.ChatList)
+                {
+                    chatMessageListBox.Items.Add(item.ChatDateTime + " - " + item.PlayerUsername + " - " + item.ChatText);
+                }
+            }
+        }
+
+        private void submitChatBtn_Click(object sender, EventArgs e)
+        {
+            if (chatTxtBox.Text.Length >= 51)
+            {
+                chatErrorLine.Visible = true;
+            }
+            else
+            {
+                DataAccess.globalChat(chatTxtBox.Text, Main.M.Username);
+                chatTxtBox.Text = "";
+                chatErrorLine.Visible = false;
+                refreshChat();
+            }
+        }
+    }      
 }
