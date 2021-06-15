@@ -23,6 +23,7 @@ namespace AmazingAdventures
         public LobbyForm()
         {
             InitializeComponent();
+            adminAbility();
             listGames();
             listPlayers();
         }
@@ -84,7 +85,11 @@ namespace AmazingAdventures
 
         private void joinGameButton_Click(object sender, EventArgs e)
         {
-            joinGame();
+            int index = currentGameList.SelectedIndex;
+            if (index != -1)
+            {
+                joinGame();
+            }
         }
 
 
@@ -109,6 +114,18 @@ namespace AmazingAdventures
             else
             {   // Create character
                 CharacterCreateForm.CreateForm.Show();
+            }
+        }
+        private void adminAbility()
+        {
+            DataAccess.checkAdmin(Main.M.Username);
+            if(DataAccess.Message == "isAdmin")
+            {
+                adminButton.Visible = true;
+            } 
+            else if (DataAccess.Message == "notAdmin")
+            {
+                adminButton.Visible = false;
             }
         }
     }

@@ -694,7 +694,6 @@ namespace AmazingAdventures
                 while (myReader.Read())
                 {
                     Message = myReader.GetString("CharacterColour");
-                 
                 }
             }
             finally
@@ -729,6 +728,29 @@ namespace AmazingAdventures
                     }                 
 
                     Main.CharacterList.Add(new Characters() { Name = name, Colour = colour, TileID = tile, ID = id });
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
+
+        public static void checkAdmin(string pusername)
+        {
+            MySqlCommand cmd = new MySqlCommand("checkAdmin", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
+            connect.Open();
+            cmd.ExecuteNonQuery();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    Message = myReader.GetString("MESSAGE");
                 }
             }
             finally

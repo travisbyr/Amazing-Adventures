@@ -177,6 +177,7 @@ namespace AmazingAdventures
             this.adminButton.TabIndex = 15;
             this.adminButton.Text = "Admin";
             this.adminButton.UseVisualStyleBackColor = false;
+            this.adminButton.Visible = false;
             // 
             // label4
             // 
@@ -219,6 +220,9 @@ namespace AmazingAdventures
             this.Controls.Add(this.onlinePlayersList);
             this.Controls.Add(this.currentGameList);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1056, 755);
+            this.MinimumSize = new System.Drawing.Size(1056, 755);
             this.Name = "LobbyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Lobby";
