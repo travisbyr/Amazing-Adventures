@@ -36,7 +36,10 @@ namespace AmazingAdventures
         private void currentGameList_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = currentGameList.SelectedIndex;
-            Main.M.GameNumber = Main.M.GameListID[index];
+            if (index != -1)
+            {
+                Main.M.GameNumber = Main.M.GameListID[index];
+            }
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
@@ -81,29 +84,32 @@ namespace AmazingAdventures
 
         private void joinGameButton_Click(object sender, EventArgs e)
         {
-            DataAccess.checkCharacter(Main.M.Username, Main.M.GameNumber);
-            if (DataAccess.Message == "characterIsMade")
+            joinGame();
+        }
+
+
+        private void currentGameList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (onlinePlayersList.Items.Count != 0)
             {
                 joinGame();
-            } 
-            else
-            {
-                createCharacter();
             }
         }
 
         private void joinGame()
         {
-            DataAccess.characterRejoins(Main.M.Username, Main.M.GameNumber);
-            GameForm.Game.characterSetup();
-            GameForm.Game.Show();
-            Hide();
+            DataAccess.checkCharacter(Main.M.Username, Main.M.GameNumber);
+            if (DataAccess.Message == "characterIsMade")
+            {   // Join game using existing character
+                DataAccess.characterRejoins(Main.M.Username, Main.M.GameNumber);
+                GameForm.Game.characterSetup();
+                GameForm.Game.Show();
+                Hide();
+            }
+            else
+            {   // Create character
+                CharacterCreateForm.CreateForm.Show();
+            }
         }
-        
-        private void createCharacter()
-        {
-            CharacterCreateForm.CreateForm.Show();
-        }
-
     }
 }

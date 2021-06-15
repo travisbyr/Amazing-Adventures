@@ -720,8 +720,13 @@ namespace AmazingAdventures
                 {
                     string name = myReader.GetString("CharacterName");
                     string colour = myReader.GetString("CharacterColour");
-                    int tile = Int32.Parse(myReader.GetString("TileID"));
                     int id = Int32.Parse(myReader.GetString("CharacterID"));
+                    int? tile = null;
+
+                    if (!myReader.IsDBNull(myReader.GetOrdinal("TileID")))
+                    {
+                        tile = Int32.Parse(myReader.GetString("TileID"));
+                    }                 
 
                     Main.CharacterList.Add(new Characters() { Name = name, Colour = colour, TileID = tile, ID = id });
                 }

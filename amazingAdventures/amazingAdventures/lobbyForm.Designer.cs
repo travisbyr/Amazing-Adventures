@@ -55,6 +55,7 @@ namespace AmazingAdventures
             this.currentGameList.Size = new System.Drawing.Size(283, 479);
             this.currentGameList.TabIndex = 0;
             this.currentGameList.SelectedIndexChanged += new System.EventHandler(this.currentGameList_SelectedIndexChanged);
+            this.currentGameList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.currentGameList_MouseDoubleClick);
             // 
             // onlinePlayersList
             // 

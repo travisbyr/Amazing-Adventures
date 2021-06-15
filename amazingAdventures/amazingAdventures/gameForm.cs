@@ -86,6 +86,7 @@ namespace AmazingAdventures
 
         public void characterSetup() // Creating an eclipse that will show the players current location
         {
+            otherCharactersMarker();
             characterMove();
 
             int a = Main.M.GameNumber;
@@ -104,10 +105,10 @@ namespace AmazingAdventures
             Controls.Add(playerMarker);
             playerMarker.BringToFront();
 
-            otherCharactersMarker();
         }
         private void characterCheckLocation()
         {
+            showPreviousTile(preTile);
             otherCharactersMarker();
 
             if (preTile == 15 && curTile == 16 ||
@@ -258,7 +259,8 @@ namespace AmazingAdventures
             Size locationOfMove = new Size(pt);                                           // converts to size
             playerMarker.Visible = true;
             playerMarker.Location = new System.Drawing.Point(locationOfMove);             // moves character to tile
-            showPreviousTile(preTile);
+
+            playerMarker.BringToFront();
         }
         private void showPreviousTile(int tile)
         {
@@ -307,11 +309,14 @@ namespace AmazingAdventures
             {
                 foreach (Characters item in Main.CharacterList)
                 {
-                    string x = "pb" + item.TileID;                                                
-                    PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        
-                    pb.Visible = true;
-                    var labelToRemove = Controls[item.ID.ToString()];
-                    Controls.Remove(labelToRemove);
+                    if (item.TileID != null)
+                    {
+                        string x = "pb" + item.TileID;
+                        PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
+                        pb.Visible = true;
+                        var labelToRemove = Controls[item.ID.ToString()];
+                        Controls.Remove(labelToRemove);
+                    }
                 }
             }
 
@@ -325,27 +330,30 @@ namespace AmazingAdventures
             { 
                 foreach (Characters item in Main.CharacterList)
                 {
-                    string x = "pb" + item.TileID;                                                // gets picturebox name
-                    PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
-                    pb.Visible = false;                                                           // changes the controls properties
-                    Point pt = pb.FindForm().PointToClient(pb.Parent.PointToScreen(pb.Location)); // gets control location
-                    Size playerLocation = new Size(pt);                                           // converts to size
+                    if (item.TileID != null)
+                    {
+                        string x = "pb" + item.TileID;                                                // gets picturebox name
+                        PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
+                        pb.Visible = false;                                                           // changes the controls properties
+                        Point pt = pb.FindForm().PointToClient(pb.Parent.PointToScreen(pb.Location)); // gets control location
+                        Size playerLocation = new Size(pt);                                           // converts to size
 
-                    button[i] = new ButtonEllipse();
+                        button[i] = new ButtonEllipse();
 
-                    button[i].BackColor = ColorTranslator.FromHtml(item.Colour);
-                    button[i].ForeColor = ColorTranslator.FromHtml(item.Colour);
-                    button[i].FlatStyle = FlatStyle.Flat;
-                    button[i].Location = new System.Drawing.Point(playerLocation);
-                    button[i].Name = item.ID.ToString();
-                    button[i].Size = new System.Drawing.Size(86, 86);
-                    button[i].Invalidate();
-                    button[i].Text = item.Name;
-                    button[i].Enabled = false;
-                    button[i].Font = new Font("Arial", 12);
-                    Controls.Add(button[i]);
-                    button[i].BringToFront();
-                    i++;
+                        button[i].BackColor = ColorTranslator.FromHtml(item.Colour);
+                        button[i].ForeColor = ColorTranslator.FromHtml(item.Colour);
+                        button[i].FlatStyle = FlatStyle.Flat;
+                        button[i].Location = new System.Drawing.Point(playerLocation);
+                        button[i].Name = item.ID.ToString();
+                        button[i].Size = new System.Drawing.Size(86, 86);
+                        button[i].Invalidate();
+                        button[i].Text = item.Name;
+                        button[i].Enabled = false;
+                        button[i].Font = new Font("Arial", 12);
+                        Controls.Add(button[i]);
+                        button[i].BringToFront();
+                        i++;
+                    }
                 }
             }
         }
