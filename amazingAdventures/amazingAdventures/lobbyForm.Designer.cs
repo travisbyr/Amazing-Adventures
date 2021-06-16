@@ -43,7 +43,6 @@ namespace AmazingAdventures
             this.adminButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // currentGameList
@@ -200,15 +199,6 @@ namespace AmazingAdventures
             this.label5.TabIndex = 17;
             this.label5.Text = "Travis: 15 items";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "label100";
-            // 
             // LobbyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,7 +206,6 @@ namespace AmazingAdventures
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1040, 716);
             this.ControlBox = false;
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.adminButton);
@@ -256,6 +245,5 @@ namespace AmazingAdventures
         public System.Windows.Forms.ListBox currentGameList;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
     }
 }

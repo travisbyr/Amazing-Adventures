@@ -48,3 +48,4 @@ C:\Users\tbyrm\Documents\Workspace\DAT602\amazingAdventures\amazingAdventures\am
 C:\Users\tbyrm\Documents\Workspace\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.NewGameForm.resources
 C:\Users\tbyrm\Documents\Workspace\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.CharacterCreateForm.resources
 C:\Users\tbyrm\Documents\Workspace\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\amazingAdventures.csprojAssemblyReference.cache
+C:\Users\tbyrm\Documents\Workspace\DAT602\amazingAdventures\amazingAdventures\amazingAdventures\obj\Debug\AmazingAdventures.GameLoseForm.resources

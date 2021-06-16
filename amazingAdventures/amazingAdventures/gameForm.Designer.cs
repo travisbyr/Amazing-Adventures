@@ -31,14 +31,12 @@ namespace AmazingAdventures
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.leaveButton = new System.Windows.Forms.Button();
             this.upButton = new System.Windows.Forms.Button();
             this.downButton = new System.Windows.Forms.Button();
             this.leftButton = new System.Windows.Forms.Button();
             this.rightButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.gameFormBackground = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,7 +44,6 @@ namespace AmazingAdventures
             this.totalFoundItemsLabel = new System.Windows.Forms.Label();
             this.foundItemLabel = new System.Windows.Forms.Label();
             this.totalPlayersLabel = new System.Windows.Forms.Label();
-            this.photoPlaceholderLabel = new System.Windows.Forms.Label();
             this.pb121 = new System.Windows.Forms.PictureBox();
             this.pb106 = new System.Windows.Forms.PictureBox();
             this.pb91 = new System.Windows.Forms.PictureBox();
@@ -182,8 +179,9 @@ namespace AmazingAdventures
             this.pb45 = new System.Windows.Forms.PictureBox();
             this.pb30 = new System.Windows.Forms.PictureBox();
             this.pb15 = new System.Windows.Forms.PictureBox();
-            this.gameLTwoErrorLbl = new System.Windows.Forms.Label();
-            this.gameLOneErrorLbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.leaderboardList = new System.Windows.Forms.ListBox();
+            this.gameBackground = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pb121)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb106)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb91)).BeginInit();
@@ -329,17 +327,6 @@ namespace AmazingAdventures
             this.label1.Size = new System.Drawing.Size(2, 1103);
             this.label1.TabIndex = 0;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(525, 17);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 47);
-            this.label2.TabIndex = 8;
-            this.label2.Text = " ";
-            // 
             // leaveButton
             // 
             this.leaveButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -421,20 +408,11 @@ namespace AmazingAdventures
             this.label3.TabIndex = 20;
             this.label3.Text = "Amazing Adventures";
             // 
-            // gameFormBackground
-            // 
-            this.gameFormBackground.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.gameFormBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gameFormBackground.Location = new System.Drawing.Point(52, 91);
-            this.gameFormBackground.Name = "gameFormBackground";
-            this.gameFormBackground.Size = new System.Drawing.Size(1395, 844);
-            this.gameFormBackground.TabIndex = 21;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(1622, 178);
+            this.label5.Location = new System.Drawing.Point(1621, 136);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 37);
             this.label5.TabIndex = 22;
@@ -444,7 +422,7 @@ namespace AmazingAdventures
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(1628, 322);
+            this.label6.Location = new System.Drawing.Point(1630, 255);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 37);
             this.label6.TabIndex = 23;
@@ -454,7 +432,7 @@ namespace AmazingAdventures
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(1612, 729);
+            this.label7.Location = new System.Drawing.Point(1620, 861);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(170, 37);
             this.label7.TabIndex = 24;
@@ -464,7 +442,7 @@ namespace AmazingAdventures
             // 
             this.highscoreLabel.AutoSize = true;
             this.highscoreLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.highscoreLabel.Location = new System.Drawing.Point(1648, 223);
+            this.highscoreLabel.Location = new System.Drawing.Point(1647, 181);
             this.highscoreLabel.Name = "highscoreLabel";
             this.highscoreLabel.Size = new System.Drawing.Size(86, 28);
             this.highscoreLabel.TabIndex = 25;
@@ -474,7 +452,7 @@ namespace AmazingAdventures
             // 
             this.totalFoundItemsLabel.AutoSize = true;
             this.totalFoundItemsLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.totalFoundItemsLabel.Location = new System.Drawing.Point(1649, 366);
+            this.totalFoundItemsLabel.Location = new System.Drawing.Point(1651, 299);
             this.totalFoundItemsLabel.Name = "totalFoundItemsLabel";
             this.totalFoundItemsLabel.Size = new System.Drawing.Size(86, 28);
             this.totalFoundItemsLabel.TabIndex = 26;
@@ -484,7 +462,7 @@ namespace AmazingAdventures
             // 
             this.foundItemLabel.AutoSize = true;
             this.foundItemLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.foundItemLabel.Location = new System.Drawing.Point(1604, 627);
+            this.foundItemLabel.Location = new System.Drawing.Point(1609, 368);
             this.foundItemLabel.Name = "foundItemLabel";
             this.foundItemLabel.Size = new System.Drawing.Size(187, 28);
             this.foundItemLabel.TabIndex = 27;
@@ -494,20 +472,11 @@ namespace AmazingAdventures
             // 
             this.totalPlayersLabel.AutoSize = true;
             this.totalPlayersLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.totalPlayersLabel.Location = new System.Drawing.Point(1652, 775);
+            this.totalPlayersLabel.Location = new System.Drawing.Point(1658, 907);
             this.totalPlayersLabel.Name = "totalPlayersLabel";
             this.totalPlayersLabel.Size = new System.Drawing.Size(89, 28);
             this.totalPlayersLabel.TabIndex = 28;
             this.totalPlayersLabel.Text = "2 Players";
-            // 
-            // photoPlaceholderLabel
-            // 
-            this.photoPlaceholderLabel.BackColor = System.Drawing.SystemColors.Window;
-            this.photoPlaceholderLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.photoPlaceholderLabel.Location = new System.Drawing.Point(1596, 407);
-            this.photoPlaceholderLabel.Name = "photoPlaceholderLabel";
-            this.photoPlaceholderLabel.Size = new System.Drawing.Size(200, 200);
-            this.photoPlaceholderLabel.TabIndex = 29;
             // 
             // pb121
             // 
@@ -1859,33 +1828,32 @@ namespace AmazingAdventures
             this.pb15.TabIndex = 156;
             this.pb15.TabStop = false;
             // 
-            // gameLTwoErrorLbl
+            // label4
             // 
-            this.gameLTwoErrorLbl.AutoSize = true;
-            this.gameLTwoErrorLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold);
-            this.gameLTwoErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.gameLTwoErrorLbl.Location = new System.Drawing.Point(1567, 911);
-            this.gameLTwoErrorLbl.MinimumSize = new System.Drawing.Size(263, 16);
-            this.gameLTwoErrorLbl.Name = "gameLTwoErrorLbl";
-            this.gameLTwoErrorLbl.Size = new System.Drawing.Size(263, 20);
-            this.gameLTwoErrorLbl.TabIndex = 166;
-            this.gameLTwoErrorLbl.Text = "Tile is already occupied.";
-            this.gameLTwoErrorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.gameLTwoErrorLbl.Visible = false;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(1614, 440);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(170, 37);
+            this.label4.TabIndex = 167;
+            this.label4.Text = "Leaderboard";
             // 
-            // gameLOneErrorLbl
+            // leaderboardList
             // 
-            this.gameLOneErrorLbl.AutoSize = true;
-            this.gameLOneErrorLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.gameLOneErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.gameLOneErrorLbl.Location = new System.Drawing.Point(1616, 889);
-            this.gameLOneErrorLbl.MinimumSize = new System.Drawing.Size(165, 17);
-            this.gameLOneErrorLbl.Name = "gameLOneErrorLbl";
-            this.gameLOneErrorLbl.Size = new System.Drawing.Size(165, 22);
-            this.gameLOneErrorLbl.TabIndex = 165;
-            this.gameLOneErrorLbl.Text = "Invalid move!";
-            this.gameLOneErrorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.gameLOneErrorLbl.Visible = false;
+            this.leaderboardList.FormattingEnabled = true;
+            this.leaderboardList.Location = new System.Drawing.Point(1600, 491);
+            this.leaderboardList.Name = "leaderboardList";
+            this.leaderboardList.Size = new System.Drawing.Size(200, 342);
+            this.leaderboardList.TabIndex = 168;
+            // 
+            // gameBackground
+            // 
+            this.gameBackground.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gameBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gameBackground.Location = new System.Drawing.Point(52, 91);
+            this.gameBackground.Name = "gameBackground";
+            this.gameBackground.Size = new System.Drawing.Size(1395, 844);
+            this.gameBackground.TabIndex = 169;
             // 
             // GameForm
             // 
@@ -1895,8 +1863,8 @@ namespace AmazingAdventures
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1880, 1073);
             this.ControlBox = false;
-            this.Controls.Add(this.gameLTwoErrorLbl);
-            this.Controls.Add(this.gameLOneErrorLbl);
+            this.Controls.Add(this.leaderboardList);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pb135);
             this.Controls.Add(this.pb120);
             this.Controls.Add(this.pb105);
@@ -2032,7 +2000,6 @@ namespace AmazingAdventures
             this.Controls.Add(this.pb31);
             this.Controls.Add(this.pb16);
             this.Controls.Add(this.pb1);
-            this.Controls.Add(this.photoPlaceholderLabel);
             this.Controls.Add(this.totalPlayersLabel);
             this.Controls.Add(this.foundItemLabel);
             this.Controls.Add(this.totalFoundItemsLabel);
@@ -2040,15 +2007,14 @@ namespace AmazingAdventures
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.gameFormBackground);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rightButton);
             this.Controls.Add(this.leftButton);
             this.Controls.Add(this.downButton);
             this.Controls.Add(this.upButton);
             this.Controls.Add(this.leaveButton);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.gameBackground);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1896, 1112);
@@ -2057,6 +2023,7 @@ namespace AmazingAdventures
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Game";
+            this.Load += new System.EventHandler(this.GameForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb121)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb106)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb91)).EndInit();
@@ -2200,14 +2167,12 @@ namespace AmazingAdventures
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button leaveButton;
         private System.Windows.Forms.Button upButton;
         private System.Windows.Forms.Button downButton;
         private System.Windows.Forms.Button leftButton;
         private System.Windows.Forms.Button rightButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label gameFormBackground;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -2215,7 +2180,6 @@ namespace AmazingAdventures
         private System.Windows.Forms.Label totalFoundItemsLabel;
         private System.Windows.Forms.Label foundItemLabel;
         private System.Windows.Forms.Label totalPlayersLabel;
-        private System.Windows.Forms.Label photoPlaceholderLabel;
         private System.Windows.Forms.PictureBox pb121;
         private System.Windows.Forms.PictureBox pb106;
         private System.Windows.Forms.PictureBox pb91;
@@ -2351,7 +2315,8 @@ namespace AmazingAdventures
         private System.Windows.Forms.PictureBox pb45;
         private System.Windows.Forms.PictureBox pb30;
         private System.Windows.Forms.PictureBox pb15;
-        public System.Windows.Forms.Label gameLTwoErrorLbl;
-        public System.Windows.Forms.Label gameLOneErrorLbl;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox leaderboardList;
+        private System.Windows.Forms.Panel gameBackground;
     }
 }

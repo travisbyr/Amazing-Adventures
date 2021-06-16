@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -109,7 +110,7 @@ namespace AmazingAdventures
         }
         private void characterCheckLocation()
         {
-            showPreviousTile(preTile);
+           // showPreviousTile(preTile);
             otherCharactersMarker();
             itemMarker();
 
@@ -179,22 +180,21 @@ namespace AmazingAdventures
             {
                 curTile = preTile;
                 preTile = prePreTile;
-                gameLOneErrorLbl.Visible = true;
-                gameLTwoErrorLbl.Visible = true;
-            }
-            else if (DataAccess.Message == "succMove")
-            {
                 characterMove();
-                DataAccess.addItems(Main.M.GameNumber);
-                gameLOneErrorLbl.Visible = false;
-                gameLTwoErrorLbl.Visible = false;
             }
             else if (DataAccess.Message == "itemFound")
             {
                 characterMove();
                 DataAccess.addItems(Main.M.GameNumber);
-                gameLOneErrorLbl.Visible = false;
-                gameLTwoErrorLbl.Visible = false;
+            }
+            else if (DataAccess.Message == "trapFound")
+            {
+                Hide();
+                GameLoseForm.GameLose.Show();
+            }
+            else
+            {
+                characterMove();
             }
         }
         private void characterMove()
@@ -253,7 +253,6 @@ namespace AmazingAdventures
         
         private void otherCharactersMarker()
         {
-
             if (Main.CharacterList.Count() > 0)
             {
                 foreach (Characters item in Main.CharacterList)
@@ -306,7 +305,6 @@ namespace AmazingAdventures
                 }
             }
         }
-
         private void itemMarker()
         {
             if (Main.ItemList.Count() > 0)
@@ -334,6 +332,11 @@ namespace AmazingAdventures
                     i++;
                 }
             }
+        }
+
+        private void GameForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
