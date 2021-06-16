@@ -103,6 +103,7 @@ namespace AmazingAdventures
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(492, 303);
+            this.ControlBox = false;
             this.Controls.Add(this.cancelGameBtn);
             this.Controls.Add(this.createGameBtn);
             this.Controls.Add(this.Use);
