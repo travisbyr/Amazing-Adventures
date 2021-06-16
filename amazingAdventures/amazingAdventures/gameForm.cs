@@ -309,12 +309,32 @@ namespace AmazingAdventures
 
         private void itemMarker()
         {
+            if (Main.ItemList.Count() > 0)
+            {
+                foreach (Items item in Main.ItemList)
+                {
+                    string x = "pb" + item.TileID;
+                    PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
+                    pb.Image = null;                    
+                }
+            }
+
             Main.ItemList.Clear();
             DataAccess.getGameItems(Main.M.GameNumber);
-            foreach (Items item in Main.ItemList)
+            int n = Main.ItemList.Count();
+
+            for (int i = 0; i < n; i++)
             {
-                MessageBox.Show(item.Name);
+                foreach (Items item in Main.ItemList)
+                {
+                    string x = "pb" + item.TileID;                                                
+                    PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        
+                    Image image = Image.FromFile(@item.Photo);
+                    pb.Image = image;
+                    i++;
+                }
             }
         }
     }
 }
+

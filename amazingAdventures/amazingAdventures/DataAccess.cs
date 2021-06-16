@@ -796,10 +796,11 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    int a = Int32.Parse(myReader.GetString("ID"));
                     string b = myReader.GetString("NME");
                     string c = myReader.GetString("PIC");
-                    Main.ItemList.Add(new Items() { TileID = a, Name = b, Photo = c});
+                    int tile = Int32.Parse(myReader.GetString("ID"));
+
+                    Main.ItemList.Add(new Items() { TileID = tile, Name = b, Photo = c});
                 }
             }
             finally
