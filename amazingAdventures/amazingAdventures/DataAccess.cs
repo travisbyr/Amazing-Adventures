@@ -761,7 +761,6 @@ namespace AmazingAdventures
                 connect.Close();
             }
         }
-
         public static void checkAdmin(string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("checkAdmin", connect); // Select stored proecdure name
@@ -776,6 +775,31 @@ namespace AmazingAdventures
                 while (myReader.Read())
                 {
                     Message = myReader.GetString("MESSAGE");
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
+
+        public static void getGameItems(int pgamenumber)
+        {
+            MySqlCommand cmd = new MySqlCommand("getGameItems", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("pGameNumber", pgamenumber); // Add a parameter
+            connect.Open();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    int a = Int32.Parse(myReader.GetString("ID"));
+                    string b = myReader.GetString("NME");
+                    string c = myReader.GetString("PIC");
+                    Main.ItemList.Add(new Items() { TileID = a, Name = b, Photo = c});
                 }
             }
             finally

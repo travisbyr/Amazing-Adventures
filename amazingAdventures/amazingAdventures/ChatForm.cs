@@ -25,11 +25,6 @@ namespace AmazingAdventures
             refreshChat();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void chatCloseBtn_Click(object sender, EventArgs e)
         {
             Hide();
@@ -47,6 +42,8 @@ namespace AmazingAdventures
                     chatMessageListBox.Items.Add(item.ChatDateTime + " - " + item.PlayerUsername + " - " + item.ChatText);
                 }
             }
+            int visibleItems = chatMessageListBox.ClientSize.Height / chatMessageListBox.ItemHeight;
+            chatMessageListBox.TopIndex = Math.Max(chatMessageListBox.Items.Count - visibleItems + 1, 0);
         }
 
         private void submitChatBtn_Click(object sender, EventArgs e)

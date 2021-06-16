@@ -29,11 +29,6 @@ namespace AmazingAdventures
             loginBtn.FlatAppearance.BorderColor = Color.Blue;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             login();
@@ -77,6 +72,10 @@ namespace AmazingAdventures
                     usrnInvalidSecondLabel.Visible = true;
                 } else if (DataAccess.Message == "SLogin")
                 {
+                    usrnValidFirstLine.Visible = false;
+                    usrnValidSecondLine.Visible = false;
+                    usrnInvalidFirstLabel.Visible = false;
+                    usrnInvalidSecondLabel.Visible = false;
                     Main.M.Username = loginUsername.Text;
                     LobbyForm.Lobby.Show();
                     Hide();

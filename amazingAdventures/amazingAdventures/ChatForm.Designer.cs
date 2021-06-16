@@ -58,7 +58,6 @@ namespace AmazingAdventures
             this.label1.Size = new System.Drawing.Size(354, 37);
             this.label1.TabIndex = 8;
             this.label1.Text = "Amazing Adventures - Chat";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // chatTxtBox
             // 
@@ -129,12 +128,11 @@ namespace AmazingAdventures
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox chatMessageListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox chatTxtBox;
         private System.Windows.Forms.Button chatCloseBtn;
         private System.Windows.Forms.Button submitChatBtn;
         public System.Windows.Forms.Label chatErrorLine;
+        public System.Windows.Forms.ListBox chatMessageListBox;
     }
 }
