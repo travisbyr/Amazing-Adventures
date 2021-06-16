@@ -21,12 +21,24 @@ namespace AmazingAdventures
         public GameLoseForm()
         {
             InitializeComponent();
+
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
             Hide();
+            LobbyForm.Lobby.updateLeaderboard();
             LobbyForm.Lobby.Show();
+        }
+        public void updatePoints()
+        {
+            foreach (Leaderboard item in Main.LeaderboardList)
+            {
+                if (item.PName == Main.M.CharacterName)
+                {
+                    pointsEndLabel.Text = item.PScore + " Points";
+                }
+            }
         }
     }
 }

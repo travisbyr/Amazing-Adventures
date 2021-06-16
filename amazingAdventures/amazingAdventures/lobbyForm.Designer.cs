@@ -42,7 +42,7 @@ namespace AmazingAdventures
             this.logoutButton = new System.Windows.Forms.Button();
             this.adminButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lobbyHighScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // currentGameList
@@ -65,6 +65,7 @@ namespace AmazingAdventures
             this.onlinePlayersList.Location = new System.Drawing.Point(708, 107);
             this.onlinePlayersList.Name = "onlinePlayersList";
             this.onlinePlayersList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.onlinePlayersList.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.onlinePlayersList.Size = new System.Drawing.Size(283, 479);
             this.onlinePlayersList.TabIndex = 1;
             // 
@@ -183,21 +184,22 @@ namespace AmazingAdventures
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(417, 119);
+            this.label4.Location = new System.Drawing.Point(405, 119);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(198, 31);
+            this.label4.Size = new System.Drawing.Size(227, 31);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Highest Score";
+            this.label4.Text = "Your High Score";
             // 
-            // label5
+            // lobbyHighScore
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label5.Location = new System.Drawing.Point(431, 165);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 26);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Travis: 15 items";
+            this.lobbyHighScore.AutoSize = true;
+            this.lobbyHighScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lobbyHighScore.Location = new System.Drawing.Point(466, 165);
+            this.lobbyHighScore.Name = "lobbyHighScore";
+            this.lobbyHighScore.Size = new System.Drawing.Size(91, 26);
+            this.lobbyHighScore.TabIndex = 17;
+            this.lobbyHighScore.Text = "0 Points";
+            this.lobbyHighScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LobbyForm
             // 
@@ -206,7 +208,7 @@ namespace AmazingAdventures
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1040, 716);
             this.ControlBox = false;
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lobbyHighScore);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.adminButton);
             this.Controls.Add(this.logoutButton);
@@ -232,7 +234,6 @@ namespace AmazingAdventures
         }
 
         #endregion
-        private System.Windows.Forms.ListBox onlinePlayersList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -244,6 +245,7 @@ namespace AmazingAdventures
         private System.Windows.Forms.Button adminButton;
         public System.Windows.Forms.ListBox currentGameList;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label lobbyHighScore;
+        public System.Windows.Forms.ListBox onlinePlayersList;
     }
 }

@@ -77,6 +77,7 @@ namespace AmazingAdventures
                     usrnInvalidSecondLabel.Visible = false;
                     Main.M.Username = loginUsername.Text;
                     LobbyForm.Lobby.Show();
+                    LobbyForm.Lobby.updateLeaderboard();
                     Hide();
                 }
             }

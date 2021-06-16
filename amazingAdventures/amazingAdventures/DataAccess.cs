@@ -351,11 +351,10 @@ namespace AmazingAdventures
             }
         }
 
-        public static void viewLeaderboard(int pgamenumber)
+        public static void viewLeaderboard()
         {
             MySqlCommand cmd = new MySqlCommand("viewLeaderboard", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("pGameNumber", pgamenumber); // Add a parameter
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();
@@ -363,10 +362,9 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    Main.M.LeaderboardGame = myReader.GetString("GameName");
-                    Main.M.LeaderboardList.Add(myReader.GetString("CharacterName"));
-                    Main.M.LeaderboardList.Add(myReader.GetString("CharacterScore"));
-                    Message = myReader.GetString("MESSAGE"); // Get message  
+                    string a = myReader.GetString("PlayerUsername");
+                    int b = Int32.Parse(myReader.GetString("Highscore"));
+                    Main.LeaderboardList.Add(new Leaderboard() { PName = a, PScore = b});
                 }
             }
             finally
@@ -801,6 +799,30 @@ namespace AmazingAdventures
                     int tile = Int32.Parse(myReader.GetString("ID"));
 
                     Main.ItemList.Add(new Items() { TileID = tile, Name = b, Photo = c});
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
+
+        public static void getHighscore(string pusername)
+        {
+            MySqlCommand cmd = new MySqlCommand("getPlayerScore", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
+            connect.Open();
+            cmd.ExecuteNonQuery();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    int x = Int32.Parse(myReader.GetString("Highscore"));
+                    Message = x.ToString(); 
                 }
             }
             finally

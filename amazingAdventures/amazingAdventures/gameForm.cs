@@ -40,6 +40,7 @@ namespace AmazingAdventures
 
             DataAccess.characterQuits(curTile, Main.M.Username, Main.M.GameNumber);
             Hide();
+            LobbyForm.Lobby.updateLeaderboard();
             LobbyForm.Lobby.Show();
         }
 
@@ -110,9 +111,10 @@ namespace AmazingAdventures
         }
         private void characterCheckLocation()
         {
-           // showPreviousTile(preTile);
+            showPreviousTile(preTile);
             otherCharactersMarker();
             itemMarker();
+
 
             if (preTile == 15 && curTile == 16 ||
                 preTile == 30 && curTile == 31 ||
@@ -186,10 +188,12 @@ namespace AmazingAdventures
             {
                 characterMove();
                 DataAccess.addItems(Main.M.GameNumber);
+                LobbyForm.Lobby.updateLeaderboard();
             }
             else if (DataAccess.Message == "trapFound")
             {
                 Hide();
+                GameLoseForm.GameLose.updatePoints();
                 GameLoseForm.GameLose.Show();
             }
             else
@@ -338,6 +342,7 @@ namespace AmazingAdventures
         {
 
         }
+
     }
 }
 

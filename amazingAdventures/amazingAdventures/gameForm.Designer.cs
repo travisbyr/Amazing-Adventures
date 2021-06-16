@@ -39,11 +39,8 @@ namespace AmazingAdventures
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.highscoreLabel = new System.Windows.Forms.Label();
             this.totalFoundItemsLabel = new System.Windows.Forms.Label();
-            this.foundItemLabel = new System.Windows.Forms.Label();
-            this.totalPlayersLabel = new System.Windows.Forms.Label();
             this.pb121 = new System.Windows.Forms.PictureBox();
             this.pb106 = new System.Windows.Forms.PictureBox();
             this.pb91 = new System.Windows.Forms.PictureBox();
@@ -412,7 +409,7 @@ namespace AmazingAdventures
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(1621, 136);
+            this.label5.Location = new System.Drawing.Point(1622, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 37);
             this.label5.TabIndex = 22;
@@ -422,61 +419,31 @@ namespace AmazingAdventures
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(1630, 255);
+            this.label6.Location = new System.Drawing.Point(1652, 317);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 37);
+            this.label6.Size = new System.Drawing.Size(85, 37);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Backpack";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(1620, 861);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(170, 37);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Total Players";
+            this.label6.Text = "Score";
             // 
             // highscoreLabel
             // 
             this.highscoreLabel.AutoSize = true;
             this.highscoreLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.highscoreLabel.Location = new System.Drawing.Point(1647, 181);
+            this.highscoreLabel.Location = new System.Drawing.Point(1647, 213);
             this.highscoreLabel.Name = "highscoreLabel";
-            this.highscoreLabel.Size = new System.Drawing.Size(86, 28);
+            this.highscoreLabel.Size = new System.Drawing.Size(93, 28);
             this.highscoreLabel.TabIndex = 25;
-            this.highscoreLabel.Text = "68 Items";
+            this.highscoreLabel.Text = "68 Points";
             // 
             // totalFoundItemsLabel
             // 
             this.totalFoundItemsLabel.AutoSize = true;
             this.totalFoundItemsLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.totalFoundItemsLabel.Location = new System.Drawing.Point(1651, 299);
+            this.totalFoundItemsLabel.Location = new System.Drawing.Point(1651, 361);
             this.totalFoundItemsLabel.Name = "totalFoundItemsLabel";
-            this.totalFoundItemsLabel.Size = new System.Drawing.Size(86, 28);
+            this.totalFoundItemsLabel.Size = new System.Drawing.Size(93, 28);
             this.totalFoundItemsLabel.TabIndex = 26;
-            this.totalFoundItemsLabel.Text = "12 Items";
-            // 
-            // foundItemLabel
-            // 
-            this.foundItemLabel.AutoSize = true;
-            this.foundItemLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.foundItemLabel.Location = new System.Drawing.Point(1609, 368);
-            this.foundItemLabel.Name = "foundItemLabel";
-            this.foundItemLabel.Size = new System.Drawing.Size(187, 28);
-            this.foundItemLabel.TabIndex = 27;
-            this.foundItemLabel.Text = "You found an apple!";
-            // 
-            // totalPlayersLabel
-            // 
-            this.totalPlayersLabel.AutoSize = true;
-            this.totalPlayersLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.totalPlayersLabel.Location = new System.Drawing.Point(1658, 907);
-            this.totalPlayersLabel.Name = "totalPlayersLabel";
-            this.totalPlayersLabel.Size = new System.Drawing.Size(89, 28);
-            this.totalPlayersLabel.TabIndex = 28;
-            this.totalPlayersLabel.Text = "2 Players";
+            this.totalFoundItemsLabel.Text = "12 Points";
             // 
             // pb121
             // 
@@ -1832,7 +1799,7 @@ namespace AmazingAdventures
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(1614, 440);
+            this.label4.Location = new System.Drawing.Point(1619, 473);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(170, 37);
             this.label4.TabIndex = 167;
@@ -1840,10 +1807,13 @@ namespace AmazingAdventures
             // 
             // leaderboardList
             // 
+            this.leaderboardList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.leaderboardList.FormattingEnabled = true;
-            this.leaderboardList.Location = new System.Drawing.Point(1600, 491);
+            this.leaderboardList.ItemHeight = 24;
+            this.leaderboardList.Location = new System.Drawing.Point(1607, 524);
             this.leaderboardList.Name = "leaderboardList";
-            this.leaderboardList.Size = new System.Drawing.Size(200, 342);
+            this.leaderboardList.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.leaderboardList.Size = new System.Drawing.Size(200, 340);
             this.leaderboardList.TabIndex = 168;
             // 
             // gameBackground
@@ -2000,11 +1970,8 @@ namespace AmazingAdventures
             this.Controls.Add(this.pb31);
             this.Controls.Add(this.pb16);
             this.Controls.Add(this.pb1);
-            this.Controls.Add(this.totalPlayersLabel);
-            this.Controls.Add(this.foundItemLabel);
             this.Controls.Add(this.totalFoundItemsLabel);
             this.Controls.Add(this.highscoreLabel);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -2175,11 +2142,7 @@ namespace AmazingAdventures
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label highscoreLabel;
         private System.Windows.Forms.Label totalFoundItemsLabel;
-        private System.Windows.Forms.Label foundItemLabel;
-        private System.Windows.Forms.Label totalPlayersLabel;
         private System.Windows.Forms.PictureBox pb121;
         private System.Windows.Forms.PictureBox pb106;
         private System.Windows.Forms.PictureBox pb91;
@@ -2318,5 +2281,6 @@ namespace AmazingAdventures
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox leaderboardList;
         private System.Windows.Forms.Panel gameBackground;
+        public System.Windows.Forms.Label highscoreLabel;
     }
 }
