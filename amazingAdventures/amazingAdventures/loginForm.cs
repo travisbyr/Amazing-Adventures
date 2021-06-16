@@ -28,7 +28,6 @@ namespace AmazingAdventures
             registerBtn.FlatAppearance.BorderColor = Color.Blue;
             loginBtn.FlatAppearance.BorderColor = Color.Blue;
         }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             login();

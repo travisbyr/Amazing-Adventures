@@ -41,6 +41,8 @@ namespace AmazingAdventures
             this.registerBtn = new System.Windows.Forms.Button();
             this.usrnValidSecondLine = new System.Windows.Forms.Label();
             this.usrnValidFirstLine = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // loginBtn
@@ -180,6 +182,14 @@ namespace AmazingAdventures
             this.usrnValidFirstLine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.usrnValidFirstLine.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(50, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(372, 261);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.loginBtn;
@@ -187,6 +197,7 @@ namespace AmazingAdventures
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(492, 372);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usrnValidSecondLine);
             this.Controls.Add(this.usrnValidFirstLine);
             this.Controls.Add(this.registerBtn);
@@ -205,6 +216,7 @@ namespace AmazingAdventures
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,6 +235,7 @@ namespace AmazingAdventures
         public System.Windows.Forms.Button registerBtn;
         public System.Windows.Forms.Label usrnValidSecondLine;
         public System.Windows.Forms.Label usrnValidFirstLine;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

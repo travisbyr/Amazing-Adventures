@@ -46,7 +46,6 @@ namespace AmazingAdventures
         {
             moveUp();
         }
-
         private void downButton_Click(object sender, EventArgs e)
         {
             moveDown();
