@@ -439,11 +439,11 @@ namespace AmazingAdventures
             // 
             this.totalFoundItemsLabel.AutoSize = true;
             this.totalFoundItemsLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.totalFoundItemsLabel.Location = new System.Drawing.Point(1651, 361);
+            this.totalFoundItemsLabel.Location = new System.Drawing.Point(1653, 361);
             this.totalFoundItemsLabel.Name = "totalFoundItemsLabel";
-            this.totalFoundItemsLabel.Size = new System.Drawing.Size(93, 28);
+            this.totalFoundItemsLabel.Size = new System.Drawing.Size(82, 28);
             this.totalFoundItemsLabel.TabIndex = 26;
-            this.totalFoundItemsLabel.Text = "12 Points";
+            this.totalFoundItemsLabel.Text = "0 Points";
             // 
             // pb121
             // 
@@ -1799,18 +1799,18 @@ namespace AmazingAdventures
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(1619, 473);
+            this.label4.Location = new System.Drawing.Point(1608, 473);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 37);
+            this.label4.Size = new System.Drawing.Size(184, 37);
             this.label4.TabIndex = 167;
-            this.label4.Text = "Leaderboard";
+            this.label4.Text = "Character List";
             // 
             // leaderboardList
             // 
             this.leaderboardList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.leaderboardList.FormattingEnabled = true;
             this.leaderboardList.ItemHeight = 24;
-            this.leaderboardList.Location = new System.Drawing.Point(1607, 524);
+            this.leaderboardList.Location = new System.Drawing.Point(1599, 524);
             this.leaderboardList.Name = "leaderboardList";
             this.leaderboardList.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.leaderboardList.Size = new System.Drawing.Size(200, 340);

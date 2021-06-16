@@ -125,7 +125,6 @@ namespace AmazingAdventures
             onlinePlayersList.Items.Clear();
             Main.LeaderboardList.Clear();
             DataAccess.viewLeaderboard();
-            string x = Main.M.Username;
             foreach (Leaderboard item in Main.LeaderboardList)
             {
                 onlinePlayersList.Items.Add(item.PName + " - " + item.PScore);

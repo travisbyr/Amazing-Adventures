@@ -14,7 +14,7 @@ namespace AmazingAdventures
     public partial class GameForm : Form
     {
         ButtonEllipse playerMarker = new ButtonEllipse();
-
+        public int points = 0;
         public int prePreTile;
         public int preTile = 0;
         public int curTile;
@@ -188,7 +188,9 @@ namespace AmazingAdventures
             {
                 characterMove();
                 DataAccess.addItems(Main.M.GameNumber);
-                LobbyForm.Lobby.updateLeaderboard();
+                DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
+                totalFoundItemsLabel.Text = DataAccess.Message + " Points";
+                points = Int32.Parse(DataAccess.Message);
             }
             else if (DataAccess.Message == "trapFound")
             {

@@ -808,11 +808,12 @@ namespace AmazingAdventures
             }
         }
 
-        public static void getHighscore(string pusername)
+        public static void getCharacterScore(string pusername, int pgamenumber)
         {
-            MySqlCommand cmd = new MySqlCommand("getPlayerScore", connect); // Select stored proecdure name
+            MySqlCommand cmd = new MySqlCommand("getCharacterScore", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
+            cmd.Parameters.AddWithValue("pGameNumber", pgamenumber); // Add a parameter
             connect.Open();
             cmd.ExecuteNonQuery();
             MySqlDataReader myReader;
@@ -821,7 +822,7 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    int x = Int32.Parse(myReader.GetString("Highscore"));
+                    int x = Int32.Parse(myReader.GetString("CharacterScore"));
                     Message = x.ToString(); 
                 }
             }

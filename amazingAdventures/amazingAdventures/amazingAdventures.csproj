@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="GlobalChat.cs" />
     <Compile Include="Items.cs" />
+    <Compile Include="Leaderboard.cs" />
     <Compile Include="LobbyForm.cs">
       <SubType>Form</SubType>
     </Compile>

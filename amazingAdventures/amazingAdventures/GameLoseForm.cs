@@ -32,13 +32,8 @@ namespace AmazingAdventures
         }
         public void updatePoints()
         {
-            foreach (Leaderboard item in Main.LeaderboardList)
-            {
-                if (item.PName == Main.M.CharacterName)
-                {
-                    pointsEndLabel.Text = item.PScore + " Points";
-                }
-            }
+            DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
+            pointsEndLabel.Text = GameForm.Game.points + " Points";
         }
     }
 }
