@@ -56,12 +56,12 @@ namespace AmazingAdventures
             this.secondLoseTxt.AutoSize = true;
             this.secondLoseTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.secondLoseTxt.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.secondLoseTxt.Location = new System.Drawing.Point(142, 91);
+            this.secondLoseTxt.Location = new System.Drawing.Point(161, 91);
             this.secondLoseTxt.MinimumSize = new System.Drawing.Size(165, 17);
             this.secondLoseTxt.Name = "secondLoseTxt";
-            this.secondLoseTxt.Size = new System.Drawing.Size(198, 17);
+            this.secondLoseTxt.Size = new System.Drawing.Size(165, 17);
             this.secondLoseTxt.TabIndex = 26;
-            this.secondLoseTxt.Text = "Sadly the trap has beaten you";
+            this.secondLoseTxt.Text = "You hit a trap!";
             this.secondLoseTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // closeBtn

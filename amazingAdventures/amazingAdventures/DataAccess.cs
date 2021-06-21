@@ -794,11 +794,14 @@ namespace AmazingAdventures
             {
                 while (myReader.Read())
                 {
-                    string b = myReader.GetString("NME");
-                    string c = myReader.GetString("PIC");
-                    int tile = Int32.Parse(myReader.GetString("ID"));
-
-                    Main.ItemList.Add(new Items() { TileID = tile, Name = b, Photo = c});
+                    int x = myReader.GetInt32("VAL");
+                    if (x != 0)
+                    {
+                        string b = myReader.GetString("NME");
+                        string c = myReader.GetString("PIC");
+                        int tile = Int32.Parse(myReader.GetString("ID"));
+                        Main.ItemList.Add(new Items() { TileID = tile, Name = b, Photo = c });
+                    }
                 }
             }
             finally

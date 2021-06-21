@@ -334,6 +334,11 @@ namespace AmazingAdventures
         {
             ChatForm.Chat.Show();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

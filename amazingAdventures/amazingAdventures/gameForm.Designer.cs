@@ -171,9 +171,10 @@ namespace AmazingAdventures
             this.pb30 = new System.Windows.Forms.PictureBox();
             this.pb15 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.leaderboardList = new System.Windows.Forms.ListBox();
             this.gameBackground = new System.Windows.Forms.Panel();
             this.openChatBtn = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pb121)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb106)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb91)).BeginInit();
@@ -309,6 +310,8 @@ namespace AmazingAdventures
             ((System.ComponentModel.ISupportInitialize)(this.pb45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -336,31 +339,31 @@ namespace AmazingAdventures
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 30.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label3.Location = new System.Drawing.Point(587, 17);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(351, 47);
+            this.label3.Size = new System.Drawing.Size(350, 48);
             this.label3.TabIndex = 20;
             this.label3.Text = "Amazing Adventures";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(1652, 135);
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(73, 25);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 37);
+            this.label6.Size = new System.Drawing.Size(117, 24);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Score";
+            this.label6.Text = "Your score is:";
             // 
             // totalFoundItemsLabel
             // 
             this.totalFoundItemsLabel.AutoSize = true;
-            this.totalFoundItemsLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.totalFoundItemsLabel.Location = new System.Drawing.Point(1653, 179);
+            this.totalFoundItemsLabel.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
+            this.totalFoundItemsLabel.Location = new System.Drawing.Point(100, 56);
             this.totalFoundItemsLabel.Name = "totalFoundItemsLabel";
-            this.totalFoundItemsLabel.Size = new System.Drawing.Size(82, 28);
+            this.totalFoundItemsLabel.Size = new System.Drawing.Size(66, 21);
             this.totalFoundItemsLabel.TabIndex = 26;
             this.totalFoundItemsLabel.Text = "0 Points";
             // 
@@ -1717,23 +1720,12 @@ namespace AmazingAdventures
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(1608, 260);
+            this.label4.Font = new System.Drawing.Font("Tw Cen MT", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label4.Location = new System.Drawing.Point(1606, 325);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 37);
+            this.label4.Size = new System.Drawing.Size(187, 37);
             this.label4.TabIndex = 167;
             this.label4.Text = "Character List";
-            // 
-            // leaderboardList
-            // 
-            this.leaderboardList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.leaderboardList.FormattingEnabled = true;
-            this.leaderboardList.ItemHeight = 24;
-            this.leaderboardList.Location = new System.Drawing.Point(1599, 311);
-            this.leaderboardList.Name = "leaderboardList";
-            this.leaderboardList.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.leaderboardList.Size = new System.Drawing.Size(200, 340);
-            this.leaderboardList.TabIndex = 168;
             // 
             // gameBackground
             // 
@@ -1758,6 +1750,26 @@ namespace AmazingAdventures
             this.openChatBtn.UseVisualStyleBackColor = false;
             this.openChatBtn.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(1563, 392);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(266, 440);
+            this.dataGridView1.TabIndex = 171;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.totalFoundItemsLabel);
+            this.panel1.Location = new System.Drawing.Point(1563, 150);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(266, 110);
+            this.panel1.TabIndex = 172;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1766,8 +1778,9 @@ namespace AmazingAdventures
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1880, 981);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.openChatBtn);
-            this.Controls.Add(this.leaderboardList);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pb135);
             this.Controls.Add(this.pb120);
@@ -1904,8 +1917,6 @@ namespace AmazingAdventures
             this.Controls.Add(this.pb31);
             this.Controls.Add(this.pb16);
             this.Controls.Add(this.pb1);
-            this.Controls.Add(this.totalFoundItemsLabel);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.leaveButton);
             this.Controls.Add(this.label1);
@@ -2054,6 +2065,9 @@ namespace AmazingAdventures
             ((System.ComponentModel.ISupportInitialize)(this.pb45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2202,8 +2216,9 @@ namespace AmazingAdventures
         private System.Windows.Forms.PictureBox pb30;
         private System.Windows.Forms.PictureBox pb15;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox leaderboardList;
         private System.Windows.Forms.Panel gameBackground;
         private System.Windows.Forms.Button openChatBtn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
