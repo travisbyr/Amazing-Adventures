@@ -27,12 +27,11 @@ namespace AmazingAdventures
         private void closeBtn_Click(object sender, EventArgs e)
         {
             Hide();
-            LobbyForm.Lobby.updateLeaderboard();
+            LobbyForm.Lobby.viewPlayersOnline();
             LobbyForm.Lobby.Show();
         }
         public void updatePoints()
         {
-            DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
             pointsEndLabel.Text = GameForm.Game.points + " Points";
         }
     }

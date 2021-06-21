@@ -44,7 +44,7 @@ namespace AmazingAdventures
                 {
                     DataAccess.gameClose(Main.M.Username);
                     DataAccess.gameCreation(Main.M.Username, gameNameInput.Text);
-                    LobbyForm.Lobby.listGames();
+                    LobbyForm.Lobby.viewPlayersOnline(); ;
                     Hide();
                 }
                 else if (result == DialogResult.No)
@@ -53,7 +53,7 @@ namespace AmazingAdventures
                 }
             }
 
-            LobbyForm.Lobby.listGames();
+            LobbyForm.Lobby.viewPlayersOnline(); ;
             Hide();
         }
     }

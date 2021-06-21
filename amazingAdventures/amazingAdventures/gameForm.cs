@@ -40,26 +40,10 @@ namespace AmazingAdventures
 
             DataAccess.characterQuits(curTile, Main.M.Username, Main.M.GameNumber);
             Hide();
-            LobbyForm.Lobby.updateLeaderboard();
+            LobbyForm.Lobby.viewPlayersOnline();
             LobbyForm.Lobby.Show();
         }
 
-        private void upButton_Click(object sender, EventArgs e)
-        {
-            moveUp();
-        }
-        private void downButton_Click(object sender, EventArgs e)
-        {
-            moveDown();
-        }
-        private void leftButton_Click(object sender, EventArgs e)
-        {
-            moveLeft();
-        }
-        private void rightButton_Click(object sender, EventArgs e)
-        {
-            moveRight();
-        }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Left)
@@ -191,6 +175,7 @@ namespace AmazingAdventures
                 DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
                 totalFoundItemsLabel.Text = DataAccess.Message + " Points";
                 points = Int32.Parse(DataAccess.Message);
+                int b = Int32.Parse(DataAccess.Message);
             }
             else if (DataAccess.Message == "trapFound")
             {
@@ -345,6 +330,10 @@ namespace AmazingAdventures
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ChatForm.Chat.Show();
+        }
     }
 }
 

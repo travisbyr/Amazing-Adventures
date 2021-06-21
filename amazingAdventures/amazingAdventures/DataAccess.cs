@@ -351,9 +351,9 @@ namespace AmazingAdventures
             }
         }
 
-        public static void viewLeaderboard()
+        public static void viewOnlinePlayers()
         {
-            MySqlCommand cmd = new MySqlCommand("viewLeaderboard", connect); // Select stored proecdure name
+            MySqlCommand cmd = new MySqlCommand("viewOnlinePlayers", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
             connect.Open();
             MySqlDataReader myReader;

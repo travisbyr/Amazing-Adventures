@@ -24,8 +24,7 @@ namespace AmazingAdventures
         public LobbyForm()
         {
             InitializeComponent();
-            adminAbility();
-            listGames();
+            viewPlayersOnline();
         }
 
         private void newGameButton_Click(object sender, EventArgs e)
@@ -120,20 +119,21 @@ namespace AmazingAdventures
             }
         }
 
-        public void updateLeaderboard()
+        public void viewPlayersOnline()
         {
             onlinePlayersList.Items.Clear();
             Main.LeaderboardList.Clear();
-            DataAccess.viewLeaderboard();
+            DataAccess.viewOnlinePlayers();
             foreach (Leaderboard item in Main.LeaderboardList)
             {
                 onlinePlayersList.Items.Add(item.PName + " - " + item.PScore);
                 if (Main.M.Username.ToLower() == item.PName.ToLower())
                 {
                     lobbyHighScore.Text = item.PScore + " Points";
-                    GameForm.Game.highscoreLabel.Text = item.PScore + " Points";
                 }
             }
+            adminAbility();
+            listGames();
         }
     }
 }

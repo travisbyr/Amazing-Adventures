@@ -32,14 +32,8 @@ namespace AmazingAdventures
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.label1 = new System.Windows.Forms.Label();
             this.leaveButton = new System.Windows.Forms.Button();
-            this.upButton = new System.Windows.Forms.Button();
-            this.downButton = new System.Windows.Forms.Button();
-            this.leftButton = new System.Windows.Forms.Button();
-            this.rightButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.highscoreLabel = new System.Windows.Forms.Label();
             this.totalFoundItemsLabel = new System.Windows.Forms.Label();
             this.pb121 = new System.Windows.Forms.PictureBox();
             this.pb106 = new System.Windows.Forms.PictureBox();
@@ -179,6 +173,7 @@ namespace AmazingAdventures
             this.label4 = new System.Windows.Forms.Label();
             this.leaderboardList = new System.Windows.Forms.ListBox();
             this.gameBackground = new System.Windows.Forms.Panel();
+            this.openChatBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb121)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb106)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb91)).BeginInit();
@@ -338,62 +333,6 @@ namespace AmazingAdventures
             this.leaveButton.UseVisualStyleBackColor = false;
             this.leaveButton.Click += new System.EventHandler(this.leaveButton_Click);
             // 
-            // upButton
-            // 
-            this.upButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.upButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.upButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.upButton.Location = new System.Drawing.Point(97, 983);
-            this.upButton.Name = "upButton";
-            this.upButton.Size = new System.Drawing.Size(258, 46);
-            this.upButton.TabIndex = 16;
-            this.upButton.TabStop = false;
-            this.upButton.Text = "Up";
-            this.upButton.UseVisualStyleBackColor = false;
-            this.upButton.Click += new System.EventHandler(this.upButton_Click);
-            // 
-            // downButton
-            // 
-            this.downButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.downButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.downButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.downButton.Location = new System.Drawing.Point(454, 983);
-            this.downButton.Name = "downButton";
-            this.downButton.Size = new System.Drawing.Size(258, 46);
-            this.downButton.TabIndex = 17;
-            this.downButton.TabStop = false;
-            this.downButton.Text = "Down";
-            this.downButton.UseVisualStyleBackColor = false;
-            this.downButton.Click += new System.EventHandler(this.downButton_Click);
-            // 
-            // leftButton
-            // 
-            this.leftButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.leftButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.leftButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.leftButton.Location = new System.Drawing.Point(816, 983);
-            this.leftButton.Name = "leftButton";
-            this.leftButton.Size = new System.Drawing.Size(258, 46);
-            this.leftButton.TabIndex = 18;
-            this.leftButton.TabStop = false;
-            this.leftButton.Text = "Left";
-            this.leftButton.UseVisualStyleBackColor = false;
-            this.leftButton.Click += new System.EventHandler(this.leftButton_Click);
-            // 
-            // rightButton
-            // 
-            this.rightButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.rightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.rightButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.rightButton.Location = new System.Drawing.Point(1158, 983);
-            this.rightButton.Name = "rightButton";
-            this.rightButton.Size = new System.Drawing.Size(258, 46);
-            this.rightButton.TabIndex = 19;
-            this.rightButton.TabStop = false;
-            this.rightButton.Text = "Right";
-            this.rightButton.UseVisualStyleBackColor = false;
-            this.rightButton.Click += new System.EventHandler(this.rightButton_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -405,41 +344,21 @@ namespace AmazingAdventures
             this.label3.TabIndex = 20;
             this.label3.Text = "Amazing Adventures";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(1622, 168);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 37);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Highscore";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(1652, 317);
+            this.label6.Location = new System.Drawing.Point(1652, 135);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 37);
             this.label6.TabIndex = 23;
             this.label6.Text = "Score";
             // 
-            // highscoreLabel
-            // 
-            this.highscoreLabel.AutoSize = true;
-            this.highscoreLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.highscoreLabel.Location = new System.Drawing.Point(1647, 213);
-            this.highscoreLabel.Name = "highscoreLabel";
-            this.highscoreLabel.Size = new System.Drawing.Size(93, 28);
-            this.highscoreLabel.TabIndex = 25;
-            this.highscoreLabel.Text = "68 Points";
-            // 
             // totalFoundItemsLabel
             // 
             this.totalFoundItemsLabel.AutoSize = true;
             this.totalFoundItemsLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F);
-            this.totalFoundItemsLabel.Location = new System.Drawing.Point(1653, 361);
+            this.totalFoundItemsLabel.Location = new System.Drawing.Point(1653, 179);
             this.totalFoundItemsLabel.Name = "totalFoundItemsLabel";
             this.totalFoundItemsLabel.Size = new System.Drawing.Size(82, 28);
             this.totalFoundItemsLabel.TabIndex = 26;
@@ -1799,7 +1718,7 @@ namespace AmazingAdventures
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(1608, 473);
+            this.label4.Location = new System.Drawing.Point(1608, 260);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(184, 37);
             this.label4.TabIndex = 167;
@@ -1810,7 +1729,7 @@ namespace AmazingAdventures
             this.leaderboardList.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.leaderboardList.FormattingEnabled = true;
             this.leaderboardList.ItemHeight = 24;
-            this.leaderboardList.Location = new System.Drawing.Point(1599, 524);
+            this.leaderboardList.Location = new System.Drawing.Point(1599, 311);
             this.leaderboardList.Name = "leaderboardList";
             this.leaderboardList.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.leaderboardList.Size = new System.Drawing.Size(200, 340);
@@ -1825,14 +1744,29 @@ namespace AmazingAdventures
             this.gameBackground.Size = new System.Drawing.Size(1395, 844);
             this.gameBackground.TabIndex = 169;
             // 
+            // openChatBtn
+            // 
+            this.openChatBtn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.openChatBtn.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 22F);
+            this.openChatBtn.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.openChatBtn.Location = new System.Drawing.Point(1563, 887);
+            this.openChatBtn.Name = "openChatBtn";
+            this.openChatBtn.Size = new System.Drawing.Size(266, 51);
+            this.openChatBtn.TabIndex = 170;
+            this.openChatBtn.TabStop = false;
+            this.openChatBtn.Text = "Chat";
+            this.openChatBtn.UseVisualStyleBackColor = false;
+            this.openChatBtn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1880, 1073);
+            this.ClientSize = new System.Drawing.Size(1880, 981);
             this.ControlBox = false;
+            this.Controls.Add(this.openChatBtn);
             this.Controls.Add(this.leaderboardList);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pb135);
@@ -1971,22 +1905,16 @@ namespace AmazingAdventures
             this.Controls.Add(this.pb16);
             this.Controls.Add(this.pb1);
             this.Controls.Add(this.totalFoundItemsLabel);
-            this.Controls.Add(this.highscoreLabel);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.rightButton);
-            this.Controls.Add(this.leftButton);
-            this.Controls.Add(this.downButton);
-            this.Controls.Add(this.upButton);
             this.Controls.Add(this.leaveButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gameBackground);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1896, 1112);
+            this.MaximumSize = new System.Drawing.Size(1896, 1020);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1896, 1112);
+            this.MinimumSize = new System.Drawing.Size(1896, 1020);
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Game";
@@ -2135,12 +2063,7 @@ namespace AmazingAdventures
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button leaveButton;
-        private System.Windows.Forms.Button upButton;
-        private System.Windows.Forms.Button downButton;
-        private System.Windows.Forms.Button leftButton;
-        private System.Windows.Forms.Button rightButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label totalFoundItemsLabel;
         private System.Windows.Forms.PictureBox pb121;
@@ -2281,6 +2204,6 @@ namespace AmazingAdventures
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox leaderboardList;
         private System.Windows.Forms.Panel gameBackground;
-        public System.Windows.Forms.Label highscoreLabel;
+        private System.Windows.Forms.Button openChatBtn;
     }
 }
