@@ -80,6 +80,7 @@ namespace AmazingAdventures
             itemMarker();
             characterMove();
             onScreenControlSetup();
+            onScreenControls();
 
             int a = Main.M.GameNumber;
             DataAccess.checkCharacter(Main.M.Username, Main.M.GameNumber);
@@ -194,6 +195,7 @@ namespace AmazingAdventures
         }
         private void characterMove()
         {
+            onScreenControls();
             DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
             string x = "pb" + curTile;                                                    // gets picturebox name
             PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
@@ -333,13 +335,6 @@ namespace AmazingAdventures
         private void onScreenControls()
         {
             DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
-            //curTile
-
-        }
-
-        private void onScreenControlSetup()
-        {
-
             string a = "pb" + (curTile - 15);
             PictureBox pbU = Controls.Find(a, true).FirstOrDefault() as PictureBox;
             Point ptU = pbU.FindForm().PointToClient(pbU.Parent.PointToScreen(pbU.Location));
@@ -361,29 +356,29 @@ namespace AmazingAdventures
             Size locationOfLbtn = new Size(ptL);
 
 
+        }
+
+        private void onScreenControlSetup()
+        {
             Ubtn.Size = new System.Drawing.Size(86, 86);
             Ubtn.Name = "Ubtn";
-            Ubtn.Location = new System.Drawing.Point(locationOfUbtn);
-            Ubtn.BringToFront();
             Controls.Add(Ubtn);
+            Ubtn.BringToFront();
 
             Rbtn.Size = new System.Drawing.Size(86, 86);
             Rbtn.Name = "RBtn";
-            Rbtn.Location = new System.Drawing.Point(locationOfRbtn);
-            Rbtn.BringToFront();
             Controls.Add(Rbtn);
+            Rbtn.BringToFront();
 
             Dbtn.Size = new System.Drawing.Size(86, 86);
             Dbtn.Name = "Dbtn";
-            Dbtn.Location = new System.Drawing.Point(locationOfDbtn);
-            Dbtn.BringToFront();
             Controls.Add(Dbtn);
+            Dbtn.BringToFront();
 
             Lbtn.Size = new System.Drawing.Size(86, 86);
             Lbtn.Name = "Lbtn";
-            Lbtn.Location = new System.Drawing.Point(locationOfLbtn);
-            Lbtn.BringToFront();
             Controls.Add(Lbtn);
+            Lbtn.BringToFront();
 
 
         }

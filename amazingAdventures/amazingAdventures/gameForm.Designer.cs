@@ -965,7 +965,6 @@ namespace AmazingAdventures
             this.pb52.Size = new System.Drawing.Size(86, 86);
             this.pb52.TabIndex = 87;
             this.pb52.TabStop = false;
-            this.pb52.Visible = false;
             // 
             // pb37
             // 
@@ -1045,7 +1044,6 @@ namespace AmazingAdventures
             this.pb68.Size = new System.Drawing.Size(86, 86);
             this.pb68.TabIndex = 97;
             this.pb68.TabStop = false;
-            this.pb68.Visible = false;
             // 
             // pb53
             // 
@@ -1055,7 +1053,6 @@ namespace AmazingAdventures
             this.pb53.Size = new System.Drawing.Size(86, 86);
             this.pb53.TabIndex = 96;
             this.pb53.TabStop = false;
-            this.pb53.Visible = false;
             // 
             // pb38
             // 
@@ -1135,7 +1132,6 @@ namespace AmazingAdventures
             this.pb69.Size = new System.Drawing.Size(86, 86);
             this.pb69.TabIndex = 106;
             this.pb69.TabStop = false;
-            this.pb69.Visible = false;
             // 
             // pb54
             // 
