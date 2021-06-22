@@ -364,7 +364,7 @@ namespace AmazingAdventures
                 {
                     string a = myReader.GetString("PlayerUsername");
                     int b = Int32.Parse(myReader.GetString("Highscore"));
-                    Main.LeaderboardList.Add(new Leaderboard() { PName = a, PScore = b});
+                    Leaderboard.LeaderboardList.Add(new Leaderboard() { Player = a, Highscore = b});
                 }
             }
             finally

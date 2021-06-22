@@ -72,7 +72,6 @@ namespace AmazingAdventures
             Hide();
             LoginForm.Login.Show();
         }
-
         private void joinGameButton_Click(object sender, EventArgs e)
         {
             int index = currentGameList.SelectedIndex;
@@ -81,14 +80,9 @@ namespace AmazingAdventures
                 joinGame();
             }
         }
-
-
         private void currentGameList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (onlinePlayersList.Items.Count != 0)
-            {
-                joinGame();
-            }
+            joinGame();
         }
 
         private void joinGame()
@@ -121,19 +115,28 @@ namespace AmazingAdventures
 
         public void viewPlayersOnline()
         {
-            onlinePlayersList.Items.Clear();
-            Main.LeaderboardList.Clear();
+            onlinePlayersDGV.DataSource = null;
+            Leaderboard.LeaderboardList.Clear();
             DataAccess.viewOnlinePlayers();
-            foreach (Leaderboard item in Main.LeaderboardList)
+            onlinePlayersDGV.DataSource = Leaderboard.LeaderboardList;
+            onlinePlayersDGV.Columns["GameNumber"].Visible = false;
+            onlinePlayersDGV.Columns["Username"].Visible = false;
+            onlinePlayersDGV.Columns["Message"].Visible = false;
+            onlinePlayersDGV.Columns["CharacterName"].Visible = false;
+            onlinePlayersDGV.Columns["CharacterScore"].Visible = false;
+            onlinePlayersDGV.Columns["LeaderboardGame"].Visible = false;
+            onlinePlayersDGV.Columns["Highscore"].Width = 100;
+            onlinePlayersDGV.ClearSelection();
+
+            foreach (Leaderboard item in Leaderboard.LeaderboardList)
             {
-                onlinePlayersList.Items.Add(item.PName + " - " + item.PScore);
-                if (Main.M.Username.ToLower() == item.PName.ToLower())
+                if (Main.M.Username.ToLower() == item.Player.ToLower())
                 {
-                    lobbyHighScore.Text = item.PScore + " Points";
+                    lobbyHighScore.Text = item.Highscore + " Points";
                 }
             }
             adminAbility();
             listGames();
-        }
+        } // talk about why I didnt do diagonal movements
     }
 }

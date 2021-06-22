@@ -8,7 +8,10 @@ namespace AmazingAdventures
 {
     public class Leaderboard : Main
     {
-        public string PName { get; set; }
-        public int PScore{ get; set; }
+        private static List<Leaderboard> _leaderboardList = new List<Leaderboard>();
+        public string Player { get; set; }
+        public int Highscore{ get; set; }
+
+        public static List<Leaderboard> LeaderboardList { get => _leaderboardList; set => _leaderboardList = value; }
     }
 }

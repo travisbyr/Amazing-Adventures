@@ -29,9 +29,13 @@ namespace AmazingAdventures
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LobbyForm));
             this.currentGameList = new System.Windows.Forms.ListBox();
-            this.onlinePlayersList = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +47,8 @@ namespace AmazingAdventures
             this.label4 = new System.Windows.Forms.Label();
             this.lobbyHighScore = new System.Windows.Forms.Label();
             this.settingsBtn = new System.Windows.Forms.Button();
+            this.onlinePlayersDGV = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.onlinePlayersDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // currentGameList
@@ -56,18 +62,6 @@ namespace AmazingAdventures
             this.currentGameList.TabIndex = 0;
             this.currentGameList.SelectedIndexChanged += new System.EventHandler(this.currentGameList_SelectedIndexChanged);
             this.currentGameList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.currentGameList_MouseDoubleClick);
-            // 
-            // onlinePlayersList
-            // 
-            this.onlinePlayersList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.onlinePlayersList.FormattingEnabled = true;
-            this.onlinePlayersList.ItemHeight = 25;
-            this.onlinePlayersList.Location = new System.Drawing.Point(708, 107);
-            this.onlinePlayersList.Name = "onlinePlayersList";
-            this.onlinePlayersList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.onlinePlayersList.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.onlinePlayersList.Size = new System.Drawing.Size(283, 479);
-            this.onlinePlayersList.TabIndex = 1;
             // 
             // label1
             // 
@@ -204,6 +198,58 @@ namespace AmazingAdventures
             this.settingsBtn.Text = "Settings";
             this.settingsBtn.UseVisualStyleBackColor = false;
             // 
+            // onlinePlayersDGV
+            // 
+            this.onlinePlayersDGV.AllowUserToAddRows = false;
+            this.onlinePlayersDGV.AllowUserToDeleteRows = false;
+            this.onlinePlayersDGV.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.onlinePlayersDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.onlinePlayersDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.onlinePlayersDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.onlinePlayersDGV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.onlinePlayersDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.onlinePlayersDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.onlinePlayersDGV.ColumnHeadersHeight = 33;
+            this.onlinePlayersDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.onlinePlayersDGV.DefaultCellStyle = dataGridViewCellStyle3;
+            this.onlinePlayersDGV.GridColor = System.Drawing.SystemColors.Control;
+            this.onlinePlayersDGV.Location = new System.Drawing.Point(708, 107);
+            this.onlinePlayersDGV.Margin = new System.Windows.Forms.Padding(2);
+            this.onlinePlayersDGV.MultiSelect = false;
+            this.onlinePlayersDGV.Name = "onlinePlayersDGV";
+            this.onlinePlayersDGV.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.onlinePlayersDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.onlinePlayersDGV.RowHeadersVisible = false;
+            this.onlinePlayersDGV.RowHeadersWidth = 82;
+            this.onlinePlayersDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.onlinePlayersDGV.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.onlinePlayersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.onlinePlayersDGV.Size = new System.Drawing.Size(283, 479);
+            this.onlinePlayersDGV.TabIndex = 19;
+            // 
             // LobbyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +257,7 @@ namespace AmazingAdventures
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1040, 716);
             this.ControlBox = false;
+            this.Controls.Add(this.onlinePlayersDGV);
             this.Controls.Add(this.settingsBtn);
             this.Controls.Add(this.lobbyHighScore);
             this.Controls.Add(this.label4);
@@ -222,7 +269,6 @@ namespace AmazingAdventures
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.onlinePlayersList);
             this.Controls.Add(this.currentGameList);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -231,6 +277,7 @@ namespace AmazingAdventures
             this.Name = "LobbyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Lobby";
+            ((System.ComponentModel.ISupportInitialize)(this.onlinePlayersDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,7 +295,7 @@ namespace AmazingAdventures
         public System.Windows.Forms.ListBox currentGameList;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label lobbyHighScore;
-        public System.Windows.Forms.ListBox onlinePlayersList;
         private System.Windows.Forms.Button settingsBtn;
+        public System.Windows.Forms.DataGridView onlinePlayersDGV;
     }
 }
