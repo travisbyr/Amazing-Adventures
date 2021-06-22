@@ -42,8 +42,8 @@ namespace amazingAdventures
             // 
             this.usrnValidSecondLine.AutoSize = true;
             this.usrnValidSecondLine.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold);
-            this.usrnValidSecondLine.ForeColor = System.Drawing.Color.LawnGreen;
-            this.usrnValidSecondLine.Location = new System.Drawing.Point(-58, 31);
+            this.usrnValidSecondLine.ForeColor = System.Drawing.Color.Black;
+            this.usrnValidSecondLine.Location = new System.Drawing.Point(-58, 9);
             this.usrnValidSecondLine.MinimumSize = new System.Drawing.Size(263, 16);
             this.usrnValidSecondLine.Name = "usrnValidSecondLine";
             this.usrnValidSecondLine.Size = new System.Drawing.Size(263, 24);
@@ -97,8 +97,8 @@ namespace amazingAdventures
             // 
             this.pointsEndLabel.AutoSize = true;
             this.pointsEndLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pointsEndLabel.ForeColor = System.Drawing.Color.Lime;
-            this.pointsEndLabel.Location = new System.Drawing.Point(-11, 67);
+            this.pointsEndLabel.ForeColor = System.Drawing.Color.Black;
+            this.pointsEndLabel.Location = new System.Drawing.Point(-11, 45);
             this.pointsEndLabel.MinimumSize = new System.Drawing.Size(165, 17);
             this.pointsEndLabel.Name = "pointsEndLabel";
             this.pointsEndLabel.Size = new System.Drawing.Size(165, 20);
@@ -108,13 +108,13 @@ namespace amazingAdventures
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.usrnValidSecondLine);
             this.panel1.Controls.Add(this.pointsEndLabel);
-            this.panel1.Location = new System.Drawing.Point(171, 134);
+            this.panel1.Location = new System.Drawing.Point(171, 148);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(146, 115);
+            this.panel1.Size = new System.Drawing.Size(146, 76);
             this.panel1.TabIndex = 29;
             // 
             // GameLoseForm
@@ -129,6 +129,8 @@ namespace amazingAdventures
             this.Controls.Add(this.secondLoseTxt);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.firstLoseTxt);
+            this.MaximumSize = new System.Drawing.Size(508, 396);
+            this.MinimumSize = new System.Drawing.Size(508, 396);
             this.Name = "GameLoseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - End";

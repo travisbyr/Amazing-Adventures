@@ -35,7 +35,6 @@ namespace amazingAdventures
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.label1 = new System.Windows.Forms.Label();
             this.leaveButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.totalFoundItemsLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -179,6 +178,7 @@ namespace amazingAdventures
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.gameBackground = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb135)).BeginInit();
@@ -339,19 +339,6 @@ namespace amazingAdventures
             this.leaveButton.Text = "Leave";
             this.leaveButton.UseVisualStyleBackColor = false;
             this.leaveButton.Click += new System.EventHandler(this.leaveButton_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.DarkGreen;
-            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 30.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(561, 7);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(403, 48);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Welcome to the jungle...";
             // 
             // label6
             // 
@@ -1813,6 +1800,19 @@ namespace amazingAdventures
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1505, 70);
             this.flowLayoutPanel1.TabIndex = 173;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.DarkGreen;
+            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 30.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label3.Location = new System.Drawing.Point(561, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(403, 48);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Welcome to the jungle...";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2120,7 +2120,6 @@ namespace amazingAdventures
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button leaveButton;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label totalFoundItemsLabel;
         private System.Windows.Forms.PictureBox pb121;
@@ -2264,5 +2263,6 @@ namespace amazingAdventures
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label3;
     }
 }

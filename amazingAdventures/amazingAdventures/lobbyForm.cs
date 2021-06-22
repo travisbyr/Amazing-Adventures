@@ -142,6 +142,7 @@ namespace amazingAdventures
         private void settingsBtn_Click(object sender, EventArgs e)
         {
             Hide();
+            PlayerSettingsForm.PlayerSettings.settingsUsername.Text = "dwadwa";
             PlayerSettingsForm.PlayerSettings.Show();
         }
 

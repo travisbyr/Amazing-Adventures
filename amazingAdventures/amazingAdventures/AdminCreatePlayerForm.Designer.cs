@@ -39,6 +39,7 @@ namespace amazingAdventures
             this.createPassword = new System.Windows.Forms.TextBox();
             this.createUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // closeBtn
@@ -161,15 +162,25 @@ namespace amazingAdventures
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.Color.DarkGreen;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(133, 19);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(135, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.MaximumSize = new System.Drawing.Size(231, 47);
+            this.label1.MinimumSize = new System.Drawing.Size(231, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(231, 47);
-            this.label1.TabIndex = 43;
+            this.label1.TabIndex = 53;
             this.label1.Text = "Create Player";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkGreen;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(-6, -8);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(503, 70);
+            this.flowLayoutPanel1.TabIndex = 54;
             // 
             // AdminCreatePlayerForm
             // 
@@ -177,6 +188,8 @@ namespace amazingAdventures
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 372);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.usrnInvalidFirstLabel);
             this.Controls.Add(this.createBtn);
@@ -186,7 +199,6 @@ namespace amazingAdventures
             this.Controls.Add(this.Use);
             this.Controls.Add(this.createPassword);
             this.Controls.Add(this.createUsername);
-            this.Controls.Add(this.label1);
             this.Name = "AdminCreatePlayerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Create Player";
@@ -207,5 +219,6 @@ namespace amazingAdventures
         private System.Windows.Forms.TextBox createPassword;
         private System.Windows.Forms.TextBox createUsername;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

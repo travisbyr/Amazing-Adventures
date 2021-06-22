@@ -39,6 +39,7 @@ namespace amazingAdventures
             this.closeBtn = new System.Windows.Forms.Button();
             this.usrnInvalidFirstLabel = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // label3
@@ -50,9 +51,9 @@ namespace amazingAdventures
             this.label3.Location = new System.Drawing.Point(102, 211);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 24);
+            this.label3.Size = new System.Drawing.Size(106, 24);
             this.label3.TabIndex = 39;
-            this.label3.Text = "Email:";
+            this.label3.Text = "New Email:";
             // 
             // settingsEmail
             // 
@@ -75,9 +76,9 @@ namespace amazingAdventures
             this.label2.Location = new System.Drawing.Point(102, 147);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 24);
+            this.label2.Size = new System.Drawing.Size(141, 24);
             this.label2.TabIndex = 34;
-            this.label2.Text = "Password:";
+            this.label2.Text = "New Password:";
             // 
             // Use
             // 
@@ -121,10 +122,10 @@ namespace amazingAdventures
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.Color.DarkGreen;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(179, 24);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(179, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 47);
@@ -170,6 +171,15 @@ namespace amazingAdventures
             this.saveBtn.TabIndex = 40;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkGreen;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(-6, -8);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(503, 70);
+            this.flowLayoutPanel1.TabIndex = 43;
             // 
             // PlayerSettingsForm
             // 
@@ -187,6 +197,9 @@ namespace amazingAdventures
             this.Controls.Add(this.settingsPassword);
             this.Controls.Add(this.settingsUsername);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.MaximumSize = new System.Drawing.Size(508, 411);
+            this.MinimumSize = new System.Drawing.Size(508, 411);
             this.Name = "PlayerSettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Player Settings";
@@ -202,10 +215,11 @@ namespace amazingAdventures
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Use;
         private System.Windows.Forms.TextBox settingsPassword;
-        private System.Windows.Forms.TextBox settingsUsername;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Label usrnInvalidFirstLabel;
         private System.Windows.Forms.Button saveBtn;
+        public System.Windows.Forms.TextBox settingsUsername;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

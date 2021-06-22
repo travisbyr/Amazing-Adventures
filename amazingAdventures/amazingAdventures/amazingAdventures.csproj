@@ -242,5 +242,26 @@
   <ItemGroup>
     <None Include="Resources\background2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jungle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jungle1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jungle2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jungle3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jungle4.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

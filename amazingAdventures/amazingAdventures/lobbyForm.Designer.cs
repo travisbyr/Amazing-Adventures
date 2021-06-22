@@ -259,6 +259,8 @@ namespace amazingAdventures
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkGreen;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-6, -8);
+            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(1056, 70);
+            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(1056, 70);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1056, 70);
             this.flowLayoutPanel1.TabIndex = 20;
