@@ -142,7 +142,7 @@ namespace amazingAdventures
             this.closeBtn.TabIndex = 42;
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = false;
-            this.closeBtn.Visible = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // usrnInvalidFirstLabel
             // 
@@ -188,6 +188,7 @@ namespace amazingAdventures
             this.Controls.Add(this.settingsUsername);
             this.Controls.Add(this.label1);
             this.Name = "PlayerSettingsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Player Settings";
             this.ResumeLayout(false);
             this.PerformLayout();

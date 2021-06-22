@@ -1,5 +1,5 @@
 ﻿
-namespace AmazingAdventures
+namespace amazingAdventures
 {
     partial class LobbyForm
     {
@@ -152,7 +152,7 @@ namespace AmazingAdventures
             // 
             // adminButton
             // 
-            this.adminButton.BackColor = System.Drawing.Color.Red;
+            this.adminButton.BackColor = System.Drawing.Color.LightSalmon;
             this.adminButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adminButton.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
             this.adminButton.ForeColor = System.Drawing.Color.Black;
@@ -163,6 +163,7 @@ namespace AmazingAdventures
             this.adminButton.Text = "Admin";
             this.adminButton.UseVisualStyleBackColor = false;
             this.adminButton.Visible = false;
+            this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
             // 
             // label4
             // 
@@ -197,6 +198,7 @@ namespace AmazingAdventures
             this.settingsBtn.TabIndex = 18;
             this.settingsBtn.Text = "Settings";
             this.settingsBtn.UseVisualStyleBackColor = false;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
             // 
             // onlinePlayersDGV
             // 

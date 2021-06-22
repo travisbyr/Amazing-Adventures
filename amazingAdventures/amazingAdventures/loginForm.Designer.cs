@@ -1,5 +1,5 @@
 ﻿
-namespace AmazingAdventures
+namespace amazingAdventures
 {
     partial class LoginForm
     {

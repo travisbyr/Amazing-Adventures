@@ -52,7 +52,7 @@ namespace amazingAdventures
             this.closeBtn.TabIndex = 52;
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = false;
-            this.closeBtn.Visible = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // usrnInvalidFirstLabel
             // 
@@ -80,6 +80,7 @@ namespace amazingAdventures
             this.createBtn.TabIndex = 50;
             this.createBtn.Text = "Create";
             this.createBtn.UseVisualStyleBackColor = false;
+            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
             // 
             // label3
             // 
@@ -175,6 +176,7 @@ namespace amazingAdventures
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 372);
+            this.ControlBox = false;
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.usrnInvalidFirstLabel);
             this.Controls.Add(this.createBtn);
@@ -186,6 +188,7 @@ namespace amazingAdventures
             this.Controls.Add(this.createUsername);
             this.Controls.Add(this.label1);
             this.Name = "AdminCreatePlayerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Create Player";
             this.ResumeLayout(false);
             this.PerformLayout();

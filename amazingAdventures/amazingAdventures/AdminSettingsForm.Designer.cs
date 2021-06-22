@@ -126,7 +126,7 @@ namespace amazingAdventures
             this.adminFormCloseBtn.TabIndex = 28;
             this.adminFormCloseBtn.Text = "Return to Lobby";
             this.adminFormCloseBtn.UseVisualStyleBackColor = false;
-            this.adminFormCloseBtn.Visible = false;
+            this.adminFormCloseBtn.Click += new System.EventHandler(this.adminFormCloseBtn_Click);
             // 
             // deletePlayerBtn
             // 
@@ -140,6 +140,7 @@ namespace amazingAdventures
             this.deletePlayerBtn.TabIndex = 27;
             this.deletePlayerBtn.Text = "Delete Player";
             this.deletePlayerBtn.UseVisualStyleBackColor = false;
+            this.deletePlayerBtn.Click += new System.EventHandler(this.deletePlayerBtn_Click);
             // 
             // clearChatBtn
             // 
@@ -209,6 +210,7 @@ namespace amazingAdventures
             this.addPlayerBtn.TabIndex = 33;
             this.addPlayerBtn.Text = "Add Player";
             this.addPlayerBtn.UseVisualStyleBackColor = false;
+            this.addPlayerBtn.Click += new System.EventHandler(this.addPlayerBtn_Click);
             // 
             // editPlayerBtn
             // 
@@ -222,6 +224,7 @@ namespace amazingAdventures
             this.editPlayerBtn.TabIndex = 34;
             this.editPlayerBtn.Text = "Edit Player";
             this.editPlayerBtn.UseVisualStyleBackColor = false;
+            this.editPlayerBtn.Click += new System.EventHandler(this.editPlayerBtn_Click);
             // 
             // deleteGameBtn
             // 
@@ -255,6 +258,7 @@ namespace amazingAdventures
             this.Controls.Add(this.label1);
             this.Controls.Add(this.currentGameList);
             this.Name = "AdminSettingsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Admin Settings";
             this.Load += new System.EventHandler(this.AdminSettingsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.totalPlayersDGV)).EndInit();

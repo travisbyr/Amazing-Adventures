@@ -89,6 +89,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminCreatePlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminCreatePlayerForm.Designer.cs">
+      <DependentUpon>AdminCreatePlayerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditPlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminEditPlayerForm.Designer.cs">
+      <DependentUpon>AdminEditPlayerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +173,12 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminCreatePlayerForm.resx">
+      <DependentUpon>AdminCreatePlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminEditPlayerForm.resx">
+      <DependentUpon>AdminEditPlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminSettingsForm.resx">
       <DependentUpon>AdminSettingsForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -24,5 +24,26 @@ namespace amazingAdventures
         {
 
         }
+
+        private void adminFormCloseBtn_Click(object sender, EventArgs e)
+        {
+            LobbyForm.Lobby.Show();
+            Hide();
+        }
+
+        private void editPlayerBtn_Click(object sender, EventArgs e)
+        {
+            AdminEditPlayerForm.AdminEdit.Show();
+        }
+
+        private void addPlayerBtn_Click(object sender, EventArgs e)
+        {
+            AdminCreatePlayerForm.AdminCreate.Show();
+        }
+
+        private void deletePlayerBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -57,7 +57,7 @@ namespace amazingAdventures
             this.manageCloseBtn.TabIndex = 62;
             this.manageCloseBtn.Text = "Close";
             this.manageCloseBtn.UseVisualStyleBackColor = false;
-            this.manageCloseBtn.Visible = false;
+            this.manageCloseBtn.Click += new System.EventHandler(this.manageCloseBtn_Click);
             // 
             // manageSaveBtn
             // 
@@ -70,6 +70,7 @@ namespace amazingAdventures
             this.manageSaveBtn.TabIndex = 60;
             this.manageSaveBtn.Text = "Save";
             this.manageSaveBtn.UseVisualStyleBackColor = false;
+            this.manageSaveBtn.Click += new System.EventHandler(this.manageSaveBtn_Click);
             // 
             // label3
             // 
@@ -234,6 +235,7 @@ namespace amazingAdventures
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 372);
+            this.ControlBox = false;
             this.Controls.Add(this.lockedCheckBox);
             this.Controls.Add(this.lockAdminBox);
             this.Controls.Add(this.label6);
@@ -250,6 +252,7 @@ namespace amazingAdventures
             this.Controls.Add(this.manageUsername);
             this.Controls.Add(this.label1);
             this.Name = "AdminEditPlayerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Edit Player";
             this.ResumeLayout(false);
             this.PerformLayout();

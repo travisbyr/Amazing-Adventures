@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AmazingAdventures
+namespace amazingAdventures
 {
     public partial class LobbyForm : Form
     {
@@ -138,5 +138,17 @@ namespace AmazingAdventures
             adminAbility();
             listGames();
         } // talk about why I didnt do diagonal movements
+
+        private void settingsBtn_Click(object sender, EventArgs e)
+        {
+            Hide();
+            PlayerSettingsForm.PlayerSettings.Show();
+        }
+
+        private void adminButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            AdminSettingsForm.AdminSettings.Show();
+        }
     }
 }

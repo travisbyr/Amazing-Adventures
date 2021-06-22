@@ -19,5 +19,15 @@ namespace amazingAdventures
         {
             InitializeComponent();
         }
+
+        private void manageCloseBtn_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
+
+        private void manageSaveBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
