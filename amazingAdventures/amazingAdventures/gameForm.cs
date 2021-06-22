@@ -14,6 +14,10 @@ namespace AmazingAdventures
     public partial class GameForm : Form
     {
         ButtonEllipse playerMarker = new ButtonEllipse();
+        Button Ubtn = new Button();
+        Button Rbtn = new Button();
+        Button Dbtn = new Button();
+        Button Lbtn = new Button();
         public int points = 0;
         public int prePreTile;
         public int preTile = 0;
@@ -75,6 +79,7 @@ namespace AmazingAdventures
             otherCharactersMarker();
             itemMarker();
             characterMove();
+            onScreenControlSetup();
 
             int a = Main.M.GameNumber;
             DataAccess.checkCharacter(Main.M.Username, Main.M.GameNumber);
@@ -95,7 +100,6 @@ namespace AmazingAdventures
         }
         private void characterCheckLocation()
         {
-            showPreviousTile(preTile);
             otherCharactersMarker();
             itemMarker();
 
@@ -202,16 +206,6 @@ namespace AmazingAdventures
 
             playerMarker.BringToFront();
         }
-        private void showPreviousTile(int tile)
-        {
-            if (preTile != 0)
-            {
-                string x = "pb" + tile; // gets picturebox name
-                PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
-                pb.Visible = true;
-            }
-            
-        }
 
         private void moveUp()
         {
@@ -304,7 +298,8 @@ namespace AmazingAdventures
                 {
                     string x = "pb" + item.TileID;
                     PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
-                    pb.Image = null;                    
+                    pb.Image = null;
+                    pb.Visible = false;
                 }
             }
 
@@ -320,23 +315,76 @@ namespace AmazingAdventures
                     PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        
                     Image image = Image.FromFile(@item.Photo);
                     pb.Image = image;
+                    pb.Visible = true;
                     i++;
                 }
             }
         }
 
-        private void GameForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void gameFormChatBtn_Click(object sender, EventArgs e)
         {
             ChatForm.Chat.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+        private void onScreenControls()
+        {
+            DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
+            //curTile
+
+        }
+
+        private void onScreenControlSetup()
+        {
+
+            string a = "pb" + (curTile - 15);
+            PictureBox pbU = Controls.Find(a, true).FirstOrDefault() as PictureBox;
+            Point ptU = pbU.FindForm().PointToClient(pbU.Parent.PointToScreen(pbU.Location));
+            Size locationOfUbtn = new Size(ptU);
+
+            string b = "pb" + (curTile + 1);
+            PictureBox pbR = Controls.Find(b, true).FirstOrDefault() as PictureBox;
+            Point ptR = pbR.FindForm().PointToClient(pbR.Parent.PointToScreen(pbR.Location));
+            Size locationOfRbtn = new Size(ptR);
+
+            string c = "pb" + (curTile + 15);
+            PictureBox pbD = Controls.Find(c, true).FirstOrDefault() as PictureBox;
+            Point ptD = pbD.FindForm().PointToClient(pbD.Parent.PointToScreen(pbD.Location));
+            Size locationOfDbtn = new Size(ptD);
+
+            string d = "pb" + (curTile - 1);
+            PictureBox pbL = Controls.Find(d, true).FirstOrDefault() as PictureBox;
+            Point ptL = pbL.FindForm().PointToClient(pbL.Parent.PointToScreen(pbL.Location));
+            Size locationOfLbtn = new Size(ptL);
+
+
+            Ubtn.Size = new System.Drawing.Size(86, 86);
+            Ubtn.Name = "Ubtn";
+            Ubtn.Location = new System.Drawing.Point(locationOfUbtn);
+            Ubtn.BringToFront();
+            Controls.Add(Ubtn);
+
+            Rbtn.Size = new System.Drawing.Size(86, 86);
+            Rbtn.Name = "RBtn";
+            Rbtn.Location = new System.Drawing.Point(locationOfRbtn);
+            Rbtn.BringToFront();
+            Controls.Add(Rbtn);
+
+            Dbtn.Size = new System.Drawing.Size(86, 86);
+            Dbtn.Name = "Dbtn";
+            Dbtn.Location = new System.Drawing.Point(locationOfDbtn);
+            Dbtn.BringToFront();
+            Controls.Add(Dbtn);
+
+            Lbtn.Size = new System.Drawing.Size(86, 86);
+            Lbtn.Name = "Lbtn";
+            Lbtn.Location = new System.Drawing.Point(locationOfLbtn);
+            Lbtn.BringToFront();
+            Controls.Add(Lbtn);
+
 
         }
     }
