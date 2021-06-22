@@ -313,9 +313,11 @@ namespace AmazingAdventures
                 foreach (Items item in Main.ItemList)
                 {
                     string x = "pb" + item.TileID;                                                
-                    PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        
-                    Image image = Image.FromFile(@item.Photo);
+                    PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
+                    pb.Size = new System.Drawing.Size(60, 60);
+                    Image image = Image.FromFile(@item.Photo); //26
                     pb.Image = image;
+                    pb.BackColor = Color.Transparent;
                     pb.Visible = true;
                     pb.BringToFront();
                     i++;
