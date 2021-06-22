@@ -42,8 +42,8 @@ namespace amazingAdventures
             // 
             this.usrnValidSecondLine.AutoSize = true;
             this.usrnValidSecondLine.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold);
-            this.usrnValidSecondLine.ForeColor = System.Drawing.Color.Black;
-            this.usrnValidSecondLine.Location = new System.Drawing.Point(6, 24);
+            this.usrnValidSecondLine.ForeColor = System.Drawing.Color.LawnGreen;
+            this.usrnValidSecondLine.Location = new System.Drawing.Point(-58, 31);
             this.usrnValidSecondLine.MinimumSize = new System.Drawing.Size(263, 16);
             this.usrnValidSecondLine.Name = "usrnValidSecondLine";
             this.usrnValidSecondLine.Size = new System.Drawing.Size(263, 24);
@@ -54,12 +54,13 @@ namespace amazingAdventures
             // secondLoseTxt
             // 
             this.secondLoseTxt.AutoSize = true;
-            this.secondLoseTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.secondLoseTxt.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.secondLoseTxt.BackColor = System.Drawing.Color.Transparent;
+            this.secondLoseTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.secondLoseTxt.ForeColor = System.Drawing.Color.PaleGreen;
             this.secondLoseTxt.Location = new System.Drawing.Point(161, 91);
             this.secondLoseTxt.MinimumSize = new System.Drawing.Size(165, 17);
             this.secondLoseTxt.Name = "secondLoseTxt";
-            this.secondLoseTxt.Size = new System.Drawing.Size(165, 17);
+            this.secondLoseTxt.Size = new System.Drawing.Size(165, 22);
             this.secondLoseTxt.TabIndex = 26;
             this.secondLoseTxt.Text = "You hit a trap!";
             this.secondLoseTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -69,7 +70,7 @@ namespace amazingAdventures
             this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.closeBtn.Location = new System.Drawing.Point(144, 268);
+            this.closeBtn.Location = new System.Drawing.Point(144, 277);
             this.closeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(199, 35);
@@ -81,7 +82,9 @@ namespace amazingAdventures
             // firstLoseTxt
             // 
             this.firstLoseTxt.AutoSize = true;
+            this.firstLoseTxt.BackColor = System.Drawing.Color.Transparent;
             this.firstLoseTxt.Font = new System.Drawing.Font("Yu Gothic UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstLoseTxt.ForeColor = System.Drawing.Color.PaleGreen;
             this.firstLoseTxt.Location = new System.Drawing.Point(67, 41);
             this.firstLoseTxt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.firstLoseTxt.Name = "firstLoseTxt";
@@ -94,8 +97,8 @@ namespace amazingAdventures
             // 
             this.pointsEndLabel.AutoSize = true;
             this.pointsEndLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pointsEndLabel.ForeColor = System.Drawing.Color.Black;
-            this.pointsEndLabel.Location = new System.Drawing.Point(55, 56);
+            this.pointsEndLabel.ForeColor = System.Drawing.Color.Lime;
+            this.pointsEndLabel.Location = new System.Drawing.Point(-11, 67);
             this.pointsEndLabel.MinimumSize = new System.Drawing.Size(165, 17);
             this.pointsEndLabel.Name = "pointsEndLabel";
             this.pointsEndLabel.Size = new System.Drawing.Size(165, 20);
@@ -105,12 +108,13 @@ namespace amazingAdventures
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.usrnValidSecondLine);
             this.panel1.Controls.Add(this.pointsEndLabel);
-            this.panel1.Location = new System.Drawing.Point(107, 125);
+            this.panel1.Location = new System.Drawing.Point(171, 134);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(278, 110);
+            this.panel1.Size = new System.Drawing.Size(146, 115);
             this.panel1.TabIndex = 29;
             // 
             // GameLoseForm
@@ -118,6 +122,7 @@ namespace amazingAdventures
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackgroundImage = global::amazingAdventures.Properties.Resources.jungle2;
             this.ClientSize = new System.Drawing.Size(492, 357);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
