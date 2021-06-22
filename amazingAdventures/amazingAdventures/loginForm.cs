@@ -25,8 +25,8 @@ namespace AmazingAdventures
             DataAccess.createdb(); // Creates the tables
             DataAccess.modifydb(); // Creates the items
             DataAccess.testData(); // Creates the test data
-            registerBtn.FlatAppearance.BorderColor = Color.Blue;
-            loginBtn.FlatAppearance.BorderColor = Color.Blue;
+            registerBtn.FlatAppearance.BorderColor = Color.DarkGreen;
+            loginBtn.FlatAppearance.BorderColor = Color.DarkGreen;
         }
         private void loginButton_Click(object sender, EventArgs e)
         {

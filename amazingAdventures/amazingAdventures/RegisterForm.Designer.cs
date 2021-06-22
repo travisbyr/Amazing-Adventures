@@ -45,9 +45,10 @@ namespace AmazingAdventures
             // rgsrSecondLine
             // 
             this.rgsrSecondLine.AutoSize = true;
+            this.rgsrSecondLine.BackColor = System.Drawing.Color.Transparent;
             this.rgsrSecondLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rgsrSecondLine.ForeColor = System.Drawing.Color.Red;
-            this.rgsrSecondLine.Location = new System.Drawing.Point(122, 358);
+            this.rgsrSecondLine.ForeColor = System.Drawing.Color.LightSalmon;
+            this.rgsrSecondLine.Location = new System.Drawing.Point(122, 353);
             this.rgsrSecondLine.MinimumSize = new System.Drawing.Size(241, 16);
             this.rgsrSecondLine.Name = "rgsrSecondLine";
             this.rgsrSecondLine.Size = new System.Drawing.Size(241, 16);
@@ -59,9 +60,10 @@ namespace AmazingAdventures
             // rgsrFirstLine
             // 
             this.rgsrFirstLine.AutoSize = true;
+            this.rgsrFirstLine.BackColor = System.Drawing.Color.Transparent;
             this.rgsrFirstLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rgsrFirstLine.ForeColor = System.Drawing.Color.Red;
-            this.rgsrFirstLine.Location = new System.Drawing.Point(189, 338);
+            this.rgsrFirstLine.ForeColor = System.Drawing.Color.LightSalmon;
+            this.rgsrFirstLine.Location = new System.Drawing.Point(189, 333);
             this.rgsrFirstLine.MinimumSize = new System.Drawing.Size(117, 17);
             this.rgsrFirstLine.Name = "rgsrFirstLine";
             this.rgsrFirstLine.Size = new System.Drawing.Size(117, 17);
@@ -72,7 +74,7 @@ namespace AmazingAdventures
             // 
             // registerBtn
             // 
-            this.registerBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.registerBtn.BackColor = System.Drawing.Color.LightSalmon;
             this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.registerBtn.Location = new System.Drawing.Point(147, 296);
@@ -87,7 +89,9 @@ namespace AmazingAdventures
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(100, 160);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -98,7 +102,9 @@ namespace AmazingAdventures
             // Use
             // 
             this.Use.AutoSize = true;
+            this.Use.BackColor = System.Drawing.Color.Transparent;
             this.Use.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.Use.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Use.Location = new System.Drawing.Point(100, 95);
             this.Use.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Use.Name = "Use";
@@ -108,7 +114,10 @@ namespace AmazingAdventures
             // 
             // registerPassword
             // 
+            this.registerPassword.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.registerPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.registerPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.registerPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.registerPassword.Location = new System.Drawing.Point(104, 186);
             this.registerPassword.Margin = new System.Windows.Forms.Padding(2);
             this.registerPassword.Name = "registerPassword";
@@ -118,7 +127,10 @@ namespace AmazingAdventures
             // 
             // registerEmail
             // 
+            this.registerEmail.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.registerEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.registerEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.registerEmail.Location = new System.Drawing.Point(104, 121);
             this.registerEmail.Margin = new System.Windows.Forms.Padding(2);
             this.registerEmail.Name = "registerEmail";
@@ -128,7 +140,9 @@ namespace AmazingAdventures
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(75, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -139,7 +153,9 @@ namespace AmazingAdventures
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label3.Location = new System.Drawing.Point(100, 224);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -149,6 +165,8 @@ namespace AmazingAdventures
             // 
             // registerUsername
             // 
+            this.registerUsername.BackColor = System.Drawing.SystemColors.Menu;
+            this.registerUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.registerUsername.Enabled = false;
             this.registerUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerUsername.Location = new System.Drawing.Point(104, 250);
@@ -163,7 +181,8 @@ namespace AmazingAdventures
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(492, 401);
+            this.BackgroundImage = global::amazingAdventures.Properties.Resources.background2;
+            this.ClientSize = new System.Drawing.Size(492, 372);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.registerUsername);
             this.Controls.Add(this.rgsrSecondLine);

@@ -45,7 +45,7 @@ namespace AmazingAdventures
             // 
             // loginBtn
             // 
-            this.loginBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.loginBtn.Location = new System.Drawing.Point(147, 235);
@@ -60,7 +60,9 @@ namespace AmazingAdventures
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(100, 163);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -71,7 +73,9 @@ namespace AmazingAdventures
             // Use
             // 
             this.Use.AutoSize = true;
+            this.Use.BackColor = System.Drawing.Color.Transparent;
             this.Use.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.Use.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Use.Location = new System.Drawing.Point(100, 98);
             this.Use.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Use.Name = "Use";
@@ -81,7 +85,10 @@ namespace AmazingAdventures
             // 
             // loginPassword
             // 
+            this.loginPassword.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.loginPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.loginPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.loginPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.loginPassword.Location = new System.Drawing.Point(104, 189);
             this.loginPassword.Margin = new System.Windows.Forms.Padding(2);
             this.loginPassword.Name = "loginPassword";
@@ -91,7 +98,10 @@ namespace AmazingAdventures
             // 
             // loginUsername
             // 
+            this.loginUsername.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.loginUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.loginUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.loginUsername.Location = new System.Drawing.Point(104, 124);
             this.loginUsername.Margin = new System.Windows.Forms.Padding(2);
             this.loginUsername.Name = "loginUsername";
@@ -101,7 +111,9 @@ namespace AmazingAdventures
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(74, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -112,8 +124,9 @@ namespace AmazingAdventures
             // usrnInvalidFirstLabel
             // 
             this.usrnInvalidFirstLabel.AutoSize = true;
+            this.usrnInvalidFirstLabel.BackColor = System.Drawing.Color.Transparent;
             this.usrnInvalidFirstLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.usrnInvalidFirstLabel.ForeColor = System.Drawing.Color.Red;
+            this.usrnInvalidFirstLabel.ForeColor = System.Drawing.Color.LightSalmon;
             this.usrnInvalidFirstLabel.Location = new System.Drawing.Point(185, 284);
             this.usrnInvalidFirstLabel.MinimumSize = new System.Drawing.Size(128, 17);
             this.usrnInvalidFirstLabel.Name = "usrnInvalidFirstLabel";
@@ -126,8 +139,9 @@ namespace AmazingAdventures
             // usrnInvalidSecondLabel
             // 
             this.usrnInvalidSecondLabel.AutoSize = true;
+            this.usrnInvalidSecondLabel.BackColor = System.Drawing.Color.Transparent;
             this.usrnInvalidSecondLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usrnInvalidSecondLabel.ForeColor = System.Drawing.Color.Red;
+            this.usrnInvalidSecondLabel.ForeColor = System.Drawing.Color.LightSalmon;
             this.usrnInvalidSecondLabel.Location = new System.Drawing.Point(86, 304);
             this.usrnInvalidSecondLabel.MinimumSize = new System.Drawing.Size(323, 16);
             this.usrnInvalidSecondLabel.Name = "usrnInvalidSecondLabel";
@@ -139,7 +153,7 @@ namespace AmazingAdventures
             // 
             // registerBtn
             // 
-            this.registerBtn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.registerBtn.BackColor = System.Drawing.Color.LightSalmon;
             this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.registerBtn.Location = new System.Drawing.Point(147, 274);
@@ -155,8 +169,9 @@ namespace AmazingAdventures
             // usrnValidSecondLine
             // 
             this.usrnValidSecondLine.AutoSize = true;
+            this.usrnValidSecondLine.BackColor = System.Drawing.Color.Transparent;
             this.usrnValidSecondLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usrnValidSecondLine.ForeColor = System.Drawing.Color.Red;
+            this.usrnValidSecondLine.ForeColor = System.Drawing.Color.LightSalmon;
             this.usrnValidSecondLine.Location = new System.Drawing.Point(121, 336);
             this.usrnValidSecondLine.MinimumSize = new System.Drawing.Size(263, 16);
             this.usrnValidSecondLine.Name = "usrnValidSecondLine";
@@ -169,8 +184,9 @@ namespace AmazingAdventures
             // usrnValidFirstLine
             // 
             this.usrnValidFirstLine.AutoSize = true;
+            this.usrnValidFirstLine.BackColor = System.Drawing.Color.Transparent;
             this.usrnValidFirstLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.usrnValidFirstLine.ForeColor = System.Drawing.Color.Red;
+            this.usrnValidFirstLine.ForeColor = System.Drawing.Color.LightSalmon;
             this.usrnValidFirstLine.Location = new System.Drawing.Point(174, 316);
             this.usrnValidFirstLine.MinimumSize = new System.Drawing.Size(165, 17);
             this.usrnValidFirstLine.Name = "usrnValidFirstLine";
@@ -186,6 +202,7 @@ namespace AmazingAdventures
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackgroundImage = global::amazingAdventures.Properties.Resources.background2;
             this.ClientSize = new System.Drawing.Size(492, 372);
             this.Controls.Add(this.usrnValidSecondLine);
             this.Controls.Add(this.usrnValidFirstLine);
