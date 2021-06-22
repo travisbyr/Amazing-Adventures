@@ -47,7 +47,7 @@ namespace amazingAdventures
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(102, 209);
+            this.label3.Location = new System.Drawing.Point(102, 211);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 24);
@@ -60,7 +60,7 @@ namespace amazingAdventures
             this.settingsUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.settingsUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.settingsUsername.ForeColor = System.Drawing.Color.Black;
-            this.settingsUsername.Location = new System.Drawing.Point(106, 235);
+            this.settingsUsername.Location = new System.Drawing.Point(106, 237);
             this.settingsUsername.Margin = new System.Windows.Forms.Padding(2);
             this.settingsUsername.Name = "settingsUsername";
             this.settingsUsername.Size = new System.Drawing.Size(287, 29);
@@ -72,7 +72,7 @@ namespace amazingAdventures
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(102, 145);
+            this.label2.Location = new System.Drawing.Point(102, 147);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 24);
@@ -85,7 +85,7 @@ namespace amazingAdventures
             this.Use.BackColor = System.Drawing.Color.Transparent;
             this.Use.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.Use.ForeColor = System.Drawing.Color.Black;
-            this.Use.Location = new System.Drawing.Point(102, 80);
+            this.Use.Location = new System.Drawing.Point(102, 82);
             this.Use.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Use.Name = "Use";
             this.Use.Size = new System.Drawing.Size(62, 24);
@@ -98,7 +98,7 @@ namespace amazingAdventures
             this.settingsPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.settingsPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.settingsPassword.ForeColor = System.Drawing.Color.Black;
-            this.settingsPassword.Location = new System.Drawing.Point(106, 171);
+            this.settingsPassword.Location = new System.Drawing.Point(106, 173);
             this.settingsPassword.Margin = new System.Windows.Forms.Padding(2);
             this.settingsPassword.Name = "settingsPassword";
             this.settingsPassword.PasswordChar = '*';
@@ -111,7 +111,7 @@ namespace amazingAdventures
             this.settingsEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.settingsEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.settingsEmail.ForeColor = System.Drawing.Color.Black;
-            this.settingsEmail.Location = new System.Drawing.Point(106, 106);
+            this.settingsEmail.Location = new System.Drawing.Point(106, 108);
             this.settingsEmail.Margin = new System.Windows.Forms.Padding(2);
             this.settingsEmail.Name = "settingsEmail";
             this.settingsEmail.Size = new System.Drawing.Size(287, 29);
@@ -123,7 +123,7 @@ namespace amazingAdventures
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(179, 16);
+            this.label1.Location = new System.Drawing.Point(179, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 47);
@@ -162,7 +162,7 @@ namespace amazingAdventures
             // 
             this.saveBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.saveBtn.Location = new System.Drawing.Point(147, 280);
+            this.saveBtn.Location = new System.Drawing.Point(147, 282);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(2);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(199, 35);

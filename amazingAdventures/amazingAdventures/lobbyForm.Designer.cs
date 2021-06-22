@@ -92,9 +92,9 @@ namespace AmazingAdventures
             this.label3.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.label3.Location = new System.Drawing.Point(47, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 29);
+            this.label3.Size = new System.Drawing.Size(194, 29);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Current Games";
+            this.label3.Text = "Avaliable Games";
             // 
             // newGameButton
             // 

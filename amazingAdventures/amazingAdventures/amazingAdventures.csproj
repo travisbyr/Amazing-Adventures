@@ -89,6 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSettingsForm.Designer.cs">
+      <DependentUpon>AdminSettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ButtonEllipse.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminSettingsForm.resx">
+      <DependentUpon>AdminSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CharacterCreateForm.resx">
       <DependentUpon>CharacterCreateForm.cs</DependentUpon>
     </EmbeddedResource>

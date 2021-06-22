@@ -16,5 +16,10 @@ namespace amazingAdventures
         {
             InitializeComponent();
         }
+
+        private void AdminSettingsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
