@@ -75,7 +75,7 @@ namespace AmazingAdventures
             this.chatCloseBtn.Name = "chatCloseBtn";
             this.chatCloseBtn.Size = new System.Drawing.Size(158, 40);
             this.chatCloseBtn.TabIndex = 10;
-            this.chatCloseBtn.Text = "Close Chat";
+            this.chatCloseBtn.Text = "Close";
             this.chatCloseBtn.UseVisualStyleBackColor = true;
             this.chatCloseBtn.Click += new System.EventHandler(this.chatCloseBtn_Click);
             // 

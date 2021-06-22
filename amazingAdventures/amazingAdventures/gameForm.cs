@@ -33,6 +33,10 @@ namespace AmazingAdventures
         public GameForm()
         {
             InitializeComponent();
+            Ubtn.Click += new EventHandler(Ubtn_Click);
+            Rbtn.Click += new EventHandler(Rbtn_Click);
+            Dbtn.Click += new EventHandler(Dbtn_Click);
+            Lbtn.Click += new EventHandler(Lbtn_Click);
         }
 
         private void leaveButton_Click(object sender, EventArgs e)
@@ -78,9 +82,8 @@ namespace AmazingAdventures
             DataAccess.addItems(Main.M.GameNumber);
             otherCharactersMarker();
             itemMarker();
-            characterMove();
             onScreenControlSetup();
-            onScreenControls();
+            characterMove();
 
             int a = Main.M.GameNumber;
             DataAccess.checkCharacter(Main.M.Username, Main.M.GameNumber);
@@ -101,10 +104,6 @@ namespace AmazingAdventures
         }
         private void characterCheckLocation()
         {
-            otherCharactersMarker();
-            itemMarker();
-
-
             if (preTile == 15 && curTile == 16 ||
                 preTile == 30 && curTile == 31 ||
                 preTile == 45 && curTile == 46 ||
@@ -181,6 +180,7 @@ namespace AmazingAdventures
                 totalFoundItemsLabel.Text = DataAccess.Message + " Points";
                 points = Int32.Parse(DataAccess.Message);
                 int b = Int32.Parse(DataAccess.Message);
+                itemMarker();
             }
             else if (DataAccess.Message == "trapFound")
             {
@@ -195,6 +195,7 @@ namespace AmazingAdventures
         }
         private void characterMove()
         {
+            itemMarker();
             DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
             string x = "pb" + curTile;                                                    // gets picturebox name
             PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
@@ -204,8 +205,11 @@ namespace AmazingAdventures
             Size locationOfMove = new Size(pt);                                           // converts to size
             playerMarker.Visible = true;
             playerMarker.Location = new System.Drawing.Point(locationOfMove);             // moves character to tile
-            onScreenControls();
             playerMarker.BringToFront();
+
+            otherCharactersMarker();
+
+
         }
 
         private void moveUp()
@@ -301,8 +305,14 @@ namespace AmazingAdventures
                     PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
                     pb.Image = null;
                     pb.Visible = false;
+
+                    Point pt = pb.FindForm().PointToClient(pb.Parent.PointToScreen(pb.Location));
+                    Size locationOfMove = new Size(pt.X - 14, pt.Y - 14);
+                    pb.Location = new System.Drawing.Point(locationOfMove);
                 }
             }
+
+            onScreenControls();
 
             Main.ItemList.Clear();
             DataAccess.getGameItems(Main.M.GameNumber);
@@ -314,8 +324,11 @@ namespace AmazingAdventures
                 {
                     string x = "pb" + item.TileID;                                                
                     PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
+                    Point pt = pb.FindForm().PointToClient(pb.Parent.PointToScreen(pb.Location));
+                    Size locationOfMove = new Size(pt.X + 14, pt.Y + 14);
+                    pb.Location = new System.Drawing.Point(locationOfMove);
                     pb.Size = new System.Drawing.Size(60, 60);
-                    Image image = Image.FromFile(@item.Photo); //26
+                    Image image = Image.FromFile(@item.Photo);
                     pb.Image = image;
                     pb.BackColor = Color.Transparent;
                     pb.Visible = true;
@@ -355,6 +368,13 @@ namespace AmazingAdventures
                 Point ptU = pbU.FindForm().PointToClient(pbU.Parent.PointToScreen(pbU.Location));
                 Size locationOfUbtn = new Size(ptU);
                 Ubtn.Location = new System.Drawing.Point(locationOfUbtn);
+                Ubtn.Text = "ᐃ";
+                Ubtn.Font = new Font("Arial", 40);
+                Ubtn.BackColor = Color.White;
+                Ubtn.FlatStyle = FlatStyle.Flat;
+                Ubtn.FlatAppearance.BorderColor = Color.White;
+                Ubtn.FlatAppearance.BorderSize = 1;
+                Ubtn.TabStop = false;
                 Ubtn.Visible = true;
             }
 
@@ -375,6 +395,13 @@ namespace AmazingAdventures
                 Point ptD = pbD.FindForm().PointToClient(pbD.Parent.PointToScreen(pbD.Location));
                 Size locationOfDbtn = new Size(ptD);
                 Dbtn.Location = new System.Drawing.Point(locationOfDbtn);
+                Dbtn.Text = "ᐁ";
+                Dbtn.Font = new Font("Arial", 40);
+                Dbtn.BackColor = Color.White;
+                Dbtn.FlatStyle = FlatStyle.Flat;
+                Dbtn.FlatAppearance.BorderColor = Color.White;
+                Dbtn.FlatAppearance.BorderSize = 1;
+                Dbtn.TabStop = false;
                 Dbtn.Visible = true;
             }
 
@@ -395,6 +422,13 @@ namespace AmazingAdventures
                 Point ptR = pbR.FindForm().PointToClient(pbR.Parent.PointToScreen(pbR.Location));
                 Size locationOfRbtn = new Size(ptR);
                 Rbtn.Location = new System.Drawing.Point(locationOfRbtn);
+                Rbtn.Text = "ᐅ";
+                Rbtn.Font = new Font("Arial", 40);
+                Rbtn.BackColor = Color.White;
+                Rbtn.FlatStyle = FlatStyle.Flat;
+                Rbtn.FlatAppearance.BorderColor = Color.White;
+                Rbtn.FlatAppearance.BorderSize = 1;
+                Rbtn.TabStop = false;
                 Rbtn.Visible = true;
             }
 
@@ -416,6 +450,13 @@ namespace AmazingAdventures
                 Point ptL = pbL.FindForm().PointToClient(pbL.Parent.PointToScreen(pbL.Location));
                 Size locationOfLbtn = new Size(ptL);
                 Lbtn.Location = new System.Drawing.Point(locationOfLbtn);
+                Lbtn.Text = "ᐊ";
+                Lbtn.Font = new Font("Arial", 40);
+                Lbtn.BackColor = Color.White;
+                Lbtn.FlatStyle = FlatStyle.Flat;
+                Lbtn.FlatAppearance.BorderColor = Color.White;
+                Lbtn.FlatAppearance.BorderSize = 1;
+                Lbtn.TabStop = false;
                 Lbtn.Visible = true;
             }
         }
@@ -442,6 +483,23 @@ namespace AmazingAdventures
             Lbtn.BringToFront();
 
 
+        }
+
+        private void Ubtn_Click(object sender, System.EventArgs e)
+        {
+            moveUp();
+        }
+        private void Dbtn_Click(object sender, System.EventArgs e)
+        {
+            moveDown();
+        }
+        private void Lbtn_Click(object sender, System.EventArgs e)
+        {
+            moveLeft();
+        }
+        private void Rbtn_Click(object sender, System.EventArgs e)
+        {
+            moveRight();
         }
     }
 }

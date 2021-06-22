@@ -37,7 +37,6 @@ namespace AmazingAdventures
             this.label3 = new System.Windows.Forms.Label();
             this.newGameButton = new System.Windows.Forms.Button();
             this.chatButton = new System.Windows.Forms.Button();
-            this.leaderBoardBtn = new System.Windows.Forms.Button();
             this.joinGameButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             this.adminButton = new System.Windows.Forms.Button();
@@ -109,7 +108,7 @@ namespace AmazingAdventures
             this.newGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newGameButton.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
             this.newGameButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.newGameButton.Location = new System.Drawing.Point(390, 232);
+            this.newGameButton.Location = new System.Drawing.Point(390, 260);
             this.newGameButton.Name = "newGameButton";
             this.newGameButton.Size = new System.Drawing.Size(255, 60);
             this.newGameButton.TabIndex = 10;
@@ -123,27 +122,13 @@ namespace AmazingAdventures
             this.chatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chatButton.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
             this.chatButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.chatButton.Location = new System.Drawing.Point(390, 416);
+            this.chatButton.Location = new System.Drawing.Point(390, 351);
             this.chatButton.Name = "chatButton";
             this.chatButton.Size = new System.Drawing.Size(255, 60);
             this.chatButton.TabIndex = 11;
             this.chatButton.Text = "Chat";
             this.chatButton.UseVisualStyleBackColor = false;
             this.chatButton.Click += new System.EventHandler(this.chatButton_Click);
-            // 
-            // leaderBoardBtn
-            // 
-            this.leaderBoardBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.leaderBoardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.leaderBoardBtn.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
-            this.leaderBoardBtn.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.leaderBoardBtn.Location = new System.Drawing.Point(390, 323);
-            this.leaderBoardBtn.Name = "leaderBoardBtn";
-            this.leaderBoardBtn.Size = new System.Drawing.Size(255, 60);
-            this.leaderBoardBtn.TabIndex = 12;
-            this.leaderBoardBtn.Text = "Leaderboard";
-            this.leaderBoardBtn.UseVisualStyleBackColor = false;
-            this.leaderBoardBtn.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // joinGameButton
             // 
@@ -189,7 +174,7 @@ namespace AmazingAdventures
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(408, 119);
+            this.label4.Location = new System.Drawing.Point(408, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(215, 31);
             this.label4.TabIndex = 16;
@@ -199,7 +184,7 @@ namespace AmazingAdventures
             // 
             this.lobbyHighScore.AutoSize = true;
             this.lobbyHighScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lobbyHighScore.Location = new System.Drawing.Point(466, 165);
+            this.lobbyHighScore.Location = new System.Drawing.Point(466, 183);
             this.lobbyHighScore.Name = "lobbyHighScore";
             this.lobbyHighScore.Size = new System.Drawing.Size(91, 26);
             this.lobbyHighScore.TabIndex = 17;
@@ -212,7 +197,7 @@ namespace AmazingAdventures
             this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settingsBtn.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
             this.settingsBtn.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.settingsBtn.Location = new System.Drawing.Point(390, 507);
+            this.settingsBtn.Location = new System.Drawing.Point(390, 444);
             this.settingsBtn.Name = "settingsBtn";
             this.settingsBtn.Size = new System.Drawing.Size(255, 60);
             this.settingsBtn.TabIndex = 18;
@@ -232,7 +217,6 @@ namespace AmazingAdventures
             this.Controls.Add(this.adminButton);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.joinGameButton);
-            this.Controls.Add(this.leaderBoardBtn);
             this.Controls.Add(this.chatButton);
             this.Controls.Add(this.newGameButton);
             this.Controls.Add(this.label3);
@@ -258,7 +242,6 @@ namespace AmazingAdventures
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button newGameButton;
         private System.Windows.Forms.Button chatButton;
-        private System.Windows.Forms.Button leaderBoardBtn;
         private System.Windows.Forms.Button joinGameButton;
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.Button adminButton;

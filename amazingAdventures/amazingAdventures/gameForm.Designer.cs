@@ -2215,5 +2215,6 @@ namespace AmazingAdventures
         private System.Windows.Forms.Button openChatBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-    }
+
+        }
 }
