@@ -89,6 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSettingsForm.Designer.cs">
+      <DependentUpon>AdminSettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ButtonEllipse.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -141,6 +147,12 @@
     <Compile Include="NewGameForm.Designer.cs">
       <DependentUpon>NewGameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayerSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerSettingsForm.Designer.cs">
+      <DependentUpon>PlayerSettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterForm.cs">
@@ -149,6 +161,9 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminSettingsForm.resx">
+      <DependentUpon>AdminSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CharacterCreateForm.resx">
       <DependentUpon>CharacterCreateForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewGameForm.resx">
       <DependentUpon>NewGameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerSettingsForm.resx">
+      <DependentUpon>PlayerSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
