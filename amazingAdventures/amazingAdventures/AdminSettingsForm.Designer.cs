@@ -29,130 +29,130 @@ namespace amazingAdventures
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.onlinePlayersDGV = new System.Windows.Forms.DataGridView();
-            this.settingsBtn = new System.Windows.Forms.Button();
-            this.adminButton = new System.Windows.Forms.Button();
-            this.logoutButton = new System.Windows.Forms.Button();
-            this.chatButton = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.totalPlayersDGV = new System.Windows.Forms.DataGridView();
+            this.refreshAdminFormBtn = new System.Windows.Forms.Button();
+            this.adminFormCloseBtn = new System.Windows.Forms.Button();
+            this.deletePlayerBtn = new System.Windows.Forms.Button();
+            this.clearChatBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.currentGameList = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.onlinePlayersDGV)).BeginInit();
+            this.addPlayerBtn = new System.Windows.Forms.Button();
+            this.editPlayerBtn = new System.Windows.Forms.Button();
+            this.deleteGameBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.totalPlayersDGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // onlinePlayersDGV
+            // totalPlayersDGV
             // 
-            this.onlinePlayersDGV.AllowUserToAddRows = false;
-            this.onlinePlayersDGV.AllowUserToDeleteRows = false;
-            this.onlinePlayersDGV.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.onlinePlayersDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
-            this.onlinePlayersDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.onlinePlayersDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.onlinePlayersDGV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.onlinePlayersDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.onlinePlayersDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
-            this.onlinePlayersDGV.ColumnHeadersHeight = 33;
-            this.onlinePlayersDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.onlinePlayersDGV.DefaultCellStyle = dataGridViewCellStyle48;
-            this.onlinePlayersDGV.GridColor = System.Drawing.SystemColors.Control;
-            this.onlinePlayersDGV.Location = new System.Drawing.Point(706, 114);
-            this.onlinePlayersDGV.Margin = new System.Windows.Forms.Padding(2);
-            this.onlinePlayersDGV.MultiSelect = false;
-            this.onlinePlayersDGV.Name = "onlinePlayersDGV";
-            this.onlinePlayersDGV.ReadOnly = true;
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.onlinePlayersDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
-            this.onlinePlayersDGV.RowHeadersVisible = false;
-            this.onlinePlayersDGV.RowHeadersWidth = 82;
-            this.onlinePlayersDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.onlinePlayersDGV.RowsDefaultCellStyle = dataGridViewCellStyle50;
-            this.onlinePlayersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.onlinePlayersDGV.Size = new System.Drawing.Size(283, 479);
-            this.onlinePlayersDGV.TabIndex = 32;
+            this.totalPlayersDGV.AllowUserToAddRows = false;
+            this.totalPlayersDGV.AllowUserToDeleteRows = false;
+            this.totalPlayersDGV.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.totalPlayersDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.totalPlayersDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.totalPlayersDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.totalPlayersDGV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.totalPlayersDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.totalPlayersDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.totalPlayersDGV.ColumnHeadersHeight = 33;
+            this.totalPlayersDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.totalPlayersDGV.DefaultCellStyle = dataGridViewCellStyle3;
+            this.totalPlayersDGV.GridColor = System.Drawing.SystemColors.Control;
+            this.totalPlayersDGV.Location = new System.Drawing.Point(706, 114);
+            this.totalPlayersDGV.Margin = new System.Windows.Forms.Padding(2);
+            this.totalPlayersDGV.MultiSelect = false;
+            this.totalPlayersDGV.Name = "totalPlayersDGV";
+            this.totalPlayersDGV.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.totalPlayersDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.totalPlayersDGV.RowHeadersVisible = false;
+            this.totalPlayersDGV.RowHeadersWidth = 82;
+            this.totalPlayersDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.totalPlayersDGV.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.totalPlayersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.totalPlayersDGV.Size = new System.Drawing.Size(283, 479);
+            this.totalPlayersDGV.TabIndex = 32;
             // 
-            // settingsBtn
+            // refreshAdminFormBtn
             // 
-            this.settingsBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsBtn.Font = new System.Drawing.Font("Arial", 17F);
-            this.settingsBtn.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.settingsBtn.Location = new System.Drawing.Point(388, 305);
-            this.settingsBtn.Name = "settingsBtn";
-            this.settingsBtn.Size = new System.Drawing.Size(255, 60);
-            this.settingsBtn.TabIndex = 31;
-            this.settingsBtn.Text = "Refresh";
-            this.settingsBtn.UseVisualStyleBackColor = false;
+            this.refreshAdminFormBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.refreshAdminFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshAdminFormBtn.Font = new System.Drawing.Font("Arial", 17F);
+            this.refreshAdminFormBtn.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.refreshAdminFormBtn.Location = new System.Drawing.Point(388, 305);
+            this.refreshAdminFormBtn.Name = "refreshAdminFormBtn";
+            this.refreshAdminFormBtn.Size = new System.Drawing.Size(255, 60);
+            this.refreshAdminFormBtn.TabIndex = 31;
+            this.refreshAdminFormBtn.Text = "Refresh";
+            this.refreshAdminFormBtn.UseVisualStyleBackColor = false;
             // 
-            // adminButton
+            // adminFormCloseBtn
             // 
-            this.adminButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.adminButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminButton.Font = new System.Drawing.Font("Arial", 17F);
-            this.adminButton.ForeColor = System.Drawing.Color.Black;
-            this.adminButton.Location = new System.Drawing.Point(388, 623);
-            this.adminButton.Name = "adminButton";
-            this.adminButton.Size = new System.Drawing.Size(255, 60);
-            this.adminButton.TabIndex = 28;
-            this.adminButton.Text = "Return to Lobby";
-            this.adminButton.UseVisualStyleBackColor = false;
-            this.adminButton.Visible = false;
+            this.adminFormCloseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.adminFormCloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adminFormCloseBtn.Font = new System.Drawing.Font("Arial", 17F);
+            this.adminFormCloseBtn.ForeColor = System.Drawing.Color.Black;
+            this.adminFormCloseBtn.Location = new System.Drawing.Point(388, 623);
+            this.adminFormCloseBtn.Name = "adminFormCloseBtn";
+            this.adminFormCloseBtn.Size = new System.Drawing.Size(255, 60);
+            this.adminFormCloseBtn.TabIndex = 28;
+            this.adminFormCloseBtn.Text = "Return to Lobby";
+            this.adminFormCloseBtn.UseVisualStyleBackColor = false;
+            this.adminFormCloseBtn.Visible = false;
             // 
-            // logoutButton
+            // deletePlayerBtn
             // 
-            this.logoutButton.BackColor = System.Drawing.Color.LightSalmon;
-            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logoutButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.logoutButton.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.logoutButton.Location = new System.Drawing.Point(738, 657);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(226, 40);
-            this.logoutButton.TabIndex = 27;
-            this.logoutButton.Text = "Delete Player";
-            this.logoutButton.UseVisualStyleBackColor = false;
+            this.deletePlayerBtn.BackColor = System.Drawing.Color.LightSalmon;
+            this.deletePlayerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deletePlayerBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.deletePlayerBtn.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.deletePlayerBtn.Location = new System.Drawing.Point(738, 657);
+            this.deletePlayerBtn.Name = "deletePlayerBtn";
+            this.deletePlayerBtn.Size = new System.Drawing.Size(226, 40);
+            this.deletePlayerBtn.TabIndex = 27;
+            this.deletePlayerBtn.Text = "Delete Player";
+            this.deletePlayerBtn.UseVisualStyleBackColor = false;
             // 
-            // chatButton
+            // clearChatBtn
             // 
-            this.chatButton.BackColor = System.Drawing.Color.LightSalmon;
-            this.chatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chatButton.Font = new System.Drawing.Font("Arial", 17F);
-            this.chatButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.chatButton.Location = new System.Drawing.Point(388, 420);
-            this.chatButton.Name = "chatButton";
-            this.chatButton.Size = new System.Drawing.Size(255, 60);
-            this.chatButton.TabIndex = 25;
-            this.chatButton.Text = "Clear Chat";
-            this.chatButton.UseVisualStyleBackColor = false;
+            this.clearChatBtn.BackColor = System.Drawing.Color.LightSalmon;
+            this.clearChatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearChatBtn.Font = new System.Drawing.Font("Arial", 17F);
+            this.clearChatBtn.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.clearChatBtn.Location = new System.Drawing.Point(388, 420);
+            this.clearChatBtn.Name = "clearChatBtn";
+            this.clearChatBtn.Size = new System.Drawing.Size(255, 60);
+            this.clearChatBtn.TabIndex = 25;
+            this.clearChatBtn.Text = "Clear Chat";
+            this.clearChatBtn.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -197,44 +197,44 @@ namespace amazingAdventures
             this.currentGameList.Size = new System.Drawing.Size(283, 479);
             this.currentGameList.TabIndex = 20;
             // 
-            // button1
+            // addPlayerBtn
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 17F);
-            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(388, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 60);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Add Player";
-            this.button1.UseVisualStyleBackColor = false;
+            this.addPlayerBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.addPlayerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addPlayerBtn.Font = new System.Drawing.Font("Arial", 17F);
+            this.addPlayerBtn.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.addPlayerBtn.Location = new System.Drawing.Point(388, 194);
+            this.addPlayerBtn.Name = "addPlayerBtn";
+            this.addPlayerBtn.Size = new System.Drawing.Size(255, 60);
+            this.addPlayerBtn.TabIndex = 33;
+            this.addPlayerBtn.Text = "Add Player";
+            this.addPlayerBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // editPlayerBtn
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.button2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button2.Location = new System.Drawing.Point(738, 608);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(226, 40);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Edit Player";
-            this.button2.UseVisualStyleBackColor = false;
+            this.editPlayerBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.editPlayerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editPlayerBtn.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.editPlayerBtn.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.editPlayerBtn.Location = new System.Drawing.Point(738, 608);
+            this.editPlayerBtn.Name = "editPlayerBtn";
+            this.editPlayerBtn.Size = new System.Drawing.Size(226, 40);
+            this.editPlayerBtn.TabIndex = 34;
+            this.editPlayerBtn.Text = "Edit Player";
+            this.editPlayerBtn.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // deleteGameBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.LightSalmon;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button3.Location = new System.Drawing.Point(74, 608);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(226, 40);
-            this.button3.TabIndex = 35;
-            this.button3.Text = "Delete Game";
-            this.button3.UseVisualStyleBackColor = false;
+            this.deleteGameBtn.BackColor = System.Drawing.Color.LightSalmon;
+            this.deleteGameBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteGameBtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.deleteGameBtn.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.deleteGameBtn.Location = new System.Drawing.Point(74, 608);
+            this.deleteGameBtn.Name = "deleteGameBtn";
+            this.deleteGameBtn.Size = new System.Drawing.Size(226, 40);
+            this.deleteGameBtn.TabIndex = 35;
+            this.deleteGameBtn.Text = "Delete Game";
+            this.deleteGameBtn.UseVisualStyleBackColor = false;
             // 
             // AdminSettingsForm
             // 
@@ -242,14 +242,14 @@ namespace amazingAdventures
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 716);
             this.ControlBox = false;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.onlinePlayersDGV);
-            this.Controls.Add(this.settingsBtn);
-            this.Controls.Add(this.adminButton);
-            this.Controls.Add(this.logoutButton);
-            this.Controls.Add(this.chatButton);
+            this.Controls.Add(this.deleteGameBtn);
+            this.Controls.Add(this.editPlayerBtn);
+            this.Controls.Add(this.addPlayerBtn);
+            this.Controls.Add(this.totalPlayersDGV);
+            this.Controls.Add(this.refreshAdminFormBtn);
+            this.Controls.Add(this.adminFormCloseBtn);
+            this.Controls.Add(this.deletePlayerBtn);
+            this.Controls.Add(this.clearChatBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -257,7 +257,7 @@ namespace amazingAdventures
             this.Name = "AdminSettingsForm";
             this.Text = "Amazing Adventures - Admin Settings";
             this.Load += new System.EventHandler(this.AdminSettingsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.onlinePlayersDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.totalPlayersDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,17 +265,17 @@ namespace amazingAdventures
 
         #endregion
 
-        public System.Windows.Forms.DataGridView onlinePlayersDGV;
-        private System.Windows.Forms.Button settingsBtn;
-        private System.Windows.Forms.Button adminButton;
-        private System.Windows.Forms.Button logoutButton;
-        private System.Windows.Forms.Button chatButton;
+        public System.Windows.Forms.DataGridView totalPlayersDGV;
+        private System.Windows.Forms.Button refreshAdminFormBtn;
+        private System.Windows.Forms.Button adminFormCloseBtn;
+        private System.Windows.Forms.Button deletePlayerBtn;
+        private System.Windows.Forms.Button clearChatBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ListBox currentGameList;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button addPlayerBtn;
+        private System.Windows.Forms.Button editPlayerBtn;
+        private System.Windows.Forms.Button deleteGameBtn;
     }
 }

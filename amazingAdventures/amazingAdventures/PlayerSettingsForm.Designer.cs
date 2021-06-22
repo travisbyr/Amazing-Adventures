@@ -30,11 +30,11 @@ namespace amazingAdventures
         private void InitializeComponent()
         {
             this.label3 = new System.Windows.Forms.Label();
-            this.settingsUsername = new System.Windows.Forms.TextBox();
+            this.settingsEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Use = new System.Windows.Forms.Label();
             this.settingsPassword = new System.Windows.Forms.TextBox();
-            this.settingsEmail = new System.Windows.Forms.TextBox();
+            this.settingsUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
             this.usrnInvalidFirstLabel = new System.Windows.Forms.Label();
@@ -50,21 +50,21 @@ namespace amazingAdventures
             this.label3.Location = new System.Drawing.Point(102, 211);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 24);
+            this.label3.Size = new System.Drawing.Size(62, 24);
             this.label3.TabIndex = 39;
-            this.label3.Text = "Username:";
+            this.label3.Text = "Email:";
             // 
-            // settingsUsername
+            // settingsEmail
             // 
-            this.settingsUsername.BackColor = System.Drawing.Color.White;
-            this.settingsUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.settingsUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.settingsUsername.ForeColor = System.Drawing.Color.Black;
-            this.settingsUsername.Location = new System.Drawing.Point(106, 237);
-            this.settingsUsername.Margin = new System.Windows.Forms.Padding(2);
-            this.settingsUsername.Name = "settingsUsername";
-            this.settingsUsername.Size = new System.Drawing.Size(287, 29);
-            this.settingsUsername.TabIndex = 38;
+            this.settingsEmail.BackColor = System.Drawing.Color.White;
+            this.settingsEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.settingsEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.settingsEmail.ForeColor = System.Drawing.Color.Black;
+            this.settingsEmail.Location = new System.Drawing.Point(106, 237);
+            this.settingsEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.settingsEmail.Name = "settingsEmail";
+            this.settingsEmail.Size = new System.Drawing.Size(287, 29);
+            this.settingsEmail.TabIndex = 38;
             // 
             // label2
             // 
@@ -88,9 +88,9 @@ namespace amazingAdventures
             this.Use.Location = new System.Drawing.Point(102, 82);
             this.Use.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Use.Name = "Use";
-            this.Use.Size = new System.Drawing.Size(62, 24);
+            this.Use.Size = new System.Drawing.Size(102, 24);
             this.Use.TabIndex = 33;
-            this.Use.Text = "Email:";
+            this.Use.Text = "Username:";
             // 
             // settingsPassword
             // 
@@ -105,17 +105,18 @@ namespace amazingAdventures
             this.settingsPassword.Size = new System.Drawing.Size(287, 29);
             this.settingsPassword.TabIndex = 32;
             // 
-            // settingsEmail
+            // settingsUsername
             // 
-            this.settingsEmail.BackColor = System.Drawing.Color.White;
-            this.settingsEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.settingsEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.settingsEmail.ForeColor = System.Drawing.Color.Black;
-            this.settingsEmail.Location = new System.Drawing.Point(106, 108);
-            this.settingsEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.settingsEmail.Name = "settingsEmail";
-            this.settingsEmail.Size = new System.Drawing.Size(287, 29);
-            this.settingsEmail.TabIndex = 31;
+            this.settingsUsername.BackColor = System.Drawing.Color.White;
+            this.settingsUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.settingsUsername.Enabled = false;
+            this.settingsUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.settingsUsername.ForeColor = System.Drawing.Color.Black;
+            this.settingsUsername.Location = new System.Drawing.Point(106, 108);
+            this.settingsUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.settingsUsername.Name = "settingsUsername";
+            this.settingsUsername.Size = new System.Drawing.Size(287, 29);
+            this.settingsUsername.TabIndex = 31;
             // 
             // label1
             // 
@@ -180,11 +181,11 @@ namespace amazingAdventures
             this.Controls.Add(this.usrnInvalidFirstLabel);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.settingsUsername);
+            this.Controls.Add(this.settingsEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Use);
             this.Controls.Add(this.settingsPassword);
-            this.Controls.Add(this.settingsEmail);
+            this.Controls.Add(this.settingsUsername);
             this.Controls.Add(this.label1);
             this.Name = "PlayerSettingsForm";
             this.Text = "Amazing Adventures - Player Settings";
@@ -196,11 +197,11 @@ namespace amazingAdventures
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox settingsUsername;
+        private System.Windows.Forms.TextBox settingsEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Use;
         private System.Windows.Forms.TextBox settingsPassword;
-        private System.Windows.Forms.TextBox settingsEmail;
+        private System.Windows.Forms.TextBox settingsUsername;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Label usrnInvalidFirstLabel;

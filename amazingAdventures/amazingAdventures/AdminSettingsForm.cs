@@ -12,6 +12,9 @@ namespace amazingAdventures
 {
     public partial class AdminSettingsForm : Form
     {
+        private static readonly AdminSettingsForm _instance = new AdminSettingsForm();
+        public static AdminSettingsForm AdminSettings => _instance;
+        static AdminSettingsForm() { }
         public AdminSettingsForm()
         {
             InitializeComponent();

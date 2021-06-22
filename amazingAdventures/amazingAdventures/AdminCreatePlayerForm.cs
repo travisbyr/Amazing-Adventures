@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace amazingAdventures
 {
-    public partial class PlayerSettingsForm : Form
+    public partial class AdminCreatePlayerForm : Form
     {
-        private static readonly PlayerSettingsForm _instance = new PlayerSettingsForm();
-        public static PlayerSettingsForm PlayerSettings => _instance;
-        static PlayerSettingsForm() { }
-        public PlayerSettingsForm()
+        private static readonly AdminCreatePlayerForm _instance = new AdminCreatePlayerForm();
+        public static AdminCreatePlayerForm AdminCreate => _instance;
+        static AdminCreatePlayerForm() { }
+        public AdminCreatePlayerForm()
         {
             InitializeComponent();
         }
