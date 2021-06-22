@@ -195,7 +195,6 @@ namespace AmazingAdventures
         }
         private void characterMove()
         {
-            onScreenControls();
             DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
             string x = "pb" + curTile;                                                    // gets picturebox name
             PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
@@ -205,7 +204,7 @@ namespace AmazingAdventures
             Size locationOfMove = new Size(pt);                                           // converts to size
             playerMarker.Visible = true;
             playerMarker.Location = new System.Drawing.Point(locationOfMove);             // moves character to tile
-
+            onScreenControls();
             playerMarker.BringToFront();
         }
 
@@ -318,6 +317,7 @@ namespace AmazingAdventures
                     Image image = Image.FromFile(@item.Photo);
                     pb.Image = image;
                     pb.Visible = true;
+                    pb.BringToFront();
                     i++;
                 }
             }
@@ -335,29 +335,88 @@ namespace AmazingAdventures
         private void onScreenControls()
         {
             DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
-            string a = "pb" + (curTile - 15);
-            PictureBox pbU = Controls.Find(a, true).FirstOrDefault() as PictureBox;
-            Point ptU = pbU.FindForm().PointToClient(pbU.Parent.PointToScreen(pbU.Location));
-            Size locationOfUbtn = new Size(ptU);
+            bool x = true;
+            for (int i = 1; i <= 15; i++)
+            {
+                if(curTile == i)
+                {
+                    x = false;
+                    Ubtn.Visible = false;
+                }
+            }
 
-            string b = "pb" + (curTile + 1);
-            PictureBox pbR = Controls.Find(b, true).FirstOrDefault() as PictureBox;
-            Point ptR = pbR.FindForm().PointToClient(pbR.Parent.PointToScreen(pbR.Location));
-            Size locationOfRbtn = new Size(ptR);
+            if (x == true)
+            {
+                DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
+                string a = "pb" + (curTile - 15);
+                PictureBox pbU = Controls.Find(a, true).FirstOrDefault() as PictureBox;
+                Point ptU = pbU.FindForm().PointToClient(pbU.Parent.PointToScreen(pbU.Location));
+                Size locationOfUbtn = new Size(ptU);
+                Ubtn.Location = new System.Drawing.Point(locationOfUbtn);
+                Ubtn.Visible = true;
+            }
 
-            string c = "pb" + (curTile + 15);
-            PictureBox pbD = Controls.Find(c, true).FirstOrDefault() as PictureBox;
-            Point ptD = pbD.FindForm().PointToClient(pbD.Parent.PointToScreen(pbD.Location));
-            Size locationOfDbtn = new Size(ptD);
+            x = true;
 
-            string d = "pb" + (curTile - 1);
-            PictureBox pbL = Controls.Find(d, true).FirstOrDefault() as PictureBox;
-            Point ptL = pbL.FindForm().PointToClient(pbL.Parent.PointToScreen(pbL.Location));
-            Size locationOfLbtn = new Size(ptL);
+            for (int i = 121; i <= 135; i++)
+            {
+                if (curTile == i)
+                {
+                    x = false;
+                    Dbtn.Visible = false;
+                }
+            }
+            if (x == true)
+            {
+                string c = "pb" + (curTile + 15);
+                PictureBox pbD = Controls.Find(c, true).FirstOrDefault() as PictureBox;
+                Point ptD = pbD.FindForm().PointToClient(pbD.Parent.PointToScreen(pbD.Location));
+                Size locationOfDbtn = new Size(ptD);
+                Dbtn.Location = new System.Drawing.Point(locationOfDbtn);
+                Dbtn.Visible = true;
+            }
+
+            x = true;
+
+            for (int i = 15; i <= 135; i = i + 15)
+            {
+                if (curTile == i)
+                {
+                    x = false;
+                    Rbtn.Visible = false;
+                }
+            }
+            if (x == true)
+            {
+                string b = "pb" + (curTile + 1);
+                PictureBox pbR = Controls.Find(b, true).FirstOrDefault() as PictureBox;
+                Point ptR = pbR.FindForm().PointToClient(pbR.Parent.PointToScreen(pbR.Location));
+                Size locationOfRbtn = new Size(ptR);
+                Rbtn.Location = new System.Drawing.Point(locationOfRbtn);
+                Rbtn.Visible = true;
+            }
+
+            x = true;
 
 
+            for (int i = 1; i <= 121; i = i + 15)
+            {
+                if (curTile == i)
+                {
+                    x = false;
+                    Lbtn.Visible = false;
+                }
+            }
+            if (x == true)
+            {
+                string d = "pb" + (curTile - 1);
+                PictureBox pbL = Controls.Find(d, true).FirstOrDefault() as PictureBox;
+                Point ptL = pbL.FindForm().PointToClient(pbL.Parent.PointToScreen(pbL.Location));
+                Size locationOfLbtn = new Size(ptL);
+                Lbtn.Location = new System.Drawing.Point(locationOfLbtn);
+                Lbtn.Visible = true;
+            }
         }
-
         private void onScreenControlSetup()
         {
             Ubtn.Size = new System.Drawing.Size(86, 86);
