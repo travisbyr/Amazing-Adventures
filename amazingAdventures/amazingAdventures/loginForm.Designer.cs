@@ -100,7 +100,7 @@ namespace AmazingAdventures
             // 
             this.loginUsername.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.loginUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.loginUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.loginUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.loginUsername.Location = new System.Drawing.Point(104, 124);
             this.loginUsername.Margin = new System.Windows.Forms.Padding(2);

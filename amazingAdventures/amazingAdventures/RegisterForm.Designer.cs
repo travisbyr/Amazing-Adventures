@@ -129,7 +129,7 @@ namespace AmazingAdventures
             // 
             this.registerEmail.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.registerEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.registerEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.registerEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.registerEmail.Location = new System.Drawing.Point(104, 121);
             this.registerEmail.Margin = new System.Windows.Forms.Padding(2);
@@ -168,7 +168,7 @@ namespace AmazingAdventures
             this.registerUsername.BackColor = System.Drawing.SystemColors.Menu;
             this.registerUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.registerUsername.Enabled = false;
-            this.registerUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.registerUsername.Location = new System.Drawing.Point(104, 250);
             this.registerUsername.Margin = new System.Windows.Forms.Padding(2);
             this.registerUsername.Name = "registerUsername";
