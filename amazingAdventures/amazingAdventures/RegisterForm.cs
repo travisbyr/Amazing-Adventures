@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace amazingAdventures
@@ -18,7 +12,6 @@ namespace amazingAdventures
            registerBtn.FlatAppearance.BorderColor = Color.DarkGreen;
            registerUsername.Text = Main.M.Username;
         }
-
         private void registerBtn_Click(object sender, EventArgs e)
         {
             DataAccess.AccountCreate(registerUsername.Text, registerPassword.Text, registerEmail.Text);

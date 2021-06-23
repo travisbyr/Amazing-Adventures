@@ -1,22 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace amazingAdventures
 {
     public partial class LoginForm : Form
     {
-
         private static readonly LoginForm _instance = new LoginForm();
-
         public static LoginForm Login => _instance;
-
         static LoginForm() { }
         
         public LoginForm()
@@ -28,32 +19,31 @@ namespace amazingAdventures
             registerBtn.FlatAppearance.BorderColor = Color.DarkGreen;
             loginBtn.FlatAppearance.BorderColor = Color.DarkGreen;
         }
-        private void loginButton_Click(object sender, EventArgs e)
+        private void loginBtn_Click(object sender, EventArgs e)
         {
             login();
         }
-
         private void registerBtn_Click(object sender, EventArgs e)
         {
             Main.M.Username = loginUsername.Text;
             new RegisterForm().Show();
         }
-
         private void login()
         {
             DataAccess.CheckUsername(loginUsername.Text);
-            if (DataAccess.Message == "avaliableUsername")
+            if (DataAccess.Message == "avaliableUsername") // If username is avaliable, offer registration
             {
                 registerBtn.Visible = true;
                 usrnValidFirstLine.Visible = true;
                 usrnValidSecondLine.Visible = true;
                 usrnInvalidFirstLabel.Visible = false;
                 usrnInvalidSecondLabel.Visible = false;
-            } else if (DataAccess.Message == "unavaliableUsername")
+            } 
+            else if (DataAccess.Message == "unavaliableUsername") // If username is taken
             {
                 registerBtn.Visible = false;
-                DataAccess.AccountLogin(loginUsername.Text, loginPassword.Text);
-                if (DataAccess.Message == "NLogin")
+                DataAccess.AccountLogin(loginUsername.Text, loginPassword.Text); // Check login
+                if (DataAccess.Message == "NLogin") // If the login is wrong
                 {
                     usrnValidFirstLine.Visible = false;
                     usrnValidSecondLine.Visible = false;
@@ -61,7 +51,7 @@ namespace amazingAdventures
                     usrnInvalidSecondLabel.Text = "Please try again.";
                     usrnInvalidFirstLabel.Visible = true;
                     usrnInvalidSecondLabel.Visible = true;
-                } else if (DataAccess.Message == "maxLoginAttempts")
+                } else if (DataAccess.Message == "maxLoginAttempts") // If the login has max attempts
                 {
                     usrnValidFirstLine.Visible = false;
                     usrnValidSecondLine.Visible = false;
@@ -69,7 +59,7 @@ namespace amazingAdventures
                     usrnInvalidSecondLabel.Text = "Email an administrator to unlock this account";
                     usrnInvalidFirstLabel.Visible = true;
                     usrnInvalidSecondLabel.Visible = true;
-                } else if (DataAccess.Message == "SLogin")
+                } else if (DataAccess.Message == "SLogin") // If the login is successful
                 {
                     usrnValidFirstLine.Visible = false;
                     usrnValidSecondLine.Visible = false;

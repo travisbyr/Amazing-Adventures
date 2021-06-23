@@ -1,53 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace amazingAdventures
 {
     public partial class CharacterCreateForm : Form
     {
-        public static string characterColour = "#000000";
+        public static string characterColour = "#32CD32"; // Character default colour
 
         private static readonly CharacterCreateForm _instance = new CharacterCreateForm();
-
         public static CharacterCreateForm CreateForm => _instance;
-
         static CharacterCreateForm() { }
 
         public CharacterCreateForm()
         {
             InitializeComponent();
         }
-
-        private void pickcolourBtn_Click(object sender, EventArgs e)
+        private void pickColourBtn_Click(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                Color col = colorDialog1.Color;
+                Color col = colorDialog1.Color; // Create colour from picker
                 pickcolourBtn.BackColor = col;
                 pickcolourBtn.FlatAppearance.BorderColor = col;
-
-                string color = col.ToArgb().ToString("x");
-
+                string color = col.ToArgb().ToString("x"); // Change colour to hex
                 color = color.Substring(2, 6);
-
                 characterColour = "#" + color;
-
             }
         }
-
         private void cancelCharacterBtn_Click(object sender, EventArgs e)
         {
             Hide();
             LobbyForm.Lobby.Show();
         }
-
         private void createCharacterBtn_click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you would like to create this character?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

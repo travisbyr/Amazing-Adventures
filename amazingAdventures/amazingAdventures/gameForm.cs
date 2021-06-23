@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace amazingAdventures
@@ -30,10 +25,10 @@ namespace amazingAdventures
         public GameForm()
         {
             InitializeComponent();
-            Ubtn.Click += new EventHandler(Ubtn_Click);
-            Rbtn.Click += new EventHandler(Rbtn_Click);
-            Dbtn.Click += new EventHandler(Dbtn_Click);
-            Lbtn.Click += new EventHandler(Lbtn_Click);
+            Ubtn.Click += new EventHandler(ubtn_Click);
+            Rbtn.Click += new EventHandler(rbtn_Click);
+            Dbtn.Click += new EventHandler(dbtn_Click);
+            Lbtn.Click += new EventHandler(lbtn_Click);
         }
         private void leaveBtn_Click(object sender, EventArgs e)
         {
@@ -490,19 +485,19 @@ namespace amazingAdventures
             characterCheckLocation();
         }
 
-        private void Ubtn_Click(object sender, System.EventArgs e)
+        private void ubtn_Click(object sender, System.EventArgs e)
         {
             moveUp();
         }
-        private void Dbtn_Click(object sender, System.EventArgs e)
+        private void dbtn_Click(object sender, System.EventArgs e)
         {
             moveDown();
         }
-        private void Lbtn_Click(object sender, System.EventArgs e)
+        private void lbtn_Click(object sender, System.EventArgs e)
         {
             moveLeft();
         }
-        private void Rbtn_Click(object sender, System.EventArgs e)
+        private void rbtn_Click(object sender, System.EventArgs e)
         {
             moveRight();
         }

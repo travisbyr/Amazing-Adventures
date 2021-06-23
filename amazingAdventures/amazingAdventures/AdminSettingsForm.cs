@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace amazingAdventures
@@ -31,16 +25,15 @@ namespace amazingAdventures
         }
         private void editPlayerBtn_Click(object sender, EventArgs e)
         {
-            int x = totalPlayersDGV.CurrentCell.RowIndex;
-            Leaderboard a = (Leaderboard)totalPlayersDGV.Rows[x].DataBoundItem;
+            int x = totalPlayersDGV.CurrentCell.RowIndex; // Get selected row
+            Leaderboard a = (Leaderboard)totalPlayersDGV.Rows[x].DataBoundItem; // Get selected row object from list
             user = a.Player;
-            DataAccess.GetPlayerInfo(a.Player);
+            DataAccess.GetPlayerInfo(a.Player); // get selected object name
 
-            if (a.Player.ToLower() != Main.M.Username.ToLower()) // Explain in report why you cant edit yourself, because of admin access, hacks etc, check there own highscore, corruption of data
+            if (a.Player.ToLower() != Main.M.Username.ToLower()) // If selected player is not itself
             {
-
                 AdminEditPlayerForm.AdminEdit.manageUsername.Text = a.Player;
-                AdminEditPlayerForm.AdminEdit.manageEmail.Text = Main.M.GetPEmail;
+                AdminEditPlayerForm.AdminEdit.manageEmail.Text = Main.M.GetPEmail; // Set values on form
                 AdminEditPlayerForm.AdminEdit.managePassword.Text = Main.M.GetPPassword;
                 AdminEditPlayerForm.AdminEdit.manageHighscore.Text = Main.M.GetPHighscore;
                 if (Main.M.GetPIsAdmin == "True")
@@ -54,7 +47,6 @@ namespace amazingAdventures
                     AdminEditPlayerForm.AdminEdit.manageLocked.Checked = true;
                     Main.M.GetPLocked = "False";
                 }
-
                 AdminEditPlayerForm.AdminEdit.Show();
             }
         }
@@ -66,23 +58,17 @@ namespace amazingAdventures
         {
             int x = totalPlayersDGV.CurrentCell.RowIndex;
             Leaderboard a = (Leaderboard)totalPlayersDGV.Rows[x].DataBoundItem;
-            if (a.Player.ToLower() != Main.M.Username.ToLower()) // Explain in report why you cant edit yourself, because of admin access, hacks etc.
+            if (a.Player.ToLower() != Main.M.Username.ToLower())
             {
-                if (a.Player == Main.M.Username)
+                DialogResult dialogResult = MessageBox.Show("Are you sure you would like to delete this player?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("You cannot delete yourself", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DataAccess.AdminDeletePlayer(user);
+                    MessageBox.Show("Player has been deleted", "Player Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    updatePlayerList();
+                    adminListGames();
                 }
-                else
-                {
-                    DialogResult dialogResult = MessageBox.Show("Are you sure you would like to delete this player?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        DataAccess.AdminDeletePlayer(user);
-                        MessageBox.Show("Player has been deleted", "Player Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        updatePlayerList();
-                        adminListGames();
-                    }
-                }
+                
             }
         }
         private void clearChatBtn_Click(object sender, EventArgs e)
@@ -98,20 +84,20 @@ namespace amazingAdventures
         {
             currentGameList.Items.Clear();
             Main.M.GameListName.Clear();
-            Main.M.GameListID.Clear();
+            Main.M.GameListID.Clear(); // Clear lists and listbox
             DataAccess.GamesList();
             if (DataAccess.Message == "gamesAvaliable")
             {
                 foreach (string a in Main.M.GameListName.ToArray())
                 {
-                    currentGameList.Items.Add(a);
+                    currentGameList.Items.Add(a); // Add items to gamelist 
                 }
             }
         }
         private void deleteGameBtn_Click(object sender, EventArgs e)
         {
             int index = currentGameList.SelectedIndex;
-            if (index != -1)
+            if (index != -1) // If selected index is not null but is valid
             {
                 DialogResult dialogResult = MessageBox.Show("Are you sure you would like to delete this game?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
@@ -124,7 +110,7 @@ namespace amazingAdventures
         private void currentGameList_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = currentGameList.SelectedIndex;
-            if (index != -1)
+            if (index != -1) // If selected index is valid and not null
             {
                 i = Main.M.GameListID[index];
             }
@@ -132,7 +118,6 @@ namespace amazingAdventures
         public void updatePlayerList()
         {
             DataAccess.ListOfPlayers();
-
             totalPlayersDGV.DataSource = null;
             Leaderboard.PlayerList.Clear();
             DataAccess.ListOfPlayers();

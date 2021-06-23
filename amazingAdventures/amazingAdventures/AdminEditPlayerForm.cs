@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace amazingAdventures
@@ -24,7 +17,6 @@ namespace amazingAdventures
         {
             Hide();
         }
-
         private void manageSaveBtn_Click(object sender, EventArgs e)
         {
             bool Lock = false;
@@ -33,7 +25,7 @@ namespace amazingAdventures
             DialogResult dialogResult = MessageBox.Show("Are you sure you would edit this player?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                if (manageLocked.Checked == true)
+                if (manageLocked.Checked == true) // Set boolean values from form
                 {
                     Lock = true;
                 }
@@ -41,7 +33,7 @@ namespace amazingAdventures
                 {
                     Lock = true;
                 }
-                DataAccess.UpdatePlayerInfo(AdminSettingsForm.AdminSettings.user, 
+                DataAccess.UpdatePlayerInfo(AdminSettingsForm.AdminSettings.user, // Update information
                                             manageUsername.Text,
                                             managePassword.Text,
                                             manageEmail.Text,

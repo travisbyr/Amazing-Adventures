@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace amazingAdventures
@@ -13,9 +6,7 @@ namespace amazingAdventures
     public partial class GameLoseForm : Form
     {
         private static readonly GameLoseForm _instance = new GameLoseForm();
-
         public static GameLoseForm GameLose => _instance;
-
         static GameLoseForm() { }
 
         public GameLoseForm()
@@ -23,7 +14,6 @@ namespace amazingAdventures
             InitializeComponent();
 
         }
-
         private void closeBtn_Click(object sender, EventArgs e)
         {
             Hide();

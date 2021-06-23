@@ -98,7 +98,7 @@ namespace amazingAdventures
             this.pickcolourBtn.TabIndex = 41;
             this.pickcolourBtn.Text = "Pick Colour";
             this.pickcolourBtn.UseVisualStyleBackColor = true;
-            this.pickcolourBtn.Click += new System.EventHandler(this.pickcolourBtn_Click);
+            this.pickcolourBtn.Click += new System.EventHandler(this.pickColourBtn_Click);
             // 
             // label2
             // 
