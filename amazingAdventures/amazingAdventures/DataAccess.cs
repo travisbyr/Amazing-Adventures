@@ -657,7 +657,7 @@ namespace amazingAdventures
             }
         }
 
-        public static void showPlayerList()
+        public static void listOfPlayers()
         {
             MySqlCommand cmd = new MySqlCommand("listOfPlayers", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -669,7 +669,8 @@ namespace amazingAdventures
             {
                 while (myReader.Read())
                 {
-                    Main.M.PlayerList.Add(myReader.GetString("PlayerUsername"));
+                    string name = myReader.GetString("PlayerUsername");
+                    Leaderboard.PlayerList.Add(new Leaderboard() { Player = name });
                 }
             }
             finally

@@ -195,6 +195,7 @@ namespace amazingAdventures
         }
         private void characterMove()
         {
+            DataAccess.checkGameExists(Main.M.GameNumber);
             if (DataAccess.gameStatus == "gameClosed")
             {
                 Hide();

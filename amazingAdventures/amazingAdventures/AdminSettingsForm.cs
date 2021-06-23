@@ -29,6 +29,7 @@ namespace amazingAdventures
         private void adminFormCloseBtn_Click(object sender, EventArgs e)
         {
             LobbyForm.Lobby.listGames();
+            LobbyForm.Lobby.viewPlayersOnline();
             LobbyForm.Lobby.Show();
             Hide();
         }
@@ -45,7 +46,23 @@ namespace amazingAdventures
 
         private void deletePlayerBtn_Click(object sender, EventArgs e)
         {
-
+            int x = totalPlayersDGV.CurrentCell.RowIndex;
+            Leaderboard a = (Leaderboard)totalPlayersDGV.Rows[x].DataBoundItem;
+            string user = a.Player;
+            if (a.Player == Main.M.Username)
+            {
+                MessageBox.Show("You cannot delete yourself", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you would like to delete this player?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    DataAccess.adminDeletePlayer(user);
+                    MessageBox.Show("Player has been deleted", "Player Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    updatePlayerList();
+                    adminListGames();
+                }
+            }
         }
 
         private void clearChatBtn_Click(object sender, EventArgs e)
@@ -90,6 +107,25 @@ namespace amazingAdventures
         {
             int index = currentGameList.SelectedIndex;
             i = Main.M.GameListID[index];
+        }
+
+        public void updatePlayerList()
+        {
+            DataAccess.listOfPlayers();
+
+            totalPlayersDGV.DataSource = null;
+            Leaderboard.PlayerList.Clear();
+            DataAccess.listOfPlayers();
+            totalPlayersDGV.DataSource = Leaderboard.PlayerList;
+            totalPlayersDGV.Columns["Highscore"].Visible = false;
+            totalPlayersDGV.Columns["GameNumber"].Visible = false;
+            totalPlayersDGV.Columns["Username"].Visible = false;
+            totalPlayersDGV.Columns["Message"].Visible = false;
+            totalPlayersDGV.Columns["CharacterName"].Visible = false;
+            totalPlayersDGV.Columns["CharacterScore"].Visible = false;
+            totalPlayersDGV.Columns["LeaderboardGame"].Visible = false;
+            totalPlayersDGV.ClearSelection();
+
         }
     }
 }

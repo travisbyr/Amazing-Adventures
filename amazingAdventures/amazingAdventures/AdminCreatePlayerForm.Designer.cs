@@ -199,6 +199,8 @@ namespace amazingAdventures
             this.Controls.Add(this.Use);
             this.Controls.Add(this.createPassword);
             this.Controls.Add(this.createUsername);
+            this.MaximumSize = new System.Drawing.Size(508, 411);
+            this.MinimumSize = new System.Drawing.Size(508, 411);
             this.Name = "AdminCreatePlayerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Create Player";

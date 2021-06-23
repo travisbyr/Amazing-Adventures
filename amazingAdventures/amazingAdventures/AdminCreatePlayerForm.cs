@@ -27,7 +27,15 @@ namespace amazingAdventures
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-
+            DialogResult dialogResult = MessageBox.Show("Are you sure you would like to create this player?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                DataAccess.accountCreate(createUsername.Text, createPassword.Text, createEmail.Text);
+                MessageBox.Show("Player account is created", "Account Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AdminSettingsForm.AdminSettings.updatePlayerList();
+                AdminSettingsForm.AdminSettings.adminListGames();
+                Hide();
+            }
         }
     }
 }

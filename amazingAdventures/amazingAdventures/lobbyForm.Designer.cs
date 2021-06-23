@@ -49,6 +49,7 @@ namespace amazingAdventures
             this.settingsBtn = new System.Windows.Forms.Button();
             this.onlinePlayersDGV = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.refreshbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.onlinePlayersDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +106,7 @@ namespace amazingAdventures
             this.newGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newGameButton.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
             this.newGameButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.newGameButton.Location = new System.Drawing.Point(390, 265);
+            this.newGameButton.Location = new System.Drawing.Point(390, 235);
             this.newGameButton.Name = "newGameButton";
             this.newGameButton.Size = new System.Drawing.Size(255, 60);
             this.newGameButton.TabIndex = 10;
@@ -119,7 +120,7 @@ namespace amazingAdventures
             this.chatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chatButton.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
             this.chatButton.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.chatButton.Location = new System.Drawing.Point(390, 356);
+            this.chatButton.Location = new System.Drawing.Point(390, 326);
             this.chatButton.Name = "chatButton";
             this.chatButton.Size = new System.Drawing.Size(255, 60);
             this.chatButton.TabIndex = 11;
@@ -172,7 +173,7 @@ namespace amazingAdventures
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(441, 136);
+            this.label4.Location = new System.Drawing.Point(441, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(150, 47);
             this.label4.TabIndex = 16;
@@ -182,7 +183,7 @@ namespace amazingAdventures
             // 
             this.lobbyHighScore.AutoSize = true;
             this.lobbyHighScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lobbyHighScore.Location = new System.Drawing.Point(472, 187);
+            this.lobbyHighScore.Location = new System.Drawing.Point(472, 176);
             this.lobbyHighScore.Name = "lobbyHighScore";
             this.lobbyHighScore.Size = new System.Drawing.Size(91, 26);
             this.lobbyHighScore.TabIndex = 17;
@@ -195,7 +196,7 @@ namespace amazingAdventures
             this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settingsBtn.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
             this.settingsBtn.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.settingsBtn.Location = new System.Drawing.Point(390, 449);
+            this.settingsBtn.Location = new System.Drawing.Point(390, 419);
             this.settingsBtn.Name = "settingsBtn";
             this.settingsBtn.Size = new System.Drawing.Size(255, 60);
             this.settingsBtn.TabIndex = 18;
@@ -265,6 +266,20 @@ namespace amazingAdventures
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1056, 70);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
+            // refreshbtn
+            // 
+            this.refreshbtn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.refreshbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshbtn.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
+            this.refreshbtn.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.refreshbtn.Location = new System.Drawing.Point(390, 508);
+            this.refreshbtn.Name = "refreshbtn";
+            this.refreshbtn.Size = new System.Drawing.Size(255, 60);
+            this.refreshbtn.TabIndex = 21;
+            this.refreshbtn.Text = "Refresh";
+            this.refreshbtn.UseVisualStyleBackColor = false;
+            this.refreshbtn.Click += new System.EventHandler(this.refreshbtn_Click);
+            // 
             // LobbyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +287,7 @@ namespace amazingAdventures
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1040, 716);
             this.ControlBox = false;
+            this.Controls.Add(this.refreshbtn);
             this.Controls.Add(this.onlinePlayersDGV);
             this.Controls.Add(this.settingsBtn);
             this.Controls.Add(this.lobbyHighScore);
@@ -314,5 +330,6 @@ namespace amazingAdventures
         private System.Windows.Forms.Button settingsBtn;
         public System.Windows.Forms.DataGridView onlinePlayersDGV;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button refreshbtn;
     }
 }
