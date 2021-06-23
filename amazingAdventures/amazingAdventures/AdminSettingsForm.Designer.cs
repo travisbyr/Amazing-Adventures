@@ -46,7 +46,6 @@ namespace amazingAdventures
             this.deleteGameBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.adminRefreshBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.totalPlayersDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -242,27 +241,12 @@ namespace amazingAdventures
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1056, 70);
             this.flowLayoutPanel1.TabIndex = 37;
             // 
-            // adminRefreshBtn
-            // 
-            this.adminRefreshBtn.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.adminRefreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adminRefreshBtn.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
-            this.adminRefreshBtn.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.adminRefreshBtn.Location = new System.Drawing.Point(390, 481);
-            this.adminRefreshBtn.Name = "adminRefreshBtn";
-            this.adminRefreshBtn.Size = new System.Drawing.Size(255, 60);
-            this.adminRefreshBtn.TabIndex = 35;
-            this.adminRefreshBtn.Text = "Refresh";
-            this.adminRefreshBtn.UseVisualStyleBackColor = false;
-            this.adminRefreshBtn.Click += new System.EventHandler(this.adminRefreshBtn_Click);
-            // 
             // AdminSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 716);
             this.ControlBox = false;
-            this.Controls.Add(this.adminRefreshBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.deleteGameBtn);
@@ -300,6 +284,5 @@ namespace amazingAdventures
         private System.Windows.Forms.Button deleteGameBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button adminRefreshBtn;
     }
 }

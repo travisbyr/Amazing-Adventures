@@ -129,7 +129,10 @@ namespace amazingAdventures
         private void currentGameList_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = currentGameList.SelectedIndex;
-            i = Main.M.GameListID[index];
+            if (index != -1)
+            {
+                i = Main.M.GameListID[index];
+            }
         }
 
         public void updatePlayerList()
@@ -144,12 +147,6 @@ namespace amazingAdventures
             totalPlayersDGV.Columns["Player"].Visible = true;
             totalPlayersDGV.ClearSelection();
 
-        }
-
-        private void adminRefreshBtn_Click(object sender, EventArgs e)
-        {
-            updatePlayerList();
-            adminListGames();
         }
     }
 }

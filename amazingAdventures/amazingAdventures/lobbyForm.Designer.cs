@@ -102,7 +102,7 @@ namespace amazingAdventures
             // 
             // newGameButton
             // 
-            this.newGameButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.newGameButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.newGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newGameButton.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
             this.newGameButton.ForeColor = System.Drawing.SystemColors.Desktop;
@@ -268,7 +268,7 @@ namespace amazingAdventures
             // 
             // refreshbtn
             // 
-            this.refreshbtn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.refreshbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.refreshbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshbtn.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 20F);
             this.refreshbtn.ForeColor = System.Drawing.SystemColors.WindowText;

@@ -83,7 +83,11 @@ namespace amazingAdventures
         }
         private void currentGameList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            joinGame();
+            int index = currentGameList.SelectedIndex;
+            if (index != -1)
+            {
+                joinGame();
+            }
         }
 
         private void joinGame()

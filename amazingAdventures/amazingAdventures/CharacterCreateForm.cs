@@ -45,6 +45,7 @@ namespace amazingAdventures
         private void cancelCharacterBtn_Click(object sender, EventArgs e)
         {
             Hide();
+            LobbyForm.Lobby.Show();
         }
 
         private void createCharacterBtn_click(object sender, EventArgs e)
