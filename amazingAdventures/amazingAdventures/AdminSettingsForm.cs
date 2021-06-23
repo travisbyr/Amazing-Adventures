@@ -63,7 +63,7 @@ namespace amazingAdventures
                 DialogResult dialogResult = MessageBox.Show("Are you sure you would like to delete this player?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    DataAccess.AdminDeletePlayer(user);
+                    DataAccess.DeletePlayer(user);
                     MessageBox.Show("Player has been deleted", "Player Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     updatePlayerList();
                     adminListGames();

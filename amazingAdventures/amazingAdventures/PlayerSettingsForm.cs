@@ -36,5 +36,16 @@ namespace amazingAdventures
                 LobbyForm.Lobby.Show();
             }
         }
+        private void deleteAccountBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you would like to delete your account", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                DataAccess.DeletePlayer(Main.M.Username);
+                Hide();
+                LoginForm.Login.Show();
+
+            }
+        }
     }
 }

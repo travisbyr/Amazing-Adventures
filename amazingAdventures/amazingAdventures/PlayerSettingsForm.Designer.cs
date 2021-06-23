@@ -40,6 +40,7 @@ namespace amazingAdventures
             this.usrnInvalidFirstLabel = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.deleteAccountBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -181,6 +182,20 @@ namespace amazingAdventures
             this.flowLayoutPanel1.Size = new System.Drawing.Size(503, 70);
             this.flowLayoutPanel1.TabIndex = 43;
             // 
+            // deleteAccountBtn
+            // 
+            this.deleteAccountBtn.BackColor = System.Drawing.Color.LightSalmon;
+            this.deleteAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteAccountBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.deleteAccountBtn.Location = new System.Drawing.Point(23, 295);
+            this.deleteAccountBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteAccountBtn.Name = "deleteAccountBtn";
+            this.deleteAccountBtn.Size = new System.Drawing.Size(73, 55);
+            this.deleteAccountBtn.TabIndex = 44;
+            this.deleteAccountBtn.Text = "Delete Account";
+            this.deleteAccountBtn.UseVisualStyleBackColor = false;
+            this.deleteAccountBtn.Click += new System.EventHandler(this.deleteAccountBtn_Click);
+            // 
             // PlayerSettingsForm
             // 
             this.AcceptButton = this.saveBtn;
@@ -188,6 +203,7 @@ namespace amazingAdventures
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 372);
             this.ControlBox = false;
+            this.Controls.Add(this.deleteAccountBtn);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.usrnInvalidFirstLabel);
             this.Controls.Add(this.saveBtn);
@@ -223,5 +239,6 @@ namespace amazingAdventures
         private System.Windows.Forms.Button saveBtn;
         public System.Windows.Forms.TextBox settingsUsername;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.Button deleteAccountBtn;
     }
 }

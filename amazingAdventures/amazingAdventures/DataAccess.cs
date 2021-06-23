@@ -38,16 +38,6 @@ namespace amazingAdventures
             myReader.Close();
             connect.Close();
         }
-        public static void TestData()
-        {
-            MySqlCommand cmd = new MySqlCommand("editDB", connect); // Select stored proecdure name
-            cmd.CommandType = CommandType.StoredProcedure;
-            connect.Open();
-            MySqlDataReader myReader;
-            myReader = cmd.ExecuteReader();
-            myReader.Close();
-            connect.Close();
-        }
 
         // ACCOUNT FUNCTIONALITY
 
@@ -445,22 +435,7 @@ namespace amazingAdventures
             myReader.Close();
             connect.Close();
         }
-
-        // ADMIN PROPERTIES
-
-        public static void AdminLockPlayer(string pusername, bool plocked)
-        {
-            MySqlCommand cmd = new MySqlCommand("lockPlayer", connect); // Select stored proecdure name
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
-            cmd.Parameters.AddWithValue("pLocked", plocked); // Add a parameter
-            connect.Open();
-            MySqlDataReader myReader;
-            myReader = cmd.ExecuteReader();
-            myReader.Close();
-            connect.Close();
-        }
-        public static void AdminDeletePlayer(string pusername)
+        public static void DeletePlayer(string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("deletePlayer", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -471,6 +446,9 @@ namespace amazingAdventures
             myReader.Close();
             connect.Close();
         }
+
+        // ADMIN PROPERTIES
+
         public static void AdminClearGlobalChat()
         {
             MySqlCommand cmd = new MySqlCommand("clearGlobalChat", connect); // Select stored proecdure name
