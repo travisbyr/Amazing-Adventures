@@ -41,8 +41,8 @@ namespace amazingAdventures
             this.manageHighscore = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lockAdminBox = new System.Windows.Forms.CheckBox();
-            this.lockedCheckBox = new System.Windows.Forms.CheckBox();
+            this.manageAdmin = new System.Windows.Forms.CheckBox();
+            this.manageLocked = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
@@ -200,23 +200,23 @@ namespace amazingAdventures
             this.label6.TabIndex = 66;
             this.label6.Text = "Locked:";
             // 
-            // lockAdminBox
+            // manageAdmin
             // 
-            this.lockAdminBox.AutoSize = true;
-            this.lockAdminBox.Location = new System.Drawing.Point(258, 268);
-            this.lockAdminBox.Name = "lockAdminBox";
-            this.lockAdminBox.Size = new System.Drawing.Size(15, 14);
-            this.lockAdminBox.TabIndex = 67;
-            this.lockAdminBox.UseVisualStyleBackColor = true;
+            this.manageAdmin.AutoSize = true;
+            this.manageAdmin.Location = new System.Drawing.Point(258, 268);
+            this.manageAdmin.Name = "manageAdmin";
+            this.manageAdmin.Size = new System.Drawing.Size(15, 14);
+            this.manageAdmin.TabIndex = 67;
+            this.manageAdmin.UseVisualStyleBackColor = true;
             // 
-            // lockedCheckBox
+            // manageLocked
             // 
-            this.lockedCheckBox.AutoSize = true;
-            this.lockedCheckBox.Location = new System.Drawing.Point(388, 268);
-            this.lockedCheckBox.Name = "lockedCheckBox";
-            this.lockedCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.lockedCheckBox.TabIndex = 68;
-            this.lockedCheckBox.UseVisualStyleBackColor = true;
+            this.manageLocked.AutoSize = true;
+            this.manageLocked.Location = new System.Drawing.Point(388, 268);
+            this.manageLocked.Name = "manageLocked";
+            this.manageLocked.Size = new System.Drawing.Size(15, 14);
+            this.manageLocked.TabIndex = 68;
+            this.manageLocked.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -247,8 +247,8 @@ namespace amazingAdventures
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.lockedCheckBox);
-            this.Controls.Add(this.lockAdminBox);
+            this.Controls.Add(this.manageLocked);
+            this.Controls.Add(this.manageAdmin);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -276,18 +276,18 @@ namespace amazingAdventures
         public System.Windows.Forms.Button manageCloseBtn;
         private System.Windows.Forms.Button manageSaveBtn;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox manageEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Use;
-        private System.Windows.Forms.TextBox managePassword;
-        private System.Windows.Forms.TextBox manageUsername;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox manageHighscore;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox lockAdminBox;
-        private System.Windows.Forms.CheckBox lockedCheckBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.TextBox manageEmail;
+        public System.Windows.Forms.TextBox managePassword;
+        public System.Windows.Forms.TextBox manageUsername;
+        public System.Windows.Forms.TextBox manageHighscore;
+        public System.Windows.Forms.CheckBox manageAdmin;
+        public System.Windows.Forms.CheckBox manageLocked;
     }
 }

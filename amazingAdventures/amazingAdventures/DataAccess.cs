@@ -15,18 +15,6 @@ namespace amazingAdventures
 
         public static string Message = "";
         public static string gameStatus = "gameOpen";
-        /*public static string characterName = "";
-        public static string characterScore = "";
-        public static string leaderboardGame = "";*/
-
-        // PUBLIC LISTS
-        /*
-                public static List<string> gameListName = new List<string>();
-                public static List<int> gameListID = new List<int>();
-                public static List<string> leaderboardList = new List<string>();
-                public static List<string> chatGlobal = new List<string>();
-                public static List<string> backpackList = new List<string>();
-                public static List<string> playerList = new List<string>();*/
 
         // CONNECTION TO DATABASE
 
@@ -851,6 +839,61 @@ namespace amazingAdventures
                 while (myReader.Read())
                 {
                     gameStatus = myReader.GetString("MESSAGE");
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
+
+        public static void getPlayerInfo(string pusername)
+        {
+            MySqlCommand cmd = new MySqlCommand("getPlayerInfo", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
+            connect.Open();
+            cmd.ExecuteNonQuery();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    Main.M.GetPPassword = myReader.GetString("PlayerPassword");
+                    Main.M.GetPEmail = myReader.GetString("PlayerEmail");
+                    Main.M.GetPLocked = myReader.GetString("Locked");
+                    Main.M.GetPHighscore = myReader.GetString("Highscore");
+                    Main.M.GetPIsAdmin = myReader.GetString("IsAdmin");
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
+
+        public static void updatePlayerInfo(string pusername, string nusername, string npassword, string nemail, int nhighscore, bool nisadmin, bool nlocked)
+        {
+            MySqlCommand cmd = new MySqlCommand("updatePlayerInfo", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
+            cmd.Parameters.AddWithValue("nUsername", nusername); // Add a parameter
+            cmd.Parameters.AddWithValue("nPassword", npassword); // Add a parameter
+            cmd.Parameters.AddWithValue("nEmail", nemail); // Add a parameter
+            cmd.Parameters.AddWithValue("nHighscore", nhighscore); // Add a parameter
+            cmd.Parameters.AddWithValue("nIsAdmin", nisadmin); // Add a parameter
+            cmd.Parameters.AddWithValue("nLocked", nlocked); // Add a parameter
+            connect.Open();
+            cmd.ExecuteNonQuery();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
                 }
             }
             finally

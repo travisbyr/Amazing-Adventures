@@ -119,12 +119,9 @@ namespace amazingAdventures
             Leaderboard.LeaderboardList.Clear();
             DataAccess.viewOnlinePlayers();
             onlinePlayersDGV.DataSource = Leaderboard.LeaderboardList;
-            onlinePlayersDGV.Columns["GameNumber"].Visible = false;
-            onlinePlayersDGV.Columns["Username"].Visible = false;
-            onlinePlayersDGV.Columns["Message"].Visible = false;
-            onlinePlayersDGV.Columns["CharacterName"].Visible = false;
-            onlinePlayersDGV.Columns["CharacterScore"].Visible = false;
-            onlinePlayersDGV.Columns["LeaderboardGame"].Visible = false;
+            onlinePlayersDGV.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
+            onlinePlayersDGV.Columns["Player"].Visible = true;
+            onlinePlayersDGV.Columns["Highscore"].Visible = true;
             onlinePlayersDGV.Columns["Highscore"].Width = 100;
             onlinePlayersDGV.ClearSelection();
 

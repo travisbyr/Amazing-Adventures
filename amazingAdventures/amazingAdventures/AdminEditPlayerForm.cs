@@ -27,7 +27,32 @@ namespace amazingAdventures
 
         private void manageSaveBtn_Click(object sender, EventArgs e)
         {
+            bool Lock = false;
+            bool Admin = false;
 
+            DialogResult dialogResult = MessageBox.Show("Are you sure you would edit this player?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (manageLocked.Checked == true)
+                {
+                    Lock = true;
+                }
+                if (manageAdmin.Checked == true)
+                {
+                    Lock = true;
+                }
+                DataAccess.updatePlayerInfo(AdminSettingsForm.AdminSettings.user, 
+                                            manageUsername.Text,
+                                            managePassword.Text,
+                                            manageEmail.Text,
+                                            Int32.Parse(manageHighscore.Text),
+                                            Admin,
+                                            Lock);
+                MessageBox.Show("Player details have been edited", "Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Hide();
+                AdminSettingsForm.AdminSettings.adminListGames();
+                AdminSettingsForm.AdminSettings.updatePlayerList();
+            }
         }
     }
 }

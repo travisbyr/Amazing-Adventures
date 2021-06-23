@@ -12,6 +12,7 @@ namespace amazingAdventures
 {
     public partial class AdminSettingsForm : Form
     {
+        public string user;
         int i;
         private static readonly AdminSettingsForm _instance = new AdminSettingsForm();
         public static AdminSettingsForm AdminSettings => _instance;
@@ -20,12 +21,6 @@ namespace amazingAdventures
         {
             InitializeComponent();
         }
-
-        private void AdminSettingsForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void adminFormCloseBtn_Click(object sender, EventArgs e)
         {
             LobbyForm.Lobby.listGames();
@@ -36,7 +31,32 @@ namespace amazingAdventures
 
         private void editPlayerBtn_Click(object sender, EventArgs e)
         {
-            AdminEditPlayerForm.AdminEdit.Show();
+            int x = totalPlayersDGV.CurrentCell.RowIndex;
+            Leaderboard a = (Leaderboard)totalPlayersDGV.Rows[x].DataBoundItem;
+            user = a.Player;
+            DataAccess.getPlayerInfo(a.Player);
+
+            if (a.Player.ToLower() != Main.M.Username.ToLower()) // Explain in report why you cant edit yourself, because of admin access, hacks etc.
+            {
+
+                AdminEditPlayerForm.AdminEdit.manageUsername.Text = a.Player;
+                AdminEditPlayerForm.AdminEdit.manageEmail.Text = Main.M.GetPEmail;
+                AdminEditPlayerForm.AdminEdit.managePassword.Text = Main.M.GetPPassword;
+                AdminEditPlayerForm.AdminEdit.manageHighscore.Text = Main.M.GetPHighscore;
+                if (Main.M.GetPIsAdmin == "True")
+                {
+                    AdminEditPlayerForm.AdminEdit.manageAdmin.Checked = true;
+                    Main.M.GetPIsAdmin = "False";
+                }
+
+                if (Main.M.GetPLocked == "True")
+                {
+                    AdminEditPlayerForm.AdminEdit.manageLocked.Checked = true;
+                    Main.M.GetPLocked = "False";
+                }
+
+                AdminEditPlayerForm.AdminEdit.Show();
+            }
         }
 
         private void addPlayerBtn_Click(object sender, EventArgs e)
@@ -117,13 +137,8 @@ namespace amazingAdventures
             Leaderboard.PlayerList.Clear();
             DataAccess.listOfPlayers();
             totalPlayersDGV.DataSource = Leaderboard.PlayerList;
-            totalPlayersDGV.Columns["Highscore"].Visible = false;
-            totalPlayersDGV.Columns["GameNumber"].Visible = false;
-            totalPlayersDGV.Columns["Username"].Visible = false;
-            totalPlayersDGV.Columns["Message"].Visible = false;
-            totalPlayersDGV.Columns["CharacterName"].Visible = false;
-            totalPlayersDGV.Columns["CharacterScore"].Visible = false;
-            totalPlayersDGV.Columns["LeaderboardGame"].Visible = false;
+            totalPlayersDGV.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
+            totalPlayersDGV.Columns["Player"].Visible = true;
             totalPlayersDGV.ClearSelection();
 
         }
