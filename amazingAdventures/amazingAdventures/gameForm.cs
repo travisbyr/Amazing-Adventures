@@ -180,10 +180,10 @@ namespace amazingAdventures
             }
             else if (DataAccess.Message == "trapFound")
             {
+                GameLoseForm.GameLose.Show();
                 Hide();
                 DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
                 GameLoseForm.GameLose.pointsEndLabel.Text = DataAccess.Points + " Points";
-                GameLoseForm.GameLose.Show();
             }
             else
             {
@@ -216,7 +216,6 @@ namespace amazingAdventures
                 playerMarker.Location = new System.Drawing.Point(locationOfMove);             // moves character to tile
                 playerMarker.BringToFront();
             }
-
         }
 
         private void moveUp()

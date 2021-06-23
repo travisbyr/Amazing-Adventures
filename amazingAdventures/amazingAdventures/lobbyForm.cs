@@ -98,6 +98,7 @@ namespace amazingAdventures
             }
             else
             {   // Create character
+                Hide();
                 CharacterCreateForm.CreateForm.Show();
             }
         }
