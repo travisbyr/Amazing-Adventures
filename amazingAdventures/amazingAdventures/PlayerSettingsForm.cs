@@ -15,17 +15,16 @@ namespace amazingAdventures
         private static readonly PlayerSettingsForm _instance = new PlayerSettingsForm();
         public static PlayerSettingsForm PlayerSettings => _instance;
         static PlayerSettingsForm() { }
+
         public PlayerSettingsForm()
         {
             InitializeComponent();
         }
-
         private void closeBtn_Click(object sender, EventArgs e)
         {
             Hide();
             LobbyForm.Lobby.Show();
         }
-
         private void saveBtn_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you would like to save your details?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

@@ -337,7 +337,7 @@ namespace amazingAdventures
             this.leaveButton.TabStop = false;
             this.leaveButton.Text = "Leave";
             this.leaveButton.UseVisualStyleBackColor = false;
-            this.leaveButton.Click += new System.EventHandler(this.leaveButton_Click);
+            this.leaveButton.Click += new System.EventHandler(this.leaveBtn_Click);
             // 
             // openChatBtn
             // 
@@ -394,7 +394,6 @@ namespace amazingAdventures
             this.gameLeaderboardDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gameLeaderboardDGV.Size = new System.Drawing.Size(266, 620);
             this.gameLeaderboardDGV.TabIndex = 171;
-            this.gameLeaderboardDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // pb135
             // 

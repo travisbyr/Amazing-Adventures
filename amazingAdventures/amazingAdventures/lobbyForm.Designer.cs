@@ -112,7 +112,7 @@ namespace amazingAdventures
             this.newGameButton.TabIndex = 10;
             this.newGameButton.Text = "New Game";
             this.newGameButton.UseVisualStyleBackColor = false;
-            this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
+            this.newGameButton.Click += new System.EventHandler(this.createGameBtn_Click);
             // 
             // chatButton
             // 
@@ -126,7 +126,7 @@ namespace amazingAdventures
             this.chatButton.TabIndex = 11;
             this.chatButton.Text = "Chat";
             this.chatButton.UseVisualStyleBackColor = false;
-            this.chatButton.Click += new System.EventHandler(this.chatButton_Click);
+            this.chatButton.Click += new System.EventHandler(this.chatBtn_Click);
             // 
             // joinGameButton
             // 
@@ -139,7 +139,7 @@ namespace amazingAdventures
             this.joinGameButton.TabIndex = 14;
             this.joinGameButton.Text = "Join";
             this.joinGameButton.UseVisualStyleBackColor = false;
-            this.joinGameButton.Click += new System.EventHandler(this.joinGameButton_Click);
+            this.joinGameButton.Click += new System.EventHandler(this.joinGameBtn_Click);
             // 
             // logoutButton
             // 
@@ -152,7 +152,7 @@ namespace amazingAdventures
             this.logoutButton.TabIndex = 16;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = false;
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            this.logoutButton.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // adminButton
             // 
@@ -167,7 +167,7 @@ namespace amazingAdventures
             this.adminButton.Text = "Admin";
             this.adminButton.UseVisualStyleBackColor = false;
             this.adminButton.Visible = false;
-            this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
+            this.adminButton.Click += new System.EventHandler(this.adminBtn_Click);
             // 
             // label4
             // 
@@ -278,7 +278,7 @@ namespace amazingAdventures
             this.refreshbtn.TabIndex = 13;
             this.refreshbtn.Text = "Refresh";
             this.refreshbtn.UseVisualStyleBackColor = false;
-            this.refreshbtn.Click += new System.EventHandler(this.refreshbtn_Click);
+            this.refreshbtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // LobbyForm
             // 

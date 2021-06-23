@@ -25,11 +25,8 @@ namespace amazingAdventures
         public static int n = 0;
 
         private static readonly GameForm _instance = new GameForm();
-
         public static GameForm Game => _instance;
-
         static GameForm() { }
-
         public GameForm()
         {
             InitializeComponent();
@@ -38,22 +35,19 @@ namespace amazingAdventures
             Dbtn.Click += new EventHandler(Dbtn_Click);
             Lbtn.Click += new EventHandler(Lbtn_Click);
         }
-
-        private void leaveButton_Click(object sender, EventArgs e)
+        private void leaveBtn_Click(object sender, EventArgs e)
         {
             string x = "pb" + curTile;
-            PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
+            PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox; // Find the control
             pb.Visible = true;
-            playerMarker.Visible = false;
-
+            playerMarker.Visible = false; // Remove character from board
             DataAccess.CharacterQuits(curTile, Main.M.Username, Main.M.GameNumber);
             Hide();
             LobbyForm.Lobby.viewPlayersOnline();
             LobbyForm.Lobby.Show();
         }
-
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
+        { // if arrow keys are pressed
             if (keyData == Keys.Left)
             {
                 moveLeft();
@@ -76,10 +70,9 @@ namespace amazingAdventures
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
-
         public void characterSetup()
         {
-            DataAccess.AddItems(Main.M.GameNumber);
+            DataAccess.AddItems(Main.M.GameNumber); // Add items to game
             otherCharactersMarker();
             itemMarker();
             onScreenControlSetup();
@@ -87,8 +80,7 @@ namespace amazingAdventures
 
             int a = Main.M.GameNumber;
             DataAccess.CheckCharacter(Main.M.Username, Main.M.GameNumber);
-
-            DataAccess.GetCharacterColour(Main.M.Username, a);
+            DataAccess.GetCharacterColour(Main.M.Username, a); // Set playermarker properties
             playerMarker.BackColor = ColorTranslator.FromHtml(DataAccess.Message);
             playerMarker.ForeColor = ColorTranslator.FromHtml(DataAccess.Message);
             playerMarker.FlatStyle = FlatStyle.Flat;
@@ -104,7 +96,7 @@ namespace amazingAdventures
         }
         private void characterCheckLocation()
         {
-            if (preTile == 15 && curTile == 16 ||
+            if (preTile == 15 && curTile == 16 || // If character is move from the right last tile
                 preTile == 30 && curTile == 31 ||
                 preTile == 45 && curTile == 46 ||
                 preTile == 60 && curTile == 61 ||
@@ -116,7 +108,7 @@ namespace amazingAdventures
             {
                 curTile = curTile - 15;
             }
-            else if (preTile == 1 && curTile == 0 ||
+            else if (preTile == 1 && curTile == 0 || // If the character is moving from the left last tile
                 preTile == 16 && curTile == 15 ||
                 preTile == 31 && curTile == 30 ||
                 preTile == 46 && curTile == 45 ||
@@ -128,7 +120,7 @@ namespace amazingAdventures
             {
                 curTile = curTile + 15;
             }
-            else if (preTile == 121 && curTile == 136 ||
+            else if (preTile == 121 && curTile == 136 || // If the character is moving from the buttom last tile, downwards
                 preTile == 122 && curTile == 137 ||
                 preTile == 123 && curTile == 138 ||
                 preTile == 124 && curTile == 139 ||
@@ -146,7 +138,7 @@ namespace amazingAdventures
             {
                 curTile = curTile - 135;
             }
-           else if (preTile == 1 && curTile == -14 ||
+           else if (preTile == 1 && curTile == -14 || // If the character is moving from the top highest tile, upwards.
                 preTile == 2 && curTile == -13 ||
                 preTile == 3 && curTile == -12 ||
                 preTile == 4 && curTile == -11 ||
@@ -166,42 +158,42 @@ namespace amazingAdventures
             } 
 
             DataAccess.CheckCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
-            if (DataAccess.Message == "invalidMove")
+            if (DataAccess.Message == "invalidMove") // If move is invalid
             {
                 curTile = preTile;
                 preTile = prePreTile;
                 characterMove();
             }
-            else if (DataAccess.Message == "itemFound")
+            else if (DataAccess.Message == "itemFound") // If an item is found
             {
                 characterMove();
                 DataAccess.AddItems(Main.M.GameNumber);
                 itemMarker();
             }
-            else if (DataAccess.Message == "trapFound")
+            else if (DataAccess.Message == "trapFound") // If the character hits a trap
             {
                 GameLoseForm.GameLose.Show();
                 Hide();
                 DataAccess.GetCharacterScore(Main.M.Username, Main.M.GameNumber);
-                GameLoseForm.GameLose.pointsEndLabel.Text = DataAccess.Points + " Points";
+                GameLoseForm.GameLose.pointsEndLabel.Text = DataAccess.Points + " Points"; // Update the game lose form
             }
             else
             {
-                characterMove();
+                characterMove(); // Anything else move character as its a normal move
             }
         }
         private void characterMove()
         {
             DataAccess.CheckGameExists(Main.M.GameNumber);
             updateCharacterLeaderboard();
-            if (DataAccess.gameStatus == "gameClosed")
+            if (DataAccess.gameStatus == "gameClosed") // If the game is closed
             {
                 Hide();
                 DataAccess.GetCharacterScore(Main.M.Username, Main.M.GameNumber);
                 GameLoseForm.GameLose.pointsEndLabel.Text = DataAccess.Points + " Points";
                 GameLoseForm.GameLose.Show();
             }
-            else
+            else // Otherwise move character
             {
                 otherCharactersMarker();
                 itemMarker();
@@ -217,41 +209,11 @@ namespace amazingAdventures
                 playerMarker.BringToFront();
             }
         }
-
-        private void moveUp()
-        {
-            prePreTile = preTile;
-            preTile = curTile;
-            curTile = curTile - 15;
-            characterCheckLocation();
-        }
-        private void moveDown()
-        {
-            prePreTile = preTile;
-            preTile = curTile;
-            curTile = curTile + 15;
-            characterCheckLocation();
-        }
-        private void moveLeft()
-        {
-            prePreTile = preTile;
-            preTile = curTile;
-            curTile = curTile - 1;
-            characterCheckLocation();
-        }
-        private void moveRight()
-        {
-            prePreTile = preTile;
-            preTile = curTile;
-            curTile = curTile + 1;
-            characterCheckLocation();
-        }
-        
         private void otherCharactersMarker()
         {
             if (Main.CharacterList.Count() > 0)
             {
-                foreach (Characters item in Main.CharacterList)
+                foreach (Characters item in Main.CharacterList) // Remove all characters from list if some exist
                 {
                     if (item.TileID != null)
                     {
@@ -270,9 +232,9 @@ namespace amazingAdventures
             n = Main.CharacterList.Count();
             ButtonEllipse[] button = new ButtonEllipse[n];
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++) // Add the new characters to the list
             { 
-                foreach (Characters item in Main.CharacterList)
+                foreach (Characters item in Main.CharacterList) // For every character in the list
                 {
                     if (item.TileID != null)
                     {
@@ -326,7 +288,7 @@ namespace amazingAdventures
 
             for (int i = 0; i < n; i++)
             {
-                foreach (Items item in Main.ItemList)
+                foreach (Items item in Main.ItemList) // Add tiles to list
                 {
                     string x = "pb" + item.TileID;                                                
                     PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;
@@ -343,21 +305,15 @@ namespace amazingAdventures
                 }
             }
         }
-
         private void gameFormChatBtn_Click(object sender, EventArgs e)
         {
             ChatForm.Chat.Show();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
         private void onScreenControls()
         {
             DataAccess.GetCharacterLocation(Main.M.Username, Main.M.GameNumber);
             bool x = true;
-            for (int i = 1; i <= 15; i++)
+            for (int i = 1; i <= 15; i++) // On screen controls for Up arrow
             {
                 if(curTile == i)
                 {
@@ -386,7 +342,7 @@ namespace amazingAdventures
 
             x = true;
 
-            for (int i = 121; i <= 135; i++)
+            for (int i = 121; i <= 135; i++) // On screen controls for Down arrow
             {
                 if (curTile == i)
                 {
@@ -413,7 +369,7 @@ namespace amazingAdventures
 
             x = true;
 
-            for (int i = 15; i <= 135; i = i + 15)
+            for (int i = 15; i <= 135; i = i + 15) // On screen controls for Right arrow
             {
                 if (curTile == i)
                 {
@@ -441,7 +397,7 @@ namespace amazingAdventures
             x = true;
 
 
-            for (int i = 1; i <= 121; i = i + 15)
+            for (int i = 1; i <= 121; i = i + 15) // On screen controls for Left arrow
             {
                 if (curTile == i)
                 {
@@ -468,7 +424,7 @@ namespace amazingAdventures
         }
         private void onScreenControlSetup()
         {
-            Ubtn.Size = new System.Drawing.Size(86, 86);
+            Ubtn.Size = new System.Drawing.Size(86, 86); // Creating the on screen controls
             Ubtn.Name = "Ubtn";
             Controls.Add(Ubtn);
             Ubtn.BringToFront();
@@ -490,6 +446,49 @@ namespace amazingAdventures
 
 
         }
+        public void updateCharacterLeaderboard()
+        {
+            DataAccess.GetCharacterScore(Main.M.Username, Main.M.GameNumber); // Get the character scores from the game
+
+            gameLeaderboardDGV.DataSource = null;
+            Leaderboard.GameCharacterList.Clear(); // Clear the list
+            DataAccess.GetGameCharacterScores(Main.M.GameNumber); // Add the characters
+            gameLeaderboardDGV.DataSource = Leaderboard.GameCharacterList.OrderByDescending(a => a.Score).ToList(); // Sort the data source
+            gameLeaderboardDGV.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false); // Remove all columns
+            gameLeaderboardDGV.Columns["Character"].Visible = true; // Add only needed columns
+            gameLeaderboardDGV.Columns["Score"].Visible = true;
+            gameLeaderboardDGV.Columns["Score"].Width = 100;
+            gameLeaderboardDGV.ClearSelection();
+        }
+
+        private void moveUp()
+        {
+            prePreTile = preTile;
+            preTile = curTile;
+            curTile = curTile - 15;
+            characterCheckLocation();
+        }
+        private void moveDown()
+        {
+            prePreTile = preTile;
+            preTile = curTile;
+            curTile = curTile + 15;
+            characterCheckLocation();
+        }
+        private void moveLeft()
+        {
+            prePreTile = preTile;
+            preTile = curTile;
+            curTile = curTile - 1;
+            characterCheckLocation();
+        }
+        private void moveRight()
+        {
+            prePreTile = preTile;
+            preTile = curTile;
+            curTile = curTile + 1;
+            characterCheckLocation();
+        }
 
         private void Ubtn_Click(object sender, System.EventArgs e)
         {
@@ -506,21 +505,6 @@ namespace amazingAdventures
         private void Rbtn_Click(object sender, System.EventArgs e)
         {
             moveRight();
-        }
-
-        public void updateCharacterLeaderboard()
-        {
-            DataAccess.GetCharacterScore(Main.M.Username, Main.M.GameNumber);
-
-            gameLeaderboardDGV.DataSource = null;
-            Leaderboard.GameCharacterList.Clear();
-            DataAccess.GetGameCharacterScores(Main.M.GameNumber);
-            gameLeaderboardDGV.DataSource = Leaderboard.GameCharacterList.OrderByDescending(a => a.Score).ToList();
-            gameLeaderboardDGV.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
-            gameLeaderboardDGV.Columns["Character"].Visible = true;
-            gameLeaderboardDGV.Columns["Score"].Visible = true;
-            gameLeaderboardDGV.Columns["Score"].Width = 100;
-            gameLeaderboardDGV.ClearSelection();
         }
     }
 }
