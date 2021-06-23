@@ -14,18 +14,19 @@ namespace amazingAdventures
         // PUBLIC VARIABLES
 
         public static string Message = "";
+        public static string gameStatus = "gameOpen";
         /*public static string characterName = "";
         public static string characterScore = "";
         public static string leaderboardGame = "";*/
 
         // PUBLIC LISTS
-/*
-        public static List<string> gameListName = new List<string>();
-        public static List<int> gameListID = new List<int>();
-        public static List<string> leaderboardList = new List<string>();
-        public static List<string> chatGlobal = new List<string>();
-        public static List<string> backpackList = new List<string>();
-        public static List<string> playerList = new List<string>();*/
+        /*
+                public static List<string> gameListName = new List<string>();
+                public static List<int> gameListID = new List<int>();
+                public static List<string> leaderboardList = new List<string>();
+                public static List<string> chatGlobal = new List<string>();
+                public static List<string> backpackList = new List<string>();
+                public static List<string> playerList = new List<string>();*/
 
         // CONNECTION TO DATABASE
 
@@ -341,7 +342,7 @@ namespace amazingAdventures
             {
                 while (myReader.Read())
                 {
-                    Message = myReader.GetString("MESSAGE"); // Get message 
+                  //  gameStatus = myReader.GetString("MESSAGE"); // Get message 
                 }
             }
             finally
@@ -623,7 +624,7 @@ namespace amazingAdventures
             {
                 while (myReader.Read())
                 {
-                    Message = myReader.GetString("MESSAGE");
+                  //  gameStatus = myReader.GetString("MESSAGE");
                 }
             }
             finally
@@ -827,6 +828,28 @@ namespace amazingAdventures
                 {
                     int x = Int32.Parse(myReader.GetString("CharacterScore"));
                     Message = x.ToString(); 
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
+        public static void checkGameExists(int pgamenumber)
+        {
+            MySqlCommand cmd = new MySqlCommand("checkGameExists", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("pGameNumber", pgamenumber); // Add a parameter
+            connect.Open();
+            cmd.ExecuteNonQuery();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    gameStatus = myReader.GetString("MESSAGE");
                 }
             }
             finally

@@ -149,6 +149,7 @@ namespace amazingAdventures
         private void adminButton_Click(object sender, EventArgs e)
         {
             Hide();
+            AdminSettingsForm.AdminSettings.adminListGames();
             AdminSettingsForm.AdminSettings.Show();
         }
     }

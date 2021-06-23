@@ -30,11 +30,11 @@ namespace amazingAdventures
         private void InitializeComponent()
         {
             this.usrnValidSecondLine = new System.Windows.Forms.Label();
-            this.secondLoseTxt = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
             this.firstLoseTxt = new System.Windows.Forms.Label();
             this.pointsEndLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.secondLoseTxt = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,20 +50,6 @@ namespace amazingAdventures
             this.usrnValidSecondLine.TabIndex = 27;
             this.usrnValidSecondLine.Text = "Your score was:";
             this.usrnValidSecondLine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // secondLoseTxt
-            // 
-            this.secondLoseTxt.AutoSize = true;
-            this.secondLoseTxt.BackColor = System.Drawing.Color.Transparent;
-            this.secondLoseTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.secondLoseTxt.ForeColor = System.Drawing.Color.PaleGreen;
-            this.secondLoseTxt.Location = new System.Drawing.Point(161, 91);
-            this.secondLoseTxt.MinimumSize = new System.Drawing.Size(165, 17);
-            this.secondLoseTxt.Name = "secondLoseTxt";
-            this.secondLoseTxt.Size = new System.Drawing.Size(165, 22);
-            this.secondLoseTxt.TabIndex = 26;
-            this.secondLoseTxt.Text = "You hit a trap!";
-            this.secondLoseTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // closeBtn
             // 
@@ -117,6 +103,20 @@ namespace amazingAdventures
             this.panel1.Size = new System.Drawing.Size(146, 76);
             this.panel1.TabIndex = 29;
             // 
+            // secondLoseTxt
+            // 
+            this.secondLoseTxt.AutoSize = true;
+            this.secondLoseTxt.BackColor = System.Drawing.Color.Transparent;
+            this.secondLoseTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.secondLoseTxt.ForeColor = System.Drawing.Color.PaleGreen;
+            this.secondLoseTxt.Location = new System.Drawing.Point(155, 91);
+            this.secondLoseTxt.MinimumSize = new System.Drawing.Size(165, 17);
+            this.secondLoseTxt.Name = "secondLoseTxt";
+            this.secondLoseTxt.Size = new System.Drawing.Size(167, 22);
+            this.secondLoseTxt.TabIndex = 26;
+            this.secondLoseTxt.Text = "You stood on a trap";
+            this.secondLoseTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // GameLoseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,10 +144,10 @@ namespace amazingAdventures
         #endregion
 
         public System.Windows.Forms.Label usrnValidSecondLine;
-        public System.Windows.Forms.Label secondLoseTxt;
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Label firstLoseTxt;
         public System.Windows.Forms.Label pointsEndLabel;
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label secondLoseTxt;
     }
 }

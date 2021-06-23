@@ -195,20 +195,27 @@ namespace amazingAdventures
         }
         private void characterMove()
         {
-            itemMarker();
-            DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
-            string x = "pb" + curTile;                                                    // gets picturebox name
-            PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
-            pb.Visible = false;                                                           // changes the controls properties
+            if (DataAccess.gameStatus == "gameClosed")
+            {
+                Hide();
+                GameLoseForm.GameLose.updatePoints();
+                GameLoseForm.GameLose.Show();
+            }
+            else
+            {
+                otherCharactersMarker();
+                itemMarker();
+                DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
+                string x = "pb" + curTile;                                                    // gets picturebox name
+                PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
+                pb.Visible = false;                                                           // changes the controls properties
 
-            Point pt = pb.FindForm().PointToClient(pb.Parent.PointToScreen(pb.Location)); // gets control location
-            Size locationOfMove = new Size(pt);                                           // converts to size
-            playerMarker.Visible = true;
-            playerMarker.Location = new System.Drawing.Point(locationOfMove);             // moves character to tile
-            playerMarker.BringToFront();
-
-            otherCharactersMarker();
-
+                Point pt = pb.FindForm().PointToClient(pb.Parent.PointToScreen(pb.Location)); // gets control location
+                Size locationOfMove = new Size(pt);                                           // converts to size
+                playerMarker.Visible = true;
+                playerMarker.Location = new System.Drawing.Point(locationOfMove);             // moves character to tile
+                playerMarker.BringToFront();
+            }
 
         }
 
