@@ -22,9 +22,9 @@ namespace amazingAdventures
         public LoginForm()
         {
             InitializeComponent();
-            DataAccess.createdb(); // Creates the tables
-            DataAccess.modifydb(); // Creates the items
-            DataAccess.testData(); // Creates the test data
+            DataAccess.CreateDB(); // Creates the tables
+            DataAccess.ModifyDB(); // Creates the items
+            DataAccess.TestData(); // Creates the test data
             registerBtn.FlatAppearance.BorderColor = Color.DarkGreen;
             loginBtn.FlatAppearance.BorderColor = Color.DarkGreen;
         }
@@ -41,7 +41,7 @@ namespace amazingAdventures
 
         private void login()
         {
-            DataAccess.checkUsername(loginUsername.Text);
+            DataAccess.CheckUsername(loginUsername.Text);
             if (DataAccess.Message == "avaliableUsername")
             {
                 registerBtn.Visible = true;
@@ -52,7 +52,7 @@ namespace amazingAdventures
             } else if (DataAccess.Message == "unavaliableUsername")
             {
                 registerBtn.Visible = false;
-                DataAccess.accountLogin(loginUsername.Text, loginPassword.Text);
+                DataAccess.AccountLogin(loginUsername.Text, loginPassword.Text);
                 if (DataAccess.Message == "NLogin")
                 {
                     usrnValidFirstLine.Visible = false;

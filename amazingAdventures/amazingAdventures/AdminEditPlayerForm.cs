@@ -41,7 +41,7 @@ namespace amazingAdventures
                 {
                     Lock = true;
                 }
-                DataAccess.updatePlayerInfo(AdminSettingsForm.AdminSettings.user, 
+                DataAccess.UpdatePlayerInfo(AdminSettingsForm.AdminSettings.user, 
                                             manageUsername.Text,
                                             managePassword.Text,
                                             manageEmail.Text,

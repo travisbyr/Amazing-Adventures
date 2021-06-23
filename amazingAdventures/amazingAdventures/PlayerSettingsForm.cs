@@ -33,11 +33,11 @@ namespace amazingAdventures
             {
                 if (String.IsNullOrEmpty(settingsEmail.Text) == false)
                 {
-                    DataAccess.changeEmail(Main.M.Username, settingsEmail.Text);
+                    DataAccess.ChangeEmail(Main.M.Username, settingsEmail.Text);
                 }
                 if (String.IsNullOrEmpty(settingsPassword.Text) == false)
                 {
-                    DataAccess.changePassword(Main.M.Username, settingsPassword.Text);
+                    DataAccess.ChangePassword(Main.M.Username, settingsPassword.Text);
                 }
                 MessageBox.Show("Details have been successfully changed", "Details Changed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Hide();

@@ -34,7 +34,7 @@ namespace amazingAdventures
         {
             chatMessageListBox.Items.Clear();
             Main.ChatList.Clear();
-            DataAccess.readGlobalChat();
+            DataAccess.ReadGlobalChat();
             if (DataAccess.Message == "foundChatText")
             {
                 foreach (Chat item in Main.ChatList)
@@ -54,7 +54,7 @@ namespace amazingAdventures
             }
             else
             {
-                DataAccess.globalChat(chatTxtBox.Text, Main.M.Username);
+                DataAccess.SubmitGlobalChat(chatTxtBox.Text, Main.M.Username);
                 chatTxtBox.Text = "";
                 chatErrorLine.Visible = false;
                 refreshChat();

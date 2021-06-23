@@ -46,7 +46,7 @@ namespace amazingAdventures
             pb.Visible = true;
             playerMarker.Visible = false;
 
-            DataAccess.characterQuits(curTile, Main.M.Username, Main.M.GameNumber);
+            DataAccess.CharacterQuits(curTile, Main.M.Username, Main.M.GameNumber);
             Hide();
             LobbyForm.Lobby.viewPlayersOnline();
             LobbyForm.Lobby.Show();
@@ -79,16 +79,16 @@ namespace amazingAdventures
 
         public void characterSetup()
         {
-            DataAccess.addItems(Main.M.GameNumber);
+            DataAccess.AddItems(Main.M.GameNumber);
             otherCharactersMarker();
             itemMarker();
             onScreenControlSetup();
             characterMove();
 
             int a = Main.M.GameNumber;
-            DataAccess.checkCharacter(Main.M.Username, Main.M.GameNumber);
+            DataAccess.CheckCharacter(Main.M.Username, Main.M.GameNumber);
 
-            DataAccess.getColour(Main.M.Username, a);
+            DataAccess.GetCharacterColour(Main.M.Username, a);
             playerMarker.BackColor = ColorTranslator.FromHtml(DataAccess.Message);
             playerMarker.ForeColor = ColorTranslator.FromHtml(DataAccess.Message);
             playerMarker.FlatStyle = FlatStyle.Flat;
@@ -165,7 +165,7 @@ namespace amazingAdventures
                 curTile = curTile + 135;
             } 
 
-            DataAccess.checkCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
+            DataAccess.CheckCharacterLocation(curTile, Main.M.Username, Main.M.GameNumber);
             if (DataAccess.Message == "invalidMove")
             {
                 curTile = preTile;
@@ -175,14 +175,14 @@ namespace amazingAdventures
             else if (DataAccess.Message == "itemFound")
             {
                 characterMove();
-                DataAccess.addItems(Main.M.GameNumber);
+                DataAccess.AddItems(Main.M.GameNumber);
                 itemMarker();
             }
             else if (DataAccess.Message == "trapFound")
             {
                 GameLoseForm.GameLose.Show();
                 Hide();
-                DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
+                DataAccess.GetCharacterScore(Main.M.Username, Main.M.GameNumber);
                 GameLoseForm.GameLose.pointsEndLabel.Text = DataAccess.Points + " Points";
             }
             else
@@ -192,12 +192,12 @@ namespace amazingAdventures
         }
         private void characterMove()
         {
-            DataAccess.checkGameExists(Main.M.GameNumber);
+            DataAccess.CheckGameExists(Main.M.GameNumber);
             updateCharacterLeaderboard();
             if (DataAccess.gameStatus == "gameClosed")
             {
                 Hide();
-                DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
+                DataAccess.GetCharacterScore(Main.M.Username, Main.M.GameNumber);
                 GameLoseForm.GameLose.pointsEndLabel.Text = DataAccess.Points + " Points";
                 GameLoseForm.GameLose.Show();
             }
@@ -205,7 +205,7 @@ namespace amazingAdventures
             {
                 otherCharactersMarker();
                 itemMarker();
-                DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
+                DataAccess.GetCharacterLocation(Main.M.Username, Main.M.GameNumber);
                 string x = "pb" + curTile;                                                    // gets picturebox name
                 PictureBox pb = Controls.Find(x, true).FirstOrDefault() as PictureBox;        // targets control with the name from above
                 pb.Visible = false;                                                           // changes the controls properties
@@ -266,7 +266,7 @@ namespace amazingAdventures
 
             int b = n;
             Main.CharacterList.Clear();
-            DataAccess.getAllCharacterPositions(Main.M.Username, Main.M.GameNumber);
+            DataAccess.GetAllCharacterPositions(Main.M.Username, Main.M.GameNumber);
             n = Main.CharacterList.Count();
             ButtonEllipse[] button = new ButtonEllipse[n];
 
@@ -321,7 +321,7 @@ namespace amazingAdventures
             onScreenControls();
 
             Main.ItemList.Clear();
-            DataAccess.getGameItems(Main.M.GameNumber);
+            DataAccess.GetGameItems(Main.M.GameNumber);
             int n = Main.ItemList.Count();
 
             for (int i = 0; i < n; i++)
@@ -355,7 +355,7 @@ namespace amazingAdventures
         }
         private void onScreenControls()
         {
-            DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
+            DataAccess.GetCharacterLocation(Main.M.Username, Main.M.GameNumber);
             bool x = true;
             for (int i = 1; i <= 15; i++)
             {
@@ -368,7 +368,7 @@ namespace amazingAdventures
 
             if (x == true)
             {
-                DataAccess.getCharacterLocation(Main.M.Username, Main.M.GameNumber);
+                DataAccess.GetCharacterLocation(Main.M.Username, Main.M.GameNumber);
                 string a = "pb" + (curTile - 15);
                 PictureBox pbU = Controls.Find(a, true).FirstOrDefault() as PictureBox;
                 Point ptU = pbU.FindForm().PointToClient(pbU.Parent.PointToScreen(pbU.Location));
@@ -510,11 +510,11 @@ namespace amazingAdventures
 
         public void updateCharacterLeaderboard()
         {
-            DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
+            DataAccess.GetCharacterScore(Main.M.Username, Main.M.GameNumber);
 
             gameLeaderboardDGV.DataSource = null;
             Leaderboard.GameCharacterList.Clear();
-            DataAccess.getGameCharacterScores(Main.M.GameNumber);
+            DataAccess.GetGameCharacterScores(Main.M.GameNumber);
             gameLeaderboardDGV.DataSource = Leaderboard.GameCharacterList.OrderByDescending(a => a.Score).ToList();
             gameLeaderboardDGV.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
             gameLeaderboardDGV.Columns["Character"].Visible = true;

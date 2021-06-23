@@ -53,7 +53,7 @@ namespace amazingAdventures
             DialogResult dialogResult = MessageBox.Show("Are you sure you would like to create this character?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                DataAccess.characterJoinGame(Main.M.GameNumber, characterNameInput.Text, characterColour, Main.M.Username.ToString());
+                DataAccess.CharacterJoinGame(Main.M.GameNumber, characterNameInput.Text, characterColour, Main.M.Username.ToString());
                 GameForm.Game.characterSetup();
                 GameForm.Game.Show();
                 Hide();

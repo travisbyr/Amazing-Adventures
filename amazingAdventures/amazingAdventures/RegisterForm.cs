@@ -21,7 +21,7 @@ namespace amazingAdventures
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            DataAccess.accountCreate(registerUsername.Text, registerPassword.Text, registerEmail.Text);
+            DataAccess.AccountCreate(registerUsername.Text, registerPassword.Text, registerEmail.Text);
             MessageBox.Show("Account has been successfully created.", "Account Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoginForm.Login.registerBtn.Visible = false;
             LoginForm.Login.usrnValidFirstLine.Visible = false;

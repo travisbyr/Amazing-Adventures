@@ -23,7 +23,7 @@ namespace amazingAdventures
 
         // SETTING UP DATABASE
 
-        public static void createdb()
+        public static void CreateDB()
         {
             MySqlCommand cmd = new MySqlCommand("createdb", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -33,8 +33,7 @@ namespace amazingAdventures
             myReader.Close();
             connect.Close();
         }
-
-        public static void modifydb()
+        public static void ModifyDB()
         {
             MySqlCommand cmd = new MySqlCommand("modifyDB", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -44,8 +43,7 @@ namespace amazingAdventures
             myReader.Close();
             connect.Close();
         }
-
-        public static void testData()
+        public static void TestData()
         {
             MySqlCommand cmd = new MySqlCommand("editDB", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -58,7 +56,7 @@ namespace amazingAdventures
 
         // ACCOUNT FUNCTIONALITY
 
-        public static void accountCreate(string pusername, string ppassword, string pemail)
+        public static void AccountCreate(string pusername, string ppassword, string pemail)
         {
             MySqlCommand cmd = new MySqlCommand("accountCreate", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -81,8 +79,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void checkUsername(string pusername)
+        public static void CheckUsername(string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("checkUsername", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -103,8 +100,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void accountLogin(string pusername, string ppassword)
+        public static void AccountLogin(string pusername, string ppassword)
         {
             MySqlCommand cmd = new MySqlCommand("accountLogin", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -126,8 +122,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void accountLogout(string pusername)
+        public static void AccountLogout(string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("accountLogout", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -152,7 +147,7 @@ namespace amazingAdventures
 
         // GAME FUNCTIONALITY
 
-        public static void gameCreation(string pusername, string pgamename)
+        public static void GameCreation(string pusername, string pgamename)
         {
             MySqlCommand cmd = new MySqlCommand("gameCreation", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -174,8 +169,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void gamesList()
+        public static void GamesList()
         {
             MySqlCommand cmd = new MySqlCommand("listOfGames", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -198,8 +192,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void characterJoinGame(int pgamenumber, string pcharactername, string pcharactercolour, string pusername)
+        public static void CharacterJoinGame(int pgamenumber, string pcharactername, string pcharactercolour, string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("characterJoinGame", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -223,8 +216,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void checkCharacterLocation(int ptile, string pusername, int pgamenumber)
+        public static void CheckCharacterLocation(int ptile, string pusername, int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("checkCharacterLocation", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -247,8 +239,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void getCharacterLocation(string pusername, int pgamenumber)
+        public static void GetCharacterLocation(string pusername, int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("characterCurrentTile", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -271,8 +262,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void characterQuits(int ptile, string pusername, int pgamenumber)
+        public static void CharacterQuits(int ptile, string pusername, int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("characterQuits", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -295,8 +285,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void characterRejoins(string pusername, int pgamenumber)
+        public static void CharacterRejoins(string pusername, int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("characterRejoins", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -318,8 +307,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void gameClose(string pusername)
+        public static void GameClose(string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("gameClose", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -340,8 +328,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void viewOnlinePlayers()
+        public static void ViewOnlinePlayers()
         {
             MySqlCommand cmd = new MySqlCommand("viewOnlinePlayers", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -363,7 +350,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-        public static void addItems(int pgamenumber)
+        public static void AddItems(int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("addItems", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -384,8 +371,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void readGlobalChat()
+        public static void ReadGlobalChat()
         {
             MySqlCommand cmd = new MySqlCommand("viewGlobalChat", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -412,8 +398,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void globalChat(string pchatmessage, string pusername)
+        public static void SubmitGlobalChat(string pchatmessage, string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("globalChat", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -422,23 +407,13 @@ namespace amazingAdventures
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();
-/*            try
-            {
-                while (myReader.Read())
-                {
-
-                }
-            }
-            finally
-            {*/
-                myReader.Close();
-                connect.Close();
-           // }
+            myReader.Close();
+            connect.Close();
         }
 
         // PLAYER PROPERTIES
 
-        public static void changeEmail(string pusername, string pemail)
+        public static void ChangeEmail(string pusername, string pemail)
         {
             MySqlCommand cmd = new MySqlCommand("changeEmail", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -447,21 +422,11 @@ namespace amazingAdventures
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();
-            try
-            {
-                while (myReader.Read())
-                {
-                    Message = myReader.GetString("MESSAGE");
-                }
-            }
-            finally
-            {
-                myReader.Close();
-                connect.Close();
-            }
+            myReader.Close();
+            connect.Close();
+            
         }
-
-        public static void changePassword(string pusername, string ppassword)
+        public static void ChangePassword(string pusername, string ppassword)
         {
             MySqlCommand cmd = new MySqlCommand("changePassword", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -470,21 +435,10 @@ namespace amazingAdventures
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();
-            try
-            {
-                while (myReader.Read())
-                {
-                    Message = myReader.GetString("MESSAGE");
-                }
-            }
-            finally
-            {
-                myReader.Close();
-                connect.Close();
-            }
+            myReader.Close();
+            connect.Close();
         }
-
-        public static void changeUsername(string pusername, string pnewusername)
+        public static void ChangeUsername(string pusername, string pnewusername)
         {
             MySqlCommand cmd = new MySqlCommand("changeUsername", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -493,23 +447,13 @@ namespace amazingAdventures
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();
-            try
-            {
-                while (myReader.Read())
-                {
-                    Message = myReader.GetString("MESSAGE");
-                }
-            }
-            finally
-            {
-                myReader.Close();
-                connect.Close();
-            }
+            myReader.Close();
+            connect.Close();
         }
 
         // ADMIN PROPERTIES
 
-        public static void adminLockPlayer(string pusername, bool plocked)
+        public static void AdminLockPlayer(string pusername, bool plocked)
         {
             MySqlCommand cmd = new MySqlCommand("lockPlayer", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -518,21 +462,10 @@ namespace amazingAdventures
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();
-            try
-            {
-                while (myReader.Read())
-                {
-                    Message = myReader.GetString("MESSAGE");
-                }
-            }
-            finally
-            {
-                myReader.Close();
-                connect.Close();
-            }
+            myReader.Close();
+            connect.Close();
         }
-
-        public static void adminDeletePlayer(string pusername)
+        public static void AdminDeletePlayer(string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("deletePlayer", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -540,42 +473,20 @@ namespace amazingAdventures
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();
-            try
-            {
-                while (myReader.Read())
-                {
-                    Message = myReader.GetString("MESSAGE");
-                }
-            }
-            finally
-            {
-                myReader.Close();
-                connect.Close();
-            }
+            myReader.Close();
+            connect.Close();
         }
-
-        public static void clearGlobalChat()
+        public static void AdminClearGlobalChat()
         {
             MySqlCommand cmd = new MySqlCommand("clearGlobalChat", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();
-            try
-            {
-                while (myReader.Read())
-                {
-                    Message = myReader.GetString("MESSAGE");
-                }
-            }
-            finally
-            {
-                myReader.Close();
-                connect.Close();
-            }
+            myReader.Close();
+            connect.Close();
         }
-
-        public static void adminCloseGame(int pgamenumber)
+        public static void AdminCloseGame(int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("adminCloseGame", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -583,21 +494,14 @@ namespace amazingAdventures
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();
-            try
-            {
-                while (myReader.Read())
-                {
-                  //  gameStatus = myReader.GetString("MESSAGE");
-                }
-            }
-            finally
-            {
-                myReader.Close();
-                connect.Close();
-            }
+            myReader.Close();
+            connect.Close();
         }
 
-        public static void listOfPlayers()
+
+        // TO ADD
+
+        public static void ListOfPlayers()
         {
             MySqlCommand cmd = new MySqlCommand("listOfPlayers", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -619,8 +523,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void checkCharacter(string pusername, int pgamenumber)
+        public static void CheckCharacter(string pusername, int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("checkCharacter", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -644,7 +547,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-        public static void getColour(string pusername, int pgamenumber)
+        public static void GetCharacterColour(string pusername, int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("getColour", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -667,8 +570,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void getAllCharacterPositions(string pusername, int pgamenumber)
+        public static void GetAllCharacterPositions(string pusername, int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("getCharacters", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -701,7 +603,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-        public static void checkAdmin(string pusername)
+        public static void CheckAdmin(string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("checkAdmin", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -723,8 +625,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void getGameItems(int pgamenumber)
+        public static void GetGameItems(int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("getGameItems", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -752,8 +653,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void getCharacterScore(string pusername, int pgamenumber)
+        public static void GetCharacterScore(string pusername, int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("getCharacterScore", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -777,7 +677,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-        public static void checkGameExists(int pgamenumber)
+        public static void CheckGameExists(int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("checkGameExists", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -799,8 +699,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void getPlayerInfo(string pusername)
+        public static void GetPlayerInfo(string pusername)
         {
             MySqlCommand cmd = new MySqlCommand("getPlayerInfo", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -826,8 +725,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void getGameCharacterScores(int pgamenumber)
+        public static void GetGameCharacterScores(int pgamenumber)
         {
             MySqlCommand cmd = new MySqlCommand("getGameCharacterScores", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
@@ -850,8 +748,7 @@ namespace amazingAdventures
                 connect.Close();
             }
         }
-
-        public static void updatePlayerInfo(string pusername, string nusername, string npassword, string nemail, int nhighscore, bool nisadmin, bool nlocked)
+        public static void UpdatePlayerInfo(string pusername, string nusername, string npassword, string nemail, int nhighscore, bool nisadmin, bool nlocked)
         {
             MySqlCommand cmd = new MySqlCommand("updatePlayerInfo", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;

@@ -36,14 +36,14 @@ namespace amazingAdventures
 
         private void createGame()
         {
-            DataAccess.gameCreation(Main.M.Username, gameNameInput.Text);
+            DataAccess.GameCreation(Main.M.Username, gameNameInput.Text);
             if (DataAccess.Message == "gameAlreadyCreated")
             {
                 DialogResult result = MessageBox.Show("You have already created a game.\nWould you like to delete it and create a new one?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 if (result == DialogResult.Yes)
                 {
-                    DataAccess.gameClose(Main.M.Username);
-                    DataAccess.gameCreation(Main.M.Username, gameNameInput.Text);
+                    DataAccess.GameClose(Main.M.Username);
+                    DataAccess.GameCreation(Main.M.Username, gameNameInput.Text);
                     LobbyForm.Lobby.viewPlayersOnline(); ;
                     Hide();
                 }

@@ -57,7 +57,7 @@ namespace amazingAdventures
             currentGameList.Items.Clear();
             Main.M.GameListName.Clear();
             Main.M.GameListID.Clear();
-            DataAccess.gamesList();
+            DataAccess.GamesList();
             if (DataAccess.Message == "gamesAvaliable")
             {
                 foreach (string a in Main.M.GameListName.ToArray())
@@ -70,7 +70,7 @@ namespace amazingAdventures
         private void logoutButton_Click(object sender, EventArgs e)
         {
             Hide();
-            DataAccess.accountLogout(Main.M.Username);
+            DataAccess.AccountLogout(Main.M.Username);
             LoginForm.Login.Show();
         }
         private void joinGameButton_Click(object sender, EventArgs e)
@@ -92,10 +92,10 @@ namespace amazingAdventures
 
         private void joinGame()
         {
-            DataAccess.checkCharacter(Main.M.Username, Main.M.GameNumber);
+            DataAccess.CheckCharacter(Main.M.Username, Main.M.GameNumber);
             if (DataAccess.Message == "characterIsMade")
             {   // Join game using existing character
-                DataAccess.characterRejoins(Main.M.Username, Main.M.GameNumber);
+                DataAccess.CharacterRejoins(Main.M.Username, Main.M.GameNumber);
                 GameForm.Game.characterSetup();
                 GameForm.Game.Show();
                 Hide();
@@ -108,7 +108,7 @@ namespace amazingAdventures
         }
         private void adminAbility()
         {
-            DataAccess.checkAdmin(Main.M.Username);
+            DataAccess.CheckAdmin(Main.M.Username);
             if(DataAccess.Message == "isAdmin")
             {
                 adminButton.Visible = true;
@@ -123,7 +123,7 @@ namespace amazingAdventures
         {
             onlinePlayersDGV.DataSource = null;
             Leaderboard.LeaderboardList.Clear();
-            DataAccess.viewOnlinePlayers();
+            DataAccess.ViewOnlinePlayers();
             onlinePlayersDGV.DataSource = Leaderboard.LeaderboardList;
             onlinePlayersDGV.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
             onlinePlayersDGV.Columns["Player"].Visible = true;

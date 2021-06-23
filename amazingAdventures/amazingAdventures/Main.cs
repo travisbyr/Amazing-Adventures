@@ -9,7 +9,6 @@ namespace amazingAdventures
     public class Main
     {
         private static readonly Main _instance = new Main();
-
         public static Main M => _instance;
         static Main() { }
 
