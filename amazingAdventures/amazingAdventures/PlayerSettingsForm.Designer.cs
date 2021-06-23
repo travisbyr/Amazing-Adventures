@@ -199,6 +199,7 @@ namespace amazingAdventures
             this.Controls.Add(this.settingsUsername);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(508, 411);
             this.MinimumSize = new System.Drawing.Size(508, 411);
             this.Name = "PlayerSettingsForm";

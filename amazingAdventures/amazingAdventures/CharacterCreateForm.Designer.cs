@@ -149,6 +149,7 @@ namespace amazingAdventures
             this.Controls.Add(this.Use);
             this.Controls.Add(this.characterNameInput);
             this.MaximumSize = new System.Drawing.Size(508, 374);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(508, 374);
             this.Name = "CharacterCreateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

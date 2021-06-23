@@ -130,6 +130,7 @@ namespace amazingAdventures
             this.Controls.Add(this.chatMessageListBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(988, 500);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(988, 500);
             this.Name = "ChatForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

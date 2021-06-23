@@ -130,6 +130,7 @@ namespace amazingAdventures
             this.Controls.Add(this.secondLoseTxt);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.firstLoseTxt);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(508, 396);
             this.MinimumSize = new System.Drawing.Size(508, 396);
             this.Name = "GameLoseForm";

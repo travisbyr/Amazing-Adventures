@@ -263,6 +263,7 @@ namespace amazingAdventures
             this.Controls.Add(this.managePassword);
             this.Controls.Add(this.manageUsername);
             this.MaximumSize = new System.Drawing.Size(500, 405);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 405);
             this.Name = "AdminEditPlayerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
