@@ -1757,7 +1757,7 @@ namespace amazingAdventures
             this.label3.BackColor = System.Drawing.Color.DarkGreen;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT", 30.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(552, 21);
+            this.label3.Location = new System.Drawing.Point(559, 21);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(403, 48);
@@ -1787,9 +1787,9 @@ namespace amazingAdventures
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGreen;
-            this.panel2.Location = new System.Drawing.Point(497, 14);
+            this.panel2.Location = new System.Drawing.Point(294, 14);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(498, 65);
+            this.panel2.Size = new System.Drawing.Size(942, 65);
             this.panel2.TabIndex = 174;
             // 
             // GameForm
