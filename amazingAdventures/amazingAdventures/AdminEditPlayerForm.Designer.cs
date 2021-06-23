@@ -55,7 +55,7 @@ namespace amazingAdventures
             this.manageCloseBtn.Margin = new System.Windows.Forms.Padding(2);
             this.manageCloseBtn.Name = "manageCloseBtn";
             this.manageCloseBtn.Size = new System.Drawing.Size(130, 35);
-            this.manageCloseBtn.TabIndex = 62;
+            this.manageCloseBtn.TabIndex = 61;
             this.manageCloseBtn.Text = "Close";
             this.manageCloseBtn.UseVisualStyleBackColor = false;
             this.manageCloseBtn.Click += new System.EventHandler(this.manageCloseBtn_Click);
@@ -96,7 +96,7 @@ namespace amazingAdventures
             this.manageEmail.Margin = new System.Windows.Forms.Padding(2);
             this.manageEmail.Name = "manageEmail";
             this.manageEmail.Size = new System.Drawing.Size(298, 29);
-            this.manageEmail.TabIndex = 58;
+            this.manageEmail.TabIndex = 56;
             // 
             // label2
             // 
@@ -172,7 +172,7 @@ namespace amazingAdventures
             this.manageHighscore.Margin = new System.Windows.Forms.Padding(2);
             this.manageHighscore.Name = "manageHighscore";
             this.manageHighscore.Size = new System.Drawing.Size(298, 29);
-            this.manageHighscore.TabIndex = 63;
+            this.manageHighscore.TabIndex = 57;
             // 
             // label5
             // 
@@ -193,7 +193,7 @@ namespace amazingAdventures
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(308, 261);
+            this.label6.Location = new System.Drawing.Point(349, 261);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 24);
@@ -206,16 +206,16 @@ namespace amazingAdventures
             this.manageAdmin.Location = new System.Drawing.Point(258, 268);
             this.manageAdmin.Name = "manageAdmin";
             this.manageAdmin.Size = new System.Drawing.Size(15, 14);
-            this.manageAdmin.TabIndex = 67;
+            this.manageAdmin.TabIndex = 58;
             this.manageAdmin.UseVisualStyleBackColor = true;
             // 
             // manageLocked
             // 
             this.manageLocked.AutoSize = true;
-            this.manageLocked.Location = new System.Drawing.Point(388, 268);
+            this.manageLocked.Location = new System.Drawing.Point(429, 268);
             this.manageLocked.Name = "manageLocked";
             this.manageLocked.Size = new System.Drawing.Size(15, 14);
-            this.manageLocked.TabIndex = 68;
+            this.manageLocked.TabIndex = 59;
             this.manageLocked.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -241,9 +241,10 @@ namespace amazingAdventures
             // 
             // AdminEditPlayerForm
             // 
+            this.AcceptButton = this.manageSaveBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 372);
+            this.ClientSize = new System.Drawing.Size(484, 366);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -261,8 +262,8 @@ namespace amazingAdventures
             this.Controls.Add(this.Use);
             this.Controls.Add(this.managePassword);
             this.Controls.Add(this.manageUsername);
-            this.MaximumSize = new System.Drawing.Size(508, 411);
-            this.MinimumSize = new System.Drawing.Size(508, 411);
+            this.MaximumSize = new System.Drawing.Size(500, 405);
+            this.MinimumSize = new System.Drawing.Size(500, 405);
             this.Name = "AdminEditPlayerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Edit Player";

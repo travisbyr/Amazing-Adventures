@@ -63,7 +63,7 @@ namespace amazingAdventures
             this.createCharacterBtn.Margin = new System.Windows.Forms.Padding(2);
             this.createCharacterBtn.Name = "createCharacterBtn";
             this.createCharacterBtn.Size = new System.Drawing.Size(130, 35);
-            this.createCharacterBtn.TabIndex = 39;
+            this.createCharacterBtn.TabIndex = 41;
             this.createCharacterBtn.Text = "Create";
             this.createCharacterBtn.UseVisualStyleBackColor = false;
             this.createCharacterBtn.Click += new System.EventHandler(this.createCharacterBtn_click);
@@ -134,6 +134,7 @@ namespace amazingAdventures
             // 
             // CharacterCreateForm
             // 
+            this.AcceptButton = this.createCharacterBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;

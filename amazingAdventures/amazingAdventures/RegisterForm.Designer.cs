@@ -81,7 +81,7 @@ namespace amazingAdventures
             this.registerBtn.Margin = new System.Windows.Forms.Padding(2);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(199, 35);
-            this.registerBtn.TabIndex = 25;
+            this.registerBtn.TabIndex = 29;
             this.registerBtn.Text = "Register";
             this.registerBtn.UseVisualStyleBackColor = false;
             this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);

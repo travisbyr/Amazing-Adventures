@@ -29,11 +29,11 @@ namespace amazingAdventures
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.totalPlayersDGV = new System.Windows.Forms.DataGridView();
             this.adminFormCloseBtn = new System.Windows.Forms.Button();
             this.deletePlayerBtn = new System.Windows.Forms.Button();
@@ -55,53 +55,53 @@ namespace amazingAdventures
             this.totalPlayersDGV.AllowUserToAddRows = false;
             this.totalPlayersDGV.AllowUserToDeleteRows = false;
             this.totalPlayersDGV.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            this.totalPlayersDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            this.totalPlayersDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.totalPlayersDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.totalPlayersDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.totalPlayersDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.totalPlayersDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.totalPlayersDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.totalPlayersDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.totalPlayersDGV.ColumnHeadersHeight = 33;
             this.totalPlayersDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.totalPlayersDGV.ColumnHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.totalPlayersDGV.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.totalPlayersDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.totalPlayersDGV.GridColor = System.Drawing.SystemColors.Control;
             this.totalPlayersDGV.Location = new System.Drawing.Point(708, 112);
             this.totalPlayersDGV.Margin = new System.Windows.Forms.Padding(2);
             this.totalPlayersDGV.MultiSelect = false;
             this.totalPlayersDGV.Name = "totalPlayersDGV";
             this.totalPlayersDGV.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.totalPlayersDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.totalPlayersDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.totalPlayersDGV.RowHeadersVisible = false;
             this.totalPlayersDGV.RowHeadersWidth = 82;
             this.totalPlayersDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.totalPlayersDGV.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.totalPlayersDGV.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.totalPlayersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.totalPlayersDGV.Size = new System.Drawing.Size(283, 479);
-            this.totalPlayersDGV.TabIndex = 32;
+            this.totalPlayersDGV.TabIndex = 41;
             // 
             // adminFormCloseBtn
             // 
@@ -112,7 +112,7 @@ namespace amazingAdventures
             this.adminFormCloseBtn.Location = new System.Drawing.Point(390, 628);
             this.adminFormCloseBtn.Name = "adminFormCloseBtn";
             this.adminFormCloseBtn.Size = new System.Drawing.Size(255, 60);
-            this.adminFormCloseBtn.TabIndex = 28;
+            this.adminFormCloseBtn.TabIndex = 36;
             this.adminFormCloseBtn.Text = "Return to Lobby";
             this.adminFormCloseBtn.UseVisualStyleBackColor = false;
             this.adminFormCloseBtn.Click += new System.EventHandler(this.adminFormCloseBtn_Click);
@@ -126,7 +126,7 @@ namespace amazingAdventures
             this.deletePlayerBtn.Location = new System.Drawing.Point(740, 606);
             this.deletePlayerBtn.Name = "deletePlayerBtn";
             this.deletePlayerBtn.Size = new System.Drawing.Size(226, 40);
-            this.deletePlayerBtn.TabIndex = 27;
+            this.deletePlayerBtn.TabIndex = 38;
             this.deletePlayerBtn.Text = "Delete Player";
             this.deletePlayerBtn.UseVisualStyleBackColor = false;
             this.deletePlayerBtn.Click += new System.EventHandler(this.deletePlayerBtn_Click);
@@ -140,7 +140,7 @@ namespace amazingAdventures
             this.clearChatBtn.Location = new System.Drawing.Point(390, 360);
             this.clearChatBtn.Name = "clearChatBtn";
             this.clearChatBtn.Size = new System.Drawing.Size(255, 60);
-            this.clearChatBtn.TabIndex = 25;
+            this.clearChatBtn.TabIndex = 34;
             this.clearChatBtn.Text = "Clear Chat";
             this.clearChatBtn.UseVisualStyleBackColor = false;
             this.clearChatBtn.Click += new System.EventHandler(this.clearChatBtn_Click);
@@ -176,7 +176,7 @@ namespace amazingAdventures
             this.currentGameList.Location = new System.Drawing.Point(49, 112);
             this.currentGameList.Name = "currentGameList";
             this.currentGameList.Size = new System.Drawing.Size(283, 479);
-            this.currentGameList.TabIndex = 20;
+            this.currentGameList.TabIndex = 40;
             this.currentGameList.SelectedIndexChanged += new System.EventHandler(this.currentGameList_SelectedIndexChanged);
             // 
             // addPlayerBtn
@@ -202,7 +202,7 @@ namespace amazingAdventures
             this.editPlayerBtn.Location = new System.Drawing.Point(740, 655);
             this.editPlayerBtn.Name = "editPlayerBtn";
             this.editPlayerBtn.Size = new System.Drawing.Size(226, 40);
-            this.editPlayerBtn.TabIndex = 34;
+            this.editPlayerBtn.TabIndex = 39;
             this.editPlayerBtn.Text = "Edit Player";
             this.editPlayerBtn.UseVisualStyleBackColor = false;
             this.editPlayerBtn.Click += new System.EventHandler(this.editPlayerBtn_Click);
@@ -216,7 +216,7 @@ namespace amazingAdventures
             this.deleteGameBtn.Location = new System.Drawing.Point(76, 606);
             this.deleteGameBtn.Name = "deleteGameBtn";
             this.deleteGameBtn.Size = new System.Drawing.Size(226, 40);
-            this.deleteGameBtn.TabIndex = 35;
+            this.deleteGameBtn.TabIndex = 37;
             this.deleteGameBtn.Text = "Delete Game";
             this.deleteGameBtn.UseVisualStyleBackColor = false;
             this.deleteGameBtn.Click += new System.EventHandler(this.deleteGameBtn_Click);
@@ -251,7 +251,7 @@ namespace amazingAdventures
             this.adminRefreshBtn.Location = new System.Drawing.Point(390, 481);
             this.adminRefreshBtn.Name = "adminRefreshBtn";
             this.adminRefreshBtn.Size = new System.Drawing.Size(255, 60);
-            this.adminRefreshBtn.TabIndex = 38;
+            this.adminRefreshBtn.TabIndex = 35;
             this.adminRefreshBtn.Text = "Refresh";
             this.adminRefreshBtn.UseVisualStyleBackColor = false;
             this.adminRefreshBtn.Click += new System.EventHandler(this.adminRefreshBtn_Click);

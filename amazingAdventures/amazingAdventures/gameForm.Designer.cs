@@ -375,6 +375,7 @@ namespace amazingAdventures
             this.gameLeaderboardDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gameLeaderboardDGV.ColumnHeadersHeight = 46;
             this.gameLeaderboardDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gameLeaderboardDGV.ColumnHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);

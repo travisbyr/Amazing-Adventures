@@ -61,7 +61,7 @@ namespace amazingAdventures
             this.currentGameList.Location = new System.Drawing.Point(49, 112);
             this.currentGameList.Name = "currentGameList";
             this.currentGameList.Size = new System.Drawing.Size(283, 479);
-            this.currentGameList.TabIndex = 0;
+            this.currentGameList.TabIndex = 17;
             this.currentGameList.SelectedIndexChanged += new System.EventHandler(this.currentGameList_SelectedIndexChanged);
             this.currentGameList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.currentGameList_MouseDoubleClick);
             // 
@@ -136,7 +136,7 @@ namespace amazingAdventures
             this.joinGameButton.Location = new System.Drawing.Point(90, 628);
             this.joinGameButton.Name = "joinGameButton";
             this.joinGameButton.Size = new System.Drawing.Size(192, 60);
-            this.joinGameButton.TabIndex = 13;
+            this.joinGameButton.TabIndex = 14;
             this.joinGameButton.Text = "Join";
             this.joinGameButton.UseVisualStyleBackColor = false;
             this.joinGameButton.Click += new System.EventHandler(this.joinGameButton_Click);
@@ -149,7 +149,7 @@ namespace amazingAdventures
             this.logoutButton.Location = new System.Drawing.Point(762, 628);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(192, 60);
-            this.logoutButton.TabIndex = 14;
+            this.logoutButton.TabIndex = 16;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = false;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
@@ -176,7 +176,7 @@ namespace amazingAdventures
             this.label4.Location = new System.Drawing.Point(441, 125);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(150, 47);
-            this.label4.TabIndex = 16;
+            this.label4.TabIndex = 1000;
             this.label4.Text = "Highscore";
             // 
             // lobbyHighScore
@@ -186,7 +186,7 @@ namespace amazingAdventures
             this.lobbyHighScore.Location = new System.Drawing.Point(472, 176);
             this.lobbyHighScore.Name = "lobbyHighScore";
             this.lobbyHighScore.Size = new System.Drawing.Size(91, 26);
-            this.lobbyHighScore.TabIndex = 17;
+            this.lobbyHighScore.TabIndex = 1000;
             this.lobbyHighScore.Text = "0 Points";
             this.lobbyHighScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -199,7 +199,7 @@ namespace amazingAdventures
             this.settingsBtn.Location = new System.Drawing.Point(390, 419);
             this.settingsBtn.Name = "settingsBtn";
             this.settingsBtn.Size = new System.Drawing.Size(255, 60);
-            this.settingsBtn.TabIndex = 18;
+            this.settingsBtn.TabIndex = 12;
             this.settingsBtn.Text = "Settings";
             this.settingsBtn.UseVisualStyleBackColor = false;
             this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
@@ -254,7 +254,7 @@ namespace amazingAdventures
             this.onlinePlayersDGV.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.onlinePlayersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.onlinePlayersDGV.Size = new System.Drawing.Size(283, 479);
-            this.onlinePlayersDGV.TabIndex = 19;
+            this.onlinePlayersDGV.TabIndex = 18;
             // 
             // flowLayoutPanel1
             // 
@@ -275,7 +275,7 @@ namespace amazingAdventures
             this.refreshbtn.Location = new System.Drawing.Point(390, 508);
             this.refreshbtn.Name = "refreshbtn";
             this.refreshbtn.Size = new System.Drawing.Size(255, 60);
-            this.refreshbtn.TabIndex = 21;
+            this.refreshbtn.TabIndex = 13;
             this.refreshbtn.Text = "Refresh";
             this.refreshbtn.UseVisualStyleBackColor = false;
             this.refreshbtn.Click += new System.EventHandler(this.refreshbtn_Click);

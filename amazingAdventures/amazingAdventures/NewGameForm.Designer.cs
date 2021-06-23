@@ -42,7 +42,7 @@ namespace amazingAdventures
             // 
             this.Use.AutoSize = true;
             this.Use.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.Use.Location = new System.Drawing.Point(217, 95);
+            this.Use.Location = new System.Drawing.Point(211, 95);
             this.Use.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Use.Name = "Use";
             this.Use.Size = new System.Drawing.Size(66, 24);
@@ -67,7 +67,7 @@ namespace amazingAdventures
             this.createGameBtn.Margin = new System.Windows.Forms.Padding(2);
             this.createGameBtn.Name = "createGameBtn";
             this.createGameBtn.Size = new System.Drawing.Size(130, 35);
-            this.createGameBtn.TabIndex = 34;
+            this.createGameBtn.TabIndex = 36;
             this.createGameBtn.Text = "Create";
             this.createGameBtn.UseVisualStyleBackColor = false;
             this.createGameBtn.Click += new System.EventHandler(this.createGameBtn_Click);

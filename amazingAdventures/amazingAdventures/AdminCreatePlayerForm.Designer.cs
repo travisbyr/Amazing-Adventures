@@ -45,6 +45,7 @@ namespace amazingAdventures
             // closeBtn
             // 
             this.closeBtn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.closeBtn.Location = new System.Drawing.Point(146, 318);
             this.closeBtn.Margin = new System.Windows.Forms.Padding(2);
@@ -73,6 +74,7 @@ namespace amazingAdventures
             // createBtn
             // 
             this.createBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.createBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.createBtn.Location = new System.Drawing.Point(146, 277);
             this.createBtn.Margin = new System.Windows.Forms.Padding(2);
@@ -184,6 +186,7 @@ namespace amazingAdventures
             // 
             // AdminCreatePlayerForm
             // 
+            this.AcceptButton = this.createBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 372);
