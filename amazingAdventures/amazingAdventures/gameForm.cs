@@ -78,7 +78,7 @@ namespace amazingAdventures
         }
 
         public void characterSetup()
-        {// Create an eclipse that will show the players current location
+        {
             DataAccess.addItems(Main.M.GameNumber);
             otherCharactersMarker();
             itemMarker();
@@ -176,16 +176,13 @@ namespace amazingAdventures
             {
                 characterMove();
                 DataAccess.addItems(Main.M.GameNumber);
-                DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
-                totalFoundItemsLabel.Text = DataAccess.Message + " Points";
-                points = Int32.Parse(DataAccess.Message);
-                int b = Int32.Parse(DataAccess.Message);
                 itemMarker();
             }
             else if (DataAccess.Message == "trapFound")
             {
                 Hide();
-                GameLoseForm.GameLose.updatePoints();
+                DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
+                GameLoseForm.GameLose.pointsEndLabel.Text = DataAccess.Points + " Points";
                 GameLoseForm.GameLose.Show();
             }
             else
@@ -196,10 +193,12 @@ namespace amazingAdventures
         private void characterMove()
         {
             DataAccess.checkGameExists(Main.M.GameNumber);
+            updateCharacterLeaderboard();
             if (DataAccess.gameStatus == "gameClosed")
             {
                 Hide();
-                GameLoseForm.GameLose.updatePoints();
+                DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
+                GameLoseForm.GameLose.pointsEndLabel.Text = DataAccess.Points + " Points";
                 GameLoseForm.GameLose.Show();
             }
             else
@@ -508,6 +507,21 @@ namespace amazingAdventures
         private void Rbtn_Click(object sender, System.EventArgs e)
         {
             moveRight();
+        }
+
+        public void updateCharacterLeaderboard()
+        {
+            DataAccess.getCharacterScore(Main.M.Username, Main.M.GameNumber);
+
+            gameLeaderboardDGV.DataSource = null;
+            Leaderboard.GameCharacterList.Clear();
+            DataAccess.getGameCharacterScores(Main.M.GameNumber);
+            gameLeaderboardDGV.DataSource = Leaderboard.GameCharacterList.OrderByDescending(a => a.Score).ToList();
+            gameLeaderboardDGV.Columns.OfType<DataGridViewColumn>().ToList().ForEach(col => col.Visible = false);
+            gameLeaderboardDGV.Columns["Character"].Visible = true;
+            gameLeaderboardDGV.Columns["Score"].Visible = true;
+            gameLeaderboardDGV.Columns["Score"].Width = 100;
+            gameLeaderboardDGV.ClearSelection();
         }
     }
 }

@@ -35,7 +35,6 @@ namespace amazingAdventures
         private List<int> _gameListID = new List<int>();
         private List<string> _gameListName = new List<string>();
         private static List<Main> _chatList = new List<Main>();
-        private List<string> _backpackList = new List<string>();
         private static List<Main> _characterList = new List<Main>();
         private static List<Main> _itemList = new List<Main>();
 
@@ -49,7 +48,6 @@ namespace amazingAdventures
         public List<int> GameListID { get => _gameListID; set => _gameListID = value; }
         public List<string> GameListName { get => _gameListName; set => _gameListName = value; }
         public static List<Main> ChatList { get => _chatList; set => _chatList = value; }
-        public List<string> BackpackList { get => _backpackList; set => _backpackList = value; }
         public static List<Main> CharacterList { get => _characterList; set => _characterList = value; }
         public static List<Main> ItemList { get => _itemList; set => _itemList = value; }
 

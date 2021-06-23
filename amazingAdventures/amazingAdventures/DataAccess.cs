@@ -14,6 +14,7 @@ namespace amazingAdventures
         // PUBLIC VARIABLES
 
         public static string Message = "";
+        public static string Points = "";
         public static string gameStatus = "gameOpen";
 
         // CONNECTION TO DATABASE
@@ -435,32 +436,6 @@ namespace amazingAdventures
            // }
         }
 
-        public static void playerBackpack(string pusername, int pgamenumber)
-        {
-            MySqlCommand cmd = new MySqlCommand("playerBackpack", connect); // Select stored proecdure name
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("pGameNumber", pgamenumber); // Add a parameter
-            cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
-            connect.Open();
-            MySqlDataReader myReader;
-            myReader = cmd.ExecuteReader();
-            try
-            {
-                while (myReader.Read())
-                {
-                    Message = myReader.GetString("MESSAGE");
-                    Main.M.CharacterScore = myReader.GetString("CharacterScore");
-                    Main.M.BackpackList.Add(myReader.GetString("ItemName"));
-                    Main.M.BackpackList.Add(myReader.GetString("ItemCount"));
-                }
-            }
-            finally
-            {
-                myReader.Close();
-                connect.Close();
-            }
-        }
-
         // PLAYER PROPERTIES
 
         public static void changeEmail(string pusername, string pemail)
@@ -613,29 +588,6 @@ namespace amazingAdventures
                 while (myReader.Read())
                 {
                   //  gameStatus = myReader.GetString("MESSAGE");
-                }
-            }
-            finally
-            {
-                myReader.Close();
-                connect.Close();
-            }
-        }
-
-        public static void adminSetAdmin(string pusername, bool pisadmin)
-        {
-            MySqlCommand cmd = new MySqlCommand("adminSetAdmin", connect); // Select stored proecdure name
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("pUsername", pusername); // Add a parameter
-            cmd.Parameters.AddWithValue("pIsAdmin", pisadmin); // Add a parameter
-            connect.Open();
-            MySqlDataReader myReader;
-            myReader = cmd.ExecuteReader();
-            try
-            {
-                while (myReader.Read())
-                {
-                    Message = myReader.GetString("MESSAGE");
                 }
             }
             finally
@@ -816,7 +768,7 @@ namespace amazingAdventures
                 while (myReader.Read())
                 {
                     int x = Int32.Parse(myReader.GetString("CharacterScore"));
-                    Message = x.ToString(); 
+                    Points = x.ToString(); 
                 }
             }
             finally
@@ -866,6 +818,30 @@ namespace amazingAdventures
                     Main.M.GetPLocked = myReader.GetString("Locked");
                     Main.M.GetPHighscore = myReader.GetString("Highscore");
                     Main.M.GetPIsAdmin = myReader.GetString("IsAdmin");
+                }
+            }
+            finally
+            {
+                myReader.Close();
+                connect.Close();
+            }
+        }
+
+        public static void getGameCharacterScores(int pgamenumber)
+        {
+            MySqlCommand cmd = new MySqlCommand("getGameCharacterScores", connect); // Select stored proecdure name
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("pGameNumber", pgamenumber); // Add a parameter
+            connect.Open();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    string a = myReader.GetString("CharacterName");
+                    int b = Int32.Parse(myReader.GetString("CharacterScore"));
+                    Leaderboard.GameCharacterList.Add(new Leaderboard() { Character = a, Score = b });
                 }
             }
             finally

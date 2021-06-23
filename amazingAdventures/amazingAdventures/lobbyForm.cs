@@ -70,6 +70,7 @@ namespace amazingAdventures
         private void logoutButton_Click(object sender, EventArgs e)
         {
             Hide();
+            DataAccess.accountLogout(Main.M.Username);
             LoginForm.Login.Show();
         }
         private void joinGameButton_Click(object sender, EventArgs e)

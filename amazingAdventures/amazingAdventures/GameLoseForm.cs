@@ -30,9 +30,5 @@ namespace amazingAdventures
             LobbyForm.Lobby.viewPlayersOnline();
             LobbyForm.Lobby.Show();
         }
-        public void updatePoints()
-        {
-            pointsEndLabel.Text = GameForm.Game.points + " Points";
-        }
     }
 }

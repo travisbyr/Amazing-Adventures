@@ -35,12 +35,8 @@ namespace amazingAdventures
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.label1 = new System.Windows.Forms.Label();
             this.leaveButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.totalFoundItemsLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.openChatBtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.gameLeaderboardDGV = new System.Windows.Forms.DataGridView();
             this.pb135 = new System.Windows.Forms.PictureBox();
             this.pb120 = new System.Windows.Forms.PictureBox();
             this.pb105 = new System.Windows.Forms.PictureBox();
@@ -177,10 +173,11 @@ namespace amazingAdventures
             this.pb16 = new System.Windows.Forms.PictureBox();
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.gameBackground = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.gameLeaderboardDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb135)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb120)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb105)).BeginInit();
@@ -316,6 +313,7 @@ namespace amazingAdventures
             ((System.ComponentModel.ISupportInitialize)(this.pb31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -328,10 +326,11 @@ namespace amazingAdventures
             // 
             // leaveButton
             // 
-            this.leaveButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.leaveButton.BackColor = System.Drawing.Color.DarkGreen;
+            this.leaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.leaveButton.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 22F);
-            this.leaveButton.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.leaveButton.Location = new System.Drawing.Point(1563, 31);
+            this.leaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.leaveButton.Location = new System.Drawing.Point(1563, 28);
             this.leaveButton.Name = "leaveButton";
             this.leaveButton.Size = new System.Drawing.Size(266, 51);
             this.leaveButton.TabIndex = 15;
@@ -340,46 +339,13 @@ namespace amazingAdventures
             this.leaveButton.UseVisualStyleBackColor = false;
             this.leaveButton.Click += new System.EventHandler(this.leaveButton_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(73, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 24);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Your score is:";
-            // 
-            // totalFoundItemsLabel
-            // 
-            this.totalFoundItemsLabel.AutoSize = true;
-            this.totalFoundItemsLabel.BackColor = System.Drawing.Color.Transparent;
-            this.totalFoundItemsLabel.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
-            this.totalFoundItemsLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.totalFoundItemsLabel.Location = new System.Drawing.Point(100, 56);
-            this.totalFoundItemsLabel.Name = "totalFoundItemsLabel";
-            this.totalFoundItemsLabel.Size = new System.Drawing.Size(66, 21);
-            this.totalFoundItemsLabel.TabIndex = 26;
-            this.totalFoundItemsLabel.Text = "0 Points";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tw Cen MT", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label4.Location = new System.Drawing.Point(1606, 325);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(187, 37);
-            this.label4.TabIndex = 167;
-            this.label4.Text = "Character List";
-            // 
             // openChatBtn
             // 
-            this.openChatBtn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.openChatBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.openChatBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openChatBtn.Font = new System.Drawing.Font("Bahnschrift Light SemiCondensed", 22F);
-            this.openChatBtn.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.openChatBtn.Location = new System.Drawing.Point(1563, 887);
+            this.openChatBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.openChatBtn.Location = new System.Drawing.Point(1563, 891);
             this.openChatBtn.Name = "openChatBtn";
             this.openChatBtn.Size = new System.Drawing.Size(266, 51);
             this.openChatBtn.TabIndex = 170;
@@ -388,17 +354,17 @@ namespace amazingAdventures
             this.openChatBtn.UseVisualStyleBackColor = false;
             this.openChatBtn.Click += new System.EventHandler(this.gameFormChatBtn_Click);
             // 
-            // dataGridView1
+            // gameLeaderboardDGV
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.gameLeaderboardDGV.AllowUserToAddRows = false;
+            this.gameLeaderboardDGV.AllowUserToDeleteRows = false;
+            this.gameLeaderboardDGV.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.gameLeaderboardDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gameLeaderboardDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gameLeaderboardDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.gameLeaderboardDGV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gameLeaderboardDGV.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -406,9 +372,9 @@ namespace amazingAdventures
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeight = 46;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gameLeaderboardDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gameLeaderboardDGV.ColumnHeadersHeight = 46;
+            this.gameLeaderboardDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -416,30 +382,23 @@ namespace amazingAdventures
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(1563, 392);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(266, 440);
-            this.dataGridView1.TabIndex = 171;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.BackgroundImage = global::amazingAdventures.Properties.Resources.background2;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.totalFoundItemsLabel);
-            this.panel1.Location = new System.Drawing.Point(1563, 150);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(266, 110);
-            this.panel1.TabIndex = 172;
+            this.gameLeaderboardDGV.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gameLeaderboardDGV.GridColor = System.Drawing.SystemColors.Control;
+            this.gameLeaderboardDGV.Location = new System.Drawing.Point(1563, 204);
+            this.gameLeaderboardDGV.MultiSelect = false;
+            this.gameLeaderboardDGV.Name = "gameLeaderboardDGV";
+            this.gameLeaderboardDGV.ReadOnly = true;
+            this.gameLeaderboardDGV.RowHeadersVisible = false;
+            this.gameLeaderboardDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gameLeaderboardDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gameLeaderboardDGV.Size = new System.Drawing.Size(266, 620);
+            this.gameLeaderboardDGV.TabIndex = 171;
+            this.gameLeaderboardDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // pb135
             // 
             this.pb135.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb135.Location = new System.Drawing.Point(1351, 838);
+            this.pb135.Location = new System.Drawing.Point(1351, 842);
             this.pb135.Name = "pb135";
             this.pb135.Size = new System.Drawing.Size(86, 86);
             this.pb135.TabIndex = 164;
@@ -449,7 +408,7 @@ namespace amazingAdventures
             // pb120
             // 
             this.pb120.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb120.Location = new System.Drawing.Point(1351, 746);
+            this.pb120.Location = new System.Drawing.Point(1351, 750);
             this.pb120.Name = "pb120";
             this.pb120.Size = new System.Drawing.Size(86, 86);
             this.pb120.TabIndex = 163;
@@ -459,7 +418,7 @@ namespace amazingAdventures
             // pb105
             // 
             this.pb105.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb105.Location = new System.Drawing.Point(1351, 654);
+            this.pb105.Location = new System.Drawing.Point(1351, 658);
             this.pb105.Name = "pb105";
             this.pb105.Size = new System.Drawing.Size(86, 86);
             this.pb105.TabIndex = 162;
@@ -469,7 +428,7 @@ namespace amazingAdventures
             // pb90
             // 
             this.pb90.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb90.Location = new System.Drawing.Point(1351, 562);
+            this.pb90.Location = new System.Drawing.Point(1351, 566);
             this.pb90.Name = "pb90";
             this.pb90.Size = new System.Drawing.Size(86, 86);
             this.pb90.TabIndex = 161;
@@ -479,7 +438,7 @@ namespace amazingAdventures
             // pb75
             // 
             this.pb75.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb75.Location = new System.Drawing.Point(1351, 470);
+            this.pb75.Location = new System.Drawing.Point(1351, 474);
             this.pb75.Name = "pb75";
             this.pb75.Size = new System.Drawing.Size(86, 86);
             this.pb75.TabIndex = 160;
@@ -489,7 +448,7 @@ namespace amazingAdventures
             // pb60
             // 
             this.pb60.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb60.Location = new System.Drawing.Point(1351, 378);
+            this.pb60.Location = new System.Drawing.Point(1351, 382);
             this.pb60.Name = "pb60";
             this.pb60.Size = new System.Drawing.Size(86, 86);
             this.pb60.TabIndex = 159;
@@ -499,7 +458,7 @@ namespace amazingAdventures
             // pb45
             // 
             this.pb45.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb45.Location = new System.Drawing.Point(1351, 286);
+            this.pb45.Location = new System.Drawing.Point(1351, 290);
             this.pb45.Name = "pb45";
             this.pb45.Size = new System.Drawing.Size(86, 86);
             this.pb45.TabIndex = 158;
@@ -509,7 +468,7 @@ namespace amazingAdventures
             // pb30
             // 
             this.pb30.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb30.Location = new System.Drawing.Point(1351, 194);
+            this.pb30.Location = new System.Drawing.Point(1351, 198);
             this.pb30.Name = "pb30";
             this.pb30.Size = new System.Drawing.Size(86, 86);
             this.pb30.TabIndex = 157;
@@ -519,7 +478,7 @@ namespace amazingAdventures
             // pb15
             // 
             this.pb15.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb15.Location = new System.Drawing.Point(1351, 102);
+            this.pb15.Location = new System.Drawing.Point(1351, 106);
             this.pb15.Name = "pb15";
             this.pb15.Size = new System.Drawing.Size(86, 86);
             this.pb15.TabIndex = 156;
@@ -529,7 +488,7 @@ namespace amazingAdventures
             // pb134
             // 
             this.pb134.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb134.Location = new System.Drawing.Point(1259, 838);
+            this.pb134.Location = new System.Drawing.Point(1259, 842);
             this.pb134.Name = "pb134";
             this.pb134.Size = new System.Drawing.Size(86, 86);
             this.pb134.TabIndex = 155;
@@ -539,7 +498,7 @@ namespace amazingAdventures
             // pb119
             // 
             this.pb119.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb119.Location = new System.Drawing.Point(1259, 746);
+            this.pb119.Location = new System.Drawing.Point(1259, 750);
             this.pb119.Name = "pb119";
             this.pb119.Size = new System.Drawing.Size(86, 86);
             this.pb119.TabIndex = 154;
@@ -549,7 +508,7 @@ namespace amazingAdventures
             // pb104
             // 
             this.pb104.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb104.Location = new System.Drawing.Point(1259, 654);
+            this.pb104.Location = new System.Drawing.Point(1259, 658);
             this.pb104.Name = "pb104";
             this.pb104.Size = new System.Drawing.Size(86, 86);
             this.pb104.TabIndex = 153;
@@ -559,7 +518,7 @@ namespace amazingAdventures
             // pb89
             // 
             this.pb89.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb89.Location = new System.Drawing.Point(1259, 562);
+            this.pb89.Location = new System.Drawing.Point(1259, 566);
             this.pb89.Name = "pb89";
             this.pb89.Size = new System.Drawing.Size(86, 86);
             this.pb89.TabIndex = 152;
@@ -569,7 +528,7 @@ namespace amazingAdventures
             // pb74
             // 
             this.pb74.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb74.Location = new System.Drawing.Point(1259, 470);
+            this.pb74.Location = new System.Drawing.Point(1259, 474);
             this.pb74.Name = "pb74";
             this.pb74.Size = new System.Drawing.Size(86, 86);
             this.pb74.TabIndex = 151;
@@ -579,7 +538,7 @@ namespace amazingAdventures
             // pb59
             // 
             this.pb59.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb59.Location = new System.Drawing.Point(1259, 378);
+            this.pb59.Location = new System.Drawing.Point(1259, 382);
             this.pb59.Name = "pb59";
             this.pb59.Size = new System.Drawing.Size(86, 86);
             this.pb59.TabIndex = 150;
@@ -589,7 +548,7 @@ namespace amazingAdventures
             // pb44
             // 
             this.pb44.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb44.Location = new System.Drawing.Point(1259, 286);
+            this.pb44.Location = new System.Drawing.Point(1259, 290);
             this.pb44.Name = "pb44";
             this.pb44.Size = new System.Drawing.Size(86, 86);
             this.pb44.TabIndex = 149;
@@ -599,7 +558,7 @@ namespace amazingAdventures
             // pb29
             // 
             this.pb29.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb29.Location = new System.Drawing.Point(1259, 194);
+            this.pb29.Location = new System.Drawing.Point(1259, 198);
             this.pb29.Name = "pb29";
             this.pb29.Size = new System.Drawing.Size(86, 86);
             this.pb29.TabIndex = 148;
@@ -609,7 +568,7 @@ namespace amazingAdventures
             // pb14
             // 
             this.pb14.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb14.Location = new System.Drawing.Point(1259, 102);
+            this.pb14.Location = new System.Drawing.Point(1259, 106);
             this.pb14.Name = "pb14";
             this.pb14.Size = new System.Drawing.Size(86, 86);
             this.pb14.TabIndex = 147;
@@ -619,7 +578,7 @@ namespace amazingAdventures
             // pb133
             // 
             this.pb133.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb133.Location = new System.Drawing.Point(1167, 838);
+            this.pb133.Location = new System.Drawing.Point(1167, 842);
             this.pb133.Name = "pb133";
             this.pb133.Size = new System.Drawing.Size(86, 86);
             this.pb133.TabIndex = 146;
@@ -629,7 +588,7 @@ namespace amazingAdventures
             // pb118
             // 
             this.pb118.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb118.Location = new System.Drawing.Point(1167, 746);
+            this.pb118.Location = new System.Drawing.Point(1167, 750);
             this.pb118.Name = "pb118";
             this.pb118.Size = new System.Drawing.Size(86, 86);
             this.pb118.TabIndex = 145;
@@ -639,7 +598,7 @@ namespace amazingAdventures
             // pb103
             // 
             this.pb103.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb103.Location = new System.Drawing.Point(1167, 654);
+            this.pb103.Location = new System.Drawing.Point(1167, 658);
             this.pb103.Name = "pb103";
             this.pb103.Size = new System.Drawing.Size(86, 86);
             this.pb103.TabIndex = 144;
@@ -649,7 +608,7 @@ namespace amazingAdventures
             // pb88
             // 
             this.pb88.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb88.Location = new System.Drawing.Point(1167, 562);
+            this.pb88.Location = new System.Drawing.Point(1167, 566);
             this.pb88.Name = "pb88";
             this.pb88.Size = new System.Drawing.Size(86, 86);
             this.pb88.TabIndex = 143;
@@ -659,7 +618,7 @@ namespace amazingAdventures
             // pb73
             // 
             this.pb73.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb73.Location = new System.Drawing.Point(1167, 470);
+            this.pb73.Location = new System.Drawing.Point(1167, 474);
             this.pb73.Name = "pb73";
             this.pb73.Size = new System.Drawing.Size(86, 86);
             this.pb73.TabIndex = 142;
@@ -669,7 +628,7 @@ namespace amazingAdventures
             // pb58
             // 
             this.pb58.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb58.Location = new System.Drawing.Point(1167, 378);
+            this.pb58.Location = new System.Drawing.Point(1167, 382);
             this.pb58.Name = "pb58";
             this.pb58.Size = new System.Drawing.Size(86, 86);
             this.pb58.TabIndex = 141;
@@ -679,7 +638,7 @@ namespace amazingAdventures
             // pb43
             // 
             this.pb43.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb43.Location = new System.Drawing.Point(1167, 286);
+            this.pb43.Location = new System.Drawing.Point(1167, 290);
             this.pb43.Name = "pb43";
             this.pb43.Size = new System.Drawing.Size(86, 86);
             this.pb43.TabIndex = 140;
@@ -689,7 +648,7 @@ namespace amazingAdventures
             // pb28
             // 
             this.pb28.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb28.Location = new System.Drawing.Point(1167, 194);
+            this.pb28.Location = new System.Drawing.Point(1167, 198);
             this.pb28.Name = "pb28";
             this.pb28.Size = new System.Drawing.Size(86, 86);
             this.pb28.TabIndex = 139;
@@ -699,7 +658,7 @@ namespace amazingAdventures
             // pb13
             // 
             this.pb13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb13.Location = new System.Drawing.Point(1167, 102);
+            this.pb13.Location = new System.Drawing.Point(1167, 106);
             this.pb13.Name = "pb13";
             this.pb13.Size = new System.Drawing.Size(86, 86);
             this.pb13.TabIndex = 138;
@@ -709,7 +668,7 @@ namespace amazingAdventures
             // pb132
             // 
             this.pb132.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb132.Location = new System.Drawing.Point(1075, 838);
+            this.pb132.Location = new System.Drawing.Point(1075, 842);
             this.pb132.Name = "pb132";
             this.pb132.Size = new System.Drawing.Size(86, 86);
             this.pb132.TabIndex = 137;
@@ -719,7 +678,7 @@ namespace amazingAdventures
             // pb117
             // 
             this.pb117.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb117.Location = new System.Drawing.Point(1075, 746);
+            this.pb117.Location = new System.Drawing.Point(1075, 750);
             this.pb117.Name = "pb117";
             this.pb117.Size = new System.Drawing.Size(86, 86);
             this.pb117.TabIndex = 136;
@@ -729,7 +688,7 @@ namespace amazingAdventures
             // pb102
             // 
             this.pb102.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb102.Location = new System.Drawing.Point(1075, 654);
+            this.pb102.Location = new System.Drawing.Point(1075, 658);
             this.pb102.Name = "pb102";
             this.pb102.Size = new System.Drawing.Size(86, 86);
             this.pb102.TabIndex = 135;
@@ -739,7 +698,7 @@ namespace amazingAdventures
             // pb87
             // 
             this.pb87.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb87.Location = new System.Drawing.Point(1075, 562);
+            this.pb87.Location = new System.Drawing.Point(1075, 566);
             this.pb87.Name = "pb87";
             this.pb87.Size = new System.Drawing.Size(86, 86);
             this.pb87.TabIndex = 134;
@@ -749,7 +708,7 @@ namespace amazingAdventures
             // pb72
             // 
             this.pb72.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb72.Location = new System.Drawing.Point(1075, 470);
+            this.pb72.Location = new System.Drawing.Point(1075, 474);
             this.pb72.Name = "pb72";
             this.pb72.Size = new System.Drawing.Size(86, 86);
             this.pb72.TabIndex = 133;
@@ -759,7 +718,7 @@ namespace amazingAdventures
             // pb57
             // 
             this.pb57.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb57.Location = new System.Drawing.Point(1075, 378);
+            this.pb57.Location = new System.Drawing.Point(1075, 382);
             this.pb57.Name = "pb57";
             this.pb57.Size = new System.Drawing.Size(86, 86);
             this.pb57.TabIndex = 132;
@@ -769,7 +728,7 @@ namespace amazingAdventures
             // pb42
             // 
             this.pb42.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb42.Location = new System.Drawing.Point(1075, 286);
+            this.pb42.Location = new System.Drawing.Point(1075, 290);
             this.pb42.Name = "pb42";
             this.pb42.Size = new System.Drawing.Size(86, 86);
             this.pb42.TabIndex = 131;
@@ -779,7 +738,7 @@ namespace amazingAdventures
             // pb27
             // 
             this.pb27.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb27.Location = new System.Drawing.Point(1075, 194);
+            this.pb27.Location = new System.Drawing.Point(1075, 198);
             this.pb27.Name = "pb27";
             this.pb27.Size = new System.Drawing.Size(86, 86);
             this.pb27.TabIndex = 130;
@@ -789,7 +748,7 @@ namespace amazingAdventures
             // pb12
             // 
             this.pb12.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb12.Location = new System.Drawing.Point(1075, 102);
+            this.pb12.Location = new System.Drawing.Point(1075, 106);
             this.pb12.Name = "pb12";
             this.pb12.Size = new System.Drawing.Size(86, 86);
             this.pb12.TabIndex = 129;
@@ -799,7 +758,7 @@ namespace amazingAdventures
             // pb131
             // 
             this.pb131.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb131.Location = new System.Drawing.Point(983, 838);
+            this.pb131.Location = new System.Drawing.Point(983, 842);
             this.pb131.Name = "pb131";
             this.pb131.Size = new System.Drawing.Size(86, 86);
             this.pb131.TabIndex = 128;
@@ -809,7 +768,7 @@ namespace amazingAdventures
             // pb116
             // 
             this.pb116.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb116.Location = new System.Drawing.Point(983, 746);
+            this.pb116.Location = new System.Drawing.Point(983, 750);
             this.pb116.Name = "pb116";
             this.pb116.Size = new System.Drawing.Size(86, 86);
             this.pb116.TabIndex = 127;
@@ -819,7 +778,7 @@ namespace amazingAdventures
             // pb101
             // 
             this.pb101.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb101.Location = new System.Drawing.Point(983, 654);
+            this.pb101.Location = new System.Drawing.Point(983, 658);
             this.pb101.Name = "pb101";
             this.pb101.Size = new System.Drawing.Size(86, 86);
             this.pb101.TabIndex = 126;
@@ -829,7 +788,7 @@ namespace amazingAdventures
             // pb86
             // 
             this.pb86.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb86.Location = new System.Drawing.Point(983, 562);
+            this.pb86.Location = new System.Drawing.Point(983, 566);
             this.pb86.Name = "pb86";
             this.pb86.Size = new System.Drawing.Size(86, 86);
             this.pb86.TabIndex = 125;
@@ -839,7 +798,7 @@ namespace amazingAdventures
             // pb71
             // 
             this.pb71.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb71.Location = new System.Drawing.Point(983, 470);
+            this.pb71.Location = new System.Drawing.Point(983, 474);
             this.pb71.Name = "pb71";
             this.pb71.Size = new System.Drawing.Size(86, 86);
             this.pb71.TabIndex = 124;
@@ -849,7 +808,7 @@ namespace amazingAdventures
             // pb56
             // 
             this.pb56.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb56.Location = new System.Drawing.Point(983, 378);
+            this.pb56.Location = new System.Drawing.Point(983, 382);
             this.pb56.Name = "pb56";
             this.pb56.Size = new System.Drawing.Size(86, 86);
             this.pb56.TabIndex = 123;
@@ -859,7 +818,7 @@ namespace amazingAdventures
             // pb41
             // 
             this.pb41.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb41.Location = new System.Drawing.Point(983, 286);
+            this.pb41.Location = new System.Drawing.Point(983, 290);
             this.pb41.Name = "pb41";
             this.pb41.Size = new System.Drawing.Size(86, 86);
             this.pb41.TabIndex = 122;
@@ -869,7 +828,7 @@ namespace amazingAdventures
             // pb26
             // 
             this.pb26.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb26.Location = new System.Drawing.Point(983, 194);
+            this.pb26.Location = new System.Drawing.Point(983, 198);
             this.pb26.Name = "pb26";
             this.pb26.Size = new System.Drawing.Size(86, 86);
             this.pb26.TabIndex = 121;
@@ -879,7 +838,7 @@ namespace amazingAdventures
             // pb11
             // 
             this.pb11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb11.Location = new System.Drawing.Point(983, 102);
+            this.pb11.Location = new System.Drawing.Point(983, 106);
             this.pb11.Name = "pb11";
             this.pb11.Size = new System.Drawing.Size(86, 86);
             this.pb11.TabIndex = 120;
@@ -889,7 +848,7 @@ namespace amazingAdventures
             // pb130
             // 
             this.pb130.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb130.Location = new System.Drawing.Point(891, 838);
+            this.pb130.Location = new System.Drawing.Point(891, 842);
             this.pb130.Name = "pb130";
             this.pb130.Size = new System.Drawing.Size(86, 86);
             this.pb130.TabIndex = 119;
@@ -899,7 +858,7 @@ namespace amazingAdventures
             // pb115
             // 
             this.pb115.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb115.Location = new System.Drawing.Point(891, 746);
+            this.pb115.Location = new System.Drawing.Point(891, 750);
             this.pb115.Name = "pb115";
             this.pb115.Size = new System.Drawing.Size(86, 86);
             this.pb115.TabIndex = 118;
@@ -909,7 +868,7 @@ namespace amazingAdventures
             // pb100
             // 
             this.pb100.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb100.Location = new System.Drawing.Point(891, 654);
+            this.pb100.Location = new System.Drawing.Point(891, 658);
             this.pb100.Name = "pb100";
             this.pb100.Size = new System.Drawing.Size(86, 86);
             this.pb100.TabIndex = 117;
@@ -919,7 +878,7 @@ namespace amazingAdventures
             // pb85
             // 
             this.pb85.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb85.Location = new System.Drawing.Point(891, 562);
+            this.pb85.Location = new System.Drawing.Point(891, 566);
             this.pb85.Name = "pb85";
             this.pb85.Size = new System.Drawing.Size(86, 86);
             this.pb85.TabIndex = 116;
@@ -929,7 +888,7 @@ namespace amazingAdventures
             // pb70
             // 
             this.pb70.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb70.Location = new System.Drawing.Point(891, 470);
+            this.pb70.Location = new System.Drawing.Point(891, 474);
             this.pb70.Name = "pb70";
             this.pb70.Size = new System.Drawing.Size(86, 86);
             this.pb70.TabIndex = 115;
@@ -939,7 +898,7 @@ namespace amazingAdventures
             // pb55
             // 
             this.pb55.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb55.Location = new System.Drawing.Point(891, 378);
+            this.pb55.Location = new System.Drawing.Point(891, 382);
             this.pb55.Name = "pb55";
             this.pb55.Size = new System.Drawing.Size(86, 86);
             this.pb55.TabIndex = 114;
@@ -949,7 +908,7 @@ namespace amazingAdventures
             // pb40
             // 
             this.pb40.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb40.Location = new System.Drawing.Point(891, 286);
+            this.pb40.Location = new System.Drawing.Point(891, 290);
             this.pb40.Name = "pb40";
             this.pb40.Size = new System.Drawing.Size(86, 86);
             this.pb40.TabIndex = 113;
@@ -959,7 +918,7 @@ namespace amazingAdventures
             // pb25
             // 
             this.pb25.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb25.Location = new System.Drawing.Point(891, 194);
+            this.pb25.Location = new System.Drawing.Point(891, 198);
             this.pb25.Name = "pb25";
             this.pb25.Size = new System.Drawing.Size(86, 86);
             this.pb25.TabIndex = 112;
@@ -969,7 +928,7 @@ namespace amazingAdventures
             // pb10
             // 
             this.pb10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb10.Location = new System.Drawing.Point(891, 102);
+            this.pb10.Location = new System.Drawing.Point(891, 106);
             this.pb10.Name = "pb10";
             this.pb10.Size = new System.Drawing.Size(86, 86);
             this.pb10.TabIndex = 111;
@@ -979,7 +938,7 @@ namespace amazingAdventures
             // pb129
             // 
             this.pb129.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb129.Location = new System.Drawing.Point(799, 838);
+            this.pb129.Location = new System.Drawing.Point(799, 842);
             this.pb129.Name = "pb129";
             this.pb129.Size = new System.Drawing.Size(86, 86);
             this.pb129.TabIndex = 110;
@@ -989,7 +948,7 @@ namespace amazingAdventures
             // pb114
             // 
             this.pb114.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb114.Location = new System.Drawing.Point(799, 746);
+            this.pb114.Location = new System.Drawing.Point(799, 750);
             this.pb114.Name = "pb114";
             this.pb114.Size = new System.Drawing.Size(86, 86);
             this.pb114.TabIndex = 109;
@@ -999,7 +958,7 @@ namespace amazingAdventures
             // pb99
             // 
             this.pb99.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb99.Location = new System.Drawing.Point(799, 654);
+            this.pb99.Location = new System.Drawing.Point(799, 658);
             this.pb99.Name = "pb99";
             this.pb99.Size = new System.Drawing.Size(86, 86);
             this.pb99.TabIndex = 108;
@@ -1009,7 +968,7 @@ namespace amazingAdventures
             // pb84
             // 
             this.pb84.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb84.Location = new System.Drawing.Point(799, 562);
+            this.pb84.Location = new System.Drawing.Point(799, 566);
             this.pb84.Name = "pb84";
             this.pb84.Size = new System.Drawing.Size(86, 86);
             this.pb84.TabIndex = 107;
@@ -1019,7 +978,7 @@ namespace amazingAdventures
             // pb69
             // 
             this.pb69.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb69.Location = new System.Drawing.Point(799, 470);
+            this.pb69.Location = new System.Drawing.Point(799, 474);
             this.pb69.Name = "pb69";
             this.pb69.Size = new System.Drawing.Size(86, 86);
             this.pb69.TabIndex = 106;
@@ -1028,7 +987,7 @@ namespace amazingAdventures
             // pb54
             // 
             this.pb54.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb54.Location = new System.Drawing.Point(799, 378);
+            this.pb54.Location = new System.Drawing.Point(799, 382);
             this.pb54.Name = "pb54";
             this.pb54.Size = new System.Drawing.Size(86, 86);
             this.pb54.TabIndex = 105;
@@ -1038,7 +997,7 @@ namespace amazingAdventures
             // pb39
             // 
             this.pb39.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb39.Location = new System.Drawing.Point(799, 286);
+            this.pb39.Location = new System.Drawing.Point(799, 290);
             this.pb39.Name = "pb39";
             this.pb39.Size = new System.Drawing.Size(86, 86);
             this.pb39.TabIndex = 104;
@@ -1048,7 +1007,7 @@ namespace amazingAdventures
             // pb24
             // 
             this.pb24.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb24.Location = new System.Drawing.Point(799, 194);
+            this.pb24.Location = new System.Drawing.Point(799, 198);
             this.pb24.Name = "pb24";
             this.pb24.Size = new System.Drawing.Size(86, 86);
             this.pb24.TabIndex = 103;
@@ -1058,7 +1017,7 @@ namespace amazingAdventures
             // pb9
             // 
             this.pb9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb9.Location = new System.Drawing.Point(799, 102);
+            this.pb9.Location = new System.Drawing.Point(799, 106);
             this.pb9.Name = "pb9";
             this.pb9.Size = new System.Drawing.Size(86, 86);
             this.pb9.TabIndex = 102;
@@ -1068,7 +1027,7 @@ namespace amazingAdventures
             // pb128
             // 
             this.pb128.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb128.Location = new System.Drawing.Point(707, 838);
+            this.pb128.Location = new System.Drawing.Point(707, 842);
             this.pb128.Name = "pb128";
             this.pb128.Size = new System.Drawing.Size(86, 86);
             this.pb128.TabIndex = 101;
@@ -1078,7 +1037,7 @@ namespace amazingAdventures
             // pb113
             // 
             this.pb113.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb113.Location = new System.Drawing.Point(707, 746);
+            this.pb113.Location = new System.Drawing.Point(707, 750);
             this.pb113.Name = "pb113";
             this.pb113.Size = new System.Drawing.Size(86, 86);
             this.pb113.TabIndex = 100;
@@ -1088,7 +1047,7 @@ namespace amazingAdventures
             // pb98
             // 
             this.pb98.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb98.Location = new System.Drawing.Point(707, 654);
+            this.pb98.Location = new System.Drawing.Point(707, 658);
             this.pb98.Name = "pb98";
             this.pb98.Size = new System.Drawing.Size(86, 86);
             this.pb98.TabIndex = 99;
@@ -1098,7 +1057,7 @@ namespace amazingAdventures
             // pb83
             // 
             this.pb83.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb83.Location = new System.Drawing.Point(707, 562);
+            this.pb83.Location = new System.Drawing.Point(707, 566);
             this.pb83.Name = "pb83";
             this.pb83.Size = new System.Drawing.Size(86, 86);
             this.pb83.TabIndex = 98;
@@ -1108,7 +1067,7 @@ namespace amazingAdventures
             // pb68
             // 
             this.pb68.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb68.Location = new System.Drawing.Point(707, 470);
+            this.pb68.Location = new System.Drawing.Point(707, 474);
             this.pb68.Name = "pb68";
             this.pb68.Size = new System.Drawing.Size(86, 86);
             this.pb68.TabIndex = 97;
@@ -1117,7 +1076,7 @@ namespace amazingAdventures
             // pb53
             // 
             this.pb53.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb53.Location = new System.Drawing.Point(707, 378);
+            this.pb53.Location = new System.Drawing.Point(707, 382);
             this.pb53.Name = "pb53";
             this.pb53.Size = new System.Drawing.Size(86, 86);
             this.pb53.TabIndex = 96;
@@ -1126,7 +1085,7 @@ namespace amazingAdventures
             // pb38
             // 
             this.pb38.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb38.Location = new System.Drawing.Point(707, 286);
+            this.pb38.Location = new System.Drawing.Point(707, 290);
             this.pb38.Name = "pb38";
             this.pb38.Size = new System.Drawing.Size(86, 86);
             this.pb38.TabIndex = 95;
@@ -1136,7 +1095,7 @@ namespace amazingAdventures
             // pb23
             // 
             this.pb23.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb23.Location = new System.Drawing.Point(707, 194);
+            this.pb23.Location = new System.Drawing.Point(707, 198);
             this.pb23.Name = "pb23";
             this.pb23.Size = new System.Drawing.Size(86, 86);
             this.pb23.TabIndex = 94;
@@ -1146,7 +1105,7 @@ namespace amazingAdventures
             // pb8
             // 
             this.pb8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb8.Location = new System.Drawing.Point(707, 102);
+            this.pb8.Location = new System.Drawing.Point(707, 106);
             this.pb8.Name = "pb8";
             this.pb8.Size = new System.Drawing.Size(86, 86);
             this.pb8.TabIndex = 93;
@@ -1156,7 +1115,7 @@ namespace amazingAdventures
             // pb127
             // 
             this.pb127.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb127.Location = new System.Drawing.Point(615, 838);
+            this.pb127.Location = new System.Drawing.Point(615, 842);
             this.pb127.Name = "pb127";
             this.pb127.Size = new System.Drawing.Size(86, 86);
             this.pb127.TabIndex = 92;
@@ -1166,7 +1125,7 @@ namespace amazingAdventures
             // pb112
             // 
             this.pb112.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb112.Location = new System.Drawing.Point(615, 746);
+            this.pb112.Location = new System.Drawing.Point(615, 750);
             this.pb112.Name = "pb112";
             this.pb112.Size = new System.Drawing.Size(86, 86);
             this.pb112.TabIndex = 91;
@@ -1176,7 +1135,7 @@ namespace amazingAdventures
             // pb97
             // 
             this.pb97.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb97.Location = new System.Drawing.Point(615, 654);
+            this.pb97.Location = new System.Drawing.Point(615, 658);
             this.pb97.Name = "pb97";
             this.pb97.Size = new System.Drawing.Size(86, 86);
             this.pb97.TabIndex = 90;
@@ -1186,7 +1145,7 @@ namespace amazingAdventures
             // pb82
             // 
             this.pb82.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb82.Location = new System.Drawing.Point(615, 562);
+            this.pb82.Location = new System.Drawing.Point(615, 566);
             this.pb82.Name = "pb82";
             this.pb82.Size = new System.Drawing.Size(86, 86);
             this.pb82.TabIndex = 89;
@@ -1196,7 +1155,7 @@ namespace amazingAdventures
             // pb67
             // 
             this.pb67.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb67.Location = new System.Drawing.Point(615, 470);
+            this.pb67.Location = new System.Drawing.Point(615, 474);
             this.pb67.Name = "pb67";
             this.pb67.Size = new System.Drawing.Size(86, 86);
             this.pb67.TabIndex = 88;
@@ -1206,7 +1165,7 @@ namespace amazingAdventures
             // pb52
             // 
             this.pb52.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb52.Location = new System.Drawing.Point(615, 378);
+            this.pb52.Location = new System.Drawing.Point(615, 382);
             this.pb52.Name = "pb52";
             this.pb52.Size = new System.Drawing.Size(86, 86);
             this.pb52.TabIndex = 87;
@@ -1215,7 +1174,7 @@ namespace amazingAdventures
             // pb37
             // 
             this.pb37.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb37.Location = new System.Drawing.Point(615, 286);
+            this.pb37.Location = new System.Drawing.Point(615, 290);
             this.pb37.Name = "pb37";
             this.pb37.Size = new System.Drawing.Size(86, 86);
             this.pb37.TabIndex = 86;
@@ -1225,7 +1184,7 @@ namespace amazingAdventures
             // pb22
             // 
             this.pb22.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb22.Location = new System.Drawing.Point(615, 194);
+            this.pb22.Location = new System.Drawing.Point(615, 198);
             this.pb22.Name = "pb22";
             this.pb22.Size = new System.Drawing.Size(86, 86);
             this.pb22.TabIndex = 85;
@@ -1235,7 +1194,7 @@ namespace amazingAdventures
             // pb7
             // 
             this.pb7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb7.Location = new System.Drawing.Point(615, 102);
+            this.pb7.Location = new System.Drawing.Point(615, 106);
             this.pb7.Name = "pb7";
             this.pb7.Size = new System.Drawing.Size(86, 86);
             this.pb7.TabIndex = 84;
@@ -1245,7 +1204,7 @@ namespace amazingAdventures
             // pb126
             // 
             this.pb126.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb126.Location = new System.Drawing.Point(523, 838);
+            this.pb126.Location = new System.Drawing.Point(523, 842);
             this.pb126.Name = "pb126";
             this.pb126.Size = new System.Drawing.Size(86, 86);
             this.pb126.TabIndex = 83;
@@ -1255,7 +1214,7 @@ namespace amazingAdventures
             // pb111
             // 
             this.pb111.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb111.Location = new System.Drawing.Point(523, 746);
+            this.pb111.Location = new System.Drawing.Point(523, 750);
             this.pb111.Name = "pb111";
             this.pb111.Size = new System.Drawing.Size(86, 86);
             this.pb111.TabIndex = 82;
@@ -1265,7 +1224,7 @@ namespace amazingAdventures
             // pb96
             // 
             this.pb96.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb96.Location = new System.Drawing.Point(523, 654);
+            this.pb96.Location = new System.Drawing.Point(523, 658);
             this.pb96.Name = "pb96";
             this.pb96.Size = new System.Drawing.Size(86, 86);
             this.pb96.TabIndex = 81;
@@ -1275,7 +1234,7 @@ namespace amazingAdventures
             // pb81
             // 
             this.pb81.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb81.Location = new System.Drawing.Point(523, 562);
+            this.pb81.Location = new System.Drawing.Point(523, 566);
             this.pb81.Name = "pb81";
             this.pb81.Size = new System.Drawing.Size(86, 86);
             this.pb81.TabIndex = 80;
@@ -1285,7 +1244,7 @@ namespace amazingAdventures
             // pb66
             // 
             this.pb66.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb66.Location = new System.Drawing.Point(523, 470);
+            this.pb66.Location = new System.Drawing.Point(523, 474);
             this.pb66.Name = "pb66";
             this.pb66.Size = new System.Drawing.Size(86, 86);
             this.pb66.TabIndex = 79;
@@ -1295,7 +1254,7 @@ namespace amazingAdventures
             // pb51
             // 
             this.pb51.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb51.Location = new System.Drawing.Point(523, 378);
+            this.pb51.Location = new System.Drawing.Point(523, 382);
             this.pb51.Name = "pb51";
             this.pb51.Size = new System.Drawing.Size(86, 86);
             this.pb51.TabIndex = 78;
@@ -1305,7 +1264,7 @@ namespace amazingAdventures
             // pb36
             // 
             this.pb36.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb36.Location = new System.Drawing.Point(523, 286);
+            this.pb36.Location = new System.Drawing.Point(523, 290);
             this.pb36.Name = "pb36";
             this.pb36.Size = new System.Drawing.Size(86, 86);
             this.pb36.TabIndex = 77;
@@ -1315,7 +1274,7 @@ namespace amazingAdventures
             // pb21
             // 
             this.pb21.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb21.Location = new System.Drawing.Point(523, 194);
+            this.pb21.Location = new System.Drawing.Point(523, 198);
             this.pb21.Name = "pb21";
             this.pb21.Size = new System.Drawing.Size(86, 86);
             this.pb21.TabIndex = 76;
@@ -1325,7 +1284,7 @@ namespace amazingAdventures
             // pb6
             // 
             this.pb6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb6.Location = new System.Drawing.Point(523, 102);
+            this.pb6.Location = new System.Drawing.Point(523, 106);
             this.pb6.Name = "pb6";
             this.pb6.Size = new System.Drawing.Size(86, 86);
             this.pb6.TabIndex = 75;
@@ -1335,7 +1294,7 @@ namespace amazingAdventures
             // pb125
             // 
             this.pb125.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb125.Location = new System.Drawing.Point(431, 838);
+            this.pb125.Location = new System.Drawing.Point(431, 842);
             this.pb125.Name = "pb125";
             this.pb125.Size = new System.Drawing.Size(86, 86);
             this.pb125.TabIndex = 74;
@@ -1345,7 +1304,7 @@ namespace amazingAdventures
             // pb110
             // 
             this.pb110.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb110.Location = new System.Drawing.Point(431, 746);
+            this.pb110.Location = new System.Drawing.Point(431, 750);
             this.pb110.Name = "pb110";
             this.pb110.Size = new System.Drawing.Size(86, 86);
             this.pb110.TabIndex = 73;
@@ -1355,7 +1314,7 @@ namespace amazingAdventures
             // pb95
             // 
             this.pb95.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb95.Location = new System.Drawing.Point(431, 654);
+            this.pb95.Location = new System.Drawing.Point(431, 658);
             this.pb95.Name = "pb95";
             this.pb95.Size = new System.Drawing.Size(86, 86);
             this.pb95.TabIndex = 72;
@@ -1365,7 +1324,7 @@ namespace amazingAdventures
             // pb80
             // 
             this.pb80.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb80.Location = new System.Drawing.Point(431, 562);
+            this.pb80.Location = new System.Drawing.Point(431, 566);
             this.pb80.Name = "pb80";
             this.pb80.Size = new System.Drawing.Size(86, 86);
             this.pb80.TabIndex = 71;
@@ -1375,7 +1334,7 @@ namespace amazingAdventures
             // pb65
             // 
             this.pb65.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb65.Location = new System.Drawing.Point(431, 470);
+            this.pb65.Location = new System.Drawing.Point(431, 474);
             this.pb65.Name = "pb65";
             this.pb65.Size = new System.Drawing.Size(86, 86);
             this.pb65.TabIndex = 70;
@@ -1385,7 +1344,7 @@ namespace amazingAdventures
             // pb50
             // 
             this.pb50.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb50.Location = new System.Drawing.Point(431, 378);
+            this.pb50.Location = new System.Drawing.Point(431, 382);
             this.pb50.Name = "pb50";
             this.pb50.Size = new System.Drawing.Size(86, 86);
             this.pb50.TabIndex = 69;
@@ -1395,7 +1354,7 @@ namespace amazingAdventures
             // pb35
             // 
             this.pb35.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb35.Location = new System.Drawing.Point(431, 286);
+            this.pb35.Location = new System.Drawing.Point(431, 290);
             this.pb35.Name = "pb35";
             this.pb35.Size = new System.Drawing.Size(86, 86);
             this.pb35.TabIndex = 68;
@@ -1405,7 +1364,7 @@ namespace amazingAdventures
             // pb20
             // 
             this.pb20.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb20.Location = new System.Drawing.Point(431, 194);
+            this.pb20.Location = new System.Drawing.Point(431, 198);
             this.pb20.Name = "pb20";
             this.pb20.Size = new System.Drawing.Size(86, 86);
             this.pb20.TabIndex = 67;
@@ -1415,7 +1374,7 @@ namespace amazingAdventures
             // pb5
             // 
             this.pb5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb5.Location = new System.Drawing.Point(431, 102);
+            this.pb5.Location = new System.Drawing.Point(431, 106);
             this.pb5.Name = "pb5";
             this.pb5.Size = new System.Drawing.Size(86, 86);
             this.pb5.TabIndex = 66;
@@ -1425,7 +1384,7 @@ namespace amazingAdventures
             // pb124
             // 
             this.pb124.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb124.Location = new System.Drawing.Point(339, 838);
+            this.pb124.Location = new System.Drawing.Point(339, 842);
             this.pb124.Name = "pb124";
             this.pb124.Size = new System.Drawing.Size(86, 86);
             this.pb124.TabIndex = 65;
@@ -1435,7 +1394,7 @@ namespace amazingAdventures
             // pb109
             // 
             this.pb109.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb109.Location = new System.Drawing.Point(339, 746);
+            this.pb109.Location = new System.Drawing.Point(339, 750);
             this.pb109.Name = "pb109";
             this.pb109.Size = new System.Drawing.Size(86, 86);
             this.pb109.TabIndex = 64;
@@ -1445,7 +1404,7 @@ namespace amazingAdventures
             // pb94
             // 
             this.pb94.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb94.Location = new System.Drawing.Point(339, 654);
+            this.pb94.Location = new System.Drawing.Point(339, 658);
             this.pb94.Name = "pb94";
             this.pb94.Size = new System.Drawing.Size(86, 86);
             this.pb94.TabIndex = 63;
@@ -1455,7 +1414,7 @@ namespace amazingAdventures
             // pb79
             // 
             this.pb79.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb79.Location = new System.Drawing.Point(339, 562);
+            this.pb79.Location = new System.Drawing.Point(339, 566);
             this.pb79.Name = "pb79";
             this.pb79.Size = new System.Drawing.Size(86, 86);
             this.pb79.TabIndex = 62;
@@ -1465,7 +1424,7 @@ namespace amazingAdventures
             // pb64
             // 
             this.pb64.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb64.Location = new System.Drawing.Point(339, 470);
+            this.pb64.Location = new System.Drawing.Point(339, 474);
             this.pb64.Name = "pb64";
             this.pb64.Size = new System.Drawing.Size(86, 86);
             this.pb64.TabIndex = 61;
@@ -1475,7 +1434,7 @@ namespace amazingAdventures
             // pb49
             // 
             this.pb49.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb49.Location = new System.Drawing.Point(339, 378);
+            this.pb49.Location = new System.Drawing.Point(339, 382);
             this.pb49.Name = "pb49";
             this.pb49.Size = new System.Drawing.Size(86, 86);
             this.pb49.TabIndex = 60;
@@ -1485,7 +1444,7 @@ namespace amazingAdventures
             // pb34
             // 
             this.pb34.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb34.Location = new System.Drawing.Point(339, 286);
+            this.pb34.Location = new System.Drawing.Point(339, 290);
             this.pb34.Name = "pb34";
             this.pb34.Size = new System.Drawing.Size(86, 86);
             this.pb34.TabIndex = 59;
@@ -1495,7 +1454,7 @@ namespace amazingAdventures
             // pb19
             // 
             this.pb19.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb19.Location = new System.Drawing.Point(339, 194);
+            this.pb19.Location = new System.Drawing.Point(339, 198);
             this.pb19.Name = "pb19";
             this.pb19.Size = new System.Drawing.Size(86, 86);
             this.pb19.TabIndex = 58;
@@ -1505,7 +1464,7 @@ namespace amazingAdventures
             // pb4
             // 
             this.pb4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb4.Location = new System.Drawing.Point(339, 102);
+            this.pb4.Location = new System.Drawing.Point(339, 106);
             this.pb4.Name = "pb4";
             this.pb4.Size = new System.Drawing.Size(86, 86);
             this.pb4.TabIndex = 57;
@@ -1515,7 +1474,7 @@ namespace amazingAdventures
             // pb123
             // 
             this.pb123.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb123.Location = new System.Drawing.Point(247, 838);
+            this.pb123.Location = new System.Drawing.Point(247, 842);
             this.pb123.Name = "pb123";
             this.pb123.Size = new System.Drawing.Size(86, 86);
             this.pb123.TabIndex = 56;
@@ -1525,7 +1484,7 @@ namespace amazingAdventures
             // pb108
             // 
             this.pb108.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb108.Location = new System.Drawing.Point(247, 746);
+            this.pb108.Location = new System.Drawing.Point(247, 750);
             this.pb108.Name = "pb108";
             this.pb108.Size = new System.Drawing.Size(86, 86);
             this.pb108.TabIndex = 55;
@@ -1535,7 +1494,7 @@ namespace amazingAdventures
             // pb93
             // 
             this.pb93.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb93.Location = new System.Drawing.Point(247, 654);
+            this.pb93.Location = new System.Drawing.Point(247, 658);
             this.pb93.Name = "pb93";
             this.pb93.Size = new System.Drawing.Size(86, 86);
             this.pb93.TabIndex = 54;
@@ -1545,7 +1504,7 @@ namespace amazingAdventures
             // pb78
             // 
             this.pb78.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb78.Location = new System.Drawing.Point(247, 562);
+            this.pb78.Location = new System.Drawing.Point(247, 566);
             this.pb78.Name = "pb78";
             this.pb78.Size = new System.Drawing.Size(86, 86);
             this.pb78.TabIndex = 53;
@@ -1555,7 +1514,7 @@ namespace amazingAdventures
             // pb63
             // 
             this.pb63.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb63.Location = new System.Drawing.Point(247, 470);
+            this.pb63.Location = new System.Drawing.Point(247, 474);
             this.pb63.Name = "pb63";
             this.pb63.Size = new System.Drawing.Size(86, 86);
             this.pb63.TabIndex = 52;
@@ -1565,7 +1524,7 @@ namespace amazingAdventures
             // pb48
             // 
             this.pb48.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb48.Location = new System.Drawing.Point(247, 378);
+            this.pb48.Location = new System.Drawing.Point(247, 382);
             this.pb48.Name = "pb48";
             this.pb48.Size = new System.Drawing.Size(86, 86);
             this.pb48.TabIndex = 51;
@@ -1575,7 +1534,7 @@ namespace amazingAdventures
             // pb33
             // 
             this.pb33.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb33.Location = new System.Drawing.Point(247, 286);
+            this.pb33.Location = new System.Drawing.Point(247, 290);
             this.pb33.Name = "pb33";
             this.pb33.Size = new System.Drawing.Size(86, 86);
             this.pb33.TabIndex = 50;
@@ -1585,7 +1544,7 @@ namespace amazingAdventures
             // pb18
             // 
             this.pb18.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb18.Location = new System.Drawing.Point(247, 194);
+            this.pb18.Location = new System.Drawing.Point(247, 198);
             this.pb18.Name = "pb18";
             this.pb18.Size = new System.Drawing.Size(86, 86);
             this.pb18.TabIndex = 49;
@@ -1595,7 +1554,7 @@ namespace amazingAdventures
             // pb3
             // 
             this.pb3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb3.Location = new System.Drawing.Point(247, 102);
+            this.pb3.Location = new System.Drawing.Point(247, 106);
             this.pb3.Name = "pb3";
             this.pb3.Size = new System.Drawing.Size(86, 86);
             this.pb3.TabIndex = 48;
@@ -1605,7 +1564,7 @@ namespace amazingAdventures
             // pb122
             // 
             this.pb122.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb122.Location = new System.Drawing.Point(155, 838);
+            this.pb122.Location = new System.Drawing.Point(155, 842);
             this.pb122.Name = "pb122";
             this.pb122.Size = new System.Drawing.Size(86, 86);
             this.pb122.TabIndex = 47;
@@ -1615,7 +1574,7 @@ namespace amazingAdventures
             // pb107
             // 
             this.pb107.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb107.Location = new System.Drawing.Point(155, 746);
+            this.pb107.Location = new System.Drawing.Point(155, 750);
             this.pb107.Name = "pb107";
             this.pb107.Size = new System.Drawing.Size(86, 86);
             this.pb107.TabIndex = 46;
@@ -1625,7 +1584,7 @@ namespace amazingAdventures
             // pb92
             // 
             this.pb92.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb92.Location = new System.Drawing.Point(155, 654);
+            this.pb92.Location = new System.Drawing.Point(155, 658);
             this.pb92.Name = "pb92";
             this.pb92.Size = new System.Drawing.Size(86, 86);
             this.pb92.TabIndex = 45;
@@ -1635,7 +1594,7 @@ namespace amazingAdventures
             // pb77
             // 
             this.pb77.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb77.Location = new System.Drawing.Point(155, 562);
+            this.pb77.Location = new System.Drawing.Point(155, 566);
             this.pb77.Name = "pb77";
             this.pb77.Size = new System.Drawing.Size(86, 86);
             this.pb77.TabIndex = 44;
@@ -1645,7 +1604,7 @@ namespace amazingAdventures
             // pb62
             // 
             this.pb62.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb62.Location = new System.Drawing.Point(155, 470);
+            this.pb62.Location = new System.Drawing.Point(155, 474);
             this.pb62.Name = "pb62";
             this.pb62.Size = new System.Drawing.Size(86, 86);
             this.pb62.TabIndex = 43;
@@ -1655,7 +1614,7 @@ namespace amazingAdventures
             // pb47
             // 
             this.pb47.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb47.Location = new System.Drawing.Point(155, 378);
+            this.pb47.Location = new System.Drawing.Point(155, 382);
             this.pb47.Name = "pb47";
             this.pb47.Size = new System.Drawing.Size(86, 86);
             this.pb47.TabIndex = 42;
@@ -1665,7 +1624,7 @@ namespace amazingAdventures
             // pb32
             // 
             this.pb32.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb32.Location = new System.Drawing.Point(155, 286);
+            this.pb32.Location = new System.Drawing.Point(155, 290);
             this.pb32.Name = "pb32";
             this.pb32.Size = new System.Drawing.Size(86, 86);
             this.pb32.TabIndex = 41;
@@ -1675,7 +1634,7 @@ namespace amazingAdventures
             // pb17
             // 
             this.pb17.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb17.Location = new System.Drawing.Point(155, 194);
+            this.pb17.Location = new System.Drawing.Point(155, 198);
             this.pb17.Name = "pb17";
             this.pb17.Size = new System.Drawing.Size(86, 86);
             this.pb17.TabIndex = 40;
@@ -1685,7 +1644,7 @@ namespace amazingAdventures
             // pb2
             // 
             this.pb2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb2.Location = new System.Drawing.Point(155, 102);
+            this.pb2.Location = new System.Drawing.Point(155, 106);
             this.pb2.Name = "pb2";
             this.pb2.Size = new System.Drawing.Size(86, 86);
             this.pb2.TabIndex = 39;
@@ -1695,7 +1654,7 @@ namespace amazingAdventures
             // pb121
             // 
             this.pb121.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb121.Location = new System.Drawing.Point(63, 838);
+            this.pb121.Location = new System.Drawing.Point(63, 842);
             this.pb121.Name = "pb121";
             this.pb121.Size = new System.Drawing.Size(86, 86);
             this.pb121.TabIndex = 38;
@@ -1705,7 +1664,7 @@ namespace amazingAdventures
             // pb106
             // 
             this.pb106.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb106.Location = new System.Drawing.Point(63, 746);
+            this.pb106.Location = new System.Drawing.Point(63, 750);
             this.pb106.Name = "pb106";
             this.pb106.Size = new System.Drawing.Size(86, 86);
             this.pb106.TabIndex = 37;
@@ -1715,7 +1674,7 @@ namespace amazingAdventures
             // pb91
             // 
             this.pb91.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb91.Location = new System.Drawing.Point(63, 654);
+            this.pb91.Location = new System.Drawing.Point(63, 658);
             this.pb91.Name = "pb91";
             this.pb91.Size = new System.Drawing.Size(86, 86);
             this.pb91.TabIndex = 36;
@@ -1725,7 +1684,7 @@ namespace amazingAdventures
             // pb76
             // 
             this.pb76.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb76.Location = new System.Drawing.Point(63, 562);
+            this.pb76.Location = new System.Drawing.Point(63, 566);
             this.pb76.Name = "pb76";
             this.pb76.Size = new System.Drawing.Size(86, 86);
             this.pb76.TabIndex = 35;
@@ -1735,7 +1694,7 @@ namespace amazingAdventures
             // pb61
             // 
             this.pb61.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb61.Location = new System.Drawing.Point(63, 470);
+            this.pb61.Location = new System.Drawing.Point(63, 474);
             this.pb61.Name = "pb61";
             this.pb61.Size = new System.Drawing.Size(86, 86);
             this.pb61.TabIndex = 34;
@@ -1745,7 +1704,7 @@ namespace amazingAdventures
             // pb46
             // 
             this.pb46.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb46.Location = new System.Drawing.Point(63, 378);
+            this.pb46.Location = new System.Drawing.Point(63, 382);
             this.pb46.Name = "pb46";
             this.pb46.Size = new System.Drawing.Size(86, 86);
             this.pb46.TabIndex = 33;
@@ -1755,7 +1714,7 @@ namespace amazingAdventures
             // pb31
             // 
             this.pb31.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb31.Location = new System.Drawing.Point(63, 286);
+            this.pb31.Location = new System.Drawing.Point(63, 290);
             this.pb31.Name = "pb31";
             this.pb31.Size = new System.Drawing.Size(86, 86);
             this.pb31.TabIndex = 32;
@@ -1765,7 +1724,7 @@ namespace amazingAdventures
             // pb16
             // 
             this.pb16.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb16.Location = new System.Drawing.Point(63, 194);
+            this.pb16.Location = new System.Drawing.Point(63, 198);
             this.pb16.Name = "pb16";
             this.pb16.Size = new System.Drawing.Size(86, 86);
             this.pb16.TabIndex = 31;
@@ -1775,7 +1734,7 @@ namespace amazingAdventures
             // pb1
             // 
             this.pb1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pb1.Location = new System.Drawing.Point(63, 102);
+            this.pb1.Location = new System.Drawing.Point(63, 106);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(86, 86);
             this.pb1.TabIndex = 30;
@@ -1787,18 +1746,10 @@ namespace amazingAdventures
             this.gameBackground.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gameBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.gameBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gameBackground.Location = new System.Drawing.Point(52, 91);
+            this.gameBackground.Location = new System.Drawing.Point(52, 95);
             this.gameBackground.Name = "gameBackground";
             this.gameBackground.Size = new System.Drawing.Size(1395, 844);
             this.gameBackground.TabIndex = 169;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkGreen;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(-6, -8);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1505, 70);
-            this.flowLayoutPanel1.TabIndex = 173;
             // 
             // label3
             // 
@@ -1806,12 +1757,40 @@ namespace amazingAdventures
             this.label3.BackColor = System.Drawing.Color.DarkGreen;
             this.label3.Font = new System.Drawing.Font("Tw Cen MT", 30.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(561, 7);
+            this.label3.Location = new System.Drawing.Point(552, 21);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(403, 48);
             this.label3.TabIndex = 20;
             this.label3.Text = "Welcome to the jungle...";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGreen;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(1563, 153);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(266, 51);
+            this.panel1.TabIndex = 173;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tw Cen MT", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label2.Location = new System.Drawing.Point(58, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 35);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Leaderboard";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkGreen;
+            this.panel2.Location = new System.Drawing.Point(497, 14);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(498, 65);
+            this.panel2.TabIndex = 174;
             // 
             // GameForm
             // 
@@ -1822,9 +1801,8 @@ namespace amazingAdventures
             this.ClientSize = new System.Drawing.Size(1880, 981);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gameLeaderboardDGV);
             this.Controls.Add(this.openChatBtn);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.pb135);
             this.Controls.Add(this.pb120);
             this.Controls.Add(this.pb105);
@@ -1964,7 +1942,7 @@ namespace amazingAdventures
             this.Controls.Add(this.leaveButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gameBackground);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1896, 1020);
@@ -1973,9 +1951,7 @@ namespace amazingAdventures
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Game";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gameLeaderboardDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb135)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb120)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb105)).EndInit();
@@ -2111,6 +2087,8 @@ namespace amazingAdventures
             ((System.ComponentModel.ISupportInitialize)(this.pb31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2120,8 +2098,6 @@ namespace amazingAdventures
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button leaveButton;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label totalFoundItemsLabel;
         private System.Windows.Forms.PictureBox pb121;
         private System.Windows.Forms.PictureBox pb106;
         private System.Windows.Forms.PictureBox pb91;
@@ -2257,12 +2233,12 @@ namespace amazingAdventures
         private System.Windows.Forms.PictureBox pb45;
         private System.Windows.Forms.PictureBox pb30;
         private System.Windows.Forms.PictureBox pb15;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel gameBackground;
         private System.Windows.Forms.Button openChatBtn;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.DataGridView gameLeaderboardDGV;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
     }
 }
