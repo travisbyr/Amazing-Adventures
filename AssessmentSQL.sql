@@ -94,7 +94,7 @@ START TRANSACTION;
 	CREATE TABLE `tbl_chat` (
 	  `ChatID` int NOT NULL AUTO_INCREMENT,
 	  `ChatText` varchar(50) DEFAULT NULL,																		 -- CHAT LENGTH CHANGED
-	  `ChatDateTime` varchar(25) DEFAULT NULL,/*use NOW() and insert into it*/
+	  `ChatDateTime` varchar(25) DEFAULT NULL,
       `PlayerID` int DEFAULT NULL,
 	  PRIMARY KEY (`ChatID`),
       FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID) ON DELETE SET NULL
