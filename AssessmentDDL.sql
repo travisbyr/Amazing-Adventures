@@ -95,7 +95,7 @@ begin
 	CREATE TABLE `tbl_chat` (
 	  `ChatID` int NOT NULL AUTO_INCREMENT,
 	  `ChatText` varchar(35) DEFAULT NULL,
-	  `ChatDateTime` varchar(25) DEFAULT NULL,/*use NOW() and insert into it*/
+	  `ChatDateTime` varchar(25) DEFAULT NULL,
       `PlayerID` int DEFAULT NULL,
 	  PRIMARY KEY (`ChatID`),
       FOREIGN KEY (PlayerID) REFERENCES tbl_player(PlayerID) ON DELETE SET NULL
@@ -182,17 +182,7 @@ begin
 	UPDATE `tbl_game` SET GameName = "My Game 1" WHERE GameID = 1;
 	UPDATE `tbl_game` SET GameDuration = 200 WHERE GameID = 3;
 	UPDATE `tbl_item` SET ItemValue = 10 WHERE ItemID = 1;
-    
-	/*------------------------------------->> DELETE STATEMENTS <<-------------------------------------*/  
 
-	DELETE FROM `tbl_tileAsset` WHERE tileAssetID = 1;
-	DELETE FROM `tbl_character` WHERE CharacterName = "Travis";
-	DELETE FROM `tbl_player` WHERE PlayerUsername = "User1";
-	DELETE FROM `tbl_tile` WHERE TileLocation = 0;
-	DELETE FROM `tbl_backpack` WHERE ItemID = 2;
-	DELETE FROM `tbl_chat` WHERE ChatText = "Hello world!";
-	DELETE FROM `tbl_game` WHERE GameName = "Game3";
-	DELETE FROM `tbl_item` WHERE ItemName = "Apple";
     
 	/*------------------------------------->> SELECT STATEMENTS <<-------------------------------------*/  
     
@@ -204,6 +194,17 @@ begin
     SELECT * FROM `tbl_chat`;
     SELECT * FROM `tbl_game`;
     SELECT * FROM `tbl_item`;
+    
+	/*------------------------------------->> DELETE STATEMENTS <<-------------------------------------*/  
+
+	DELETE FROM `tbl_tileAsset` WHERE tileAssetID = 1;
+	DELETE FROM `tbl_character` WHERE CharacterName = "Travis";
+	DELETE FROM `tbl_player` WHERE PlayerUsername = "User1";
+	DELETE FROM `tbl_tile` WHERE TileLocation = 0;
+	DELETE FROM `tbl_backpack` WHERE ItemID = 2;
+	DELETE FROM `tbl_chat` WHERE ChatText = "Hello world!";
+	DELETE FROM `tbl_game` WHERE GameName = "Game3";
+	DELETE FROM `tbl_item` WHERE ItemName = "Apple";
     
 end //
 delimiter ;   
