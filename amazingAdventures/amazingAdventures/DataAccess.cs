@@ -41,13 +41,12 @@ namespace amazingAdventures
 
         // ACCOUNT FUNCTIONALITY
 
-        public static void AccountCreate(string pusername, string ppassword, string pemail)
+        public static void AccountCreate(string pusername, string ppassword)
         {
             MySqlCommand cmd = new MySqlCommand("accountCreate", connect); // Select stored proecdure name
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("pUserName", pusername); // Add a parameter
             cmd.Parameters.AddWithValue("pPassword", ppassword); // Add a parameter
-            cmd.Parameters.AddWithValue("pEmail", pemail); // Add a parameter
             connect.Open();
             MySqlDataReader myReader;
             myReader = cmd.ExecuteReader();

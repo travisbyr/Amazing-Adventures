@@ -22,7 +22,7 @@ namespace amazingAdventures
             DialogResult dialogResult = MessageBox.Show("Are you sure you would like to create this player?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                DataAccess.AccountCreate(createUsername.Text, createPassword.Text, createEmail.Text); // Create account
+                DataAccess.AccountCreate(createUsername.Text, createPassword.Text); // Create account
                 MessageBox.Show("Player account is created", "Account Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 AdminSettingsForm.AdminSettings.updatePlayerList();
                 AdminSettingsForm.AdminSettings.adminListGames();

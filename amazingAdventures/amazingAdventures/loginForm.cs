@@ -35,16 +35,18 @@ namespace amazingAdventures
                 loginPasswordLabel.Visible = true;
                 usrnInvalidFirstLabel.Text = "New Username Detected";
                 usrnInvalidSecondLabel.Text = "Please enter a password to register an account";
+                loginBtn.Text = "Register";
 
                 if (loginPassword.Text != "" && loginUsername.Text != "")
                 {
                     DialogResult dialogResult = MessageBox.Show("Would you like to create an account using the password and username typed?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        DataAccess.AccountCreate(loginUsername.Text, loginPassword.Text, "remove");
+                        DataAccess.AccountCreate(loginUsername.Text, loginPassword.Text);
                         MessageBox.Show("Account has been successfully created.", "Account Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DataAccess.AccountLogin(loginUsername.Text, loginPassword.Text);
                         Hide();
+                        loginBtn.Text = "Login";
                         Main.M.Username = loginUsername.Text;
                         LobbyForm.Lobby.Show();
                         LobbyForm.Lobby.viewPlayersOnline();

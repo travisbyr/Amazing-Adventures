@@ -32,8 +32,6 @@ namespace amazingAdventures
             this.closeBtn = new System.Windows.Forms.Button();
             this.usrnInvalidFirstLabel = new System.Windows.Forms.Label();
             this.createBtn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.createEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Use = new System.Windows.Forms.Label();
             this.createPassword = new System.Windows.Forms.TextBox();
@@ -47,7 +45,7 @@ namespace amazingAdventures
             this.closeBtn.BackColor = System.Drawing.SystemColors.ControlLight;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.closeBtn.Location = new System.Drawing.Point(146, 318);
+            this.closeBtn.Location = new System.Drawing.Point(146, 269);
             this.closeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(199, 35);
@@ -62,7 +60,7 @@ namespace amazingAdventures
             this.usrnInvalidFirstLabel.BackColor = System.Drawing.Color.Transparent;
             this.usrnInvalidFirstLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.usrnInvalidFirstLabel.ForeColor = System.Drawing.Color.LightSalmon;
-            this.usrnInvalidFirstLabel.Location = new System.Drawing.Point(184, 327);
+            this.usrnInvalidFirstLabel.Location = new System.Drawing.Point(184, 278);
             this.usrnInvalidFirstLabel.MinimumSize = new System.Drawing.Size(128, 17);
             this.usrnInvalidFirstLabel.Name = "usrnInvalidFirstLabel";
             this.usrnInvalidFirstLabel.Size = new System.Drawing.Size(128, 17);
@@ -76,7 +74,7 @@ namespace amazingAdventures
             this.createBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.createBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.createBtn.Location = new System.Drawing.Point(146, 277);
+            this.createBtn.Location = new System.Drawing.Point(146, 228);
             this.createBtn.Margin = new System.Windows.Forms.Padding(2);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(199, 35);
@@ -84,31 +82,6 @@ namespace amazingAdventures
             this.createBtn.Text = "Create";
             this.createBtn.UseVisualStyleBackColor = false;
             this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(101, 206);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 24);
-            this.label3.TabIndex = 49;
-            this.label3.Text = "Email:";
-            // 
-            // createEmail
-            // 
-            this.createEmail.BackColor = System.Drawing.Color.White;
-            this.createEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.createEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.createEmail.ForeColor = System.Drawing.Color.Black;
-            this.createEmail.Location = new System.Drawing.Point(105, 232);
-            this.createEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.createEmail.Name = "createEmail";
-            this.createEmail.Size = new System.Drawing.Size(287, 29);
-            this.createEmail.TabIndex = 48;
             // 
             // label2
             // 
@@ -189,22 +162,20 @@ namespace amazingAdventures
             this.AcceptButton = this.createBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 372);
+            this.ClientSize = new System.Drawing.Size(492, 341);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.usrnInvalidFirstLabel);
             this.Controls.Add(this.createBtn);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.createEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Use);
             this.Controls.Add(this.createPassword);
             this.Controls.Add(this.createUsername);
-            this.MaximumSize = new System.Drawing.Size(508, 411);
+            this.MaximumSize = new System.Drawing.Size(508, 380);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(508, 411);
+            this.MinimumSize = new System.Drawing.Size(508, 380);
             this.Name = "AdminCreatePlayerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Amazing Adventures - Create Player";
@@ -218,8 +189,6 @@ namespace amazingAdventures
         public System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Label usrnInvalidFirstLabel;
         private System.Windows.Forms.Button createBtn;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox createEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Use;
         private System.Windows.Forms.TextBox createPassword;
