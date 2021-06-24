@@ -127,7 +127,7 @@ namespace amazingAdventures
             this.MinimumSize = new System.Drawing.Size(508, 342);
             this.Name = "NewGameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Amazing Adeventures - New Game";
+            this.Text = "Amazing Adeventures - Create Game";
             this.ResumeLayout(false);
             this.PerformLayout();
 
