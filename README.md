@@ -4,7 +4,7 @@
 
 <h4>Idea</h4> 
 
-I created a single player multicharacter game where characters move around the map via tiles, collecting items and competing with other characters. To achieve this, I will be using a MySQL database along with C# to create an intuitive frontend and efficient backend. 
+I created a multiplayer game where characters move around the map via tiles, collecting items and competing with other characters. To achieve this, I will be using a MySQL database along with C# to create an intuitive frontend and efficient backend. 
 
 <img src="https://raw.githubusercontent.com/travisbyr/amazingAdventures/main/Documentation%20Images/gameplay.png?token=AOUNHPOXSMYHC6YJULT74QTBCSJBC">
 
